@@ -167,5 +167,19 @@
     <p>© 2026 Schrotty74 · <a href="https://github.com/Schrotty74/Portfolio/blob/main/PRIVACY_CHECK.de.md" target="_blank" rel="noopener">Sicherheits- & Datenschutzprüfung ↗</a></p>
     <a href="https://github.com/Schrotty74" target="_blank" rel="noopener">GitHub ↗</a>
   </footer>
+  <script>
+    (() => {
+      const tagline = document.querySelector("h1 em");
+      const applyMobileTagline = () => {
+        if (!tagline) return;
+        const mobile = window.matchMedia("(max-width: 700px)").matches;
+        tagline.style.setProperty("font-size", mobile ? "clamp(1.35rem, 6.6vw, 1.78rem)" : "", "important");
+        tagline.style.setProperty("white-space", mobile ? "nowrap" : "", "important");
+        tagline.style.setProperty("letter-spacing", mobile ? "-.06em" : "", "important");
+      };
+      applyMobileTagline();
+      window.addEventListener("resize", applyMobileTagline);
+    })();
+  </script>
 </body>
 </html>
