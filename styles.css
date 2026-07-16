@@ -55,8 +55,9 @@ html[data-theme="light"] .theme-select { color-scheme: light; }
 .hero { min-height: 560px; padding: 112px 0 96px; display: flex; flex-direction: column; align-items: flex-start; }
 .eyebrow { margin: 0 0 16px; color: var(--accent); font: 500 11px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .14em; }
 h1, h2, h3, p { margin-top: 0; }
-h1 { max-width: 900px; margin-bottom: 28px; font-size: clamp(3.2rem, 7vw, 6.3rem); line-height: .98; letter-spacing: -.06em; }
+h1 { max-width: 900px; margin-bottom: 28px; font-size: clamp(2.9rem, 6vw, 5.5rem); line-height: 1.02; letter-spacing: -.06em; }
 h1 em, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; letter-spacing: -.045em; }
+h1 em { display: inline-block; margin-top: .14em; }
 .intro { max-width: 590px; color: var(--muted); font-size: 18px; line-height: 1.6; }
 .button { margin-top: 20px; padding: 14px 19px; border-radius: 999px; color: #111326; background: var(--accent); font-size: 14px; font-weight: 700; text-decoration: none; transition: transform .2s; }
 .button:hover { transform: translateY(-2px); }
