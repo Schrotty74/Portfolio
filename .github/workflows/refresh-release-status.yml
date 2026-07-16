@@ -51,9 +51,8 @@ jobs:
             }
 
             const releases = await response.json();
-            if (!releases.length) return null;
-
-            const release = releases[0];
+            const release = releases.find(candidate => !candidate.draft);
+            if (!release) return null;
             return {
               stage: release.prerelease ? "Beta" : "Final",
               release: release.tag_name,
