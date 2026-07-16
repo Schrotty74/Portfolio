@@ -1,6 +1,6 @@
 # Portfolio
 
-Die GitHub-Pages-Portfolioseite von [Martin Schrott](https://github.com/Schrotty74).
+Die GitHub-Pages-Portfolioseite von [Schrotty74](https://github.com/Schrotty74).
 
 Sie stellt ausgewählte Projekte vor und verlinkt direkt zu den jeweiligen Repositories und, wo verfügbar, zu den laufenden Web-Apps.
 
