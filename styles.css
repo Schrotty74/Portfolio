@@ -28,13 +28,13 @@ html[data-theme="graphite-lime"] {
   --glow: #41522b;
 }
 html[data-theme="retro"] {
-  --ink: #f9f5c6;
-  --muted: #c5c39c;
-  --line: rgba(249, 245, 198, .32);
-  --paper: #202a24;
-  --surface: #354338;
-  --accent: #f1c75b;
-  --glow: #4b604b;
+  --ink: #fff0c2;
+  --muted: #d2ae79;
+  --line: rgba(255, 190, 92, .33);
+  --paper: #24150f;
+  --surface: #4a2d1d;
+  --accent: #ffb64c;
+  --glow: #7a3d20;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
