@@ -6,7 +6,7 @@
   <meta name="description" content="Portfolio von Schrotty74: datenschutzfreundliche macOS-Apps und Offline-Web-Apps.">
   <meta name="theme-color" content="#0c1020">
   <title>Schrotty74 · Apps & Projekte</title>
-  <link rel="stylesheet" href="portfolio-mobile-v1.css">
+  <link rel="stylesheet" href="portfolio-mobile-v2.css">
   <script defer src="script.js?v=20260716-graphite-lime"></script>
 </head>
 <body>
@@ -15,14 +15,17 @@
       <a class="brand" href="#top">SCHROTTY74</a>
       <div class="nav-links">
         <a href="#projekte">Projekte</a>
-        <label class="theme-picker">Stil
-          <select class="theme-select" aria-label="Darstellungsstil wählen">
-            <option value="midnight">Midnight</option>
-            <option value="light">Hell</option>
-            <option value="retro">Retro</option>
-            <option value="graphite-lime">Graphite Lime</option>
-          </select>
-        </label>
+        <div class="theme-menu">
+          <button class="theme-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+            <span class="theme-current">Midnight</span><span class="theme-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="theme-options" role="listbox" aria-label="Darstellungsstil wählen">
+            <button type="button" role="option" data-theme="midnight" data-label="Midnight">Midnight</button>
+            <button type="button" role="option" data-theme="light" data-label="Hell">Hell</button>
+            <button type="button" role="option" data-theme="retro" data-label="Retro">Retro</button>
+            <button type="button" role="option" data-theme="graphite-lime" data-label="Graphite Lime">Graphite Lime</button>
+          </div>
+        </div>
         <a href="https://github.com/Schrotty74" target="_blank" rel="noopener">GitHub ↗</a>
         <span class="language-switch" aria-label="Sprache wählen"><a href="index.html">EN</a><a class="active" href="de.html" aria-current="page">DE</a></span>
       </div>
