@@ -7,17 +7,38 @@
   --paper: #0c1020;
   --surface: #141a2d;
   --accent: #c2b4ff;
+  --glow: #29204b;
+}
+html[data-theme="light"] {
+  --ink: #172037;
+  --muted: #59657d;
+  --line: rgba(27, 39, 68, .17);
+  --paper: #eef1f7;
+  --surface: #ffffff;
+  --accent: #6250bd;
+  --glow: #d9d0ff;
+}
+html[data-theme="retro"] {
+  --ink: #f9f5c6;
+  --muted: #c5c39c;
+  --line: rgba(249, 245, 198, .32);
+  --paper: #202a24;
+  --surface: #354338;
+  --accent: #f1c75b;
+  --glow: #4b604b;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; color: var(--ink); background: radial-gradient(circle at 78% -6%, #29204b 0, transparent 28rem), var(--paper); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+body { margin: 0; color: var(--ink); background: radial-gradient(circle at 78% -6%, var(--glow) 0, transparent 28rem), var(--paper); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
 main, footer { width: min(1160px, calc(100% - 48px)); margin: auto; }
 .nav { height: 88px; display: flex; align-items: center; justify-content: space-between; }
 .brand { color: var(--ink); font: 700 23px/1 ui-monospace, SFMono-Regular, Menlo, monospace; text-decoration: none; letter-spacing: -2px; }
 .brand span { color: var(--accent); }
 .nav-links { display: flex; gap: 24px; font-size: 14px; }
 .nav a, footer a { color: var(--muted); text-decoration: none; }
-.nav a:hover, footer a:hover, .text-link:hover { color: #fff; }
+.nav a:hover, footer a:hover, .text-link:hover { color: var(--ink); }
+.theme-picker { display: inline-flex; align-items: center; gap: 7px; color: var(--muted); font: 10px ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; letter-spacing: .04em; }
+.theme-select { appearance: none; min-width: 84px; padding: 6px 24px 6px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: var(--surface); font: 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; cursor: pointer; }
 .language-switch { display: inline-flex; gap: 2px; margin-left: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; }
 .language-switch a { padding: 4px 6px; border-radius: 999px; color: var(--muted); font: 10px ui-monospace, SFMono-Regular, Menlo, monospace; }
 .language-switch a.active { color: #171827; background: var(--accent); }
@@ -35,7 +56,7 @@ section { padding: 96px 0; }
 h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.6rem); line-height: .98; }
 .count { margin: 0; color: var(--muted); font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; }
 .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.project { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: rgba(23, 29, 50, .65); transition: border .2s, transform .2s; }
+.project { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); transition: border .2s, transform .2s; }
 .project:hover { border-color: rgba(194,180,255,.65); transform: translateY(-3px); }
 .project.featured { grid-column: span 2; display: grid; grid-template-columns: 1.14fr .86fr; }
 .project-visual { min-height: 255px; display: grid; place-items: center; overflow: hidden; background: #212943; }
@@ -80,3 +101,10 @@ footer p { margin: 0; }
   .principles { margin-top: 20px; padding: 56px 26px; }
   .principle-grid { grid-template-columns: 1fr; gap: 25px; margin-top: 40px; }
 }
+
+html[data-theme="retro"] body { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background-image: linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px); background-size: 6px 6px; }
+html[data-theme="retro"] h1, html[data-theme="retro"] h2 { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: -.07em; }
+html[data-theme="retro"] .project, html[data-theme="retro"] .principles, html[data-theme="retro"] .project-visual { border-radius: 0; }
+html[data-theme="retro"] .project { box-shadow: 4px 4px 0 rgba(0,0,0,.34); }
+html[data-theme="retro"] .button, html[data-theme="retro"] .language-switch, html[data-theme="retro"] .theme-select { border-radius: 2px; }
+@media (max-width: 700px) { .theme-picker { display: none; } }
