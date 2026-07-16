@@ -1,16 +1,41 @@
 (() => {
   const key = "schrotty74-portfolio-theme";
-  const select = document.querySelector(".theme-select");
-  if (!select) return;
+  const menu = document.querySelector(".theme-menu");
+  const trigger = document.querySelector(".theme-trigger");
+  const current = document.querySelector(".theme-current");
+  const options = [...document.querySelectorAll(".theme-options button")];
+  if (!menu || !trigger || !current || !options.length) return;
 
+  const allowed = options.map(option => option.dataset.theme);
   const saved = localStorage.getItem(key);
-  const theme = ["midnight", "light", "retro", "graphite-lime"].includes(saved) ? saved : "midnight";
+  const initial = allowed.includes(saved) ? saved : "midnight";
 
-  document.documentElement.dataset.theme = theme;
-  select.value = theme;
+  function applyTheme(theme) {
+    const option = options.find(item => item.dataset.theme === theme) || options[0];
+    document.documentElement.dataset.theme = option.dataset.theme;
+    current.textContent = option.dataset.label;
+    options.forEach(item => item.setAttribute("aria-selected", String(item === option)));
+    localStorage.setItem(key, option.dataset.theme);
+  }
 
-  select.addEventListener("change", () => {
-    document.documentElement.dataset.theme = select.value;
-    localStorage.setItem(key, select.value);
+  function closeMenu() {
+    menu.classList.remove("open");
+    trigger.setAttribute("aria-expanded", "false");
+  }
+
+  applyTheme(initial);
+  trigger.addEventListener("click", () => {
+    const open = menu.classList.toggle("open");
+    trigger.setAttribute("aria-expanded", String(open));
+  });
+  options.forEach(option => option.addEventListener("click", () => {
+    applyTheme(option.dataset.theme);
+    closeMenu();
+  }));
+  document.addEventListener("click", event => {
+    if (!menu.contains(event.target)) closeMenu();
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeMenu();
   });
 })();
