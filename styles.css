@@ -18,6 +18,15 @@ html[data-theme="light"] {
   --accent: #6250bd;
   --glow: #d9d0ff;
 }
+html[data-theme="graphite-lime"] {
+  --ink: #eff7dd;
+  --muted: #afbc9a;
+  --line: rgba(207, 255, 92, .22);
+  --paper: #171a18;
+  --surface: #242a25;
+  --accent: #c7ff55;
+  --glow: #41522b;
+}
 html[data-theme="retro"] {
   --ink: #f9f5c6;
   --muted: #c5c39c;
