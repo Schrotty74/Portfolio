@@ -1,76 +1,77 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio von Martin Schrott: datenschutzfreundliche macOS-Apps und Offline-Web-Apps.">
+  <meta name="description" content="Portfolio of Martin Schrott: privacy-friendly macOS apps and offline web apps.">
   <meta name="theme-color" content="#0c1020">
-  <title>Martin Schrott · Apps & Projekte</title>
+  <title>Martin Schrott · Apps & Projects</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main>
-    <nav class="nav" aria-label="Hauptnavigation">
+    <nav class="nav" aria-label="Main navigation">
       <a class="brand" href="#top">MS<span>·</span></a>
       <div class="nav-links">
-        <a href="#projekte">Projekte</a>
+        <a href="#projects">Projects</a>
         <a href="https://github.com/Schrotty74" target="_blank" rel="noopener">GitHub ↗</a>
+        <span class="language-switch" aria-label="Choose language"><a class="active" href="index.html" aria-current="page">EN</a><a href="de.html">DE</a></span>
       </div>
     </nav>
 
     <header class="hero" id="top">
       <p class="eyebrow">INDEPENDENT SOFTWARE</p>
-      <h1>Durchdachte Apps.<br><em>Deine Daten bleiben bei dir.</em></h1>
-      <p class="intro">Eine Auswahl lokaler, datenschutzfreundlicher Apps für macOS und das Web – entwickelt für klare Abläufe statt unnötiger Cloud-Abhängigkeit.</p>
-      <a class="button primary" href="#projekte">Projekte ansehen <span aria-hidden="true">↓</span></a>
+      <h1>Thoughtful apps.<br><em>Your data stays with you.</em></h1>
+      <p class="intro">A selection of local, privacy-friendly apps for macOS and the web – designed for clear workflows instead of unnecessary cloud dependencies.</p>
+      <a class="button primary" href="#projekte">Explore projects <span aria-hidden="true">↓</span></a>
     </header>
 
-    <section id="projekte" aria-labelledby="projects-heading">
+    <section id="projects" aria-labelledby="projects-heading">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">AUSGEWÄHLTE PROJEKTE</p>
-          <h2 id="projects-heading">Apps & Werkzeuge</h2>
+          <p class="eyebrow">SELECTED PROJECTS</p>
+          <h2 id="projects-heading">Apps & tools</h2>
         </div>
-        <p class="count">7 Projekte</p>
+        <p class="count">7 projects</p>
       </div>
 
       <div class="projects">
         <article class="project featured">
           <div class="project-visual appatlas">
-            <img src="https://raw.githubusercontent.com/Schrotty74/AppAtlas/main/docs/screenshots/appatlas-dashboard-demo.jpg" alt="AppAtlas Dashboard mit Demo-Daten">
+            <img src="https://raw.githubusercontent.com/Schrotty74/AppAtlas/main/docs/screenshots/appatlas-dashboard-demo.jpg" alt="AppAtlas dashboard with demo data">
           </div>
           <div class="project-content">
             <p class="meta">macOS · SwiftUI</p>
             <h3>AppAtlas</h3>
-            <p>Persönliche App-Sammlungen übersichtlich verwalten: Apps aus lokalen Ordnern erfassen, Metadaten, Tags, Links und Lizenzinformationen organisieren – mit lokalen, optional verschlüsselten Exporten.</p>
+            <p>Organise personal app collections: scan apps from local folders, manage metadata, tags, links and licence information, and create local exports with optional encryption.</p>
             <div class="tags"><span>macOS 14+</span><span>Swift 6</span><span>GPL-3.0</span></div>
-            <div class="actions"><a class="text-link" href="https://github.com/Schrotty74/AppAtlas" target="_blank" rel="noopener">Projekt auf GitHub <span>↗</span></a></div>
+            <div class="actions"><a class="text-link" href="https://github.com/Schrotty74/AppAtlas" target="_blank" rel="noopener">View on GitHub <span>↗</span></a></div>
           </div>
         </article>
 
         <article class="project">
           <div class="project-visual fileatlas">
-            <img src="https://raw.githubusercontent.com/Schrotty74/FileAtlas/main/FileAtlas/Assets.xcassets/AppIcon.appiconset/icon_512x512.png" alt="FileAtlas App-Icon">
+            <img src="https://raw.githubusercontent.com/Schrotty74/FileAtlas/main/FileAtlas/Assets.xcassets/AppIcon.appiconset/icon_512x512.png" alt="FileAtlas app icon">
           </div>
           <div class="project-content">
             <p class="meta">macOS · SwiftUI</p>
             <h3>FileAtlas</h3>
-            <p>Lokale Dateien indexieren, Metadaten prüfen, Duplikate finden, Snapshots vergleichen und Backups verwalten – ohne externe Abhängigkeiten.</p>
+            <p>Index local files, inspect metadata, find duplicates, compare snapshots and manage backups – without external dependencies.</p>
             <div class="tags"><span>macOS 26+</span><span>Swift 6</span><span>GPL-3.0</span></div>
-            <div class="actions"><a class="text-link" href="https://github.com/Schrotty74/FileAtlas" target="_blank" rel="noopener">Projekt auf GitHub <span>↗</span></a></div>
+            <div class="actions"><a class="text-link" href="https://github.com/Schrotty74/FileAtlas" target="_blank" rel="noopener">View on GitHub <span>↗</span></a></div>
           </div>
         </article>
 
         <article class="project">
           <div class="project-visual budget">
-            <img src="https://raw.githubusercontent.com/Schrotty74/BudgetApp/main/screenshots/demo-top.png" alt="BudgetApp Übersicht mit Ausgaben-Donutdiagramm">
+            <img src="https://raw.githubusercontent.com/Schrotty74/BudgetApp/main/screenshots/demo-top.png" alt="BudgetApp overview with expense donut chart">
           </div>
           <div class="project-content">
             <p class="meta">Web · Progressive Web App</p>
             <h3>BudgetApp</h3>
-            <p>Einfaches Haushaltsbudget mit Ausgabenübersicht, Excel-Import und -Export. Läuft offline im Browser, ohne Konto und ohne Datenübertragung.</p>
+            <p>A simple household budget with expense overview plus Excel import and export. Runs offline in the browser, with no account and no data transfer.</p>
             <div class="tags"><span>Offline</span><span>Vanilla JS</span><span>GPL-3.0</span></div>
-            <div class="actions"><a class="text-link" href="https://schrotty74.github.io/BudgetApp/" target="_blank" rel="noopener">App öffnen <span>↗</span></a><a class="text-link muted" href="https://github.com/Schrotty74/BudgetApp" target="_blank" rel="noopener">GitHub</a></div>
+            <div class="actions"><a class="text-link" href="https://schrotty74.github.io/BudgetApp/" target="_blank" rel="noopener">Open app <span>↗</span></a><a class="text-link muted" href="https://github.com/Schrotty74/BudgetApp" target="_blank" rel="noopener">GitHub</a></div>
           </div>
         </article>
 
@@ -81,60 +82,60 @@
           <div class="project-content">
             <p class="meta">Web · Progressive Web App</p>
             <h3>CALC BOY</h3>
-            <p>Ein verspielter Offline-Rechner im Konsolenstil: Standard- und Wissenschaftsrechner, Umrechnungen, Finanzwerkzeuge, Programmiererfunktionen und Mini-Spiele.</p>
-            <div class="tags"><span>Offline</span><span>lokal</span><span>GPL-3.0</span></div>
-            <div class="actions"><a class="text-link" href="https://schrotty74.github.io/CalcBoy/" target="_blank" rel="noopener">App öffnen <span>↗</span></a><a class="text-link muted" href="https://github.com/Schrotty74/CalcBoy" target="_blank" rel="noopener">GitHub</a></div>
+            <p>A playful offline calculator in console style: standard and scientific calculation, conversions, financial tools, programmer functions and mini games.</p>
+            <div class="tags"><span>Offline</span><span>local-first</span><span>GPL-3.0</span></div>
+            <div class="actions"><a class="text-link" href="https://schrotty74.github.io/CalcBoy/" target="_blank" rel="noopener">Open app <span>↗</span></a><a class="text-link muted" href="https://github.com/Schrotty74/CalcBoy" target="_blank" rel="noopener">GitHub</a></div>
           </div>
         </article>
 
         <article class="project">
           <div class="project-visual urobilanz">
-            <img src="https://raw.githubusercontent.com/Schrotty74/UroBilanz/main/docs/screenshots/github/web/web-dashboard-violet-night.png" alt="UroBilanz Web-App Dashboard mit Demo-Daten">
+            <img src="https://raw.githubusercontent.com/Schrotty74/UroBilanz/main/docs/screenshots/github/web/web-dashboard-violet-night.png" alt="UroBilanz web app dashboard with demo data">
           </div>
           <div class="project-content">
             <p class="meta">macOS & Web · SwiftUI</p>
             <h3>UroBilanz</h3>
-            <p>Lokales Protokoll- und Analysetool für Urin- und Flüssigkeitsdaten aus CSV-Dateien, mit Auswertungen, Berichten und Exporten. Kein Diagnosewerkzeug.</p>
-            <div class="tags"><span>100 % lokal</span><span>SwiftUI</span><span>GPL-3.0</span></div>
-            <div class="actions"><a class="text-link" href="https://github.com/Schrotty74/UroBilanz" target="_blank" rel="noopener">Projekt auf GitHub <span>↗</span></a></div>
+            <p>A local logging and analysis tool for urine and fluid records from CSV files, with insights, reports and exports. Not a diagnostic tool.</p>
+            <div class="tags"><span>100% local</span><span>SwiftUI</span><span>GPL-3.0</span></div>
+            <div class="actions"><a class="text-link" href="https://github.com/Schrotty74/UroBilanz" target="_blank" rel="noopener">View on GitHub <span>↗</span></a></div>
           </div>
         </article>
 
         <article class="project">
           <div class="project-visual health">
-            <img src="https://raw.githubusercontent.com/Schrotty74/HealthAtlas/main/Screenshots/overview.png" alt="HealthAtlas Übersicht mit synthetischen Gesundheitsdaten">
+            <img src="https://raw.githubusercontent.com/Schrotty74/HealthAtlas/main/Screenshots/overview.png" alt="HealthAtlas overview with synthetic health data">
           </div>
           <div class="project-content">
             <p class="meta">macOS · SwiftUI</p>
             <h3>HealthAtlas <span class="status">Beta</span></h3>
-            <p>Apple-Health-Exporte lokal in klare, visuelle Einblicke verwandeln. Die App verarbeitet ausgewählte Daten auf dem Mac – ohne Cloud, Tracking oder Diagnosen.</p>
-            <div class="tags"><span>lokale Analyse</span><span>macOS</span><span>SwiftUI</span></div>
-            <div class="actions"><a class="text-link" href="https://github.com/Schrotty74/HealthAtlas" target="_blank" rel="noopener">Projekt auf GitHub <span>↗</span></a></div>
+            <p>Turn Apple Health exports into clear visual insights locally. The app processes selected data on the Mac – with no cloud, tracking or diagnoses.</p>
+            <div class="tags"><span>local analysis</span><span>macOS</span><span>SwiftUI</span></div>
+            <div class="actions"><a class="text-link" href="https://github.com/Schrotty74/HealthAtlas" target="_blank" rel="noopener">View on GitHub <span>↗</span></a></div>
           </div>
         </article>
 
         <article class="project">
           <div class="project-visual pets">
-            <img src="https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Woodi/preview-transparent.png" alt="Woodi, ein ChatGPT-Pet">
+            <img src="https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Woodi/preview-transparent.png" alt="Woodi, a ChatGPT pet">
           </div>
           <div class="project-content">
             <p class="meta">ChatGPT & Codex</p>
             <h3>ChatGPT Pets</h3>
-            <p>Eine wachsende Sammlung eigener, animierter und importierbarer Pets für ChatGPT und Codex – von Woodi bis Inky.</p>
-            <div class="tags"><span>Sprite Sheets</span><span>Animation</span><span>Sammlung</span></div>
-            <div class="actions"><a class="text-link" href="https://github.com/Schrotty74/chatgpt-pets" target="_blank" rel="noopener">Sammlung ansehen <span>↗</span></a></div>
+            <p>A growing collection of original, animated and importable pets for ChatGPT and Codex – from Woodi to Inky.</p>
+            <div class="tags"><span>Sprite Sheets</span><span>Animation</span><span>collection</span></div>
+            <div class="actions"><a class="text-link" href="https://github.com/Schrotty74/chatgpt-pets" target="_blank" rel="noopener">View collection <span>↗</span></a></div>
           </div>
         </article>
       </div>
     </section>
 
     <section class="principles" aria-labelledby="principles-heading">
-      <p class="eyebrow">GRUNDSÄTZE</p>
-      <h2 id="principles-heading">Weniger Cloud.<br>Mehr Kontrolle.</h2>
+      <p class="eyebrow">PRINCIPLES</p>
+      <h2 id="principles-heading">Less cloud.<br>More control.</h2>
       <div class="principle-grid">
-        <p><strong>Lokal zuerst</strong>Persönliche Daten bleiben auf deinem Gerät, wenn es technisch sinnvoll ist.</p>
-        <p><strong>Klare Werkzeuge</strong>Funktionen sollen helfen – nicht von der eigentlichen Aufgabe ablenken.</p>
-        <p><strong>Offen entwickelt</strong>Die Projekte, ihr Quellcode und ihr Fortschritt sind auf GitHub nachvollziehbar.</p>
+        <p><strong>Local first</strong>Personal data stays on your device whenever that makes technical sense.</p>
+        <p><strong>Clear tools</strong>Features should help, not distract from the actual task.</p>
+        <p><strong>Openly developed</strong>The projects, their source code and their progress are transparent on GitHub.</p>
       </div>
     </section>
   </main>
