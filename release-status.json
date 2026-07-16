@@ -1,5 +1,22 @@
 {
+  "AppAtlas": {
+    "stage": "Final",
+    "release": "v1.2.1",
+    "updatedAt": "2026-07-13T04:54:38Z"
+  },
+  "FileAtlas": {
+    "stage": "Beta",
+    "release": "v1.9.0-beta.2",
+    "updatedAt": "2026-07-15T05:27:52Z"
+  },
+  "UroBilanz": {
+    "stage": "Beta",
+    "release": "v1.7.3-beta.2",
+    "updatedAt": "2026-07-13T06:20:40Z"
+  },
   "HealthAtlas": {
-    "stage": "Beta"
+    "stage": "Beta",
+    "release": "v0.1.0-beta.1",
+    "updatedAt": "2026-07-14T07:09:23Z"
   }
 }
