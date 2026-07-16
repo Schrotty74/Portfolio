@@ -107,4 +107,9 @@ html[data-theme="retro"] h1, html[data-theme="retro"] h2 { font-family: ui-monos
 html[data-theme="retro"] .project, html[data-theme="retro"] .principles, html[data-theme="retro"] .project-visual { border-radius: 0; }
 html[data-theme="retro"] .project { box-shadow: 4px 4px 0 rgba(0,0,0,.34); }
 html[data-theme="retro"] .button, html[data-theme="retro"] .language-switch, html[data-theme="retro"] .theme-select { border-radius: 2px; }
-@media (max-width: 700px) { .theme-picker { display: none; } }
+@media (max-width: 700px) {
+  .nav-links { gap: 10px; }
+  .nav-links > a[href="#projects"], .nav-links > a[href="#projekte"] { display: none; }
+  .theme-picker { gap: 0; font-size: 0; }
+  .theme-select { min-width: 72px; padding-left: 7px; padding-right: 18px; }
+}
