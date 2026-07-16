@@ -38,7 +38,7 @@
           </div>
         </div>
         <a href="https://github.com/Schrotty74" target="_blank" rel="noopener">GitHub ↗</a>
-        <span class="language-switch" aria-label="Choose language"><a class="active" href="index.html" aria-current="page">EN</a><a href="de.html">DE</a></span>
+        <span class="language-switch" aria-label="Choose language"><a class="active" href="index.html?v=mobile-v5" aria-current="page">EN</a><a href="de.html?v=mobile-v5">DE</a></span>
       </div>
     </nav>
 
@@ -170,15 +170,21 @@
   <script>
     (() => {
       const tagline = document.querySelector("h1 em");
-      const applyMobileTagline = () => {
-        if (!tagline) return;
+      const sectionHeadings = [...document.querySelectorAll(".section-heading h2")];
+      const applyMobileTypography = () => {
         const mobile = window.matchMedia("(max-width: 700px)").matches;
-        tagline.style.setProperty("font-size", mobile ? "clamp(1.35rem, 6.6vw, 1.78rem)" : "", "important");
-        tagline.style.setProperty("white-space", mobile ? "nowrap" : "", "important");
-        tagline.style.setProperty("letter-spacing", mobile ? "-.06em" : "", "important");
+        if (tagline) {
+          tagline.style.setProperty("font-size", mobile ? "clamp(1.35rem, 6.6vw, 1.78rem)" : "", "important");
+          tagline.style.setProperty("white-space", mobile ? "nowrap" : "", "important");
+          tagline.style.setProperty("letter-spacing", mobile ? "-.06em" : "", "important");
+        }
+        sectionHeadings.forEach(heading => {
+          heading.style.setProperty("font-size", mobile ? "2.2rem" : "", "important");
+          heading.style.setProperty("line-height", mobile ? "1.02" : "", "important");
+        });
       };
-      applyMobileTagline();
-      window.addEventListener("resize", applyMobileTagline);
+      applyMobileTypography();
+      window.addEventListener("resize", applyMobileTypography);
     })();
   </script>
 </body>
