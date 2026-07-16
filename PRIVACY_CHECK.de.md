@@ -7,7 +7,7 @@ Dieser Bericht ist öffentlich, damit nachvollziehbar bleibt, was geprüft wurde
 ## Umfang
 
 - Die aktuellen öffentlichen Repositories unter **Schrotty74** wurden nach typischen Hochrisiko-Indikatoren durchsucht: Private-Key-Kopfzeilen, GitHub-Token, übliche API-Key-Präfixe, absolute Benutzerpfade und Gmail-Adressen.
-- Das Portfolio wurde zusätzlich auf Laufzeit-Datenschutz geprüft: Es enthält keine Analysewerkzeuge, Cookies, Formulare oder Tracker. Das einzige JavaScript speichert ausschließlich den gewählten Darstellungsstil lokal im Browser und überträgt keine Daten.
+- Das Portfolio wurde zusätzlich auf Laufzeit-Datenschutz geprüft: Es enthält keine Analysewerkzeuge, Cookies, Formulare oder Tracker. Das JavaScript steuert den Stil-Schalter und dezente Scroll-Animationen. Es speichert ausschließlich den gewählten Darstellungsstil lokal im Browser und überträgt keine Daten.
 - Die Portfolio-Seite verwendet Systemschriften und lädt keine Google Fonts oder andere externe Schriftanbieter.
 - Projektbilder werden von GitHubs Raw-Content-Host geladen. GitHub Pages und diese Bilder verursachen zwangsläufig eine Anfrage an GitHub; dafür gelten die Datenschutzbedingungen von GitHub.
 
