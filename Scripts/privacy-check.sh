@@ -21,7 +21,7 @@ for file in "${files[@]}"; do
 done
 
 pattern='-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----|github_pat_[[:alnum:]_]{20,}|gh[pousr]_[[:alnum:]_]{20,}|AKIA[0-9A-Z]{16}|AIza[[:alnum:]_-]{35}|xox[baprs]-[[:alnum:]-]{10,}|sk-[[:alnum:]]{20,}|/Users/[^/[:space:]]+|/Volumes/[^/[:space:]]+'
-if ((${#content_files[@]})) && grep -I -n -E "$pattern" "${content_files[@]}"; then
+if ((${#content_files[@]})) && grep -I -n -E -e "$pattern" "${content_files[@]}"; then
   echo "Privacy check failed: possible secret or private path found." >&2
   exit 1
 fi
