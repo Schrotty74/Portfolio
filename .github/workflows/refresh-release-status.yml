@@ -31,7 +31,8 @@ jobs:
             "CalcBoy",
             "UroBilanz",
             "HealthAtlas",
-            "chatgpt-pets"
+            "chatgpt-pets",
+            "Shortcuts"
           ];
 
           async function latestStatus(repository) {
