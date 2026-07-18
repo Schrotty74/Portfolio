@@ -1,4 +1,9 @@
 (() => {
+  const glowStylesheet = document.createElement("link");
+  glowStylesheet.rel = "stylesheet";
+  glowStylesheet.href = new URL("ambient-glow.css", document.currentScript.src).href;
+  document.head.appendChild(glowStylesheet);
+
   const key = "schrotty74-portfolio-theme";
   const menu = document.querySelector(".theme-menu");
   const trigger = document.querySelector(".theme-trigger");
