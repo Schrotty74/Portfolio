@@ -1,25 +1,25 @@
 :root {
-  --ambient-glow-primary: rgba(126, 103, 255, .24);
-  --ambient-glow-secondary: rgba(55, 112, 255, .16);
+  --ambient-glow-primary: rgba(126, 103, 255, .38);
+  --ambient-glow-secondary: rgba(55, 112, 255, .27);
   --ambient-glow-opacity: 1;
 }
 
 html[data-theme="light"] {
-  --ambient-glow-primary: rgba(117, 91, 218, .17);
-  --ambient-glow-secondary: rgba(106, 151, 223, .13);
-  --ambient-glow-opacity: .82;
-}
-
-html[data-theme="graphite-lime"] {
-  --ambient-glow-primary: rgba(180, 255, 75, .17);
-  --ambient-glow-secondary: rgba(72, 143, 76, .15);
+  --ambient-glow-primary: rgba(117, 91, 218, .25);
+  --ambient-glow-secondary: rgba(106, 151, 223, .21);
   --ambient-glow-opacity: .9;
 }
 
+html[data-theme="graphite-lime"] {
+  --ambient-glow-primary: rgba(180, 255, 75, .29);
+  --ambient-glow-secondary: rgba(72, 143, 76, .24);
+  --ambient-glow-opacity: .95;
+}
+
 html[data-theme="retro"] {
-  --ambient-glow-primary: rgba(255, 155, 61, .18);
-  --ambient-glow-secondary: rgba(191, 73, 33, .14);
-  --ambient-glow-opacity: .86;
+  --ambient-glow-primary: rgba(255, 155, 61, .30);
+  --ambient-glow-secondary: rgba(191, 73, 33, .24);
+  --ambient-glow-opacity: .92;
 }
 
 body {
@@ -33,27 +33,27 @@ body::after {
   content: "";
   position: fixed;
   z-index: 0;
-  width: min(54rem, 78vw);
+  width: min(62rem, 92vw);
   aspect-ratio: 1;
   border-radius: 50%;
   pointer-events: none;
   opacity: var(--ambient-glow-opacity);
-  filter: blur(72px);
+  filter: blur(58px);
   will-change: transform;
 }
 
 body::before {
-  top: -26rem;
-  right: -18rem;
-  background: radial-gradient(circle, var(--ambient-glow-primary) 0, transparent 68%);
-  animation: ambient-drift-primary 24s ease-in-out infinite alternate;
+  top: -30rem;
+  right: -20rem;
+  background: radial-gradient(circle, var(--ambient-glow-primary) 0, transparent 66%);
+  animation: ambient-drift-primary 12s ease-in-out infinite alternate;
 }
 
 body::after {
-  left: -24rem;
-  top: 42vh;
-  background: radial-gradient(circle, var(--ambient-glow-secondary) 0, transparent 70%);
-  animation: ambient-drift-secondary 30s ease-in-out infinite alternate;
+  left: -28rem;
+  top: 36vh;
+  background: radial-gradient(circle, var(--ambient-glow-secondary) 0, transparent 68%);
+  animation: ambient-drift-secondary 15s ease-in-out infinite alternate;
 }
 
 body > main,
@@ -64,26 +64,26 @@ body > footer {
 }
 
 @keyframes ambient-drift-primary {
-  0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(-7vw, 9vh, 0) scale(1.08); }
-  100% { transform: translate3d(4vw, 18vh, 0) scale(.94); }
+  0% { transform: translate3d(0, 0, 0) scale(.92); }
+  50% { transform: translate3d(-16vw, 14vh, 0) scale(1.14); }
+  100% { transform: translate3d(8vw, 28vh, 0) scale(.98); }
 }
 
 @keyframes ambient-drift-secondary {
-  0% { transform: translate3d(0, 0, 0) scale(.94); }
-  50% { transform: translate3d(10vw, -8vh, 0) scale(1.06); }
-  100% { transform: translate3d(18vw, 10vh, 0) scale(1); }
+  0% { transform: translate3d(0, 0, 0) scale(.9); }
+  50% { transform: translate3d(20vw, -12vh, 0) scale(1.12); }
+  100% { transform: translate3d(34vw, 14vh, 0) scale(1); }
 }
 
 @media (max-width: 700px) {
   body::before,
   body::after {
-    width: 38rem;
-    filter: blur(62px);
+    width: 44rem;
+    filter: blur(50px);
   }
 
-  body::before { right: -26rem; }
-  body::after { left: -29rem; }
+  body::before { right: -29rem; }
+  body::after { left: -32rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
