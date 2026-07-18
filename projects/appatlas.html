@@ -4,25 +4,52 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="A privacy-focused macOS app for organising personal app collections, metadata and licence information.">
+  <meta name="theme-color" content="#0c1020">
   <title>AppAtlas · Schrotty74</title>
-  <style>
-    :root{--ink:#eceef7;--muted:#aab0c4;--paper:#0c1020;--surface:#151c32;--accent:#c2b4ff;--line:rgba(239,242,255,.14)}
-    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#29204b,transparent 30rem),var(--paper);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    main{width:min(800px,calc(100% - 40px));margin:auto;padding:56px 0 86px}.back{color:var(--muted);text-decoration:none}.back:hover{color:var(--ink)}
-    .eyebrow{margin:72px 0 14px;color:var(--accent);font:500 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em}h1{margin:0 0 18px;font-size:clamp(3rem,9vw,5.5rem);line-height:.96;letter-spacing:-.065em}h2{margin:0 0 10px;font-size:1.25rem}.lead{max-width:680px;margin:0;color:var(--muted);font-size:20px}
-    .panel{margin-top:42px;padding:28px;border:1px solid var(--line);border-radius:20px;background:var(--surface)}ul{margin:0;padding-left:20px;color:var(--muted)}li+li{margin-top:7px}.privacy{color:var(--muted)}.buttons{display:flex;flex-wrap:wrap;gap:11px;margin-top:34px}.button{padding:12px 17px;border-radius:999px;background:var(--accent);color:#111326;font-weight:700;text-decoration:none}@media(max-width:600px){main{width:min(100% - 32px,800px);padding-top:34px}.eyebrow{margin-top:52px}.lead{font-size:18px}.panel{padding:22px}}
-  </style>
+  <link rel="stylesheet" href="detail-v1.css">
+  <script defer src="detail-v1.js"></script>
 </head>
 <body>
-  <main>
-    <a class="back" href="../index.html">← Portfolio</a>
-    <p class="eyebrow">NATIVE MACOS APP</p>
-    <h1>AppAtlas</h1>
-    <p class="lead">A privacy-focused macOS app for organising personal app collections, metadata and licence information.</p>
-    <section class="panel"><h2>Highlights</h2><ul><li>Scan local app folders and bring collections together in one catalogue.</li><li>Manage metadata, tags, links and licence information.</li><li>Create local exports with optional encryption.</li></ul></section>
-    <section class="panel"><h2>Privacy</h2><p class="privacy">AppAtlas is local first. Personal catalogue and licence data remain on the Mac unless you explicitly export it.</p></section>
-    <div class="buttons"><a class="button" href="https://github.com/Schrotty74/AppAtlas" target="_blank" rel="noopener">GitHub ↗</a>
-      <a class="button" href="https://github.com/Schrotty74/AppAtlas/releases" target="_blank" rel="noopener">Releases ↗</a></div>
+  <nav class="nav shell" aria-label="Main navigation">
+    <a class="brand" href="../index.html">SCHROTTY74</a>
+    <div class="nav-links">
+      <a class="nav-text" href="../index.html#projects">Projects</a>
+      <select class="theme-control" data-theme-select aria-label="Style">
+        <option value="midnight">Midnight</option><option value="light">Light</option><option value="retro">Retro</option><option value="graphite-lime">Graphite Lime</option>
+      </select>
+      <span class="social-links" aria-label="Social links">
+        <a class="social-link" href="https://github.com/Schrotty74" target="_blank" rel="noopener" aria-label="GitHub"><img src="../assets/github.svg" alt=""></a>
+        <a class="social-link" href="https://discord.gg/RbsvqRCPQ" target="_blank" rel="noopener" aria-label="Discord"><img src="../assets/discord.svg" alt=""></a>
+      </span>
+      <span class="language-switch"><a class="active" href="appatlas.html">EN</a><a class="" href="appatlas.de.html">DE</a></span>
+    </div>
+  </nav>
+  <main class="shell" data-repository="AppAtlas">
+    <section class="project-hero">
+      <div>
+        <p class="eyebrow">NATIVE MACOS APP</p>
+        <h1>AppAtlas</h1>
+        <p class="lead">A privacy-focused macOS app for organising personal app collections, metadata and licence information.</p>
+        <dl class="facts">
+          <div class="fact"><dt>Platform</dt><dd>macOS 14+</dd></div>
+          <div class="fact"><dt>Licence</dt><dd>GPL-3.0</dd></div>
+          <div class="fact"><dt>Status</dt><dd><span class="release-status" data-release-status></span><span class="status-fallback">—</span></dd></div>
+        </dl>
+        <div class="actions"><a class="button" href="https://github.com/Schrotty74/AppAtlas" target="_blank" rel="noopener">GitHub ↗</a><a class="button secondary" href="https://github.com/Schrotty74/AppAtlas/releases" target="_blank" rel="noopener">Releases ↗</a></div>
+      </div>
+      <div>
+        <figure class="hero-art screenshot"><img src="https://raw.githubusercontent.com/Schrotty74/AppAtlas/main/docs/screenshots/appatlas-dashboard-demo.jpg" alt="AppAtlas Public project visual" loading="eager"></figure>
+        <p class="caption">Public project visual</p>
+      </div>
+    </section>
+    <section>
+      <div class="section-heading"><div><p class="eyebrow">HIGHLIGHTS</p><h2>Highlights</h2></div></div>
+      <div class="feature-grid"><article class="feature"><p class="feature-index">01</p><h3>Local catalogue</h3><p>Scan selected app folders and bring personal collections together in one catalogue.</p></article><article class="feature"><p class="feature-index">02</p><h3>Metadata & licences</h3><p>Manage tags, links, metadata and licence information in a clear workspace.</p></article><article class="feature"><p class="feature-index">03</p><h3>Safe exports</h3><p>Create local exports with optional encryption when you choose to share data.</p></article></div>
+    </section>
+    <section>
+      <div class="privacy-panel"><div><p class="eyebrow">PRIVACY</p><h2>Privacy</h2></div><div><p class="privacy-copy">AppAtlas is local first. Personal catalogue and licence data remain on the Mac unless you explicitly export them.</p><div class="actions"><a class="button secondary" href="https://github.com/Schrotty74/Portfolio/blob/main/PRIVACY_CHECK.md" target="_blank" rel="noopener">Security & privacy check ↗</a></div></div></div>
+    </section>
   </main>
+  <footer class="shell"><a href="../index.html">← Back to portfolio</a></footer>
 </body>
 </html>
