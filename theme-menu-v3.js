@@ -1,7 +1,7 @@
 (() => {
   const glowStylesheet = document.createElement("link");
   glowStylesheet.rel = "stylesheet";
-  glowStylesheet.href = new URL("ambient-glow.css", document.currentScript.src).href;
+  glowStylesheet.href = new URL("ambient-glow.css?v=ambient-2", document.currentScript.src).href;
   document.head.appendChild(glowStylesheet);
 
   const key = "schrotty74-portfolio-theme";
