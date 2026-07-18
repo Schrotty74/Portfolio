@@ -1,4 +1,9 @@
 (() => {
+  const glowStylesheet = document.createElement("link");
+  glowStylesheet.rel = "stylesheet";
+  glowStylesheet.href = new URL("../ambient-glow.css", document.currentScript.src).href;
+  document.head.appendChild(glowStylesheet);
+
   const themeKey = "portfolio-theme";
   const select = document.querySelector("[data-theme-select]");
   const applyTheme = theme => {
