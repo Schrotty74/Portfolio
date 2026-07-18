@@ -7,11 +7,12 @@ This repository is the public entry point for Schrotty74 projects.
 When a new app has a public repository and is ready to be presented:
 
 1. Add a project card to the portfolio in English and German.
-2. Add or update a detail page when the app is one of the main projects.
-3. Include its name, concise description, platform, repository link and, when available, live-app or download link.
-4. Use only public assets and screenshots with synthetic demo data.
-5. Add the app to the GitHub profile README: https://github.com/Schrotty74/Schrotty74
-6. Add a PORTFOLIO_UPDATE.md file with this same rule to the new app repository.
+2. Create a dedicated detail page under `projects/` for every new public app or collection, and link it from the project card and GitHub profile README.
+3. Add the repository to `.github/workflows/refresh-release-status.yml` so its Beta/Final status is updated automatically.
+4. Include its name, concise description, platform, repository link and, when available, live-app or download link.
+5. Use only public assets and screenshots with synthetic demo data.
+6. Add the app to the GitHub profile README: https://github.com/Schrotty74/Schrotty74
+7. Add a PORTFOLIO_UPDATE.md file with this same rule to the new app repository.
 
 ## Public release of an existing app
 
