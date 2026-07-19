@@ -75,17 +75,9 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.6rem); line-height: .98; 
 .project-visual { min-height: 255px; display: grid; place-items: center; overflow: hidden; background: #212943; }
 .project.featured .project-visual { order: 2; min-height: 280px; }
 .project.featured .project-content { order: 1; padding: 34px 38px; }
-.project.priority { display: grid; grid-template-columns: .88fr 1.12fr; }
-.project.priority .project-visual { order: 2; min-height: 250px; }
-.project.priority .project-content { order: 1; padding: 28px 30px; }
-.project.priority .project-content > p:not(.meta) {
-  display: -webkit-box;
-  min-height: 0;
-  margin-bottom: 16px;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-}
+.project.priority { display: flex; flex-direction: column; }
+.project.priority .project-visual { order: 1; min-height: 0; aspect-ratio: 16 / 9; }
+.project.priority .project-content { order: 2; padding: 28px 30px; }
 .project-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
 .project:hover .project-visual img { transform: translate(var(--pointer-x, 0), var(--pointer-y, 0)) scale(1.035); }
 .accent-appatlas { --project-accent: #8b8dff; }
@@ -142,7 +134,6 @@ footer p { margin: 0; }
   .project.featured .project-visual, .project.featured .project-content,
   .project.priority .project-visual, .project.priority .project-content { order: initial; }
   .project.priority { display: block; }
-  .project.priority .project-content > p:not(.meta) { display: block; }
   .project.featured .project-visual, .project-visual { min-height: 245px; }
   .project-content > p:not(.meta) { min-height: 0; }
   .principles { margin-top: 20px; padding: 56px 26px; }
@@ -155,7 +146,6 @@ footer p { margin: 0; }
   .project.priority, .project.compact { grid-column: span 2; }
   .project.priority { display: block; }
   .project.priority .project-visual, .project.priority .project-content { order: initial; }
-  .project.priority .project-content > p:not(.meta) { display: block; }
 }
 
 html[data-theme="retro"] body { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background-image: linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px); background-size: 6px 6px; }
