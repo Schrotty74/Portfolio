@@ -61,5 +61,21 @@
       });
     }, { threshold: 0.12 });
     revealTargets.forEach(element => observer.observe(element));
+
+    if (window.matchMedia("(pointer: fine)").matches) {
+      document.querySelectorAll(".project").forEach(card => {
+        card.addEventListener("pointermove", event => {
+          const bounds = card.getBoundingClientRect();
+          const x = ((event.clientX - bounds.left) / bounds.width - .5) * 5;
+          const y = ((event.clientY - bounds.top) / bounds.height - .5) * 5;
+          card.style.setProperty("--pointer-x", `${x}px`);
+          card.style.setProperty("--pointer-y", `${y}px`);
+        });
+        card.addEventListener("pointerleave", () => {
+          card.style.removeProperty("--pointer-x");
+          card.style.removeProperty("--pointer-y");
+        });
+      });
+    }
   }
 })();
