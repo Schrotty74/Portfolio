@@ -69,9 +69,9 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.6rem); line-height: .98; 
 .projects { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
 .project { --project-accent: var(--accent); overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); transition: border .2s, transform .2s, box-shadow .2s; }
 .project:hover { border-color: var(--project-accent); box-shadow: 0 14px 34px color-mix(in srgb, var(--project-accent) 14%, transparent); transform: translateY(-3px); }
-.project.featured { grid-column: span 6; display: grid; grid-template-columns: .78fr 1.22fr; }
-.project.priority { grid-column: span 3; }
-.project.compact { grid-column: span 2; }
+.project.featured { grid-column: span 6; order: 0; display: grid; grid-template-columns: .78fr 1.22fr; }
+.project.priority { grid-column: span 3; order: 1; }
+.project.compact { grid-column: span 2; order: 2; }
 .project-visual { min-height: 255px; display: grid; place-items: center; overflow: hidden; background: #212943; }
 .project.featured .project-visual { order: 2; min-height: 280px; }
 .project.featured .project-content { order: 1; padding: 34px 38px; }
