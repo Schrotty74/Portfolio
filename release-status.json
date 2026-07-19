@@ -10,9 +10,9 @@
     "updatedAt": "2026-07-19T05:51:42Z"
   },
   "UroBilanz": {
-    "stage": "Final",
-    "release": "v1.7.3",
-    "updatedAt": "2026-07-18T05:28:47Z"
+    "stage": "Beta",
+    "release": "v1.7.4-beta.1",
+    "updatedAt": "2026-07-19T06:58:10Z"
   },
   "HealthAtlas": {
     "stage": "Beta",
