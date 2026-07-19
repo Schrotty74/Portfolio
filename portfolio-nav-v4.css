@@ -72,12 +72,13 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.6rem); line-height: .98; 
 .project.featured { grid-column: span 6; order: 0; display: grid; grid-template-columns: .78fr 1.22fr; }
 .project.priority { grid-column: span 3; order: 1; }
 .project.compact { grid-column: span 2; order: 2; }
-.project-visual { min-height: 255px; display: grid; place-items: center; overflow: hidden; background: #212943; }
+.project-visual { position: relative; min-height: 255px; display: grid; place-items: center; overflow: hidden; background: #212943; }
 .project.featured .project-visual { order: 2; min-height: 280px; }
 .project.featured .project-content { order: 1; padding: 34px 38px; }
 .project.priority { display: flex; flex-direction: column; }
 .project.priority .project-visual { order: 1; min-height: 0; aspect-ratio: 16 / 9; }
 .project.priority .project-content { order: 2; padding: 28px 30px; }
+.project.priority .project-visual::after { content: ""; position: absolute; inset: auto 0 0; z-index: 1; height: 34%; background: linear-gradient(to bottom, transparent, var(--surface)); pointer-events: none; }
 .project-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
 .project:hover .project-visual img { transform: translate(var(--pointer-x, 0), var(--pointer-y, 0)) scale(1.035); }
 .accent-appatlas { --project-accent: #8b8dff; }
@@ -98,7 +99,13 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.6rem); line-height: .98; 
 .health { background: #e9e6dd; }
 .pets { background: radial-gradient(circle, #b7e7ff, #6781b6); }
 .project-content { padding: 26px 28px 29px; }
-.meta { margin-bottom: 11px; color: var(--accent); font: 11px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .06em; text-transform: uppercase; }
+.meta { display: flex; align-items: center; gap: 7px; margin-bottom: 11px; color: var(--accent); font: 11px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .06em; text-transform: uppercase; }
+.meta::before { display: inline-grid; place-items: center; width: 16px; height: 16px; border: 1px solid currentColor; border-radius: 50%; font: 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.platform-mac .meta::before { content: "⌘"; }
+.platform-web .meta::before { content: "◌"; }
+.platform-hybrid .meta::before { content: "⌘"; }
+.platform-codex .meta::before { content: "✦"; }
+.platform-shortcut .meta::before { content: "↗"; }
 h3 { margin-bottom: 12px; font-size: 27px; letter-spacing: -.04em; }
 .project-tier { display: inline-block; vertical-align: middle; margin: 0 0 3px 7px; padding: 4px 7px; border: 1px solid color-mix(in srgb, var(--project-accent) 60%, transparent); border-radius: 999px; color: var(--project-accent); font: 10px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .05em; text-transform: uppercase; }
 .project.compact .project-visual { min-height: 135px; }
@@ -107,7 +114,7 @@ h3 { margin-bottom: 12px; font-size: 27px; letter-spacing: -.04em; }
 .project.compact .project-content > p:not(.meta) { min-height: 0; margin-bottom: 16px; font-size: 14px; }
 .project.compact .actions { margin-top: 18px; gap: 12px; }
 .project-content > p:not(.meta) { min-height: 76px; margin-bottom: 21px; color: var(--muted); font-size: 15px; line-height: 1.55; }
-.status { vertical-align: middle; margin-left: 5px; padding: 4px 7px; border: 1px solid rgba(194,180,255,.5); border-radius: 999px; color: var(--accent); font: 10px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .04em; text-transform: uppercase; }
+.status { vertical-align: middle; margin-left: 5px; padding: 4px 7px; border: 1px solid rgba(194,180,255,.5); border-radius: 999px; color: var(--accent); font: 10px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
 .tags { display: flex; flex-wrap: wrap; gap: 7px; }
 .tags span { padding: 5px 8px; border: 1px solid var(--line); border-radius: 99px; color: #c5cada; font-size: 11px; }
 .actions { display: flex; flex-wrap: wrap; gap: 17px; margin-top: 24px; }
