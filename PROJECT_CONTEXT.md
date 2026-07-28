@@ -40,7 +40,7 @@ Die Seite ist eine statische Website ohne Paketmanager, Lockfile, Build-Schritt 
 
 ## Umgesetzter Stand
 
-- Englische und deutsche Übersichtsseite mit acht Projektkarten sowie passenden Detailseiten unter `projects/`.
+- Englische und deutsche Übersichtsseite mit neun Projektkarten sowie passenden Detailseiten unter `projects/`.
 - Vier visuelle Themes: Midnight, Light, Retro und Graphite Lime.
 - Release-Chips für Projekte mit Eintrag in `release-status.json`; die Daten werden automatisiert über GitHub Actions aktualisiert.
 - Projekt-Hierarchie auf der Übersicht: AppAtlas als hervorgehobene Karte, UroBilanz und HealthAtlas als zweite Ebene, weitere Karten kompakter.
