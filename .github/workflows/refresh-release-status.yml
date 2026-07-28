@@ -27,6 +27,7 @@ jobs:
           const repositories = [
             "AppAtlas",
             "FileAtlas",
+            "CodexVault",
             "BudgetApp",
             "CalcBoy",
             "UroBilanz",
