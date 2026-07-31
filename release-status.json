@@ -14,6 +14,11 @@
     "release": "v1.0.0-beta.2",
     "updatedAt": "2026-07-31T05:54:18Z"
   },
+  "Skybreak-Protocol": {
+    "stage": "Beta",
+    "release": "v1.0.0-beta.1",
+    "updatedAt": "2026-07-31T14:36:07Z"
+  },
   "UroBilanz": {
     "stage": "Beta",
     "release": "v1.7.4-beta.1",
