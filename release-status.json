@@ -1,8 +1,8 @@
 {
   "AppAtlas": {
     "stage": "Final",
-    "release": "v1.2.2",
-    "updatedAt": "2026-07-18T05:17:46Z"
+    "release": "v1.2.3",
+    "updatedAt": "2026-08-10T06:25:54Z"
   },
   "FileAtlas": {
     "stage": "Final",
@@ -13,6 +13,11 @@
     "stage": "Beta",
     "release": "v1.0.0-beta.2",
     "updatedAt": "2026-07-31T05:54:18Z"
+  },
+  "CalcBoy": {
+    "stage": "Final",
+    "release": "v3.1.0",
+    "updatedAt": "2026-08-10T05:31:55Z"
   },
   "Skybreak-Protocol": {
     "stage": "Beta",
