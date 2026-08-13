@@ -5,9 +5,9 @@
     "updatedAt": "2026-08-10T06:25:54Z"
   },
   "FileAtlas": {
-    "stage": "Final",
-    "release": "v1.9.0",
-    "updatedAt": "2026-07-25T04:15:09Z"
+    "stage": "Beta",
+    "release": "v1.10.0-beta.1",
+    "updatedAt": "2026-08-13T08:55:22Z"
   },
   "CodexVault": {
     "stage": "Beta",
