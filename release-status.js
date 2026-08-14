@@ -1,5 +1,7 @@
 (() => {
-  const labels = { Beta: "Beta", Final: "Final" };
+  const labels = document.documentElement.lang === "de"
+    ? { Beta: "Beta", Final: "Final", Development: "Entwicklung" }
+    : { Beta: "Beta", Final: "Final", Development: "Development" };
 
   fetch("release-status.json", { cache: "no-store" })
     .then(response => response.ok ? response.json() : {})

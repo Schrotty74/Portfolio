@@ -21,12 +21,16 @@
   const project = document.querySelector("[data-repository]")?.dataset.repository;
   const badge = document.querySelector("[data-release-status]");
   if (!project || !badge) return;
+  const labels = document.documentElement.lang === "de"
+    ? { Beta: "Beta", Final: "Final", Development: "Entwicklung" }
+    : { Beta: "Beta", Final: "Final", Development: "Development" };
   fetch("../release-status.json", { cache: "no-store" })
     .then(response => response.ok ? response.json() : {})
     .then(statuses => {
       const status = statuses[project];
-      if (!status?.stage) return;
-      badge.textContent = status.stage;
+      const label = status?.stage && labels[status.stage];
+      if (!label) return;
+      badge.textContent = label;
       badge.classList.add("visible");
     })
     .catch(() => {});

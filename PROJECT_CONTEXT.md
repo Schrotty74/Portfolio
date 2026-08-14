@@ -1,6 +1,6 @@
 # Projektkontext: Portfolio
 
-**Stand:** 31. Juli 2026
+**Stand:** 14. August 2026
 **Zweck:** Dieses Repository enthält die öffentliche, zweisprachige GitHub-Pages-Portfolioseite von Schrotty74. Es stellt ausgewählte Apps und Sammlungen vor und verlinkt auf öffentliche Repositories, Detailseiten sowie – falls vorhanden – laufende Web-Apps.
 
 ## Zuerst lesen
@@ -33,7 +33,7 @@ Die Seite ist eine statische Website ohne Paketmanager, Lockfile, Build-Schritt 
 
 ## Datenformate und Laufzeitdaten
 
-- `release-status.json` ist ein JSON-Objekt. Ein Eintrag enthält `stage` (`Beta` oder `Final`), `release` und `updatedAt`.
+- `release-status.json` ist ein JSON-Objekt. Ein Eintrag enthält `stage` (`Beta`, `Final` oder `Development`), `release` und `updatedAt`; für `Development` ist `release` `null`.
 - Die Übersichtskarten verwenden `data-repository`; `release-status.js` nutzt diesen Wert, um den Statuschip einzublenden.
 - Die Theme-Wahl wird ausschließlich lokal im Browser gespeichert. Die Übersicht verwendet den Schlüssel `schrotty74-portfolio-theme`; die Detailseiten verwenden derzeit `portfolio-theme`.
 - Projektbilder werden über öffentliche GitHub-Raw-URLs geladen. Nur synthetische Demo-Daten oder bewusst öffentliche Assets verwenden.

@@ -1,6 +1,6 @@
 # Nächste Schritte
 
-**Stand:** 23. Juli 2026  
+**Stand:** 14. August 2026
 **Pflege:** Bei größeren Änderungen an Funktion, Architektur, Datenschutz oder Veröffentlichung aktualisieren. Nur nachweislich offene Punkte aufnehmen.
 
 ## Priorität 1
