@@ -17,7 +17,7 @@
   "BudgetApp": {
     "stage": "Development",
     "release": null,
-    "updatedAt": "2026-08-10T06:37:03Z"
+    "updatedAt": "2026-08-15T11:49:34Z"
   },
   "CalcBoy": {
     "stage": "Final",
@@ -42,7 +42,7 @@
   "chatgpt-pets": {
     "stage": "Development",
     "release": null,
-    "updatedAt": "2026-07-23T04:50:16Z"
+    "updatedAt": "2026-08-15T11:51:36Z"
   },
   "Shortcuts": {
     "stage": "Final",
