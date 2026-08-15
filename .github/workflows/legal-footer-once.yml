@@ -1,0 +1,54 @@
+name: One-time legal footer update
+
+on:
+  push:
+    paths:
+      - '.github/workflows/legal-footer-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add legal links to footers
+        shell: python
+        run: |
+          from pathlib import Path
+
+          en_old = '© 2026 Schrotty74 · <a href="https://github.com/Schrotty74/Portfolio/blob/main/PRIVACY_CHECK.md" target="_blank" rel="noopener">Security & privacy check ↗</a>'
+          en_new = '© 2026 Schrotty74 · <a href="privacy.html">Privacy Policy</a> · <a href="legal-notice.html">Legal Notice</a> · <a href="https://github.com/Schrotty74/Portfolio/blob/main/PRIVACY_CHECK.md" target="_blank" rel="noopener">Security & privacy check ↗</a>'
+          de_old = '© 2026 Schrotty74 · <a href="https://github.com/Schrotty74/Portfolio/blob/main/PRIVACY_CHECK.de.md" target="_blank" rel="noopener">Sicherheits- & Datenschutzprüfung ↗</a>'
+          de_new = '© 2026 Schrotty74 · <a href="datenschutz.html">Datenschutzerklärung</a> · <a href="impressum.html">Impressum</a> · <a href="https://github.com/Schrotty74/Portfolio/blob/main/PRIVACY_CHECK.de.md" target="_blank" rel="noopener">Sicherheits- & Datenschutzprüfung ↗</a>'
+
+          p = Path('index.html')
+          s = p.read_text()
+          if en_old in s:
+              p.write_text(s.replace(en_old, en_new))
+
+          p = Path('de.html')
+          s = p.read_text()
+          if de_old in s:
+              p.write_text(s.replace(de_old, de_new))
+
+          for p in Path('projects').glob('*.html'):
+              s = p.read_text()
+              if p.name.endswith('.de.html'):
+                  back = '← Zurück zum Portfolio</a>'
+                  repl = '← Zurück zum Portfolio</a> · <a href="../datenschutz.html">Datenschutz</a> · <a href="../impressum.html">Impressum</a>'
+              else:
+                  back = '← Back to portfolio</a>'
+                  repl = '← Back to portfolio</a> · <a href="../privacy.html">Privacy</a> · <a href="../legal-notice.html">Legal notice</a>'
+              if back in s and 'legal-notice.html' not in s and '../impressum.html' not in s:
+                  p.write_text(s.replace(back, repl))
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html de.html projects/*.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Add privacy and legal links across portfolio [skip ci]"
+            git push
+          fi
