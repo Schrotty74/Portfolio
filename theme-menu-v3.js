@@ -15,12 +15,12 @@
   const saved = localStorage.getItem(key);
   const initial = allowed.includes(saved) ? saved : "midnight";
 
-  function applyTheme(theme) {
+  function applyTheme(theme, persist = false) {
     const option = options.find(item => item.dataset.theme === theme) || options[0];
     document.documentElement.dataset.theme = option.dataset.theme;
     current.textContent = option.dataset.label;
     options.forEach(item => item.setAttribute("aria-selected", String(item === option)));
-    localStorage.setItem(key, option.dataset.theme);
+    if (persist) localStorage.setItem(key, option.dataset.theme);
   }
 
   function closeMenu() {
@@ -34,7 +34,7 @@
     trigger.setAttribute("aria-expanded", String(open));
   });
   options.forEach(option => option.addEventListener("click", () => {
-    applyTheme(option.dataset.theme);
+    applyTheme(option.dataset.theme, true);
     closeMenu();
   }));
   document.addEventListener("click", event => {
