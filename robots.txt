@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://schrotty74.github.io/Portfolio/sitemap.xml
