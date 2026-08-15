@@ -1,0 +1,97 @@
+name: One-time homepage SEO update
+
+on:
+  push:
+    paths:
+      - '.github/workflows/seo-homepage-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update homepage SEO metadata
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          pages = {
+              'index.html': {
+                  'old_desc': 'Portfolio of Schrotty74: privacy-friendly macOS apps and offline web apps.',
+                  'new_desc': 'Schrotty74 portfolio of privacy-friendly macOS apps, offline web apps, Apple Shortcuts and browser projects including AppAtlas, FileAtlas, CodexVault and more.',
+                  'old_title': 'Schrotty74 · Apps & Projects',
+                  'new_title': 'Schrotty74 – Privacy-Friendly macOS Apps & Offline Web Apps',
+                  'canonical': 'https://schrotty74.github.io/Portfolio/',
+                  'alternate': 'https://schrotty74.github.io/Portfolio/de.html',
+                  'lang': 'en',
+                  'og_locale': 'en_US',
+                  'og_title': 'Schrotty74 – Privacy-Friendly macOS Apps & Offline Web Apps',
+                  'og_desc': 'Explore privacy-friendly macOS apps, offline web apps, Apple Shortcuts and browser projects by Schrotty74.',
+              },
+              'de.html': {
+                  'old_desc': 'Portfolio von Schrotty74: datenschutzfreundliche macOS-Apps und Offline-Web-Apps.',
+                  'new_desc': 'Portfolio von Schrotty74 mit datenschutzfreundlichen macOS-Apps, Offline-Web-Apps, Apple-Kurzbefehlen und Browser-Projekten wie AppAtlas, FileAtlas und CodexVault.',
+                  'old_title': 'Schrotty74 · Apps & Projekte',
+                  'new_title': 'Schrotty74 – Datenschutzfreundliche macOS-Apps & Offline-Web-Apps',
+                  'canonical': 'https://schrotty74.github.io/Portfolio/de.html',
+                  'alternate': 'https://schrotty74.github.io/Portfolio/',
+                  'lang': 'de',
+                  'og_locale': 'de_AT',
+                  'og_title': 'Schrotty74 – Datenschutzfreundliche macOS-Apps & Offline-Web-Apps',
+                  'og_desc': 'Entdecke datenschutzfreundliche macOS-Apps, Offline-Web-Apps, Apple-Kurzbefehle und Browser-Projekte von Schrotty74.',
+              },
+          }
+
+          projects = [
+              'AppAtlas','FileAtlas','CodexVault','BudgetApp','CALC BOY',
+              'Skybreak Protocol','UroBilanz','HealthAtlas','ChatGPT Pets','Shortcuts'
+          ]
+
+          for filename, c in pages.items():
+              p = Path(filename)
+              s = p.read_text()
+              s = s.replace(f'<meta name="description" content="{c["old_desc"]}">', f'<meta name="description" content="{c["new_desc"]}">')
+              s = s.replace(f'<title>{c["old_title"]}</title>', f'<title>{c["new_title"]}</title>')
+
+              anchor = '  <meta name="theme-color" content="#0c1020">\n'
+              metadata = (
+                  f'  <link rel="canonical" href="{c["canonical"]}">\n'
+                  f'  <link rel="alternate" hreflang="{c["lang"]}" href="{c["canonical"]}">\n'
+                  f'  <link rel="alternate" hreflang="{"de" if c["lang"] == "en" else "en"}" href="{c["alternate"]}">\n'
+                  f'  <link rel="alternate" hreflang="x-default" href="https://schrotty74.github.io/Portfolio/">\n'
+                  f'  <meta property="og:type" content="website">\n'
+                  f'  <meta property="og:site_name" content="Schrotty74">\n'
+                  f'  <meta property="og:locale" content="{c["og_locale"]}">\n'
+                  f'  <meta property="og:title" content="{c["og_title"]}">\n'
+                  f'  <meta property="og:description" content="{c["og_desc"]}">\n'
+                  f'  <meta property="og:url" content="{c["canonical"]}">\n'
+                  f'  <meta name="twitter:title" content="{c["og_title"]}">\n'
+                  f'  <meta name="twitter:description" content="{c["og_desc"]}">\n'
+              )
+              if '<link rel="canonical"' not in s:
+                  s = s.replace(anchor, anchor + metadata)
+
+              if 'application/ld+json' not in s:
+                  schema = f'''  <script type="application/ld+json">\n  {{\n    "@context": "https://schema.org",\n    "@type": "CollectionPage",\n    "name": "{c['og_title']}",\n    "url": "{c['canonical']}",\n    "description": "{c['og_desc']}",\n    "author": {{"@type": "Person", "name": "Schrotty74", "url": "https://github.com/Schrotty74"}},\n    "mainEntity": {{\n      "@type": "ItemList",\n      "numberOfItems": 10,\n      "itemListElement": [\n'''
+                  for i, name in enumerate(projects, 1):
+                      comma = ',' if i < len(projects) else ''
+                      schema += f'        {{"@type":"ListItem","position":{i},"name":"{name}"}}{comma}\n'
+                  schema += '      ]\n    }\n  }\n  </script>\n'
+                  s = s.replace('  <script defer src="theme-menu-v3.js"></script>\n', schema + '  <script defer src="theme-menu-v3.js"></script>\n')
+
+              p.write_text(s)
+          PY
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html de.html
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Improve SEO for portfolio homepage [skip ci]"
+            git push
+          fi
