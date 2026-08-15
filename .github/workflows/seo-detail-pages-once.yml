@@ -1,0 +1,70 @@
+name: One-time project detail SEO update
+on:
+  push:
+    paths:
+      - '.github/workflows/seo-detail-pages-once.yml'
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update SEO metadata and lead text
+        shell: python
+        run: |
+          import re
+          from pathlib import Path
+
+          projects = {
+            'appatlas': {
+              'en': ('AppAtlas for macOS – Local App Catalog & Software Organizer', 'AppAtlas for macOS is a privacy-focused local app catalog and software organizer for managing personal app collections, metadata, tags and licence information.', 'A privacy-focused local macOS app catalog and software organizer for managing personal app collections, metadata, tags and licence information.'),
+              'de': ('AppAtlas für macOS – Lokaler App-Katalog & Software-Organizer', 'AppAtlas für macOS ist ein datenschutzfreundlicher lokaler App-Katalog und Software-Organizer für persönliche App-Sammlungen, Metadaten, Tags und Lizenzinformationen.', 'Ein datenschutzfreundlicher lokaler App-Katalog und Software-Organizer für macOS zur Verwaltung persönlicher App-Sammlungen, Metadaten, Tags und Lizenzinformationen.')},
+            'budgetapp': {
+              'en': ('BudgetApp – Private Offline Household Budget & Expense Tracker', 'BudgetApp is a private offline-first household budget and expense tracker PWA with monthly overviews, Excel import/export, backups and no account or tracking.', 'A private offline-first household budget and expense tracker PWA with monthly overviews, spreadsheet import/export, backups and no account or tracking.'),
+              'de': ('BudgetApp – Privater Offline-Haushaltsplaner & Ausgaben-Tracker', 'BudgetApp ist eine private Offline-PWA für Haushaltsbudget und Ausgaben mit Monatsübersichten, Excel-Import/-Export, Backups und ohne Konto oder Tracking.', 'Eine private Offline-PWA für Haushaltsbudget und Ausgaben mit Monatsübersichten, Excel-Import/-Export, Backups und ohne Konto oder Tracking.')},
+            'calcboy': {
+              'en': ('CALC BOY – Retro Scientific Calculator & Unit Converter PWA', 'CALC BOY is an offline retro scientific calculator PWA with unit conversion, finance tools, programmer mode, RPN, plotting and formula helpers.', 'An offline retro scientific calculator PWA with unit conversion, finance tools, programmer mode, RPN, plotting and formula helpers.'),
+              'de': ('CALC BOY – Retro-Taschenrechner, Einheitenumrechner & PWA', 'CALC BOY ist eine Offline-PWA im Retro-Stil mit wissenschaftlichem Rechner, Einheitenumrechnung, Finanzfunktionen, Programmierer-Modus, RPN und Plotter.', 'Eine Offline-PWA im Retro-Stil mit wissenschaftlichem Rechner, Einheitenumrechnung, Finanzfunktionen, Programmierer-Modus, RPN und Plotter.')},
+            'chatgpt-pets': {
+              'en': ('ChatGPT Pets – Custom Animated Pets for ChatGPT & Codex', 'ChatGPT Pets is a collection of custom animated, importable pets and sprite sheets for ChatGPT and OpenAI Codex.', 'A collection of custom animated, importable pets and sprite sheets for ChatGPT and OpenAI Codex.'),
+              'de': ('ChatGPT Pets – Eigene animierte Pets für ChatGPT & Codex', 'ChatGPT Pets ist eine Sammlung eigener animierter, importierbarer Pets und Sprite-Sheets für ChatGPT und OpenAI Codex.', 'Eine Sammlung eigener animierter, importierbarer Pets und Sprite-Sheets für ChatGPT und OpenAI Codex.')},
+            'codexvault': {
+              'en': ('CodexVault for macOS – Verified Local Codex & Project Backups', 'CodexVault for macOS creates verified local backups of Codex data, selected projects and ChatGPT exports with SHA-256 integrity checks and safe restore.', 'A local macOS backup and restore app for verified Codex data, project and ChatGPT export backups with SHA-256 integrity checks.'),
+              'de': ('CodexVault für macOS – Verifizierte lokale Codex- & Projekt-Backups', 'CodexVault für macOS erstellt verifizierte lokale Backups von Codex-Daten, Projekten und ChatGPT-Exporten mit SHA-256-Prüfung und sicherer Wiederherstellung.', 'Eine lokale macOS-App für verifizierte Codex-, Projekt- und ChatGPT-Export-Backups mit SHA-256-Prüfung und sicherer Wiederherstellung.')},
+            'fileatlas': {
+              'en': ('FileAtlas for macOS – File Indexer, Duplicate Finder & Folder Comparison', 'FileAtlas for macOS is a private local file indexer, duplicate finder and folder comparison tool with storage analysis, reports and backups.', 'A private local macOS file indexer, duplicate finder and folder comparison tool for inspecting metadata, analyzing storage, comparing snapshots and managing backups.'),
+              'de': ('FileAtlas für macOS – Datei-Indexer, Duplikat-Finder & Ordnervergleich', 'FileAtlas für macOS ist ein privater lokaler Datei-Indexer, Duplikat-Finder und Ordnervergleich mit Speicheranalyse, Berichten und Backups.', 'Ein privater lokaler Datei-Indexer, Duplikat-Finder und Ordnervergleich für macOS zum Prüfen von Metadaten, Analysieren von Speicher, Vergleichen von Snapshots und Verwalten von Backups.')},
+            'healthatlas': {
+              'en': ('HealthAtlas for macOS – Private Apple Health Export Analyzer', 'HealthAtlas for macOS privately analyzes local Apple Health XML or ZIP exports with dashboards, trends, timelines and reports without cloud upload.', 'A privacy-first macOS Apple Health export viewer and analyzer for local XML or ZIP exports, dashboards, trends, timelines and reports without cloud upload.'),
+              'de': ('HealthAtlas für macOS – Privater Apple-Health-Export-Analyzer', 'HealthAtlas für macOS analysiert lokale Apple-Health-XML- oder ZIP-Exporte mit Dashboards, Trends, Zeitachsen und Berichten ohne Cloud-Upload.', 'Ein datenschutzfreundlicher Apple-Health-Export-Viewer und Analyzer für macOS mit lokalen XML-/ZIP-Importen, Dashboards, Trends, Zeitachsen und Berichten.')},
+            'shortcuts': {
+              'en': ('Apple Shortcuts Collection – Privacy-Focused iPhone & Mac Shortcuts', 'A public collection of privacy-focused Apple Shortcuts for iPhone, iPad and Mac with documented releases, privacy notes and reproducible files.', 'A public collection of privacy-focused Apple Shortcuts for iPhone, iPad and Mac with documented releases, privacy notes and reproducible files.'),
+              'de': ('Apple-Kurzbefehle – Datenschutzfreundliche Shortcuts für iPhone & Mac', 'Eine öffentliche Sammlung datenschutzfreundlicher Apple-Kurzbefehle für iPhone, iPad und Mac mit dokumentierten Releases und Datenschutzhinweisen.', 'Eine öffentliche Sammlung datenschutzfreundlicher Apple-Kurzbefehle für iPhone, iPad und Mac mit dokumentierten Releases und Datenschutzhinweisen.')},
+            'skybreak-protocol': {
+              'en': ('Skybreak Protocol – Cyberpunk Vertical Platformer Browser Game', 'Skybreak Protocol is an independent cyberpunk vertical platformer browser game with fourteen levels, desktop and mobile controls, offline play and retro soundtrack.', 'An independent cyberpunk vertical platformer browser game with fourteen levels, desktop and mobile controls, offline play and an original retro soundtrack.'),
+              'de': ('Skybreak Protocol – Cyberpunk-Vertical-Platformer im Browser', 'Skybreak Protocol ist ein unabhängiger Cyberpunk-Vertical-Platformer im Browser mit 14 Levels, Desktop- und Mobilsteuerung, Offline-Spiel und Retro-Soundtrack.', 'Ein unabhängiger Cyberpunk-Vertical-Platformer im Browser mit 14 Levels, Desktop- und Mobilsteuerung, Offline-Spiel und eigenem Retro-Soundtrack.')},
+            'urobilanz': {
+              'en': ('UroBilanz – Private Urine & Fluid Balance Tracker for macOS and Web', 'UroBilanz is a private urine diary and fluid balance tracker for local logging and analysis of urine output, fluid intake and notes on macOS and the web.', 'A private urine diary and fluid balance tracker for local logging and analysis of urine output, fluid intake and notes on macOS and the web.'),
+              'de': ('UroBilanz – Privates Urin- & Flüssigkeitsprotokoll für macOS und Web', 'UroBilanz ist ein privates Urin- und Flüssigkeitsprotokoll zur lokalen Erfassung und Auswertung von Urinmenge, Trinkmenge und Notizen auf macOS und im Web.', 'Ein privates Urin- und Flüssigkeitsprotokoll zur lokalen Erfassung und Auswertung von Urinmenge, Trinkmenge und Notizen auf macOS und im Web.')}
+          }
+
+          for slug, langs in projects.items():
+            for lang, (title, desc, lead) in langs.items():
+              path = Path('projects') / f'{slug}{".de" if lang == "de" else ""}.html'
+              text = path.read_text(encoding='utf-8')
+              text = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{desc}">', text, count=1)
+              text = re.sub(r'<title>.*?</title>', f'<title>{title}</title>', text, count=1)
+              if 'property="og:title"' not in text:
+                og = f'  <meta property="og:title" content="{title}">\n  <meta property="og:description" content="{desc}">\n  <meta property="og:type" content="website">\n  <meta property="og:url" content="https://schrotty74.github.io/Portfolio/projects/{path.name}">\n'
+                text = text.replace('  <meta name="theme-color"', og + '  <meta name="theme-color"', 1)
+              text = re.sub(r'<p class="lead">.*?</p>', f'<p class="lead">{lead}</p>', text, count=1)
+              path.write_text(text, encoding='utf-8')
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add projects/*.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Improve SEO for all portfolio detail pages [skip ci]"
+          git push
