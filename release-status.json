@@ -1,8 +1,8 @@
 {
   "AppAtlas": {
-    "stage": "Final",
-    "release": "v1.2.3",
-    "updatedAt": "2026-08-10T06:25:54Z"
+    "stage": "Development",
+    "release": null,
+    "updatedAt": "2026-08-15T11:43:57Z"
   },
   "FileAtlas": {
     "stage": "Beta",
@@ -10,9 +10,9 @@
     "updatedAt": "2026-08-13T08:55:22Z"
   },
   "CodexVault": {
-    "stage": "Beta",
-    "release": "v1.0.0-beta.3",
-    "updatedAt": "2026-08-14T05:38:55Z"
+    "stage": "Development",
+    "release": null,
+    "updatedAt": "2026-08-15T11:50:40Z"
   },
   "BudgetApp": {
     "stage": "Development",
@@ -20,9 +20,9 @@
     "updatedAt": "2026-08-15T11:49:34Z"
   },
   "CalcBoy": {
-    "stage": "Final",
-    "release": "v3.1.0",
-    "updatedAt": "2026-08-10T05:31:55Z"
+    "stage": "Development",
+    "release": null,
+    "updatedAt": "2026-08-15T11:49:51Z"
   },
   "Skybreak-Protocol": {
     "stage": "Beta",
@@ -30,14 +30,14 @@
     "updatedAt": "2026-08-15T06:23:32Z"
   },
   "UroBilanz": {
-    "stage": "Beta",
-    "release": "v1.7.4-beta.1",
-    "updatedAt": "2026-07-19T06:58:10Z"
+    "stage": "Development",
+    "release": null,
+    "updatedAt": "2026-08-15T11:50:28Z"
   },
   "HealthAtlas": {
-    "stage": "Beta",
-    "release": "v0.1.0-beta.4",
-    "updatedAt": "2026-08-13T07:38:16Z"
+    "stage": "Development",
+    "release": null,
+    "updatedAt": "2026-08-15T11:50:06Z"
   },
   "chatgpt-pets": {
     "stage": "Development",
@@ -45,8 +45,8 @@
     "updatedAt": "2026-08-15T11:51:36Z"
   },
   "Shortcuts": {
-    "stage": "Final",
-    "release": "v1.2.3",
-    "updatedAt": "2026-07-19T10:13:19Z"
+    "stage": "Development",
+    "release": null,
+    "updatedAt": "2026-08-15T11:51:27Z"
   }
 }
