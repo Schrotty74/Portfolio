@@ -5,9 +5,9 @@
     "updatedAt": "2026-08-15T11:43:57Z"
   },
   "FileAtlas": {
-    "stage": "Beta",
-    "release": "v1.10.0-beta.1",
-    "updatedAt": "2026-08-13T08:55:22Z"
+    "stage": "Development",
+    "release": null,
+    "updatedAt": "2026-08-15T11:44:59Z"
   },
   "CodexVault": {
     "stage": "Development",
@@ -25,9 +25,9 @@
     "updatedAt": "2026-08-15T11:49:51Z"
   },
   "Skybreak-Protocol": {
-    "stage": "Beta",
-    "release": "v1.0.1-beta.8",
-    "updatedAt": "2026-08-15T06:23:32Z"
+    "stage": "Development",
+    "release": null,
+    "updatedAt": "2026-08-15T11:51:42Z"
   },
   "UroBilanz": {
     "stage": "Development",
