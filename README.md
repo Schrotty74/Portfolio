@@ -1,5 +1,7 @@
 # Portfolio
 
+[![Privacy Check](https://github.com/Schrotty74/Portfolio/actions/workflows/privacy-check.yml/badge.svg)](https://github.com/Schrotty74/Portfolio/actions/workflows/privacy-check.yml)
+
 Die GitHub-Pages-Portfolioseite von [Schrotty74](https://github.com/Schrotty74).
 
 Sie stellt ausgewählte Projekte vor und verlinkt direkt zu den jeweiligen Repositories und, wo verfügbar, zu den laufenden Web-Apps.
