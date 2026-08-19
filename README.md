@@ -15,3 +15,7 @@ GitHub Pages in den Repository-Einstellungen für den Branch `main` und das Verz
 `https://schrotty74.github.io/Portfolio/`
 
 erreichbar.
+
+## Repo activity
+
+![Alt](https://repobeats.axiom.co/api/embed/1e962f3ae4ecf7aba6aba5a8c5b23901fa478a61.svg "Repobeats analytics image")
