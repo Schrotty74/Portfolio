@@ -93,7 +93,7 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.6rem); line-height: .98; 
 .accent-pets { --project-accent: #76c9ed; }
 .accent-shortcuts { --project-accent: #f39a50; }
 .project .meta, .project .text-link span { color: var(--project-accent); }
-.fileatlas img, .calcboy img, .skybreak img, .pets img { width: min(180px, 50%); height: auto; object-fit: contain; filter: drop-shadow(0 18px 20px rgba(0,0,0,.24)); }
+.fileatlas img, .calcboy img, .skybreak img, .thermalatlas img, .pets img { width: min(180px, 50%); height: auto; object-fit: contain; filter: drop-shadow(0 18px 20px rgba(0,0,0,.24)); }
 .fileatlas { background: linear-gradient(140deg, #bee3f5, #7593ba); }
 .codexvault { background: linear-gradient(145deg, #122a2f, #315a52); }
 .budget { background: #f2f1ea; }
@@ -103,7 +103,6 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.6rem); line-height: .98; 
 .urobilanz { background: #201c4e; }
 .health { background: #e9e6dd; }
 .thermalatlas { background: linear-gradient(140deg, #254c5c, #111d2f 56%, #46345d); }
-.thermalatlas img { padding: 10px; object-fit: contain; }
 .pets { background: radial-gradient(circle, #b7e7ff, #6781b6); }
 .project-content { padding: 26px 28px 29px; }
 .meta { display: flex; align-items: center; gap: 7px; margin-bottom: 11px; color: var(--accent); font: 11px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .06em; text-transform: uppercase; }
