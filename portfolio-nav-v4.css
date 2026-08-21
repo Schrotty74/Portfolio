@@ -89,6 +89,7 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.6rem); line-height: .98; 
 .accent-skybreak { --project-accent: #00ddeb; }
 .accent-urobilanz { --project-accent: #9a7cff; }
 .accent-health { --project-accent: #d87296; }
+.accent-thermalatlas { --project-accent: #43c2e8; }
 .accent-pets { --project-accent: #76c9ed; }
 .accent-shortcuts { --project-accent: #f39a50; }
 .project .meta, .project .text-link span { color: var(--project-accent); }
@@ -101,6 +102,7 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.6rem); line-height: .98; 
 .skybreak { background: radial-gradient(circle at 50% 42%, #163c63, #070918 68%); }
 .urobilanz { background: #201c4e; }
 .health { background: #e9e6dd; }
+.thermalatlas { background: linear-gradient(140deg, #254c5c, #111d2f 56%, #46345d); }
 .pets { background: radial-gradient(circle, #b7e7ff, #6781b6); }
 .project-content { padding: 26px 28px 29px; }
 .meta { display: flex; align-items: center; gap: 7px; margin-bottom: 11px; color: var(--accent); font: 11px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .06em; text-transform: uppercase; }

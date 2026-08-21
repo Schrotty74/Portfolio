@@ -33,6 +33,7 @@ jobs:
             "Skybreak-Protocol",
             "UroBilanz",
             "HealthAtlas",
+            "ThermalAtlas",
             "chatgpt-pets",
             "Shortcuts"
           ];

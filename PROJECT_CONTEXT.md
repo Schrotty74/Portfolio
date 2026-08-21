@@ -40,7 +40,7 @@ Die Seite ist eine statische Website ohne Paketmanager, Lockfile, Build-Schritt 
 
 ## Umgesetzter Stand
 
-- Englische und deutsche Übersichtsseite mit zehn Projektkarten sowie passenden Detailseiten unter `projects/`.
+- Englische und deutsche Übersichtsseite mit elf Projektkarten sowie passenden Detailseiten unter `projects/`, einschließlich ThermalAtlas als lokaler Apple-Silicon-Temperaturanzeige.
 - Vier visuelle Themes: Midnight, Light, Retro und Graphite Lime.
 - Release-Chips für Projekte mit Eintrag in `release-status.json`; die Daten werden automatisiert über GitHub Actions aktualisiert.
 - Projekt-Hierarchie auf der Übersicht: AppAtlas als hervorgehobene Karte, UroBilanz und HealthAtlas als zweite Ebene, weitere Karten kompakter.
