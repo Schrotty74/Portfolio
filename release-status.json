@@ -39,6 +39,11 @@
     "release": "v0.1.0-beta.4",
     "updatedAt": "2026-08-13T07:38:16Z"
   },
+  "ThermalAtlas": {
+    "stage": "Beta",
+    "release": "v0.1.0-beta.1",
+    "updatedAt": "2026-08-21T04:40:04Z"
+  },
   "chatgpt-pets": {
     "stage": "Development",
     "release": null,
