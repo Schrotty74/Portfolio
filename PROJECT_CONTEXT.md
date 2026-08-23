@@ -3,18 +3,6 @@
 **Stand:** 14. August 2026
 **Zweck:** Dieses Repository enthält die öffentliche, zweisprachige GitHub-Pages-Portfolioseite von Schrotty74. Es stellt ausgewählte Apps und Sammlungen vor und verlinkt auf öffentliche Repositories, Detailseiten sowie – falls vorhanden – laufende Web-Apps.
 
-## Zuerst lesen
-
-In einem neuen Chat zuerst diese Reihenfolge beachten:
-
-1. `PROJECT_CONTEXT.md` – technische und fachliche Hauptquelle.
-2. `NEXT_STEPS.md` – tatsächlich offene Punkte und Prioritäten.
-3. `README.md` – lokales Öffnen und GitHub-Pages-Veröffentlichung.
-4. `PORTFOLIO_UPDATE.md` – Regeln für neue oder öffentlich veränderte Projekte.
-5. `PRIVACY_CHECK.md` und `PRIVACY_CHECK.de.md` – veröffentlichte Datenschutz- und Prüfhinweise.
-
-Danach nur die für die Aufgabe relevanten Dateien lesen, zum Beispiel `index.html`, `de.html`, `projects/` oder die zugehörigen Stylesheets und Skripte.
-
 ## Architektur und wichtige Dateien
 
 Die Seite ist eine statische Website ohne Paketmanager, Lockfile, Build-Schritt oder lokale Laufzeit-Abhängigkeiten.
