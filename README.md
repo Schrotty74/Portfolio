@@ -18,6 +18,10 @@ GitHub Pages in den Repository-Einstellungen für den Branch `main` und das Verz
 
 erreichbar.
 
+## Community
+
+Fragen, Feedback und Diskussionen sind auf [Discord](https://discord.gg/Zy93AaYFaj) willkommen.
+
 ## Repo activity
 
 ![Alt](https://repobeats.axiom.co/api/embed/1e962f3ae4ecf7aba6aba5a8c5b23901fa478a61.svg "Repobeats analytics image")
