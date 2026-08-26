@@ -11,8 +11,8 @@
   },
   "CodexVault": {
     "stage": "Beta",
-    "release": "v1.0.0-beta.3",
-    "updatedAt": "2026-08-14T05:38:55Z"
+    "release": "v1.0.0-beta.4",
+    "updatedAt": "2026-08-26T03:35:01Z"
   },
   "BudgetApp": {
     "stage": "Development",
@@ -40,9 +40,9 @@
     "updatedAt": "2026-08-13T07:38:16Z"
   },
   "ThermalAtlas": {
-    "stage": "Beta",
-    "release": "v0.5.0",
-    "updatedAt": "2026-08-25T04:59:04Z"
+    "stage": "Final",
+    "release": "v1.0.0",
+    "updatedAt": "2026-08-26T04:15:07Z"
   },
   "chatgpt-pets": {
     "stage": "Development",
