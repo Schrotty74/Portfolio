@@ -96,7 +96,7 @@ h2 { margin-bottom: 0; font-size: clamp(2.6rem, 5vw, 4.6rem); line-height: .98; 
 .fileatlas img, .calcboy img, .skybreak img, .thermalatlas img, .pets img { width: min(180px, 50%); height: auto; object-fit: contain; filter: drop-shadow(0 18px 20px rgba(0,0,0,.24)); }
 .fileatlas { background: linear-gradient(140deg, #bee3f5, #7593ba); }
 .codexvault { background: linear-gradient(145deg, #122a2f, #315a52); }
-.budget { background: #f2f1ea; }
+.budget { background: var(--surface); }
 .budget img { width: 56%; height: auto; max-height: 205px; object-fit: contain; border-radius: 12px; box-shadow: 0 10px 22px rgba(24, 28, 43, .14); }
 .calcboy { background: linear-gradient(145deg, #dbcea4, #928453); }
 .skybreak { background: radial-gradient(circle at 50% 42%, #163c63, #070918 68%); }
