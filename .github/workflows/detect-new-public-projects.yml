@@ -2,7 +2,8 @@ name: Detect new public projects
 
 on:
   schedule:
-    - cron: "41 * * * *"
+    - cron: "0 4 * * *"
+    - cron: "0 5 * * *"
   workflow_dispatch:
 
 permissions:
@@ -15,7 +16,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Check Vienna schedule
+        id: vienna-time
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          local_hour="$(TZ=Europe/Vienna date +%H)"
+          if [[ "$local_hour" == "06" ]]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Skipping: current Europe/Vienna hour is ${local_hour}, not 06."
+          fi
+
       - name: Find public repositories missing from the portfolio
+        if: steps.vienna-time.outputs.run == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
