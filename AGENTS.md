@@ -28,7 +28,7 @@ Nicht veröffentlicht oder dokumentiert werden dürfen insbesondere:
 - private, personenbezogene oder vertrauliche Daten
 - reale Namen oder private Kontaktdaten; für öffentliche Entwicklerangaben ausschließlich `Schrotty74`
 - Informationen über persönliche Fähigkeiten, Kenntnisse, Gewohnheiten oder Arbeitsweise des Entwicklers
-- lokale Benutzernamen, Home-Verzeichnisse sowie konkrete lokale Benutzer-, Volume- oder Backup-Pfade
+- lokale Benutzernamen, Home-Verzeichnisse sowie lokale Benutzer-, Volume- oder Backup-Pfade
 - private Hostnamen, interne Netzwerkadressen oder interne URLs
 - Gerätekennungen, Seriennummern, Hardware-IDs oder vergleichbare Identifikatoren
 - Passwörter, API-Keys, Tokens, Secrets, Zugangsdaten oder private Accountdaten
@@ -43,7 +43,7 @@ Nicht veröffentlicht oder dokumentiert werden dürfen insbesondere:
 
 Öffentliche Beispiele, Screenshots und Demo-Daten müssen ausschließlich synthetisch, anonymisiert oder eindeutig fiktiv sein. Bewusst öffentliche Assets dürfen verwendet werden.
 
-Pfade in öffentlicher Dokumentation müssen neutral sein, zum Beispiel `/Users/example/...`. Echte lokale Benutzernamen oder persönliche Volume-Namen dürfen nicht verwendet werden.
+Lokale Benutzer-, Volume- oder Backup-Pfade dürfen auch nicht als Beispiel oder Platzhalter in öffentlichen Dateien stehen. Wenn ein Ablauf beschrieben werden muss, ist er ohne konkreten lokalen Pfad zu formulieren.
 
 Vor einem Push oder einer Veröffentlichung die vorhandene Datenschutzprüfung ausführen und öffentliche Texte sowie Bilder zusätzlich manuell prüfen. Automatische Prüfungen ersetzen keine Sichtprüfung.
 
