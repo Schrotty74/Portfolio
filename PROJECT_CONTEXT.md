@@ -1,6 +1,6 @@
 # Projektkontext: Portfolio
 
-**Stand:** 14. August 2026
+**Stand:** 27. August 2026
 **Zweck:** Dieses Repository enthält die öffentliche, zweisprachige GitHub-Pages-Portfolioseite von Schrotty74. Es stellt ausgewählte Apps und Sammlungen vor und verlinkt auf öffentliche Repositories, Detailseiten sowie – falls vorhanden – laufende Web-Apps.
 
 ## Architektur und wichtige Dateien
@@ -18,6 +18,7 @@ Die Seite ist eine statische Website ohne Paketmanager, Lockfile, Build-Schritt 
 | Gemeinsame Optik | `ambient-glow.css`, `assets/` | Hintergrundeffekt sowie lokale GitHub-, Discord- und Social-Preview-Assets. |
 | Datenschutzprüfung | `Scripts/privacy-check.sh`, `.github/workflows/privacy-check.yml` | Prüft nach verbotenen Dateien, typischen Geheimnissen und privaten Pfaden. |
 | Status-Aktualisierung | `.github/workflows/refresh-release-status.yml` | Liest öffentliche Releases der gelisteten Projekte und schreibt bei Änderungen `release-status.json`. |
+| Neue-Projekt-Erkennung | `.github/workflows/detect-new-public-projects.yml` | Vergleicht öffentliche, nicht archivierte Eigen-Repositories mit `release-status.json` und legt für noch nicht geführte Repositories einmalig ein Prüf-Issue an. `Portfolio` und `Schrotty74` sind bewusst ausgenommen. |
 
 ## Datenformate und Laufzeitdaten
 
@@ -31,6 +32,7 @@ Die Seite ist eine statische Website ohne Paketmanager, Lockfile, Build-Schritt 
 - Englische und deutsche Übersichtsseite mit elf Projektkarten sowie passenden Detailseiten unter `projects/`, einschließlich ThermalAtlas als lokaler Apple-Silicon-Temperaturanzeige.
 - Vier visuelle Themes: Midnight, Light, Retro und Graphite Lime.
 - Release-Chips für Projekte mit Eintrag in `release-status.json`; die Daten werden automatisiert über GitHub Actions aktualisiert.
+- Neue öffentliche Eigen-Repositories werden stündlich erkannt, wenn sie weder archiviert noch Forks sind und noch nicht in `release-status.json` stehen. Der Workflow erstellt dann ein Prüf-Issue, nimmt das Projekt aber nicht automatisch in die öffentliche Website auf.
 - Projekt-Hierarchie auf der Übersicht: AppAtlas als hervorgehobene Karte, UroBilanz und HealthAtlas als zweite Ebene, weitere Karten kompakter.
 - Die Spotlight-Karten zeigen Screenshot oben und Informationen darunter; ein dezenter Verlauf verbindet Bild und Inhalt.
 - Plattform-Symbole stehen vor den Plattformlabels der Karten.
@@ -49,13 +51,14 @@ Die Seite ist eine statische Website ohne Paketmanager, Lockfile, Build-Schritt 
 4. Für öffentliche Änderungen zusätzlich die in `PORTFOLIO_UPDATE.md` genannten Portfolio- und Profilpflichten prüfen.
 5. GitHub Pages wird laut `README.md` aus `main` und dem Repository-Stamm veröffentlicht. Diese Einstellung liegt außerhalb der versionierten Dateien.
 
-Die Workflows führen die Datenschutzprüfung bei Pushes und Pull Requests aus. Die Status-Aktualisierung läuft stündlich sowie manuell und darf `release-status.json` eigenständig committen.
+Die Workflows führen die Datenschutzprüfung bei Pushes und Pull Requests aus. Die Status-Aktualisierung läuft stündlich sowie manuell und darf `release-status.json` eigenständig committen. Die Neue-Projekt-Erkennung läuft ebenfalls stündlich sowie manuell; sie hat nur Lesezugriff auf Inhalte und Schreibzugriff auf Issues.
 
 ## Feste Regeln und Entscheidungen
 
 - Sichtbare Inhalte müssen auf Englisch und Deutsch gepflegt werden, einschließlich Karten, Detailseiten, Links und sichtbarer UI-Texte.
 - Jede neue öffentliche App oder Sammlung benötigt eine englische und eine deutsche Detailseite und passende Links von der jeweiligen Übersichtskarte.
 - Die Projektliste in `.github/workflows/refresh-release-status.yml` muss für neue öffentliche Projekte ergänzt werden, wenn deren Release-Status automatisch erscheinen soll.
+- Die Neue-Projekt-Erkennung ist nur ein Hinweis- und Prüfmechanismus. Sie darf keine Projektkarten, Detailseiten, Profil-Einträge oder Status-Workflow-Einträge automatisch erzeugen.
 - `release-status.json` nicht manuell als Ersatz für einen fehlenden öffentlichen Release bearbeiten.
 - Keine Analysewerkzeuge, Cookies, Formulare oder Tracker ergänzen, ohne die Datenschutzdokumentation und die tatsächliche Datenverarbeitung neu zu bewerten.
 - Theme-Speicherung bleibt lokal; keine personenbezogenen Daten oder Telemetrie einführen.
