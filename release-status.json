@@ -14,10 +14,10 @@
     "release": "v1.0.0-beta.4",
     "updatedAt": "2026-08-26T03:35:01Z"
   },
-  "BudgetApp": {
+  "BudgetAtlas": {
     "stage": "Development",
     "release": null,
-    "updatedAt": "2026-08-27T19:13:02Z"
+    "updatedAt": "2026-08-28T12:35:22Z"
   },
   "CalcBoy": {
     "stage": "Final",
