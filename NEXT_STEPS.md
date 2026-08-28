@@ -1,11 +1,12 @@
 # Nächste Schritte
 
-**Stand:** 14. August 2026
+**Stand:** 28. August 2026
 **Pflege:** Bei größeren Änderungen an Funktion, Architektur, Datenschutz oder Veröffentlichung aktualisieren. Nur nachweislich offene Punkte aufnehmen.
 
 ## Priorität 1
 
-- Die Abweichung zwischen den Privacy-Dokumenten und dem aktiven Google-Fonts-Import in `portfolio-nav-v4.css` bewusst entscheiden und anschließend Code und Dokumentation konsistent halten. Der gewünschte Zielzustand ist derzeit nicht dokumentiert.
+- Die gewünschte Schriftstrategie für den aktiven Google-Fonts-Import in `portfolio-nav-v4.css` bewusst entscheiden und anschließend Code und Dokumentation konsistent halten. Der gewünschte Zielzustand ist derzeit nicht dokumentiert.
+- Die Remote-Dokumentation zur automatischen Erkennung neuer öffentlicher Projekte erst nach einer bewussten Git-Integration mit dem lokalen Quellstand übernehmen. Der dokumentierte Workflow ist im aktuellen lokalen Checkout nicht vorhanden.
 
 ## Priorität 2
 

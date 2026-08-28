@@ -14,7 +14,7 @@ When a new app has a public repository and is ready to be presented:
 6. Add the app to the GitHub profile README: https://github.com/Schrotty74/Schrotty74
 7. Add a PORTFOLIO_UPDATE.md file with this same rule to the new app repository.
 
-`.github/workflows/detect-new-public-projects.yml` checks public, non-archived owner repositories every hour. If a repository is not yet represented in `release-status.json`, it creates a one-time review issue in this repository. This is only a notification and review mechanism; it must not add an app to the public portfolio automatically.
+This local source state does not include a workflow that automatically discovers new public repositories. New projects therefore require a deliberate manual review before applying the steps above.
 
 ## Public release of an existing app
 
