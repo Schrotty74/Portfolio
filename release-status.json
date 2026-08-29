@@ -70,7 +70,7 @@
   "BudgetAtlas": {
     "stage": "Development",
     "release": null,
-    "updatedAt": "2026-08-29T10:12:15Z",
+    "updatedAt": null,
     "assets": {
       "dmg": null,
       "zip": null
@@ -185,7 +185,7 @@
   "chatgpt-pets": {
     "stage": "Development",
     "release": null,
-    "updatedAt": "2026-08-26T08:06:28Z",
+    "updatedAt": null,
     "assets": {
       "dmg": null,
       "zip": null
