@@ -26,4 +26,23 @@ if ((${#content_files[@]})) && grep -I -n -E -e "$pattern" "${content_files[@]}"
   exit 1
 fi
 
+# The published site is hosted on GitHub Pages. Do not accidentally keep
+# runtime references to the previous ChatGPT Sites deployment in web-facing
+# assets. Project content may mention AI assistance, so only the hosting name
+# and the former deployment domain are rejected here.
+site_files=()
+for file in "${files[@]}"; do
+  case "$file" in
+    *.html|*.js|*.css|robots.txt|sitemap.xml)
+      [[ -f "$file" ]] && site_files+=("$file")
+      ;;
+  esac
+done
+
+hosting_pattern='schrotty74-apps\.bk-bezahlen\.chatgpt\.site|ChatGPT Sites'
+if ((${#site_files[@]})) && grep -I -n -E -e "$hosting_pattern" "${site_files[@]}"; then
+  echo "Privacy check failed: former hosting reference found in website files." >&2
+  exit 1
+fi
+
 echo "Privacy check passed."

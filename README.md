@@ -4,24 +4,17 @@
 
 [![Privacy Check](https://github.com/Schrotty74/Portfolio/actions/workflows/privacy-check.yml/badge.svg)](https://github.com/Schrotty74/Portfolio/actions/workflows/privacy-check.yml)
 
-The GitHub Pages portfolio of [Schrotty74](https://github.com/Schrotty74).
+The public GitHub Pages app portfolio of [Schrotty74](https://github.com/Schrotty74), available at [schrotty74.github.io/Portfolio](https://schrotty74.github.io/Portfolio/).
 
-It showcases selected projects and links directly to their repositories and, where available, to the live web apps.
-
-## Open locally
-
-Open `index.html` directly in a browser. There is no build step and no dependency installation.
+It provides an English-first, German equivalent overview of eleven public projects, with project, technical, legal-notice and privacy pages. Where publicly available, each project page links to its manual, direct download, live web app and source repository.
 
 ## Publishing
 
-Enable GitHub Pages in the repository settings for the `main` branch and the `/(root)` directory. The site is then available at:
+GitHub Pages must serve the `main` branch from the repository root. The website is a static export: GitHub Pages requires no server-side runtime, cookies, analytics or forms.
 
-`https://schrotty74.github.io/Portfolio/`
+## Privacy and maintenance
 
-## Community
-
-Questions, feedback and discussions are welcome on [Discord](https://discord.gg/Zy93AaYFaj).
-
-## Repo activity
-
-![Alt](https://repobeats.axiom.co/api/embed/1e962f3ae4ecf7aba6aba5a8c5b23901fa478a61.svg "Repobeats analytics image")
+- Public project screenshots are loaded directly from GitHub's raw-content host.
+- Before publication, run `bash Scripts/privacy-check.sh`, review public texts and images manually, and run `git diff --check`.
+- The documented privacy review is in [PRIVACY_CHECK.md](PRIVACY_CHECK.md).
+- Rules for adding or updating a project are in [PORTFOLIO_UPDATE.md](PORTFOLIO_UPDATE.md).

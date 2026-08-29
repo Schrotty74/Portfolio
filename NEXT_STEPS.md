@@ -1,24 +1,20 @@
 # Nächste Schritte
 
-**Stand:** 28. August 2026
-**Pflege:** Bei größeren Änderungen an Funktion, Architektur, Datenschutz oder Veröffentlichung aktualisieren. Nur nachweislich offene Punkte aufnehmen.
+**Stand:** 29. August 2026
 
-## Priorität 1
+## Vor oder nach einer Veröffentlichung prüfen
 
-- Die gewünschte Schriftstrategie für den aktiven Google-Fonts-Import in `portfolio-nav-v4.css` bewusst entscheiden und anschließend Code und Dokumentation konsistent halten. Der gewünschte Zielzustand ist derzeit nicht dokumentiert.
-- Die Remote-Dokumentation zur automatischen Erkennung neuer öffentlicher Projekte erst nach einer bewussten Git-Integration mit dem lokalen Quellstand übernehmen. Der dokumentierte Workflow ist im aktuellen lokalen Checkout nicht vorhanden.
+- Die GitHub-Pages-Einstellung muss `main` und `/(root)` verwenden.
+- Die neue Übersicht sowie mindestens eine Projekt- und Technikseite in Desktop- und Mobilansicht manuell prüfen. Eine automatisierte visuelle Browserprüfung ist nicht eingerichtet.
 
-## Priorität 2
+## Bei Änderungen an Projekten
 
-- Bei der nächsten Layoutänderung die Übersichtsseite und relevante Detailseiten manuell auf Desktop und Mobil prüfen. Eine automatisierte visuelle Prüfung ist nicht vorhanden.
-- GitHub-Pages-Konfiguration in den Repository-Einstellungen prüfen, wenn das Projekt nach einer Neuinstallation oder in einem neuen Umfeld übernommen wird; die Einstellung ist nicht versioniert.
+- Beschreibungen, Funktionen, Technologien, Handbücher, Downloads und Web-App-Links aus öffentlichen Quellen nachziehen.
+- Englische und deutsche Projekt- und Technikseiten gleichwertig aktualisieren.
+- Vor dem Push `bash Scripts/privacy-check.sh`, `git diff --check` und eine manuelle Prüfung von Bildern und Texten ausführen.
+- Die Regeln in `PORTFOLIO_UPDATE.md` beachten.
 
-## Wiederkehrend, nur bei Anlass
+## Datenschutz
 
-- Bei einem neuen öffentlichen Projekt `PORTFOLIO_UPDATE.md` vollständig befolgen: Karten in beiden Sprachen, englische und deutsche Detailseiten, passende Links, öffentliche Demo-Assets, Profil-Referenz und gegebenenfalls Status-Workflow ergänzen.
-- Bei öffentlich sichtbaren Änderungen an Beschreibung, Status, Plattformen, Screenshots oder URLs prüfen, ob Portfolio und Profil aktualisiert werden müssen.
-- Vor einer Veröffentlichung `bash Scripts/privacy-check.sh`, `git diff --check` und eine manuelle Sichtprüfung ausführen.
-
-## Kein offener Punkt bekannt
-
-- Für Build-Abhängigkeiten, Paketmanager oder Lockfiles ist kein Handlungsbedarf dokumentiert: Das Repository enthält nach der aktuellen Prüfung keine solchen Dateien und laut `README.md` keinen Build-Schritt.
+- Keine Tracker, Cookies, Formulare, externe Schriftanbieter oder neue Datenverarbeitung ergänzen, ohne Datenschutzhinweise und Prüfung neu zu bewerten.
+- Bei neuen externen Bild- oder Medienquellen prüfen, ob sie wirklich erforderlich und öffentlich sind; bevorzugt GitHub-Quellen verwenden.

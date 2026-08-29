@@ -1,28 +1,24 @@
 # Sicherheits- & Datenschutzprüfung
 
-**Status:** Unauffällig für die hier dokumentierten automatisierten Prüfungen am **16. Juli 2026**.
+**Status:** Die automatisierten Prüfungen waren am **29. August 2026** unauffällig; für diese Veröffentlichung wurden außerdem öffentliche Texte, Linkziele und Bild-Hosts geprüft.
 
-Dieser Bericht ist öffentlich, damit nachvollziehbar bleibt, was geprüft wurde. Er ist keine Garantie, dass ein Repository niemals private Daten enthalten kann.
+Dieser Bericht beschreibt die Prüfungen. Er ist keine Rechtsberatung und keine Garantie, dass niemals personenbezogene Daten enthalten sein können.
 
-## Umfang
+## Hosting und Laufzeit-Datenschutz
 
-- Die aktuellen öffentlichen Repositories unter **Schrotty74** wurden nach typischen Hochrisiko-Indikatoren durchsucht: Private-Key-Kopfzeilen, GitHub-Token, übliche API-Key-Präfixe, absolute Benutzerpfade und Gmail-Adressen.
-- Das Portfolio wurde zusätzlich auf Laufzeit-Datenschutz geprüft: Es enthält keine Analysewerkzeuge, Cookies, Formulare oder Tracker. Das JavaScript steuert den Stil-Schalter und dezente Scroll-Animationen. Es speichert ausschließlich den gewählten Darstellungsstil lokal im Browser und überträgt keine Daten.
-- Das aktive Stylesheet `portfolio-nav-v4.css` importiert Google Fonts. Beim Öffnen der Übersichtsseite wird daher eine Anfrage an Google für Schriften gestellt; weitere externe Schriftanbieter sind nicht konfiguriert.
-- Projektbilder werden von GitHubs Raw-Content-Host geladen. GitHub Pages und diese Bilder verursachen zwangsläufig eine Anfrage an GitHub; dafür gelten die Datenschutzbedingungen von GitHub.
+- Das Portfolio wird als statische Website über GitHub Pages ausgeliefert. GitHub verarbeitet bei der Bereitstellung notwendigerweise technische Verbindungs- und Nutzungsdaten; siehe [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
+- Projekt-Screenshots werden direkt von GitHubs Raw-Content-Host geladen. Beim Öffnen einer Seite mit einem solchen Bild stellt der Browser eine direkte Anfrage an GitHub.
+- Das Portfolio selbst enthält keine Analysewerkzeuge, Werbung, Formulare, eingebetteten Drittanbieter-Widgets, eigenen Cookies oder Local-Storage-Speicherung. Es lädt keine externen Schriften.
+- Links zu Repository, Handbuch, Download, Web-App oder Shortcut werden erst geöffnet, wenn Besucher sie auswählen. Danach gelten die Datenschutzbedingungen des jeweiligen Zielangebots.
 
-## Ergebnis
+## Durchgeführte Prüfungen
 
-Die automatisierte Indikatorprüfung hat keine echten Zugangsdaten oder privaten Benutzerpfade gefunden. Einige Texttreffer waren harmlose Referenzen in Tests, Dokumentation oder Prüfscripts – keine Geheimnisse.
+- `Scripts/privacy-check.sh` blockiert typische private oder geheime Dateitypen, Zugangsdaten, Token-Muster und private lokale Pfade.
+- Die Prüfung blockiert außerdem frühere ChatGPT-Sites-Hosting-Verweise in websichtbaren Quelldateien, damit die veröffentlichte Website keine Ressourcen von dieser Hosting-Domain nachlädt.
+- Lokale Styles, Skripte und Icons stammen aus diesem Repository. Öffentliche Projektbilder verwenden `raw.githubusercontent.com/Schrotty74/...`; keine Ressource verweist auf die frühere ChatGPT-Sites-URL.
 
-## Schutz für künftige Änderungen
+## Grenzen und künftige Änderungen
 
-Bei jeder Änderung dieses Portfolio-Repositories läuft [Scripts/privacy-check.sh](Scripts/privacy-check.sh) über GitHub Actions. Die Prüfung blockiert typische private Dateitypen sowie klare Muster für Schlüssel, Tokens und persönliche Pfade.
-
-## Grenzen
-
-Automatisierte Prüfungen erkennen nicht jede Art personenbezogener Information und können nicht beweisen, dass solche Daten in älterer Git-Historie nie vorhanden waren. Vor einer Veröffentlichung bleibt eine menschliche Prüfung nötig, besonders bei Screenshots, Beispieldateien, Exporten, Backups, Logs und Dokumentation.
-
-Bei einem möglichen Datenschutzproblem sollten die Daten nicht erneut geteilt werden. Zuerst entfernen oder über einen privaten Kontaktweg melden.
+Automatische Prüfungen erkennen nicht jede Form personenbezogener Daten und können nicht beweisen, dass ältere Git-Historie nie solche Daten enthielt. Vor jeder öffentlichen Änderung sichtbare Texte, Screenshots, Links und Downloads zusätzlich manuell prüfen. Keine echten Nutzerdaten, privaten Exporte, Logs, Backups oder Zugangsdaten veröffentlichen.
 
 [English version](PRIVACY_CHECK.md)

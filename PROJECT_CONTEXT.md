@@ -1,82 +1,36 @@
 # Projektkontext: Portfolio
 
-**Stand:** 28. August 2026
-**Zweck:** Dieses Repository enthält die öffentliche, zweisprachige GitHub-Pages-Portfolioseite von Schrotty74. Es stellt ausgewählte Apps und Sammlungen vor und verlinkt auf öffentliche Repositories, Detailseiten sowie – falls vorhanden – laufende Web-Apps.
+**Stand:** 29. August 2026
+**Zweck:** Öffentliche, zweisprachige GitHub-Pages-Website für die Apps und Projekte von Schrotty74.
 
-## Architektur und wichtige Dateien
+## Veröffentlichtes System
 
-Die Seite ist eine statische Website ohne Paketmanager, Lockfile, Build-Schritt oder lokale Laufzeit-Abhängigkeiten.
+Die Website wird als statischer Export direkt aus dem Stamm des `main`-Branches durch GitHub Pages ausgeliefert. Es gibt keinen serverseitigen Anwendungscode.
 
-| Bereich | Dateien | Aufgabe |
+| Bereich | Pfad | Aufgabe |
 | --- | --- | --- |
-| Hauptseiten | `index.html`, `de.html` | Englische und deutsche Portfolio-Übersicht; Projektkarten müssen inhaltlich und funktional gleichwertig bleiben. |
-| Übersichts-Stil | `portfolio-nav-v4.css` | Aktuell eingebundenes Stylesheet für Navigation, Karten, Themes, responsive Layouts und Bewegung. Ältere CSS-Dateien bleiben im Repository, sind aber nicht die aktive Übersichtsreferenz. |
-| Detailseiten | `projects/*.html`, `projects/*.de.html` | Englische und deutsche Detailseiten für jede öffentliche App oder Sammlung. |
-| Detailseiten-Stil und -Verhalten | `projects/detail-v1.css`, `projects/detail-v1.js` | Gemeinsames Layout, Theme-Auswahl und Release-Status für Detailseiten. |
-| Übersicht-Verhalten | `theme-menu-v3.js`, `release-status.js` | Themenmenü, lokale Theme-Speicherung, reduzierte Scroll-Animationen und Release-Chips auf der Übersicht. |
-| Statusdaten | `release-status.json` | Generierte Zuordnung von Repository zu `stage`, `release` und `updatedAt`; keine manuelle Quelle für Release-Wahrheit. |
-| Gemeinsame Optik | `ambient-glow.css`, `assets/` | Hintergrundeffekt sowie lokale GitHub-, Discord- und Social-Preview-Assets. |
-| Datenschutzprüfung | `Scripts/privacy-check.sh`, `.github/workflows/privacy-check.yml` | Prüft nach verbotenen Dateien, typischen Geheimnissen und privaten Pfaden. |
-| Status-Aktualisierung | `.github/workflows/refresh-release-status.yml` | Liest öffentliche Releases der gelisteten Projekte und schreibt bei Änderungen `release-status.json`. |
+| Englisch | `index.html`, `apps/<slug>/`, `apps/<slug>/technical/` | Standard-Sprache, Übersichts-, Projekt- und Technikseiten. |
+| Deutsch | `de/`, `de/apps/<slug>/`, `de/apps/<slug>/technik/` | Gleichwertige deutsche Seiten. |
+| Rechtliches | `privacy/`, `legal-notice/`, `de/datenschutz/`, `de/impressum/` | Datenschutzhinweise und Impressum. |
+| Statische Ressourcen | `assets/`, `favicon.svg` | Lokale Skripte, Styles und Icons. |
+| Suchmaschinen | `robots.txt`, `sitemap.xml` | Indexierungs- und Sitemap-Hinweise. |
+| Prüfung | `Scripts/privacy-check.sh`, `.github/workflows/privacy-check.yml` | Prüfung auf Geheimnisse, private Pfade und frühere Hosting-Verweise. |
 
-## Datenformate und Laufzeitdaten
+Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubusercontent.com/Schrotty74/...` geladen; damit ruft der Browser GitHub für diese Bilder auf. Andere Projekt- oder Downloadlinks werden erst nach Auswahl durch Besucher geöffnet.
 
-- `release-status.json` ist ein JSON-Objekt. Ein Eintrag enthält `stage` (`Beta`, `Final` oder `Development`), `release` und `updatedAt`; für `Development` ist `release` `null`.
-- Die Übersichtskarten verwenden `data-repository`; `release-status.js` nutzt diesen Wert, um den Statuschip einzublenden.
-- Die Theme-Wahl wird ausschließlich lokal im Browser gespeichert. Die Übersicht verwendet den Schlüssel `schrotty74-portfolio-theme`; die Detailseiten verwenden derzeit `portfolio-theme`.
-- Projektbilder werden über öffentliche GitHub-Raw-URLs geladen. Nur synthetische Demo-Daten oder bewusst öffentliche Assets verwenden.
+## Datenschutzentscheidungen
 
-## Umgesetzter Stand
+- Keine eigenen Cookies, keine lokale Theme-Speicherung, keine Analysewerkzeuge, Werbenetzwerke, Formulare oder Tracker.
+- Keine externen Schriftanbieter; Schriften stammen aus dem Browser/System.
+- GitHub Pages verarbeitet bei der Auslieferung technische Verbindungsdaten nach den Bedingungen von GitHub. Die öffentlich verlinkte Datenschutzerklärung benennt dies.
+- Nur öffentliche, synthetische oder eindeutig freigegebene Projektbilder und Inhalte verwenden.
 
-- Englische und deutsche Übersichtsseite mit elf Projektkarten sowie passenden Detailseiten unter `projects/`, einschließlich ThermalAtlas als lokaler Apple-Silicon-Temperaturanzeige.
-- Vier visuelle Themes: Midnight, Light, Retro und Graphite Lime.
-- Release-Chips für Projekte mit Eintrag in `release-status.json`; die Daten werden automatisiert über GitHub Actions aktualisiert.
-- Projekt-Hierarchie auf der Übersicht: AppAtlas als hervorgehobene Karte, UroBilanz und HealthAtlas als zweite Ebene, weitere Karten kompakter.
-- Die Spotlight-Karten zeigen Screenshot oben und Informationen darunter; ein dezenter Verlauf verbindet Bild und Inhalt.
-- Plattform-Symbole stehen vor den Plattformlabels der Karten.
-- Respektvolle Animationen beachten `prefers-reduced-motion`.
+## Pflege- und Prüfablauf
 
-## Lokaler Ablauf, Tests und Veröffentlichung
+1. Englische und deutsche Inhalte, Links, Handbücher und Downloads inhaltlich gleichwertig aktualisieren.
+2. Öffentliche Quellen für Projektfakten prüfen; keine Angaben erfinden.
+3. `bash Scripts/privacy-check.sh` und `git diff --check` ausführen.
+4. Texte, Bilder, Ziel-URLs sowie Desktop- und Mobilansicht manuell prüfen.
+5. GitHub Pages auf `main` und `/(root)` in den Repository-Einstellungen kontrollieren, wenn die Auslieferung geändert wurde.
 
-1. Für eine Sichtprüfung `index.html` direkt im Browser öffnen; ein Build-Schritt ist nicht vorgesehen.
-2. Vor einer Veröffentlichung die Datenschutzprüfung ausführen:
-
-   ```bash
-   bash Scripts/privacy-check.sh
-   ```
-
-3. `git diff --check` ausführen, wenn Dateien geändert wurden.
-4. Für öffentliche Änderungen zusätzlich die in `PORTFOLIO_UPDATE.md` genannten Portfolio- und Profilpflichten prüfen.
-5. GitHub Pages wird laut `README.md` aus `main` und dem Repository-Stamm veröffentlicht. Diese Einstellung liegt außerhalb der versionierten Dateien.
-
-Die Workflows führen die Datenschutzprüfung bei Pushes und Pull Requests aus. Die Status-Aktualisierung läuft stündlich sowie manuell und darf `release-status.json` eigenständig committen.
-
-## Feste Regeln und Entscheidungen
-
-- Sichtbare Inhalte müssen auf Englisch und Deutsch gepflegt werden, einschließlich Karten, Detailseiten, Links und sichtbarer UI-Texte.
-- Jede neue öffentliche App oder Sammlung benötigt eine englische und eine deutsche Detailseite und passende Links von der jeweiligen Übersichtskarte.
-- Die Projektliste in `.github/workflows/refresh-release-status.yml` muss für neue öffentliche Projekte ergänzt werden, wenn deren Release-Status automatisch erscheinen soll.
-- `release-status.json` nicht manuell als Ersatz für einen fehlenden öffentlichen Release bearbeiten.
-- Keine Analysewerkzeuge, Cookies, Formulare oder Tracker ergänzen, ohne die Datenschutzdokumentation und die tatsächliche Datenverarbeitung neu zu bewerten.
-- Theme-Speicherung bleibt lokal; keine personenbezogenen Daten oder Telemetrie einführen.
-- Bestehende, öffentlich sichtbare Informationen nur mit überprüften öffentlichen Quellen oder bereitgestellten Inhalten ändern.
-
-## Datenschutz und Veröffentlichung
-
-- Niemals private Daten, persönliche Exporte, Logs, Backups, Zugangsdaten, Schlüssel, Tokens, Zertifikate oder reale Nutzerdaten veröffentlichen.
-- Screenshots dürfen nur synthetische Demo-Daten oder absichtlich öffentliche Inhalte enthalten.
-- Vor jedem Push die Datenschutzprüfung ausführen; die Prüfung ersetzt keine menschliche Sichtprüfung von Bildern und Texten.
-- In neuen Dokumenten und sichtbaren Texten ausschließlich den öffentlichen Namen **Schrotty74** verwenden.
-- `PORTFOLIO_UPDATE.md` ist verbindlich, wenn neue öffentliche Projekte hinzukommen oder sich öffentlich sichtbare Projektinformationen ändern.
-
-## Bekannte Einschränkungen und zu prüfende Punkte
-
-- Das aktive `portfolio-nav-v4.css` lädt Google Fonts. Die damit verbundene externe Anfrage und die gewünschte Schriftstrategie sind vor der nächsten Datenschutzänderung oder Veröffentlichung bewusst zu entscheiden; nicht ohne diese Entscheidung ändern.
-- Die GitHub-Pages-Einstellung ist nicht im Repository versioniert; nach einer Neuinstallation oder beim Umzug muss sie in den Repository-Einstellungen kontrolliert werden.
-- Es gibt keine automatisierte visuelle Browserprüfung im Repository. Desktop- und Mobilansichten müssen bei Layoutänderungen manuell geprüft werden.
-- Eine automatische Erkennung neuer öffentlicher Projekte ist in diesem lokalen Quellstand nicht konfiguriert.
-- Der aktuelle Stand von Abhängigkeiten oder zusätzlichen lokalen Werkzeugen ist unbekannt, weil keine Manifest- oder Lockdateien vorhanden sind.
-
-## Dokumentationspflege
-
-Bei größeren Änderungen an Architektur, Datenformaten, Workflows, Datenschutz, sichtbaren Funktionen oder bekannten Problemen dieses Dokument und `NEXT_STEPS.md` aktualisieren. Keine erledigten Punkte künstlich als offen stehen lassen und keine Testergebnisse ohne tatsächliche Ausführung dokumentieren.
+Bei größeren Änderungen an Struktur, Datenschutz oder Veröffentlichung dieses Dokument und `NEXT_STEPS.md` aktualisieren.

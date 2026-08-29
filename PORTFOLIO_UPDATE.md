@@ -4,28 +4,20 @@ This repository is the public entry point for Schrotty74 projects.
 
 ## New public app
 
-When a new app has a public repository and is ready to be presented:
+When a new public project is ready to be presented:
 
-1. Add a project card to the portfolio in English and German.
-2. Create dedicated English and German detail pages under `projects/` for every new public app or collection, and link the matching language from the project card and GitHub profile README.
-3. Add the repository to `.github/workflows/refresh-release-status.yml` so its Beta/Final status is updated automatically.
-4. Include its name, concise description, platform, repository link and, when available, live-app or download link.
-5. Use only public assets and screenshots with synthetic demo data.
-6. Add the app to the GitHub profile README: https://github.com/Schrotty74/Schrotty74
-7. Add a PORTFOLIO_UPDATE.md file with this same rule to the new app repository.
-
-This local source state does not include a workflow that automatically discovers new public repositories. New projects therefore require a deliberate manual review before applying the steps above.
+1. Add it to the English and German overview.
+2. Add English and German project pages under `apps/<slug>/` and matching technical pages under `apps/<slug>/technical/` and `de/apps/<slug>/technik/`.
+3. Include only verified public information: description, key features, platform, technologies, repository link and, where available, manual, direct download or live-app link.
+4. Use public screenshots with synthetic, anonymised or intentionally public content only; prefer GitHub-hosted sources.
+5. Keep the AI-assistance notice visible and accurate when AI was used for the project.
+6. Update the public GitHub profile README when the project should be highlighted there.
+7. Apply this same rule in the new app repository when it has its own public documentation.
 
 ## Public release of an existing app
 
-Before a public release, check whether the portfolio needs an update. Update only
-when public-facing information changed, such as the main description, status,
-screenshots, supported platforms, repository URL, live-app URL or download URL.
-
-Normal bug fixes and small internal changes do not require a portfolio update.
+Update the portfolio when public-facing information changes, such as the main description, features, technologies, screenshots, platform, documentation, download URL, web-app URL or repository URL. Normal internal fixes do not automatically require a portfolio change.
 
 ## Privacy
 
-Never publish private user data, personal exports, logs, backups, licence keys
-or screenshots containing real data. Public portfolio material must use only
-synthetic demo data or intentionally public assets.
+Never publish private data, personal exports, logs, backups, licence keys, credentials or screenshots containing real user data. Before publication, run the privacy check and manually review all visible texts, images and outgoing URLs.

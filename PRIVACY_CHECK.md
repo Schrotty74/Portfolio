@@ -1,28 +1,24 @@
 # Privacy & security check
 
-**Status:** No findings from the documented automated checks on **16 July 2026**.
+**Status:** Automated checks passed on **29 August 2026**; public text, link targets and image hosts were also reviewed for this publication.
 
-This report is public so visitors can see what was checked. It is not a guarantee that a repository can never contain private data.
+This report explains the checks. It is not a legal assessment or a guarantee that no personal data can ever be present.
 
-## Scope
+## Hosting and runtime privacy
 
-- The current public repositories accessible under **Schrotty74** were searched for common high-risk indicators: private-key headers, GitHub tokens, common API-key prefixes, absolute user paths and Gmail addresses.
-- The portfolio was additionally reviewed for runtime privacy: it contains no analytics, cookies, forms or trackers. Its JavaScript controls the style selector and decorative scroll animations. It stores only the chosen visual style locally in the browser and does not send data anywhere.
-- The active `portfolio-nav-v4.css` stylesheet imports Google Fonts. Opening the overview page therefore requests fonts from Google; no other external font provider is configured.
-- Project images are loaded from GitHub's raw-content host. GitHub Pages and these images necessarily involve a request to GitHub; GitHub's privacy terms apply.
+- The portfolio is served as a static website through GitHub Pages. GitHub necessarily processes technical connection and usage data when it delivers the site; see the [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
+- Project screenshots are loaded directly from GitHub's raw-content host. Opening a page with such an image creates a direct browser request to GitHub.
+- The portfolio itself has no analytics, advertising, forms, embedded third-party widgets, own cookies or local-storage persistence. It does not load external fonts.
+- Links to a repository, manual, download, web app or shortcut are only opened after a visitor selects them. The target service's privacy terms then apply.
 
-## Result
+## Checks performed
 
-The automated indicator scan found no actual credentials or private user paths. Some text matches were benign references in tests, documentation or check scripts — not secrets.
+- `Scripts/privacy-check.sh` rejects common private or secret file types, credentials, token patterns and private local paths.
+- The check also rejects former ChatGPT Sites hosting references in website-facing source files, so the published website does not request assets from that hosting domain.
+- All local styles, scripts and icons are published from this repository. Public project images use `raw.githubusercontent.com/Schrotty74/...`; no assets point to the former ChatGPT Sites URL.
 
-## Protection for future changes
+## Limits and future changes
 
-Every change to this portfolio repository runs [Scripts/privacy-check.sh](Scripts/privacy-check.sh) through GitHub Actions. The check rejects common private file types as well as clear patterns for keys, tokens and personal paths.
-
-## Limits
-
-Automated checks cannot identify every kind of personal information and cannot prove that data was never present in older Git history. A human review remains necessary before publishing, especially for screenshots, sample files, exports, backups, logs and documentation.
-
-If you discover a potential privacy issue, do not repost the data. Remove it first or report it through a private contact channel.
+Automated checks cannot detect every form of personal data and cannot prove that older Git history never contained such data. Before every public change, review visible text, screenshots, links and downloads manually in addition to running the check. Do not publish real user data, private exports, logs, backups or credentials.
 
 [Deutsche Fassung](PRIVACY_CHECK.de.md)
