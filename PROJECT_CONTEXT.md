@@ -14,7 +14,7 @@ Die Website wird als statischer Export direkt aus dem Stamm des `main`-Branches 
 | Rechtliches | `privacy/`, `legal-notice/`, `de/datenschutz/`, `de/impressum/` | Datenschutzhinweise und Impressum. |
 | Statische Ressourcen | `assets/`, `favicon.svg` | Lokale Skripte, Styles und Icons. |
 | Suchmaschinen | `robots.txt`, `sitemap.xml` | Indexierungs- und Sitemap-Hinweise. |
-| Release-Status | `release-status.json`, `.github/workflows/refresh-release-status.yml` | Öffentliche GitHub-Releases der elf Projekte; Übersicht und Detailseiten laden Status sowie aktuelle DMG-/ZIP-Zieladressen innerhalb derselben GitHub-Pages-Website. |
+| Release-Status | `release-status.json`, `.github/workflows/refresh-release-status.yml` | Öffentliche GitHub-Releases der elf Projekte; Übersicht und Detailseiten laden Status sowie aktuelle DMG-/ZIP-Zieladressen für die jeweils neueste Final- und Beta-Version innerhalb derselben GitHub-Pages-Website. |
 | Prüfung | `Scripts/privacy-check.sh`, `.github/workflows/privacy-check.yml` | Prüfung auf Geheimnisse, private Pfade und frühere Hosting-Verweise. |
 
 Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubusercontent.com/Schrotty74/...` geladen; damit ruft der Browser GitHub für diese Bilder auf. Andere Projekt- oder Downloadlinks werden erst nach Auswahl durch Besucher geöffnet.
@@ -24,7 +24,7 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 - Keine eigenen Cookies, keine lokale Theme-Speicherung, keine Analysewerkzeuge, Werbenetzwerke, Formulare, Chatbots oder Tracker.
 - Keine externen Schriftanbieter; Schriften stammen aus dem Browser/System.
 - GitHub Pages verarbeitet bei der Auslieferung technische Verbindungsdaten nach den Bedingungen von GitHub. Die öffentlich verlinkte Datenschutzerklärung benennt dies.
-- Die Statusdatei enthält nur öffentliche Release-Informationen (Stufe, Versionsbezeichnung, Zeitpunkt und direkte URL zu vorhandenen DMG-/ZIP-Dateien). Bei vorhandener Final-Version wird diese vor einer Beta-Version bevorzugt; ohne Final-Version erscheint die neueste Beta.
+- Die Statusdatei enthält nur öffentliche Release-Informationen (Stufe, Versionsbezeichnung, Zeitpunkt und direkte URL zu vorhandenen DMG-/ZIP-Dateien). Sie wird täglich aktualisiert und führt die jeweils neueste Final- und Beta-Version getrennt. Für den Status wird bei vorhandener Final-Version diese bevorzugt; ohne Final-Version erscheint die neueste Beta.
 - Nur öffentliche, synthetische oder eindeutig freigegebene Projektbilder und Inhalte verwenden.
 
 ## Pflege- und Prüfablauf
