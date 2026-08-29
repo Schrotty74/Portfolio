@@ -16,7 +16,7 @@ GitHub Pages must serve the `main` branch from the repository root. The website 
 
 - Public project screenshots are loaded directly from GitHub's raw-content host.
 - Release badges and separate latest Final/Beta download targets are refreshed daily from public GitHub release data by the repository workflow.
-- Generated JavaScript and CSS files that are no longer referenced by the static pages are pruned automatically after generated website updates.
+- Local JavaScript and CSS resources use stable filenames, so normal updates replace the existing files instead of accumulating versioned copies.
 - Before publication, run `bash Scripts/privacy-check.sh`, review public texts and images manually, and run `git diff --check`.
 - The documented privacy review is in [PRIVACY_CHECK.md](PRIVACY_CHECK.md).
 - Rules for adding or updating a project are in [PORTFOLIO_UPDATE.md](PORTFOLIO_UPDATE.md).
