@@ -8,7 +8,7 @@ This report explains the checks. It is not a legal assessment or a guarantee tha
 
 - The portfolio is served as a static website through GitHub Pages. GitHub necessarily processes technical connection and usage data when it delivers the site; see the [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
 - Project screenshots are loaded directly from GitHub's raw-content host. Opening a page with such an image creates a direct browser request to GitHub.
-- The portfolio itself has no analytics, advertising, forms, embedded third-party widgets, own cookies or local-storage persistence. It does not load external fonts.
+- The portfolio itself has no analytics, advertising, forms, chat bot, embedded third-party widgets, own cookies or local-storage persistence. It does not load external fonts.
 - Links to a repository, manual, download, web app or shortcut are only opened after a visitor selects them. The target service's privacy terms then apply.
 
 ## Checks performed

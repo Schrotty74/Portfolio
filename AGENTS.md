@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Dieses Repository enthält die öffentliche GitHub-Pages-Portfolioseite von Schrotty74. Es ist keine App und wird deshalb als Website-/Portfolio-Repository behandelt.
+Dieses Repository enthält die öffentliche GitHub-Pages-Portfolioseite von Schrotty74 mit App-, Technik- und Rechtsseiten. Es ist keine App und wird deshalb als Website-/Portfolio-Repository behandelt.
 
 Vor jeder Projektarbeit zuerst `PROJECT_CONTEXT.md`, `NEXT_STEPS.md`, `README.md` und `PORTFOLIO_UPDATE.md` lesen. Bei Datenschutz- oder Veröffentlichungsfragen zusätzlich `PRIVACY_CHECK.md` und `PRIVACY_CHECK.de.md` berücksichtigen.
 
@@ -9,9 +9,9 @@ Vor jeder Projektarbeit zuerst `PROJECT_CONTEXT.md`, `NEXT_STEPS.md`, `README.md
 - `PROJECT_CONTEXT.md` ist die dauerhafte Quelle für Architektur, Website-Struktur, Workflows, Datenschutzentscheidungen und bekannte Grenzen.
 - `NEXT_STEPS.md` enthält nur tatsächlich offene Aufgaben und bestätigte Probleme.
 - Englische und deutsche sichtbare Inhalte müssen inhaltlich gleichwertig bleiben.
-- Release-Status, Projektbeschreibungen, Plattformen, Links und andere öffentliche Fakten nur aus überprüften öffentlichen Quellen oder dem tatsächlichen Repository-Stand übernehmen. Nichts erfinden.
-- `release-status.json` nicht als manuelle Ersatzquelle für einen fehlenden öffentlichen Release verwenden.
+- Projektbeschreibungen, Funktionen, Technologien, Plattformen, Links und andere öffentliche Fakten nur aus überprüften öffentlichen Quellen oder dem tatsächlichen Repository-Stand übernehmen. Nichts erfinden.
 - Keine Tracker, Analysewerkzeuge, Cookies, Formulare oder sonstige neue Datenverarbeitung ohne ausdrückliche Entscheidung und erneute Datenschutzprüfung ergänzen.
+- Keinen Chatbot, Assistenten oder sonstigen eingebetteten Dienst ergänzen, ohne ausdrückliche Entscheidung, erneute Datenschutzprüfung und passende sichtbare Hinweise.
 - Bestehende Website-Struktur und veröffentlichte Inhalte nur soweit ändern, wie es der Auftrag erfordert. Keine unnötigen Refactorings oder Abhängigkeiten hinzufügen.
 - Fragen nicht automatisch als Änderungsauftrag behandeln. Dateien, Prüfungen, Commits, Pushes oder Veröffentlichungen nur ausführen, wenn der Auftrag dies verlangt oder sie für eine ausdrücklich beauftragte Änderung notwendig sind.
 - Keine Projektzustände, Testergebnisse, Prüfungen oder offenen Punkte erfinden. Einen Erfolg nur behaupten, wenn die betreffende Prüfung tatsächlich ausgeführt wurde.

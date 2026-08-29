@@ -8,7 +8,7 @@ Dieser Bericht beschreibt die Prüfungen. Er ist keine Rechtsberatung und keine 
 
 - Das Portfolio wird als statische Website über GitHub Pages ausgeliefert. GitHub verarbeitet bei der Bereitstellung notwendigerweise technische Verbindungs- und Nutzungsdaten; siehe [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
 - Projekt-Screenshots werden direkt von GitHubs Raw-Content-Host geladen. Beim Öffnen einer Seite mit einem solchen Bild stellt der Browser eine direkte Anfrage an GitHub.
-- Das Portfolio selbst enthält keine Analysewerkzeuge, Werbung, Formulare, eingebetteten Drittanbieter-Widgets, eigenen Cookies oder Local-Storage-Speicherung. Es lädt keine externen Schriften.
+- Das Portfolio selbst enthält keine Analysewerkzeuge, Werbung, Formulare, Chatbots, eingebetteten Drittanbieter-Widgets, eigenen Cookies oder Local-Storage-Speicherung. Es lädt keine externen Schriften.
 - Links zu Repository, Handbuch, Download, Web-App oder Shortcut werden erst geöffnet, wenn Besucher sie auswählen. Danach gelten die Datenschutzbedingungen des jeweiligen Zielangebots.
 
 ## Durchgeführte Prüfungen

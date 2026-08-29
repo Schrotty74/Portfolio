@@ -16,5 +16,5 @@
 
 ## Datenschutz
 
-- Keine Tracker, Cookies, Formulare, externe Schriftanbieter oder neue Datenverarbeitung ergänzen, ohne Datenschutzhinweise und Prüfung neu zu bewerten.
+- Keine Tracker, Cookies, Formulare, Chatbots, externe Schriftanbieter oder neue Datenverarbeitung ergänzen, ohne Datenschutzhinweise und Prüfung neu zu bewerten.
 - Bei neuen externen Bild- oder Medienquellen prüfen, ob sie wirklich erforderlich und öffentlich sind; bevorzugt GitHub-Quellen verwenden.

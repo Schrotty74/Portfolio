@@ -20,7 +20,7 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 
 ## Datenschutzentscheidungen
 
-- Keine eigenen Cookies, keine lokale Theme-Speicherung, keine Analysewerkzeuge, Werbenetzwerke, Formulare oder Tracker.
+- Keine eigenen Cookies, keine lokale Theme-Speicherung, keine Analysewerkzeuge, Werbenetzwerke, Formulare, Chatbots oder Tracker.
 - Keine externen Schriftanbieter; Schriften stammen aus dem Browser/System.
 - GitHub Pages verarbeitet bei der Auslieferung technische Verbindungsdaten nach den Bedingungen von GitHub. Die öffentlich verlinkte Datenschutzerklärung benennt dies.
 - Nur öffentliche, synthetische oder eindeutig freigegebene Projektbilder und Inhalte verwenden.

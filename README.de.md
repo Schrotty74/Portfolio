@@ -10,7 +10,7 @@ Es bietet eine englischsprachige Übersicht mit gleichwertiger deutscher Fassung
 
 ## Veröffentlichung
 
-GitHub Pages muss den Branch `main` aus dem Repository-Stamm ausliefern. Die Website ist ein statischer Export: GitHub Pages benötigt keine serverseitige Laufzeit, Cookies, Analysewerkzeuge oder Formulare.
+GitHub Pages muss den Branch `main` aus dem Repository-Stamm ausliefern. Die Website ist ein statischer Export: GitHub Pages benötigt keine serverseitige Laufzeit, Cookies, Analysewerkzeuge, Formulare oder einen Chatbot.
 
 ## Datenschutz und Pflege
 

@@ -10,7 +10,7 @@ It provides an English-first, German equivalent overview of eleven public projec
 
 ## Publishing
 
-GitHub Pages must serve the `main` branch from the repository root. The website is a static export: GitHub Pages requires no server-side runtime, cookies, analytics or forms.
+GitHub Pages must serve the `main` branch from the repository root. The website is a static export: GitHub Pages requires no server-side runtime, cookies, analytics, forms or chat bot.
 
 ## Privacy and maintenance
 
