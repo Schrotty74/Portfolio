@@ -10,7 +10,7 @@ Die Website wird als statischer Export direkt aus dem Stamm des `main`-Branches 
 | Bereich | Pfad | Aufgabe |
 | --- | --- | --- |
 | Englisch | `index.html`, `apps/<slug>/`, `apps/<slug>/technical/` | Standard-Sprache, Übersichts-, Projekt- und Technikseiten. |
-| Deutsch | `de/`, `de/apps/<slug>/`, `de/apps/<slug>/technik/` | Gleichwertige deutsche Seiten. |
+| Deutsch | `de/`, `de/apps/<slug>/`, `de/apps/<slug>/technical/` | Gleichwertige deutsche Seiten. |
 | Rechtliches | `privacy/`, `legal-notice/`, `de/datenschutz/`, `de/impressum/` | Datenschutzhinweise und Impressum. |
 | Statische Ressourcen | `assets/`, `favicon.svg` | Lokale Skripte, Styles und Icons mit festen Dateinamen. |
 | Manuelle Asset-Prüfung | `.github/workflows/check-unused-assets.yml` | Prüft bei manuellem Start auf nicht referenzierte Assets. Standard ist nur ein Bericht; Löschen erfordert die ausdrücklich gewählte Aktion `remove`. |
