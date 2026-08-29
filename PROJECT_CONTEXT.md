@@ -14,6 +14,7 @@ Die Website wird als statischer Export direkt aus dem Stamm des `main`-Branches 
 | Rechtliches | `privacy/`, `legal-notice/`, `de/datenschutz/`, `de/impressum/` | Datenschutzhinweise und Impressum. |
 | Statische Ressourcen | `assets/`, `favicon.svg` | Lokale Skripte, Styles und Icons. |
 | Suchmaschinen | `robots.txt`, `sitemap.xml` | Indexierungs- und Sitemap-Hinweise. |
+| Release-Status | `release-status.json`, `.github/workflows/refresh-release-status.yml` | Öffentliche GitHub-Releases der elf Projekte; die Übersicht lädt die Statusdatei innerhalb derselben GitHub-Pages-Website. |
 | Prüfung | `Scripts/privacy-check.sh`, `.github/workflows/privacy-check.yml` | Prüfung auf Geheimnisse, private Pfade und frühere Hosting-Verweise. |
 
 Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubusercontent.com/Schrotty74/...` geladen; damit ruft der Browser GitHub für diese Bilder auf. Andere Projekt- oder Downloadlinks werden erst nach Auswahl durch Besucher geöffnet.
@@ -23,6 +24,7 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 - Keine eigenen Cookies, keine lokale Theme-Speicherung, keine Analysewerkzeuge, Werbenetzwerke, Formulare, Chatbots oder Tracker.
 - Keine externen Schriftanbieter; Schriften stammen aus dem Browser/System.
 - GitHub Pages verarbeitet bei der Auslieferung technische Verbindungsdaten nach den Bedingungen von GitHub. Die öffentlich verlinkte Datenschutzerklärung benennt dies.
+- Die Statusdatei enthält nur öffentliche Release-Informationen (Stufe, Versionsbezeichnung, Zeitpunkt) und wird über GitHub Actions stündlich aktualisiert.
 - Nur öffentliche, synthetische oder eindeutig freigegebene Projektbilder und Inhalte verwenden.
 
 ## Pflege- und Prüfablauf
@@ -32,5 +34,6 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 3. `bash Scripts/privacy-check.sh` und `git diff --check` ausführen.
 4. Texte, Bilder, Ziel-URLs sowie Desktop- und Mobilansicht manuell prüfen.
 5. GitHub Pages auf `main` und `/(root)` in den Repository-Einstellungen kontrollieren, wenn die Auslieferung geändert wurde.
+6. Bei einem neuen öffentlichen Projekt die Repository-Zuordnung im Status-Workflow ergänzen und prüfen, dass das Badge auf der Übersicht erscheint.
 
 Bei größeren Änderungen an Struktur, Datenschutz oder Veröffentlichung dieses Dokument und `NEXT_STEPS.md` aktualisieren.

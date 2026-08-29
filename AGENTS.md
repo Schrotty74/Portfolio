@@ -10,6 +10,7 @@ Vor jeder Projektarbeit zuerst `PROJECT_CONTEXT.md`, `NEXT_STEPS.md`, `README.md
 - `NEXT_STEPS.md` enthält nur tatsächlich offene Aufgaben und bestätigte Probleme.
 - Englische und deutsche sichtbare Inhalte müssen inhaltlich gleichwertig bleiben.
 - Projektbeschreibungen, Funktionen, Technologien, Plattformen, Links und andere öffentliche Fakten nur aus überprüften öffentlichen Quellen oder dem tatsächlichen Repository-Stand übernehmen. Nichts erfinden.
+- `release-status.json` wird ausschließlich durch `.github/workflows/refresh-release-status.yml` aktualisiert. Die Zuordnung neuer öffentlicher Projekte dort ergänzen; keinen Status manuell erfinden.
 - Keine Tracker, Analysewerkzeuge, Cookies, Formulare oder sonstige neue Datenverarbeitung ohne ausdrückliche Entscheidung und erneute Datenschutzprüfung ergänzen.
 - Keinen Chatbot, Assistenten oder sonstigen eingebetteten Dienst ergänzen, ohne ausdrückliche Entscheidung, erneute Datenschutzprüfung und passende sichtbare Hinweise.
 - Bestehende Website-Struktur und veröffentlichte Inhalte nur soweit ändern, wie es der Auftrag erfordert. Keine unnötigen Refactorings oder Abhängigkeiten hinzufügen.

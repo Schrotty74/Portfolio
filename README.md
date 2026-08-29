@@ -15,6 +15,7 @@ GitHub Pages must serve the `main` branch from the repository root. The website 
 ## Privacy and maintenance
 
 - Public project screenshots are loaded directly from GitHub's raw-content host.
+- Release badges are refreshed hourly from public GitHub release data by the repository workflow.
 - Before publication, run `bash Scripts/privacy-check.sh`, review public texts and images manually, and run `git diff --check`.
 - The documented privacy review is in [PRIVACY_CHECK.md](PRIVACY_CHECK.md).
 - Rules for adding or updating a project are in [PORTFOLIO_UPDATE.md](PORTFOLIO_UPDATE.md).

@@ -13,6 +13,7 @@ When a new public project is ready to be presented:
 5. Keep the AI-assistance notice visible and accurate when AI was used for the project.
 6. Update the public GitHub profile README when the project should be highlighted there.
 7. Apply this same rule in the new app repository when it has its own public documentation.
+8. Add the repository to `.github/workflows/refresh-release-status.yml` so the public release badge stays current.
 
 ## Public release of an existing app
 
