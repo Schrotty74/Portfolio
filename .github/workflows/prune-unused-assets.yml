@@ -1,0 +1,74 @@
+name: Prune superseded build assets
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'assets/**'
+      - '*.html'
+      - '**/*.html'
+      - '.vite/manifest.json'
+
+permissions:
+  contents: write
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Find unreferenced generated assets
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          function walk(directory) {
+            if (!fs.existsSync(directory)) return [];
+            return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
+              const file = path.join(directory, entry.name);
+              if (entry.isDirectory()) return entry.name === '.git' ? [] : walk(file);
+              return [file];
+            });
+          }
+
+          const assets = walk('assets')
+            .map(file => path.relative('assets', file).split(path.sep).join('/'));
+          const pages = walk('.')
+            .filter(file => file.endsWith('.html') || file === '.vite/manifest.json');
+          const contents = new Map(
+            [...pages, ...assets.map(asset => path.join('assets', asset))]
+              .map(file => [file, fs.readFileSync(file, 'utf8')])
+          );
+          const references = text => assets.filter(asset => text.includes(asset));
+          const reachable = new Set(pages.flatMap(page => references(contents.get(page))));
+
+          if (assets.length && reachable.size === 0) {
+            throw new Error('No asset references found; refusing cleanup.');
+          }
+
+          const pending = [...reachable];
+          while (pending.length) {
+            const asset = pending.shift();
+            for (const dependency of references(contents.get(path.join('assets', asset)))) {
+              if (!reachable.has(dependency)) {
+                reachable.add(dependency);
+                pending.push(dependency);
+              }
+            }
+          }
+
+          const unused = assets.filter(asset => !reachable.has(asset));
+          for (const asset of unused) fs.rmSync(path.join('assets', asset));
+          console.log(`Kept ${reachable.size} assets and removed ${unused.length} unused assets.`);
+          NODE
+      - name: Commit removed assets
+        run: |
+          git add -A assets
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Prune superseded build assets [skip ci]"
+          git push

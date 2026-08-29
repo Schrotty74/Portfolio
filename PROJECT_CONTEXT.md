@@ -13,6 +13,7 @@ Die Website wird als statischer Export direkt aus dem Stamm des `main`-Branches 
 | Deutsch | `de/`, `de/apps/<slug>/`, `de/apps/<slug>/technik/` | Gleichwertige deutsche Seiten. |
 | Rechtliches | `privacy/`, `legal-notice/`, `de/datenschutz/`, `de/impressum/` | Datenschutzhinweise und Impressum. |
 | Statische Ressourcen | `assets/`, `favicon.svg` | Lokale Skripte, Styles und Icons. |
+| Build-Asset-Bereinigung | `.github/workflows/prune-unused-assets.yml` | Entfernt nach Änderungen an erzeugten HTML- oder Asset-Dateien nur lokal nicht mehr referenzierte Build-Dateien. Bricht ohne Löschung ab, falls keine Referenzen erkannt werden. |
 | Suchmaschinen | `robots.txt`, `sitemap.xml` | Indexierungs- und Sitemap-Hinweise. |
 | Release-Status | `release-status.json`, `.github/workflows/refresh-release-status.yml` | Öffentliche GitHub-Releases der elf Projekte; Übersicht und Detailseiten laden Status sowie aktuelle DMG-/ZIP-Zieladressen für die jeweils neueste Final- und Beta-Version innerhalb derselben GitHub-Pages-Website. |
 | Prüfung | `Scripts/privacy-check.sh`, `.github/workflows/privacy-check.yml` | Prüfung auf Geheimnisse, private Pfade und frühere Hosting-Verweise. |
