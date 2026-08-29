@@ -53,9 +53,14 @@ jobs:
             } : null;
             const final = published.find(candidate => !candidate.prerelease);
             const beta = published.find(candidate => candidate.prerelease);
-            const preferred = final || beta;
+            const preferred = [final, beta].filter(Boolean).reduce((newest, candidate) => {
+              if (!newest) return candidate;
+              const newestTime = Date.parse(newest.published_at || newest.created_at || 0);
+              const candidateTime = Date.parse(candidate.published_at || candidate.created_at || 0);
+              return candidateTime > newestTime ? candidate : newest;
+            }, null);
             if (preferred) return {
-              stage: final ? "Final" : "Beta",
+              stage: preferred.prerelease ? "Beta" : "Final",
               release: preferred.tag_name,
               updatedAt: preferred.published_at || preferred.created_at,
               assets: releaseInfo(preferred).assets,

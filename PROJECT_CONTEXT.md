@@ -24,7 +24,7 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 - Keine eigenen Cookies, keine lokale Theme-Speicherung, keine Analysewerkzeuge, Werbenetzwerke, Formulare, Chatbots oder Tracker.
 - Keine externen Schriftanbieter; Schriften stammen aus dem Browser/System.
 - GitHub Pages verarbeitet bei der Auslieferung technische Verbindungsdaten nach den Bedingungen von GitHub. Die öffentlich verlinkte Datenschutzerklärung benennt dies.
-- Die Statusdatei enthält nur öffentliche Release-Informationen (Stufe, Versionsbezeichnung, Zeitpunkt und direkte URL zu vorhandenen DMG-/ZIP-Dateien). Sie wird täglich aktualisiert und führt die jeweils neueste Final- und Beta-Version getrennt. Für den Status wird bei vorhandener Final-Version diese bevorzugt; ohne Final-Version erscheint die neueste Beta.
+- Die Statusdatei enthält nur öffentliche Release-Informationen (Stufe, Versionsbezeichnung, Zeitpunkt und direkte URL zu vorhandenen DMG-/ZIP-Dateien). Sie wird täglich aktualisiert und führt die jeweils neueste Final- und Beta-Version getrennt. Der Status zeigt immer die zeitlich neueste veröffentlichte Version, also gegebenenfalls eine Beta.
 - Nur öffentliche, synthetische oder eindeutig freigegebene Projektbilder und Inhalte verwenden.
 
 ## Pflege- und Prüfablauf

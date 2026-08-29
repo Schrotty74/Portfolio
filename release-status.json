@@ -25,12 +25,12 @@
     }
   },
   "FileAtlas": {
-    "stage": "Final",
-    "release": "v1.9.0",
-    "updatedAt": "2026-07-25T04:15:09Z",
+    "stage": "Beta",
+    "release": "v1.10.0-beta.2",
+    "updatedAt": "2026-08-25T05:28:20Z",
     "assets": {
-      "dmg": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.9.0/FileAtlas.dmg",
-      "zip": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.9.0/FileAtlas.zip"
+      "dmg": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.10.0-beta.2/FileAtlas.dmg",
+      "zip": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.10.0-beta.2/FileAtlas.zip"
     },
     "final": {
       "release": "v1.9.0",
@@ -70,7 +70,7 @@
   "BudgetAtlas": {
     "stage": "Development",
     "release": null,
-    "updatedAt": "2026-08-29T10:12:15Z",
+    "updatedAt": null,
     "assets": {
       "dmg": null,
       "zip": null
@@ -115,12 +115,12 @@
     }
   },
   "UroBilanz": {
-    "stage": "Final",
-    "release": "v1.7.3",
-    "updatedAt": "2026-07-18T05:28:47Z",
+    "stage": "Beta",
+    "release": "v1.7.4-beta.2",
+    "updatedAt": "2026-08-28T03:37:33Z",
     "assets": {
-      "dmg": "https://github.com/Schrotty74/UroBilanz/releases/download/v1.7.3/UroBilanz-macOS-Swift-v1.7.3.dmg",
-      "zip": "https://github.com/Schrotty74/UroBilanz/releases/download/v1.7.3/UroBilanz-macOS-Swift-v1.7.3.zip"
+      "dmg": "https://github.com/Schrotty74/UroBilanz/releases/download/v1.7.4-beta.2/UroBilanz-macOS-Swift-v1.7.4-beta.2.dmg",
+      "zip": "https://github.com/Schrotty74/UroBilanz/releases/download/v1.7.4-beta.2/UroBilanz-macOS-Swift-v1.7.4-beta.2.zip"
     },
     "final": {
       "release": "v1.7.3",
@@ -185,7 +185,7 @@
   "chatgpt-pets": {
     "stage": "Development",
     "release": null,
-    "updatedAt": "2026-08-26T08:06:28Z",
+    "updatedAt": null,
     "assets": {
       "dmg": null,
       "zip": null
