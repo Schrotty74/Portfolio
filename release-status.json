@@ -26,18 +26,18 @@
   },
   "FileAtlas": {
     "stage": "Final",
-    "release": "v1.10.0",
-    "updatedAt": "2026-08-30T04:36:35Z",
+    "release": "v1.10.1",
+    "updatedAt": "2026-09-02T07:23:43Z",
     "assets": {
-      "dmg": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.10.0/FileAtlas.dmg",
-      "zip": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.10.0/FileAtlas.zip"
+      "dmg": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.10.1/FileAtlas.dmg",
+      "zip": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.10.1/FileAtlas.zip"
     },
     "final": {
-      "release": "v1.10.0",
-      "updatedAt": "2026-08-30T04:36:35Z",
+      "release": "v1.10.1",
+      "updatedAt": "2026-09-02T07:23:43Z",
       "assets": {
-        "dmg": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.10.0/FileAtlas.dmg",
-        "zip": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.10.0/FileAtlas.zip"
+        "dmg": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.10.1/FileAtlas.dmg",
+        "zip": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.10.1/FileAtlas.zip"
       }
     },
     "beta": {
