@@ -25,12 +25,12 @@
     }
   },
   "FileAtlas": {
-    "stage": "Final",
-    "release": "v1.10.1",
-    "updatedAt": "2026-09-02T07:23:43Z",
+    "stage": "Beta",
+    "release": "v1.11.0-beta.1",
+    "updatedAt": "2026-09-02T09:15:47Z",
     "assets": {
-      "dmg": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.10.1/FileAtlas.dmg",
-      "zip": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.10.1/FileAtlas.zip"
+      "dmg": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0-beta.1/FileAtlas.dmg",
+      "zip": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0-beta.1/FileAtlas.zip"
     },
     "final": {
       "release": "v1.10.1",
@@ -41,11 +41,11 @@
       }
     },
     "beta": {
-      "release": "v1.10.0-beta.2",
-      "updatedAt": "2026-08-25T05:28:20Z",
+      "release": "v1.11.0-beta.1",
+      "updatedAt": "2026-09-02T09:15:47Z",
       "assets": {
-        "dmg": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.10.0-beta.2/FileAtlas.dmg",
-        "zip": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.10.0-beta.2/FileAtlas.zip"
+        "dmg": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0-beta.1/FileAtlas.dmg",
+        "zip": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0-beta.1/FileAtlas.zip"
       }
     }
   },
