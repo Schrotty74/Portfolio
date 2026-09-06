@@ -68,22 +68,7 @@ jobs:
                   path.write_text(updated, encoding='utf-8')
 
           switcher = Path('assets/theme-switcher.js')
-          switcher_text = switcher.read_text(encoding='utf-8').replace('sessionStorage', 'localStorage')
-
-          old_component = 'function s({locale:e}){let[t,n]=(0,a.useState)(()=>{try{return localStorage.getItem(`portfolio-theme`)||document.documentElement.dataset.theme||`dark`}catch{return document.documentElement.dataset.theme||`dark`}}),r=e===`en`?[`Dark`,`Light`,`Colour`]:[`Dunkel`,`Hell`,`Bunt`],i=[`dark`,`light`,`color`];function s(e){n(e),document.documentElement.dataset.theme=e;try{localStorage.setItem(`portfolio-theme`,e)}catch{}}'
-          new_component = 'function s({locale:e}){let[t,n]=(0,a.useState)(()=>{try{return localStorage.getItem(`portfolio-theme`)||document.documentElement.dataset.theme||`dark`}catch{return document.documentElement.dataset.theme||`dark`}});(0,a.useEffect)(()=>{document.documentElement.dataset.theme=t;try{localStorage.setItem(`portfolio-theme`,t)}catch{}},[t]);let r=e===`en`?[`Dark`,`Light`,`Colour`]:[`Dunkel`,`Hell`,`Bunt`],i=[`dark`,`light`,`color`];function s(e){n(e)}'
-          if old_component in switcher_text:
-              switcher_text = switcher_text.replace(old_component, new_component, 1)
-          elif 'a.useEffect)(()=>{document.documentElement.dataset.theme=t' not in switcher_text:
-              raise RuntimeError('Could not update theme synchronization in theme-switcher.js')
-
-          init_marker = 'if(typeof document!==`undefined`){'
-          init_code = 'if(typeof document!==`undefined`){try{let t=localStorage.getItem(`portfolio-theme`);t&&(document.documentElement.dataset.theme=t)}catch{}'
-          if init_code not in switcher_text:
-              if init_marker not in switcher_text:
-                  raise RuntimeError('Could not find theme-switcher document init')
-              switcher_text = switcher_text.replace(init_marker, init_code, 1)
-
+          switcher_text = switcher.read_text(encoding='utf-8')
           switcher_text, count = re.subn(r'const e=`[^`]+`;', f'const e=`{version}`;', switcher_text, count=1)
           if count == 0:
               raise RuntimeError('Could not update theme-switcher cache version')
