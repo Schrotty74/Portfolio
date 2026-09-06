@@ -39,11 +39,22 @@ jobs:
 
           asset_pattern = re.compile(r'(/Portfolio/assets/[A-Za-z0-9._/-]+\.(?:css|js))(?:\?v=[^"\'<>\\\s]*)?')
           page_pattern = re.compile(r'(href=["\'])(/Portfolio/(?:de/)?apps/[A-Za-z0-9._/-]+/?)(?:\?v=[^"\']*)?(["\'])')
+          color_theme_pattern = re.compile(r'<link rel=["\']stylesheet["\'] href=["\']/Portfolio/assets/color-theme\.css(?:\?v=[^"\']*)?["\']\s*/?>')
+          styles_pattern = re.compile(r'(<link rel=["\']stylesheet["\'] href=["\']/Portfolio/assets/styles\.css(?:\?v=[^"\']*)?["\'][^>]*>)')
 
           for path in Path('.').rglob('*.html'):
               text = path.read_text(encoding='utf-8')
               updated = asset_pattern.sub(lambda m: f'{m.group(1)}?v={version}', text)
               updated = page_pattern.sub(lambda m: f'{m.group(1)}{m.group(2)}?v={version}{m.group(3)}', updated)
+
+              color_link = f'<link rel="stylesheet" href="/Portfolio/assets/color-theme.css?v={version}">'
+              if color_theme_pattern.search(updated):
+                  updated = color_theme_pattern.sub(color_link, updated)
+              else:
+                  updated, count = styles_pattern.subn(lambda m: m.group(1) + color_link, updated, count=1)
+                  if count == 0:
+                      raise RuntimeError(f'Could not find styles.css reference in {path}')
+
               if updated != text:
                   path.write_text(updated, encoding='utf-8')
           PY
