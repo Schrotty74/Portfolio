@@ -12,11 +12,15 @@ Es bietet eine englischsprachige Übersicht mit gleichwertiger deutscher Fassung
 
 GitHub Pages muss den Branch `main` aus dem Repository-Stamm ausliefern. Die Website ist ein statischer Export: GitHub Pages benötigt keine serverseitige Laufzeit, Cookies, Analysewerkzeuge, Formulare oder einen Chatbot.
 
+## Themes
+
+Die Website bietet Dunkel, Hell und Bunt. Theme-spezifische Regeln liegen getrennt in `assets/dark-theme.css`, `assets/light-theme.css` und `assets/color-theme.css`; gemeinsames Layout und gemeinsame Komponenten bleiben in den gemeinsamen Stylesheets. Die gewählte Theme-Variante wird lokal unter `portfolio-theme` gespeichert und verwendet ausschließlich die Werte `dark`, `light` oder `color`.
+
 ## Datenschutz und Pflege
 
 - Öffentliche Projekt-Screenshots werden direkt über GitHubs Raw-Content-Host geladen.
 - Release-Badges und getrennte Ziele für die jeweils neuesten Final-/Beta-Downloads werden durch den Repository-Workflow täglich aus öffentlichen GitHub-Release-Daten aktualisiert.
-- Lokale JavaScript- und CSS-Ressourcen behalten stabile Dateinamen. Wenn browserseitig gecachte HTML-, CSS- oder JavaScript-Ressourcen geändert werden, muss die Cache-Busting-Version in den betroffenen Referenzen erhöht werden. Dabei wird dieselbe physische Datei weiterverwendet; es entstehen keine zusätzlichen Versionskopien im Repository.
+- `cache-version.txt` ist die einzige globale Cache-Version. `.github/workflows/global-cache-bust.yml` hält HTML-Referenzen, CSS-/JavaScript-Ressourcen, interne ES-Modul-Imports und App-Detail-Links auf derselben Version. Die Assets behalten stabile Dateinamen; es entstehen keine physischen Versionskopien.
 - Vor einer Veröffentlichung `bash Scripts/privacy-check.sh` und `git diff --check` ausführen sowie Texte und Bilder manuell prüfen.
 - Die dokumentierte Datenschutzprüfung steht in [PRIVACY_CHECK.de.md](PRIVACY_CHECK.de.md).
 - Regeln für neue oder geänderte Projekte stehen in [PORTFOLIO_UPDATE.md](PORTFOLIO_UPDATE.md).
