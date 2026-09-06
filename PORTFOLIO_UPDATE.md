@@ -14,10 +14,13 @@ When a new public project is ready to be presented:
 6. Update the public GitHub profile README when the project should be highlighted there.
 7. Apply this same rule in the new app repository when it has its own public documentation.
 8. Add the repository to `.github/workflows/refresh-release-status.yml` so the public release badge stays current.
+9. If browser-cached HTML, CSS or JavaScript references are changed, increase the cache-busting query version for every affected EN/DE reference. Keep the physical asset filename unchanged; do not create separate versioned copies of the asset.
 
 ## Public release of an existing app
 
 Update the portfolio when public-facing information changes, such as the main description, features, technologies, screenshots, platform, documentation, download URL, web-app URL or repository URL. Normal internal fixes do not automatically require a portfolio change.
+
+When a change affects browser-cached HTML, CSS or JavaScript, increase the cache-busting query version in all affected references so browsers request the current resource.
 
 ## Privacy
 
