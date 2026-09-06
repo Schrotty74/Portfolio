@@ -92,7 +92,7 @@
 .health-section {
   position: relative;
   border-top: 0;
-  padding: 54px 0;
+  padding: 50px 0;
 }
 .health-section::before {
   content: "";
@@ -101,51 +101,61 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--line) 72%, transparent) 12%, color-mix(in srgb, var(--line) 88%, transparent) 50%, color-mix(in srgb, var(--line) 72%, transparent) 88%, transparent 100%);
-  opacity: .72;
+  background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--line) 60%, transparent) 14%, color-mix(in srgb, var(--line) 76%, transparent) 50%, color-mix(in srgb, var(--line) 60%, transparent) 86%, transparent 100%);
+  opacity: .58;
 }
 .health-section::after {
   content: "";
   position: absolute;
-  top: -1px;
+  top: -7px;
   left: 0;
-  width: 170px;
-  height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--lime) 70%, white), var(--lime), transparent);
-  box-shadow: 0 0 18px color-mix(in srgb, var(--lime) 42%, transparent);
-  opacity: .9;
-  animation: health-divider-sweep 7s ease-in-out infinite;
+  width: 190px;
+  height: 14px;
+  background: var(--lime);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 190 14'%3E%3Cpath d='M0 7 C18 1 36 13 54 7 S90 1 108 7 S144 13 162 7 S180 1 190 7' fill='none' stroke='black' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 190 14'%3E%3Cpath d='M0 7 C18 1 36 13 54 7 S90 1 108 7 S144 13 162 7 S180 1 190 7' fill='none' stroke='black' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--lime) 55%, transparent));
+  opacity: .95;
+  animation: health-divider-wave 5.2s linear infinite;
   pointer-events: none;
 }
-@keyframes health-divider-sweep {
-  0%, 12% { transform: translateX(-190px); opacity: 0; }
-  22% { opacity: .95; }
-  78% { opacity: .95; }
-  88%, 100% { transform: translateX(calc(1180px - 150px)); opacity: 0; }
+@keyframes health-divider-wave {
+  0% { transform: translateX(-220px); opacity: 0; }
+  3% { opacity: .95; }
+  94% { transform: translateX(calc(1180px - 170px)); opacity: .95; }
+  97% { opacity: 0; }
+  100% { transform: translateX(-220px); opacity: 0; }
 }
 .health-section-heading {
   display: grid;
-  grid-template-columns: .72fr 1.28fr;
-  gap: 54px;
+  grid-template-columns: 1fr;
+  gap: 20px;
   align-items: start;
-  margin-bottom: 30px;
+  max-width: 940px;
+  margin-bottom: 34px;
 }
 .health-section h2 {
+  max-width: 860px;
   margin: 10px 0 0;
   font-size: clamp(2.2rem, 3.8vw, 3.8rem);
-  line-height: 1;
+  line-height: 1.02;
 }
 .health-section-intro,
 .health-copy p {
   color: var(--muted);
   margin: 0;
+  max-width: 880px;
   font-size: 1rem;
   line-height: 1.78;
 }
 .health-copy {
   display: grid;
   gap: 18px;
+  max-width: 880px;
 }
 .health-steps {
   display: grid;
@@ -378,16 +388,16 @@
   transform: none;
 }
 @media (width <= 1200px) {
-  @keyframes health-divider-sweep {
-    0%, 12% { transform: translateX(-190px); opacity: 0; }
-    22% { opacity: .95; }
-    78% { opacity: .95; }
-    88%, 100% { transform: translateX(calc(100vw - 250px)); opacity: 0; }
+  @keyframes health-divider-wave {
+    0% { transform: translateX(-220px); opacity: 0; }
+    3% { opacity: .95; }
+    94% { transform: translateX(calc(100vw - 250px)); opacity: .95; }
+    97% { opacity: 0; }
+    100% { transform: translateX(-220px); opacity: 0; }
   }
 }
 @media (width <= 850px) {
-  .health-hero,
-  .health-section-heading {
+  .health-hero {
     grid-template-columns: 1fr;
     gap: 28px;
   }
@@ -410,8 +420,8 @@
     font-size: clamp(3.4rem, 16vw, 4.9rem);
   }
   .health-section h2 {
-    font-size: clamp(2.25rem, 10.5vw, 3.2rem);
-    line-height: 1.02;
+    font-size: clamp(2.05rem, 9vw, 2.8rem);
+    line-height: 1.04;
   }
   .health-marquee-track {
     padding: 13px 0;
@@ -421,13 +431,16 @@
     font-size: .66rem;
   }
   .health-section {
-    padding: 42px 0;
+    padding: 40px 0;
   }
   .health-section-heading {
-    margin-bottom: 24px;
+    gap: 17px;
+    margin-bottom: 26px;
   }
   .health-section::after {
-    width: 110px;
+    width: 125px;
+    height: 12px;
+    top: -6px;
   }
   .health-steps,
   .health-gallery,
