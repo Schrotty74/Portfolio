@@ -90,4 +90,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add release-status.json
           git commit -m "Refresh portfolio release statuses"
+          git pull --rebase origin main
           git push
