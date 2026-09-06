@@ -1,0 +1,12 @@
+:root:not([data-theme]),
+:root[data-theme="dark"] {
+  --bg:#09100f;
+  --surface:#131f1db8;
+  --ink:#eff7ec;
+  --muted:#aab9ad;
+  --line:#e5ffda29;
+  --lime:#c4ff42;
+  --violet:#9470ff;
+  --coral:#ff7a59;
+  --shadow:0 25px 70px #00000057;
+}
