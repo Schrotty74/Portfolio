@@ -87,6 +87,15 @@
   padding: 12px 14px 14px;
 }
 
+/* Extra-small treatment for the tall/mobile screenshots. */
+.app-screenshot-card:has(img[src*="/Skybreak-Protocol/"][src*="mobile-"]) img,
+.app-screenshot-card:has(img[src*="/BudgetAtlas/"][src*="IMG_2651"]) img,
+.app-screenshot-card:has(img[src*="/BudgetAtlas/"][src*="IMG_2655"]) img,
+.app-screenshot-card:has(img[src*="/ThermalAtlas/"]) img {
+  max-height: 180px;
+  max-width: 220px;
+}
+
 /* ChatGPT Pets are character previews, not full app screenshots. Keep them compact. */
 .app-screenshot-grid:has(img[src*="/chatgpt-pets/"]) {
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -131,6 +140,13 @@
   .app-screenshot-card:has(img[src*="/BudgetAtlas/"]) figcaption,
   .app-screenshot-card:has(img[src*="/ThermalAtlas/"]) figcaption {
     padding: 10px 11px 12px;
+  }
+  .app-screenshot-card:has(img[src*="/Skybreak-Protocol/"][src*="mobile-"]) img,
+  .app-screenshot-card:has(img[src*="/BudgetAtlas/"][src*="IMG_2651"]) img,
+  .app-screenshot-card:has(img[src*="/BudgetAtlas/"][src*="IMG_2655"]) img,
+  .app-screenshot-card:has(img[src*="/ThermalAtlas/"]) img {
+    max-height: 125px;
+    max-width: 150px;
   }
   .app-screenshot-grid:has(img[src*="/chatgpt-pets/"]) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
