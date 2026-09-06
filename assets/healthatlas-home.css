@@ -90,15 +90,46 @@
   to { transform: translateX(-50%); }
 }
 .health-section {
-  border-top: 1px solid var(--line);
-  padding: 64px 0;
+  position: relative;
+  border-top: 0;
+  padding: 54px 0;
+}
+.health-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--line) 72%, transparent) 12%, color-mix(in srgb, var(--line) 88%, transparent) 50%, color-mix(in srgb, var(--line) 72%, transparent) 88%, transparent 100%);
+  opacity: .72;
+}
+.health-section::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 170px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--lime) 70%, white), var(--lime), transparent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--lime) 42%, transparent);
+  opacity: .9;
+  animation: health-divider-sweep 7s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes health-divider-sweep {
+  0%, 12% { transform: translateX(-190px); opacity: 0; }
+  22% { opacity: .95; }
+  78% { opacity: .95; }
+  88%, 100% { transform: translateX(calc(1180px - 150px)); opacity: 0; }
 }
 .health-section-heading {
   display: grid;
   grid-template-columns: .72fr 1.28fr;
   gap: 54px;
   align-items: start;
-  margin-bottom: 34px;
+  margin-bottom: 30px;
 }
 .health-section h2 {
   margin: 10px 0 0;
@@ -346,6 +377,14 @@
   opacity: 1;
   transform: none;
 }
+@media (width <= 1200px) {
+  @keyframes health-divider-sweep {
+    0%, 12% { transform: translateX(-190px); opacity: 0; }
+    22% { opacity: .95; }
+    78% { opacity: .95; }
+    88%, 100% { transform: translateX(calc(100vw - 250px)); opacity: 0; }
+  }
+}
 @media (width <= 850px) {
   .health-hero,
   .health-section-heading {
@@ -382,10 +421,13 @@
     font-size: .66rem;
   }
   .health-section {
-    padding: 48px 0;
+    padding: 42px 0;
   }
   .health-section-heading {
-    margin-bottom: 25px;
+    margin-bottom: 24px;
+  }
+  .health-section::after {
+    width: 110px;
   }
   .health-steps,
   .health-gallery,
@@ -409,6 +451,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .health-marquee-track { animation: none; transform: none; }
+  .health-section::after { animation: none; opacity: .55; transform: none; }
   .health-hero-media,
   .health-hero-media img,
   .health-shot,
