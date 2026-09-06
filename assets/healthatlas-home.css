@@ -173,27 +173,31 @@
 .health-shot {
   border-radius: 22px;
   position: relative;
-  transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+  transform: none;
+  transition: border-color .28s ease, box-shadow .28s ease, background .28s ease;
 }
 .health-shot:hover {
-  transform: translateY(-6px);
+  transform: none;
   border-color: color-mix(in srgb, var(--lime) 62%, var(--line));
   box-shadow: 0 24px 60px #00000052;
+  background: color-mix(in srgb, var(--surface) 96%, var(--lime));
 }
 .health-shot-link {
   display: block;
   overflow: hidden;
+  transform: none;
 }
 .health-shot img {
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
   display: block;
-  transition: transform .5s ease, filter .5s ease;
+  transform: none;
+  transition: filter .35s ease;
 }
 .health-shot:hover img {
-  transform: scale(1.035);
-  filter: saturate(1.06) contrast(1.02);
+  transform: none;
+  filter: saturate(1.06) contrast(1.02) brightness(1.015);
 }
 .health-shot figcaption {
   padding: 17px 18px 19px;
@@ -325,6 +329,15 @@
 .health-reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+.health-shot.health-reveal {
+  opacity: 0;
+  transform: none;
+  transition: opacity .62s ease, border-color .28s ease, box-shadow .28s ease, background .28s ease;
+}
+.health-shot.health-reveal.is-visible {
+  opacity: 1;
+  transform: none;
 }
 @media (width <= 850px) {
   .health-hero,
