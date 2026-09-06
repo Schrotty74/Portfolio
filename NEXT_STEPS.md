@@ -6,6 +6,7 @@
 
 - Die GitHub-Pages-Einstellung muss `main` und `/(root)` verwenden.
 - Die Portfolio-Übersicht sowie mindestens eine Projekt- und Technikseite in Desktop- und Mobilansicht manuell prüfen. Eine automatisierte visuelle Browserprüfung ist nicht eingerichtet.
+- Bei Änderungen an browserseitig gecachten HTML-, CSS- oder JavaScript-Ressourcen die Cache-Busting-Version in den betroffenen Referenzen erhöhen und EN/DE konsistent halten.
 - Die neue HealthAtlas-Homepage auf Deutsch und Englisch nach der GitHub-Pages-Auslieferung manuell prüfen: Desktop, Mobilansicht, Theme-Umschaltung, Sprachwechsel, Screenshots sowie GitHub-, Download- und Techniklinks.
 
 ## App-Homepages
