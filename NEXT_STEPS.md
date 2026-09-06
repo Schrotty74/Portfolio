@@ -6,15 +6,16 @@
 
 - Die GitHub-Pages-Einstellung muss `main` und `/(root)` verwenden.
 - Die Portfolio-Übersicht sowie mindestens eine Projekt- und Technikseite in Desktop- und Mobilansicht manuell prüfen. Eine automatisierte visuelle Browserprüfung ist nicht eingerichtet.
-- Bei Änderungen an browserseitig gecachten HTML-, CSS- oder JavaScript-Ressourcen die Cache-Busting-Version in den betroffenen Referenzen erhöhen und EN/DE konsistent halten.
-- Die neue HealthAtlas-Homepage auf Deutsch und Englisch nach der GitHub-Pages-Auslieferung manuell prüfen: Desktop, Mobilansicht, Theme-Umschaltung, Sprachwechsel, Screenshots sowie GitHub-, Download- und Techniklinks.
+- Bei relevanten HTML-, CSS- oder JavaScript-Änderungen das vorhandene globale Cache-Busting-System verwenden und nach dem finalen Deployment prüfen, dass alle Seiten und Module mit derselben aktuellen Version ausgeliefert werden.
+- Theme-Umschaltung und Wiederherstellung von Dunkel, Hell und Bunt in mindestens einem Desktop- und einem Mobilbrowser prüfen.
 
 ## App-Homepages
 
-- HealthAtlas dient als erste Referenz für das neue Homepage-Modell der normalen App-Detailseiten.
-- Nach Prüfung der HealthAtlas-Seite die übrigen App-Detailseiten schrittweise nach demselben Grundprinzip umstellen: App erklären, öffentlichen visuellen Eindruck zeigen, Ablauf/Nutzen darstellen, Funktionen und Datenschutz ergänzen sowie Downloads und technische Detailseite verlinken.
-- Die Portfolio-Übersichtsseite bleibt dabei als kompakte Sammlung bestehen.
+- Die App-Detailseiten verwenden das gemeinsame aktuelle Homepage-Design und das gemeinsame Interaktionsmodell.
+- Bei Änderungen das gemeinsame visuelle System beibehalten; app-spezifische Abweichungen nur dort einsetzen, wo das vorhandene Material sie sinnvoll macht.
+- Galerien responsiv und passend zum Bildformat halten. Hochformat- oder Charakterbilder dürfen deutlich kompakter als normale App-Screenshots dargestellt werden.
 - Für jede App nur Inhalte und Screenshots aus dem jeweiligen überprüften öffentlichen Projektstand verwenden; Umfang und Aufbau an die tatsächlich vorhandenen Inhalte der App anpassen.
+- Die Portfolio-Übersichtsseite bleibt als kompakte Sammlung bestehen.
 
 ## Bei Änderungen an Projekten
 
@@ -26,4 +27,5 @@
 ## Datenschutz
 
 - Keine Tracker, Cookies, Formulare, Chatbots, externe Schriftanbieter oder neue Datenverarbeitung ergänzen, ohne Datenschutzhinweise und Prüfung neu zu bewerten.
+- Die vorhandene Theme-Präferenz in `localStorage` speichert ausschließlich `dark`, `light` oder `color` und darf nicht für andere Daten erweitert werden, ohne dies neu zu bewerten.
 - Bei neuen externen Bild- oder Medienquellen prüfen, ob sie wirklich erforderlich und öffentlich sind; bevorzugt GitHub-Quellen verwenden.
