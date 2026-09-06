@@ -189,15 +189,17 @@
 }
 .health-shot img {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   display: block;
   transform: none;
-  transition: filter .35s ease;
+  filter: none;
+  transition: none;
 }
 .health-shot:hover img {
   transform: none;
-  filter: saturate(1.06) contrast(1.02) brightness(1.015);
+  filter: none;
 }
 .health-shot figcaption {
   padding: 17px 18px 19px;
