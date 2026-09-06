@@ -16,7 +16,7 @@ GitHub Pages must serve the `main` branch from the repository root. The website 
 
 - Public project screenshots are loaded directly from GitHub's raw-content host.
 - Release badges and separate latest Final/Beta download targets are refreshed daily from public GitHub release data by the repository workflow.
-- Local JavaScript and CSS resources use stable filenames, so normal updates replace the existing files instead of accumulating versioned copies.
+- Local JavaScript and CSS resources keep stable filenames. When browser-cached HTML, CSS or JavaScript changes, the cache-busting query version in the affected references must be increased. This reuses the same physical file and does not create versioned copies in the repository.
 - The manual **Check unused static assets** workflow reports unused resources by default; removal requires choosing `remove` when starting it.
 - Before publication, run `bash Scripts/privacy-check.sh`, review public texts and images manually, and run `git diff --check`.
 - The documented privacy review is in [PRIVACY_CHECK.md](PRIVACY_CHECK.md).
