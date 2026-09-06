@@ -15,7 +15,8 @@ GitHub Pages muss den Branch `main` aus dem Repository-Stamm ausliefern. Die Web
 ## Datenschutz und Pflege
 
 - Öffentliche Projekt-Screenshots werden direkt über GitHubs Raw-Content-Host geladen.
-- Release-Badges werden durch den Repository-Workflow stündlich aus öffentlichen GitHub-Release-Daten aktualisiert.
+- Release-Badges und getrennte Ziele für die jeweils neuesten Final-/Beta-Downloads werden durch den Repository-Workflow täglich aus öffentlichen GitHub-Release-Daten aktualisiert.
+- Lokale JavaScript- und CSS-Ressourcen behalten stabile Dateinamen. Wenn browserseitig gecachte HTML-, CSS- oder JavaScript-Ressourcen geändert werden, muss die Cache-Busting-Version in den betroffenen Referenzen erhöht werden. Dabei wird dieselbe physische Datei weiterverwendet; es entstehen keine zusätzlichen Versionskopien im Repository.
 - Vor einer Veröffentlichung `bash Scripts/privacy-check.sh` und `git diff --check` ausführen sowie Texte und Bilder manuell prüfen.
 - Die dokumentierte Datenschutzprüfung steht in [PRIVACY_CHECK.de.md](PRIVACY_CHECK.de.md).
 - Regeln für neue oder geänderte Projekte stehen in [PORTFOLIO_UPDATE.md](PORTFOLIO_UPDATE.md).
