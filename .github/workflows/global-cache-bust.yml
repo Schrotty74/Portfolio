@@ -59,6 +59,28 @@ jobs:
 
               if updated != text:
                   path.write_text(updated, encoding='utf-8')
+
+          switcher = Path('assets/theme-switcher.js')
+          switcher_text = switcher.read_text(encoding='utf-8')
+
+          old_component = 'function s({locale:e}){let[t,n]=(0,a.useState)(`dark`),r=e===`en`?[`Dark`,`Light`,`Colour`]:[`Dunkel`,`Hell`,`Bunt`],i=[`dark`,`light`,`color`];function s(e){n(e),document.documentElement.dataset.theme=e}'
+          new_component = 'function s({locale:e}){let[t,n]=(0,a.useState)(()=>{try{return sessionStorage.getItem(`portfolio-theme`)||document.documentElement.dataset.theme||`dark`}catch{return document.documentElement.dataset.theme||`dark`}}),r=e===`en`?[`Dark`,`Light`,`Colour`]:[`Dunkel`,`Hell`,`Bunt`],i=[`dark`,`light`,`color`];function s(e){n(e),document.documentElement.dataset.theme=e;try{sessionStorage.setItem(`portfolio-theme`,e)}catch{}}'
+          if old_component in switcher_text:
+              switcher_text = switcher_text.replace(old_component, new_component, 1)
+          elif 'sessionStorage.getItem(`portfolio-theme`)' not in switcher_text:
+              raise RuntimeError('Could not update theme persistence in theme-switcher.js')
+
+          init_marker = 'if(typeof document!==`undefined`){'
+          init_code = 'if(typeof document!==`undefined`){try{let t=sessionStorage.getItem(`portfolio-theme`);t&&(document.documentElement.dataset.theme=t)}catch{}'
+          if init_code not in switcher_text:
+              if init_marker not in switcher_text:
+                  raise RuntimeError('Could not find theme-switcher document init')
+              switcher_text = switcher_text.replace(init_marker, init_code, 1)
+
+          switcher_text, count = re.subn(r'const e=`[^`]+`;', f'const e=`{version}`;', switcher_text, count=1)
+          if count == 0:
+              raise RuntimeError('Could not update theme-switcher cache version')
+          switcher.write_text(switcher_text, encoding='utf-8')
           PY
 
       - name: Commit global cache version
