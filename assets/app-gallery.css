@@ -47,6 +47,14 @@
   font-weight: 800;
 }
 
+/* UroBilanz: pair equivalent Web and Swift views on desktop. */
+.app-screenshot-grid:has(img[src*="/UroBilanz/"]) .app-screenshot-card:nth-child(4) { order: 1; }
+.app-screenshot-grid:has(img[src*="/UroBilanz/"]) .app-screenshot-card:nth-child(1) { order: 2; }
+.app-screenshot-grid:has(img[src*="/UroBilanz/"]) .app-screenshot-card:nth-child(5) { order: 3; }
+.app-screenshot-grid:has(img[src*="/UroBilanz/"]) .app-screenshot-card:nth-child(2) { order: 4; }
+.app-screenshot-grid:has(img[src*="/UroBilanz/"]) .app-screenshot-card:nth-child(6) { order: 5; }
+.app-screenshot-grid:has(img[src*="/UroBilanz/"]) .app-screenshot-card:nth-child(3) { order: 6; }
+
 /* CalcBoy screenshots are portrait-oriented, so keep their gallery compact. */
 .app-screenshot-grid:has(img[src*="/CalcBoy/"]) {
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -61,6 +69,7 @@
 @media (width <= 640px) {
   .app-screenshot-grid { grid-template-columns: 1fr; }
   .app-screenshot-section { padding: 40px 0; }
+  .app-screenshot-grid:has(img[src*="/UroBilanz/"]) .app-screenshot-card { order: initial; }
   .app-screenshot-grid:has(img[src*="/CalcBoy/"]) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
