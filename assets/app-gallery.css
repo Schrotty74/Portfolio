@@ -46,9 +46,31 @@
   font-size: .76rem;
   font-weight: 800;
 }
+
+/* CalcBoy screenshots are portrait-oriented, so keep their gallery compact. */
+.app-screenshot-grid:has(img[src*="/CalcBoy/"]) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.app-screenshot-card:has(img[src*="/CalcBoy/"]) img {
+  width: auto;
+  max-width: 100%;
+  max-height: 300px;
+  margin-inline: auto;
+}
+
 @media (width <= 640px) {
   .app-screenshot-grid { grid-template-columns: 1fr; }
   .app-screenshot-section { padding: 40px 0; }
+  .app-screenshot-grid:has(img[src*="/CalcBoy/"]) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .app-screenshot-card:has(img[src*="/CalcBoy/"]) img {
+    max-height: 190px;
+  }
+  .app-screenshot-card:has(img[src*="/CalcBoy/"]) figcaption {
+    padding: 11px 12px 13px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .app-screenshot-card { transition: none; }
