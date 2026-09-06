@@ -1,0 +1,55 @@
+.app-screenshot-section {
+  position: relative;
+  padding: 50px 0;
+}
+.app-screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+.app-screenshot-card {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  overflow: hidden;
+  background: transparent;
+  transition: border-color .28s ease, box-shadow .28s ease;
+}
+.app-screenshot-card:hover {
+  border-color: color-mix(in srgb, var(--lime) 62%, var(--line));
+  box-shadow: 0 24px 60px #00000052;
+}
+.app-screenshot-card a {
+  display: block;
+  background: transparent;
+}
+.app-screenshot-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: transparent;
+}
+.app-screenshot-card figcaption {
+  padding: 17px 18px 19px;
+  background: var(--surface);
+}
+.app-screenshot-card strong {
+  display: block;
+  font-size: .98rem;
+}
+.app-screenshot-card span {
+  display: block;
+  margin-top: 7px;
+  color: var(--lime);
+  font-size: .76rem;
+  font-weight: 800;
+}
+@media (width <= 640px) {
+  .app-screenshot-grid { grid-template-columns: 1fr; }
+  .app-screenshot-section { padding: 40px 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-screenshot-card { transition: none; }
+}
