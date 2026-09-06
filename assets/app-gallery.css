@@ -66,6 +66,21 @@
   margin-inline: auto;
 }
 
+/* ChatGPT Pets are character previews, not full app screenshots. Keep them compact. */
+.app-screenshot-grid:has(img[src*="/chatgpt-pets/"]) {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+.app-screenshot-card:has(img[src*="/chatgpt-pets/"]) img {
+  width: auto;
+  max-width: 100%;
+  max-height: 230px;
+  margin-inline: auto;
+}
+.app-screenshot-card:has(img[src*="/chatgpt-pets/"]) figcaption {
+  padding: 12px 14px 14px;
+}
+
 @media (width <= 640px) {
   .app-screenshot-grid { grid-template-columns: 1fr; }
   .app-screenshot-section { padding: 40px 0; }
@@ -79,6 +94,16 @@
   }
   .app-screenshot-card:has(img[src*="/CalcBoy/"]) figcaption {
     padding: 11px 12px 13px;
+  }
+  .app-screenshot-grid:has(img[src*="/chatgpt-pets/"]) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .app-screenshot-card:has(img[src*="/chatgpt-pets/"]) img {
+    max-height: 150px;
+  }
+  .app-screenshot-card:has(img[src*="/chatgpt-pets/"]) figcaption {
+    padding: 10px 11px 12px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
