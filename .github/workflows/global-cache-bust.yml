@@ -41,6 +41,8 @@ jobs:
           page_pattern = re.compile(r'(href=["\'])(/Portfolio/(?:de/)?apps/[A-Za-z0-9._/-]+/?)(?:\?v=[^"\']*)?(["\'])')
           theme_pattern = re.compile(r'<link rel=["\']stylesheet["\'] href=["\']/Portfolio/assets/(?:dark-theme|light-theme|color-theme)\.css(?:\?v=[^"\']*)?["\']\s*/?>')
           styles_pattern = re.compile(r'(<link rel=["\']stylesheet["\'] href=["\']/Portfolio/assets/styles\.css(?:\?v=[^"\']*)?["\'][^>]*>)')
+          theme_init_pattern = re.compile(r'<script data-portfolio-theme-init>.*?</script>')
+          theme_init = '<script data-portfolio-theme-init>try{const t=localStorage.getItem("portfolio-theme");if(["dark","light","color"].includes(t))document.documentElement.dataset.theme=t}catch{}</script>'
 
           for path in Path('.').rglob('*.html'):
               text = path.read_text(encoding='utf-8')
@@ -57,21 +59,26 @@ jobs:
               if count == 0:
                   raise RuntimeError(f'Could not find styles.css reference in {path}')
 
+              updated = theme_init_pattern.sub('', updated)
+              if '<head>' not in updated:
+                  raise RuntimeError(f'Could not find head in {path}')
+              updated = updated.replace('<head>', '<head>' + theme_init, 1)
+
               if updated != text:
                   path.write_text(updated, encoding='utf-8')
 
           switcher = Path('assets/theme-switcher.js')
-          switcher_text = switcher.read_text(encoding='utf-8')
+          switcher_text = switcher.read_text(encoding='utf-8').replace('sessionStorage', 'localStorage')
 
-          old_component = 'function s({locale:e}){let[t,n]=(0,a.useState)(`dark`),r=e===`en`?[`Dark`,`Light`,`Colour`]:[`Dunkel`,`Hell`,`Bunt`],i=[`dark`,`light`,`color`];function s(e){n(e),document.documentElement.dataset.theme=e}'
-          new_component = 'function s({locale:e}){let[t,n]=(0,a.useState)(()=>{try{return sessionStorage.getItem(`portfolio-theme`)||document.documentElement.dataset.theme||`dark`}catch{return document.documentElement.dataset.theme||`dark`}}),r=e===`en`?[`Dark`,`Light`,`Colour`]:[`Dunkel`,`Hell`,`Bunt`],i=[`dark`,`light`,`color`];function s(e){n(e),document.documentElement.dataset.theme=e;try{sessionStorage.setItem(`portfolio-theme`,e)}catch{}}'
+          old_component = 'function s({locale:e}){let[t,n]=(0,a.useState)(()=>{try{return localStorage.getItem(`portfolio-theme`)||document.documentElement.dataset.theme||`dark`}catch{return document.documentElement.dataset.theme||`dark`}}),r=e===`en`?[`Dark`,`Light`,`Colour`]:[`Dunkel`,`Hell`,`Bunt`],i=[`dark`,`light`,`color`];function s(e){n(e),document.documentElement.dataset.theme=e;try{localStorage.setItem(`portfolio-theme`,e)}catch{}}'
+          new_component = 'function s({locale:e}){let[t,n]=(0,a.useState)(()=>{try{return localStorage.getItem(`portfolio-theme`)||document.documentElement.dataset.theme||`dark`}catch{return document.documentElement.dataset.theme||`dark`}});(0,a.useEffect)(()=>{document.documentElement.dataset.theme=t;try{localStorage.setItem(`portfolio-theme`,t)}catch{}},[t]);let r=e===`en`?[`Dark`,`Light`,`Colour`]:[`Dunkel`,`Hell`,`Bunt`],i=[`dark`,`light`,`color`];function s(e){n(e)}'
           if old_component in switcher_text:
               switcher_text = switcher_text.replace(old_component, new_component, 1)
-          elif 'sessionStorage.getItem(`portfolio-theme`)' not in switcher_text:
-              raise RuntimeError('Could not update theme persistence in theme-switcher.js')
+          elif 'a.useEffect)(()=>{document.documentElement.dataset.theme=t' not in switcher_text:
+              raise RuntimeError('Could not update theme synchronization in theme-switcher.js')
 
           init_marker = 'if(typeof document!==`undefined`){'
-          init_code = 'if(typeof document!==`undefined`){try{let t=sessionStorage.getItem(`portfolio-theme`);t&&(document.documentElement.dataset.theme=t)}catch{}'
+          init_code = 'if(typeof document!==`undefined`){try{let t=localStorage.getItem(`portfolio-theme`);t&&(document.documentElement.dataset.theme=t)}catch{}'
           if init_code not in switcher_text:
               if init_marker not in switcher_text:
                   raise RuntimeError('Could not find theme-switcher document init')
