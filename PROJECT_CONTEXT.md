@@ -1,6 +1,6 @@
 # Projektkontext: Portfolio
 
-**Stand:** 29. August 2026
+**Stand:** 6. September 2026
 **Zweck:** Öffentliche, zweisprachige GitHub-Pages-Website für die Apps und Projekte von Schrotty74.
 
 ## Veröffentlichtes System
@@ -17,6 +17,10 @@ Die Website wird als statischer Export direkt aus dem Stamm des `main`-Branches 
 | Suchmaschinen | `robots.txt`, `sitemap.xml` | Indexierungs- und Sitemap-Hinweise. |
 | Release-Status | `release-status.json`, `.github/workflows/refresh-release-status.yml` | Öffentliche GitHub-Releases der elf Projekte; Übersicht und Detailseiten laden Status sowie aktuelle DMG-/ZIP-Zieladressen für die jeweils neueste Final- und Beta-Version innerhalb derselben GitHub-Pages-Website. |
 | Prüfung | `Scripts/privacy-check.sh`, `.github/workflows/privacy-check.yml` | Prüfung auf Geheimnisse, private Pfade und frühere Hosting-Verweise. |
+
+Die Portfolio-Startseite bleibt die kompakte Übersicht über alle Projekte. Die normalen Projektseiten unter `apps/<slug>/` beziehungsweise `de/apps/<slug>/` sind als besucherorientierte App-Homepages gedacht: Sie erklären Zweck und Nutzen der App, zeigen – sofern vorhanden – geprüfte öffentliche Screenshots, beschreiben den grundlegenden Ablauf, stellen zentrale Funktionen und Datenschutzmerkmale dar und führen zu Repository, Downloads und technischen Details. Die separaten `technical/`-Seiten bleiben die kompakte technische Darstellung für Architektur und Technologien.
+
+HealthAtlas ist die erste Projektseite, die dieses ausführlichere Homepage-Modell als Referenz umsetzt. Weitere App-Seiten können nach demselben Grundprinzip umgestellt werden, wobei Texte, Screenshots, Funktionen und Downloads immer aus dem jeweiligen öffentlichen Projektstand abgeleitet werden und nicht schematisch erfunden werden dürfen.
 
 Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubusercontent.com/Schrotty74/...` geladen; damit ruft der Browser GitHub für diese Bilder auf. Andere Projekt- oder Downloadlinks werden erst nach Auswahl durch Besucher geöffnet.
 
