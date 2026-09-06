@@ -66,6 +66,27 @@
   margin-inline: auto;
 }
 
+/* Skybreak, BudgetAtlas and ThermalAtlas screenshots do not need oversized cards. */
+.app-screenshot-grid:has(img[src*="/Skybreak-Protocol/"]),
+.app-screenshot-grid:has(img[src*="/BudgetAtlas/"]),
+.app-screenshot-grid:has(img[src*="/ThermalAtlas/"]) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.app-screenshot-card:has(img[src*="/Skybreak-Protocol/"]) img,
+.app-screenshot-card:has(img[src*="/BudgetAtlas/"]) img,
+.app-screenshot-card:has(img[src*="/ThermalAtlas/"]) img {
+  width: auto;
+  max-width: 100%;
+  max-height: 260px;
+  margin-inline: auto;
+}
+.app-screenshot-card:has(img[src*="/Skybreak-Protocol/"]) figcaption,
+.app-screenshot-card:has(img[src*="/BudgetAtlas/"]) figcaption,
+.app-screenshot-card:has(img[src*="/ThermalAtlas/"]) figcaption {
+  padding: 12px 14px 14px;
+}
+
 /* ChatGPT Pets are character previews, not full app screenshots. Keep them compact. */
 .app-screenshot-grid:has(img[src*="/chatgpt-pets/"]) {
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -94,6 +115,22 @@
   }
   .app-screenshot-card:has(img[src*="/CalcBoy/"]) figcaption {
     padding: 11px 12px 13px;
+  }
+  .app-screenshot-grid:has(img[src*="/Skybreak-Protocol/"]),
+  .app-screenshot-grid:has(img[src*="/BudgetAtlas/"]),
+  .app-screenshot-grid:has(img[src*="/ThermalAtlas/"]) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .app-screenshot-card:has(img[src*="/Skybreak-Protocol/"]) img,
+  .app-screenshot-card:has(img[src*="/BudgetAtlas/"]) img,
+  .app-screenshot-card:has(img[src*="/ThermalAtlas/"]) img {
+    max-height: 170px;
+  }
+  .app-screenshot-card:has(img[src*="/Skybreak-Protocol/"]) figcaption,
+  .app-screenshot-card:has(img[src*="/BudgetAtlas/"]) figcaption,
+  .app-screenshot-card:has(img[src*="/ThermalAtlas/"]) figcaption {
+    padding: 10px 11px 12px;
   }
   .app-screenshot-grid:has(img[src*="/chatgpt-pets/"]) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
