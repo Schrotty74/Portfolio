@@ -1,11 +1,19 @@
 # Nächste Schritte
 
-**Stand:** 29. August 2026
+**Stand:** 6. September 2026
 
 ## Vor oder nach einer Veröffentlichung prüfen
 
 - Die GitHub-Pages-Einstellung muss `main` und `/(root)` verwenden.
-- Die neue Übersicht sowie mindestens eine Projekt- und Technikseite in Desktop- und Mobilansicht manuell prüfen. Eine automatisierte visuelle Browserprüfung ist nicht eingerichtet.
+- Die Portfolio-Übersicht sowie mindestens eine Projekt- und Technikseite in Desktop- und Mobilansicht manuell prüfen. Eine automatisierte visuelle Browserprüfung ist nicht eingerichtet.
+- Die neue HealthAtlas-Homepage auf Deutsch und Englisch nach der GitHub-Pages-Auslieferung manuell prüfen: Desktop, Mobilansicht, Theme-Umschaltung, Sprachwechsel, Screenshots sowie GitHub-, Download- und Techniklinks.
+
+## App-Homepages
+
+- HealthAtlas dient als erste Referenz für das neue Homepage-Modell der normalen App-Detailseiten.
+- Nach Prüfung der HealthAtlas-Seite die übrigen App-Detailseiten schrittweise nach demselben Grundprinzip umstellen: App erklären, öffentlichen visuellen Eindruck zeigen, Ablauf/Nutzen darstellen, Funktionen und Datenschutz ergänzen sowie Downloads und technische Detailseite verlinken.
+- Die Portfolio-Übersichtsseite bleibt dabei als kompakte Sammlung bestehen.
+- Für jede App nur Inhalte und Screenshots aus dem jeweiligen überprüften öffentlichen Projektstand verwenden; Umfang und Aufbau an die tatsächlich vorhandenen Inhalte der App anpassen.
 
 ## Bei Änderungen an Projekten
 
