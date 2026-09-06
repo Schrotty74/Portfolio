@@ -73,6 +73,7 @@ jobs:
           styles_pattern = re.compile(r'(<link rel=["\']stylesheet["\'] href=["\']/Portfolio/assets/styles\.css(?:\?v=[^"\']*)?["\'][^>]*>)')
           theme_init_pattern = re.compile(r'<script data-portfolio-theme-init>.*?</script>')
           theme_init = '<script data-portfolio-theme-init>try{const t=localStorage.getItem("portfolio-theme");if(["dark","light","color"].includes(t))document.documentElement.dataset.theme=t}catch{}</script>'
+          relative_js_pattern = re.compile(r'(["\'])(\./[A-Za-z0-9._/-]+\.js)(?:\?v=[^"\']*)?\1')
 
           for path in Path('.').rglob('*.html'):
               text = path.read_text(encoding='utf-8')
@@ -94,6 +95,14 @@ jobs:
                   raise RuntimeError(f'Could not find head in {path}')
               updated = updated.replace('<head>', '<head>' + theme_init, 1)
 
+              if updated != text:
+                  path.write_text(updated, encoding='utf-8')
+
+          # Keep the complete ES-module graph on one cache version. Firefox can otherwise
+          # combine a newly versioned entry module with an older unversioned dependency.
+          for path in Path('assets').glob('*.js'):
+              text = path.read_text(encoding='utf-8')
+              updated = relative_js_pattern.sub(lambda m: f'{m.group(1)}{m.group(2)}?v={version}{m.group(1)}', text)
               if updated != text:
                   path.write_text(updated, encoding='utf-8')
 
