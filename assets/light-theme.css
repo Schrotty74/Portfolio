@@ -1,0 +1,11 @@
+:root[data-theme="light"] {
+  --bg:#f1f0e9;
+  --surface:#fffffcc2;
+  --ink:#17231d;
+  --muted:#56625b;
+  --line:#17231d29;
+  --lime:#779f00;
+  --violet:#674bd7;
+  --coral:#dd512f;
+  --shadow:0 25px 60px #17231d21;
+}
