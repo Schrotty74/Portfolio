@@ -1,0 +1,118 @@
+:root[data-theme=color]{
+  --bg:#f7ecff;
+  --surface:#fffafee8;
+  --ink:#241b38;
+  --muted:#5d526f;
+  --line:#4f347326;
+  --lime:#008f82;
+  --violet:#6d4be8;
+  --coral:#e94878;
+  --shadow:0 24px 60px #653a8730;
+}
+
+:root[data-theme=color] body{
+  background:
+    radial-gradient(circle at 8% 8%,#ffd35a99 0,transparent 28rem),
+    radial-gradient(circle at 92% 14%,#ff70ab8f 0,transparent 30rem),
+    radial-gradient(circle at 16% 72%,#41d9cf78 0,transparent 32rem),
+    radial-gradient(circle at 86% 78%,#8f72ff70 0,transparent 34rem),
+    linear-gradient(135deg,#fff1c8 0%,#ffe7f3 30%,#e9f7ff 58%,#efe7ff 82%,#fff4db 100%);
+  background-attachment:fixed;
+}
+
+:root[data-theme=color] .topbar,
+:root[data-theme=color] .hero,
+:root[data-theme=color] .collection,
+:root[data-theme=color] .detail-page,
+:root[data-theme=color] .legal-page,
+:root[data-theme=color] .site-footer{
+  position:relative;
+}
+
+:root[data-theme=color] .theme-switcher,
+:root[data-theme=color] .language-switch,
+:root[data-theme=color] .hero-meta,
+:root[data-theme=color] .ai-disclosure,
+:root[data-theme=color] .app-card,
+:root[data-theme=color] .feature-list div,
+:root[data-theme=color] .resource-links a,
+:root[data-theme=color] .app-screenshot-card,
+:root[data-theme=color] .health-step,
+:root[data-theme=color] .health-shot,
+:root[data-theme=color] .health-feature,
+:root[data-theme=color] .health-privacy-card{
+  background:rgba(255,250,254,.86);
+  backdrop-filter:blur(18px) saturate(125%);
+  -webkit-backdrop-filter:blur(18px) saturate(125%);
+}
+
+:root[data-theme=color] .ticker,
+:root[data-theme=color] .app-compat-marquee,
+:root[data-theme=color] .health-marquee{
+  color:#241b38;
+  background:linear-gradient(90deg,#ff6ea7 0%,#ffd35a 24%,#45ddd0 49%,#71a7ff 72%,#a77cff 100%);
+  border-color:#51366d24;
+}
+
+:root[data-theme=color] h1{color:#5b3fd2}
+:root[data-theme=color] h1 em{color:#008f82}
+:root[data-theme=color] .collection-heading h2{color:#d83f79}
+
+:root[data-theme=color] .detail-page>section:nth-of-type(4n+1) h2,
+:root[data-theme=color] .health-product>section:nth-of-type(4n+1) h2,
+:root[data-theme=color] .technical-page section:nth-of-type(4n+1) h2,
+:root[data-theme=color] .legal-page section:nth-of-type(4n+1) h2{color:#d83f79}
+
+:root[data-theme=color] .detail-page>section:nth-of-type(4n+2) h2,
+:root[data-theme=color] .health-product>section:nth-of-type(4n+2) h2,
+:root[data-theme=color] .technical-page section:nth-of-type(4n+2) h2,
+:root[data-theme=color] .legal-page section:nth-of-type(4n+2) h2{color:#007f75}
+
+:root[data-theme=color] .detail-page>section:nth-of-type(4n+3) h2,
+:root[data-theme=color] .health-product>section:nth-of-type(4n+3) h2,
+:root[data-theme=color] .technical-page section:nth-of-type(4n+3) h2,
+:root[data-theme=color] .legal-page section:nth-of-type(4n+3) h2{color:#6650d9}
+
+:root[data-theme=color] .detail-page>section:nth-of-type(4n) h2,
+:root[data-theme=color] .health-product>section:nth-of-type(4n) h2,
+:root[data-theme=color] .technical-page section:nth-of-type(4n) h2,
+:root[data-theme=color] .legal-page section:nth-of-type(4n) h2{color:#c87500}
+
+:root[data-theme=color] .eyebrow:nth-of-type(4n+1){color:#c23570}
+:root[data-theme=color] .app-card:nth-child(4n+1) h3{color:#c23570}
+:root[data-theme=color] .app-card:nth-child(4n+2) h3{color:#007f75}
+:root[data-theme=color] .app-card:nth-child(4n+3) h3{color:#6650d9}
+:root[data-theme=color] .app-card:nth-child(4n) h3{color:#b96800}
+
+:root[data-theme=color] .app-card:nth-child(4n+1){border-color:#e4548f42}
+:root[data-theme=color] .app-card:nth-child(4n+2){border-color:#00a99d42}
+:root[data-theme=color] .app-card:nth-child(4n+3){border-color:#7656e842}
+:root[data-theme=color] .app-card:nth-child(4n){border-color:#e39b2742}
+
+:root[data-theme=color] .action-row a,
+:root[data-theme=color] .theme-switcher button.active,
+:root[data-theme=color] .filters button.selected{
+  background:linear-gradient(135deg,#ffe16c,#67ded2);
+  color:#241b38;
+}
+
+:root[data-theme=color] .action-row .secondary{
+  background:rgba(255,255,255,.58);
+  color:#4c3574;
+}
+
+:root[data-theme=color] .release-badge,
+:root[data-theme=color] .status-pill,
+:root[data-theme=color] .health-version{
+  color:#5b3fd2;
+  border-color:#7656e85c;
+  background:rgba(255,255,255,.78);
+}
+
+:root[data-theme=color] .orb-one{opacity:.46;background:radial-gradient(circle at 60% 60%,#30d8cc,#0000 66%)}
+:root[data-theme=color] .orb-two{opacity:.44;background:radial-gradient(circle,#ff5f9b,#0000 67%)}
+:root[data-theme=color] .orb-three{opacity:.38;background:radial-gradient(circle,#8d69ff,#0000 68%)}
+
+@media (width<=640px){
+  :root[data-theme=color] body{background-attachment:scroll}
+}
