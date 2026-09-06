@@ -12,11 +12,15 @@ It provides an English-first, German equivalent overview of eleven public projec
 
 GitHub Pages must serve the `main` branch from the repository root. The website is a static export: GitHub Pages requires no server-side runtime, cookies, analytics, forms or chat bot.
 
+## Themes
+
+The site provides Dark, Light and Colour themes. Their theme-specific rules are kept in `assets/dark-theme.css`, `assets/light-theme.css` and `assets/color-theme.css`; shared layout and component styling remains in the common stylesheets. The selected theme is stored locally under `portfolio-theme` using only the values `dark`, `light` or `color`.
+
 ## Privacy and maintenance
 
 - Public project screenshots are loaded directly from GitHub's raw-content host.
 - Release badges and separate latest Final/Beta download targets are refreshed daily from public GitHub release data by the repository workflow.
-- Local JavaScript and CSS resources keep stable filenames. When browser-cached HTML, CSS or JavaScript changes, the cache-busting query version in the affected references must be increased. This reuses the same physical file and does not create versioned copies in the repository.
+- `cache-version.txt` is the single global cache version. `.github/workflows/global-cache-bust.yml` keeps HTML references, CSS/JavaScript assets, internal ES-module imports and app-detail links on the same version. Assets keep stable filenames; no versioned physical copies are created.
 - The manual **Check unused static assets** workflow reports unused resources by default; removal requires choosing `remove` when starting it.
 - Before publication, run `bash Scripts/privacy-check.sh`, review public texts and images manually, and run `git diff --check`.
 - The documented privacy review is in [PRIVACY_CHECK.md](PRIVACY_CHECK.md).
