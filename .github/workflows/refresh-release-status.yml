@@ -2,7 +2,7 @@ name: Refresh portfolio release statuses
 
 on:
   schedule:
-    - cron: "23 4 * * *"
+    - cron: "23 4,16 * * *"
   workflow_dispatch:
   push:
     paths:
