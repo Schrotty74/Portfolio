@@ -1,6 +1,6 @@
 # Projektkontext: Portfolio
 
-**Stand:** 6. September 2026
+**Stand:** 7. September 2026
 **Zweck:** Öffentliche, zweisprachige GitHub-Pages-Website für die Apps und Projekte von Schrotty74.
 
 ## Veröffentlichtes System
