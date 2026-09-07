@@ -1,6 +1,6 @@
 # Nächste Schritte
 
-**Stand:** 6. September 2026
+**Stand:** 7. September 2026
 
 ## Vor oder nach einer Veröffentlichung prüfen
 
