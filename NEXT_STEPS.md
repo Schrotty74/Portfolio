@@ -6,9 +6,9 @@
 
 - Die GitHub-Pages-Einstellung muss `main` und `/(root)` verwenden.
 - Die Portfolio-Übersicht sowie mindestens eine Projekt- und Technikseite in Desktop- und Mobilansicht manuell prüfen. Eine automatisierte visuelle Browserprüfung ist nicht eingerichtet.
-- Solange das globale Cache-Busting aktiv ist, keine Cache-Versionen manuell pflegen oder eigene per-App-Versionen einführen.
-- Bei Theme-, Cache-, Lade- oder Deployment-Problemen zuerst `CACHE_BUSTING_PLAN.md` lesen. Nicht automatisch löschen oder bereinigen; zuerst nur eine vorübergehende Deaktivierung des Workflows als Test anbieten und danach mit dem Nutzer über Vereinfachung oder vollständige Entfernung entscheiden.
-- Theme-Umschaltung und Wiederherstellung von Dunkel, Hell und Bunt in mindestens einem Desktop- und einem Mobilbrowser prüfen.
+- Solange das globale Cache-Busting aktiv ist, soll es bei normalen relevanten Portfolio-Änderungen unverändert weiterlaufen und die globale Cache-Version automatisch erhöhen. Keine Cache-Versionen manuell pflegen oder eigene per-App-Versionen einführen.
+- Nicht von sich aus vorschlagen, den Cache-Bust zu pausieren, zu vereinfachen oder zu löschen. Nur wenn der Nutzer ausdrücklich meldet, dass das bekannte Theme-, Lade- oder Cache-Problem erneut aufgetreten ist, `CACHE_BUSTING_PLAN.md` anwenden und zuerst nur eine vorübergehende Deaktivierung als Test anbieten.
+- Theme-Umschaltung und Wiederherstellung von Dunkel, Hell und Bunt in mindestens einem Desktop- und einem Mobilbrowser prüfen. Das zuletzt gewählte Theme muss nach Reload und Seitenwechsel erhalten bleiben.
 
 ## App-Homepages
 
