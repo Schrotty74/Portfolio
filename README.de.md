@@ -20,7 +20,7 @@ Die Website bietet Dunkel, Hell und Bunt. Theme-spezifische Regeln liegen getren
 
 - Öffentliche Projekt-Screenshots werden direkt über GitHubs Raw-Content-Host geladen.
 - Release-Badges und getrennte Ziele für die jeweils neuesten Final-/Beta-Downloads werden durch den Repository-Workflow täglich aus öffentlichen GitHub-Release-Daten aktualisiert.
-- `cache-version.txt` ist die einzige globale Cache-Version. `.github/workflows/global-cache-bust.yml` hält HTML-Referenzen, CSS-/JavaScript-Ressourcen, interne ES-Modul-Imports und App-Detail-Links auf derselben Version. Die Assets behalten stabile Dateinamen; es entstehen keine physischen Versionskopien.
+- Das derzeit aktive globale Cache-Busting-System verwendet `cache-version.txt` und `.github/workflows/global-cache-bust.yml`, um HTML-Referenzen, CSS-/JavaScript-Ressourcen, interne ES-Modul-Imports und App-Detail-Links auf einer Version zu halten. Die Assets behalten stabile Dateinamen; es entstehen keine physischen Versionskopien. Bei Theme-, Cache-, Lade- oder Deployment-Problemen zuerst [CACHE_BUSTING_PLAN.md](CACHE_BUSTING_PLAN.md) beachten, bevor dieses System verändert wird.
 - Vor einer Veröffentlichung `bash Scripts/privacy-check.sh` und `git diff --check` ausführen sowie Texte und Bilder manuell prüfen.
 - Die dokumentierte Datenschutzprüfung steht in [PRIVACY_CHECK.de.md](PRIVACY_CHECK.de.md).
 - Regeln für neue oder geänderte Projekte stehen in [PORTFOLIO_UPDATE.md](PORTFOLIO_UPDATE.md).
