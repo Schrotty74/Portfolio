@@ -27,21 +27,26 @@ Das deutet darauf hin, dass der aktuelle globale Cache-Bust zeitweise inkonsiste
 
 Die Theme-Auswahl wird weiterhin in `localStorage` unter `portfolio-theme` gespeichert.
 
-Der aktuelle Theme-Fix soll dafür sorgen, dass die Theme-Persistenz möglichst unabhängig von gecachten bzw. versionierten JavaScript-Modulen funktioniert.
+Der aktuelle Theme-Fix soll dafür sorgen, dass die Theme-Persistenz möglichst unabhängig von gecachten bzw. versionierten JavaScript-Modulen funktioniert. Ziel ist, dass nach Reload oder Seitenwechsel immer das zuletzt gewählte Theme erhalten bleibt und nicht auf ein anderes Theme zurückspringt.
 
-Der globale Cache-Bust bleibt vorerst unverändert aktiv und wird beobachtet.
+Der globale Cache-Bust bleibt vorerst unverändert aktiv. Solange er aktiv ist, soll er bei normalen relevanten Portfolio-Änderungen weiterhin wie vorgesehen die globale Cache-Version erhöhen und die dazugehörigen Referenzen aktualisieren.
 
-## Verbindliches weiteres Vorgehen
+## Wann dieser Sonderplan angewendet wird
 
-Wenn bei einer künftigen normalen Änderung an der Portfolio-Seite erneut eines der folgenden Probleme auftritt:
+Dieser Sonderplan soll **nicht** bei jeder normalen Änderung an der Homepage, an App-Seiten oder an anderen Portfolio-Inhalten automatisch angesprochen oder ausgelöst werden.
+
+Er wird erst dann angewendet, wenn der Nutzer ausdrücklich meldet, dass das bekannte Theme-, Lade- oder Cache-Problem erneut aufgetreten ist, zum Beispiel:
 
 - falsches oder wechselndes Theme nach Neuladen,
 - Theme-Persistenz funktioniert nicht zuverlässig,
+- das zuletzt gewählte Theme wird nicht wiederhergestellt,
 - leere App-Detailseiten bzw. nur Hintergrund ohne Inhalt,
 - vorübergehend inkonsistente Darstellung nach einem Deployment,
-- andere neue Probleme, die zeitlich mit dem Cache-Bust zusammenhängen,
+- ein anderes vom Nutzer ausdrücklich als erneutes Cache-/Theme-Problem gemeldetes Verhalten.
 
-dann gilt folgende Reihenfolge:
+Bei normalen Portfolio-Änderungen ohne eine solche Problemmeldung läuft der bestehende Cache-Bust unverändert weiter. In diesem Fall nicht von sich aus vorschlagen, den Workflow zu pausieren, zu vereinfachen oder zu löschen.
+
+## Verbindliches weiteres Vorgehen nach erneuter Problemmeldung
 
 ### Schritt 0: Zuerst nur Deaktivieren als Test anbieten
 
@@ -56,7 +61,7 @@ Ziel dieses Tests:
 - Safari, Firefox und iOS/WebKit vergleichen,
 - feststellen, ob die beobachteten Probleme tatsächlich verschwinden, sobald der Cache-Bust nicht mehr ausgeführt wird.
 
-Während dieses Tests bleiben bestehende `?v=`-Werte, `cache-version.txt` und sonstige bereits vorhandene Cache-Bust-Reste unverändert bestehen. Es wird ausschließlich verhindert, dass der Workflow erneut ausgeführt wird.
+Während dieses Tests bleiben bestehende `?v=`-Werte, `cache-version.txt` und sonstige bereits vorhandene Cache-Bust-Reste unverändert bestehen. Es wird ausschließlich verhindert, dass der Workflow erneut ausgeführt wird. Solange der Workflow deaktiviert ist, bleibt die zuletzt gesetzte Cache-Version unverändert und wird nicht weiter hochgezählt.
 
 Erst nach diesem Test und nur nach ausdrücklicher Entscheidung des Nutzers soll entschieden werden, ob der Workflow wieder aktiviert, vereinfacht oder vollständig entfernt wird.
 
@@ -109,6 +114,6 @@ dann ist Zustand 1 ausdrücklich vorzuziehen.
 
 ## Nicht automatisch ändern
 
-Solange kein erneutes Problem nach einer normalen Portfolio-Änderung beobachtet wird, soll aufgrund dieser Notiz allein nichts am Cache-Bust geändert werden.
+Solange der Nutzer kein erneutes Theme-, Lade- oder Cache-Problem meldet, soll aufgrund dieser Notiz allein nichts am Cache-Bust geändert oder vorgeschlagen werden. Der aktive Workflow darf bei normalen relevanten Portfolio-Änderungen weiterlaufen und die Cache-Version wie bisher erhöhen.
 
-Bei erneutem Auftreten der beschriebenen Probleme soll zuerst Schritt 0 angeboten werden. Keine Löschung, Bereinigung oder Vereinfachung ohne ausdrückliche Entscheidung des Nutzers. Schritt 1 folgt nur, wenn der Nutzer nach dem Deaktivierungs-Test eine vereinfachte Lösung versuchen möchte. Schritt 2 folgt nur, wenn Schritt 1 nicht zuverlässig funktioniert, neue Probleme verursacht oder der Nutzer ausdrücklich die vollständige Entfernung wünscht.
+Erst nach einer ausdrücklichen erneuten Problemmeldung des Nutzers soll Schritt 0 angeboten werden. Keine Löschung, Bereinigung oder Vereinfachung ohne ausdrückliche Entscheidung des Nutzers. Schritt 1 folgt nur, wenn der Nutzer nach dem Deaktivierungs-Test eine vereinfachte Lösung versuchen möchte. Schritt 2 folgt nur, wenn Schritt 1 nicht zuverlässig funktioniert, neue Probleme verursacht oder der Nutzer ausdrücklich die vollständige Entfernung wünscht.
