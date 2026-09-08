@@ -69,9 +69,13 @@ Dabei gilt ausdrücklich:
 - Die normale GitHub-Pages-Auslieferung wieder verwenden.
 - Bestehende Homepage-Funktionen, Layouts, Inhalte, Themes und App-Seiten nicht verändern.
 - Nur Dateien oder Code ändern, die direkt mit dem Cache-Busting verbunden sind oder durch dessen Entfernung technisch angepasst werden müssen.
+- Rein cachebezogene Reste wie Workflow, `cache-version.txt`, `?v=`-Versionierungen oder andere nur dafür eingeführte Mechanismen sauber entfernen, soweit dies für die vollständige Entfernung notwendig ist.
 - Theme-Persistenz über `localStorage` erhalten.
 - Keine sonstigen Refactorings oder Designänderungen im selben Schritt durchführen.
 - Nach der Entfernung prüfen, ob Homepage, Theme-Wechsel, Reload, Sprachwechsel und mehrere App-Detailseiten stabil funktionieren.
+- Den Git-Diff anschließend ausschließlich als Kontrolle verwenden, damit bestätigt wird, dass nur Cache-Bust-bezogene Änderungen vorgenommen wurden und nichts anderes unbeabsichtigt verändert wurde.
+
+Danach muss die Portfolio-Seite funktional wieder dem Zustand vor Einführung des Cache-Busts entsprechen, nur mit dem heutigen Inhalt. Ansonsten darf nichts geändert werden.
 
 ## Priorität
 
