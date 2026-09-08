@@ -56,7 +56,7 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 
 1. Englische und deutsche Inhalte, Links, Handbücher und Downloads inhaltlich gleichwertig aktualisieren.
 2. Öffentliche Quellen für Projektfakten prüfen; keine Angaben erfinden.
-3. Bei relevanten HTML-, CSS- oder JavaScript-Änderungen das vorhandene globale Cache-Busting-System verwenden; keine Einzelversionen manuell pflegen.
+3. Solange das globale Cache-Busting aktiv ist, keine Einzelversionen manuell pflegen oder zusätzliche Cache-Mechanismen einführen. Bei Theme-, Cache-, Lade- oder Deployment-Problemen ausschließlich nach `CACHE_BUSTING_PLAN.md` vorgehen: zuerst nur eine vorübergehende Deaktivierung des Workflows als Test anbieten; keine Vereinfachung, Löschung oder Bereinigung ohne ausdrückliche Entscheidung des Nutzers.
 4. `bash Scripts/privacy-check.sh` und `git diff --check` ausführen.
 5. Texte, Bilder, Ziel-URLs sowie Desktop- und Mobilansicht manuell prüfen.
 6. GitHub Pages auf `main` und `/(root)` in den Repository-Einstellungen kontrollieren, wenn die Auslieferung geändert wurde.
