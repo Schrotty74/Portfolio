@@ -87,10 +87,10 @@ jobs:
             const bundle = fs.readFileSync(bundlePath, "utf8");
             const embeddedStatusPattern = /,p=\{.*?\},m=n\(\),h=/s;
             const replacement = `,p=${JSON.stringify(status)},m=n(),h=`;
-            const updatedBundle = bundle.replace(embeddedStatusPattern, replacement);
-            if (updatedBundle === bundle) {
+            if (!embeddedStatusPattern.test(bundle)) {
               throw new Error("Could not locate embedded release status data in assets/app-detail.js");
             }
+            const updatedBundle = bundle.replace(embeddedStatusPattern, replacement);
             fs.writeFileSync(bundlePath, updatedBundle);
           })().catch(error => { console.error(error); process.exit(1); });
           NODE
