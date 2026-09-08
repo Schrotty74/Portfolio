@@ -30,18 +30,19 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 - Gemeinsames Layout und gemeinsame Komponenten liegen in den gemeinsamen Stylesheets.
 - Die drei Theme-Varianten werden getrennt in `assets/dark-theme.css`, `assets/light-theme.css` und `assets/color-theme.css` gepflegt.
 - Das gewählte Theme wird browserseitig unter dem Schlüssel `portfolio-theme` in `localStorage` gespeichert. Zulässige Werte sind ausschließlich `dark`, `light` und `color`.
+- Das zuletzt gewählte Theme soll nach Reload und Seitenwechsel erhalten bleiben und nicht auf einen anderen Theme-Zustand zurückspringen.
 - Der gespeicherte Wert enthält keine personenbezogenen Daten und wird ausschließlich lokal zur Wiederherstellung der Theme-Auswahl verwendet.
 
 ## Cache-Busting
 
-**Wichtig bei Theme-, Cache-, Lade- oder Deployment-Problemen:** Vor Analyse oder Änderungen zuerst `CACHE_BUSTING_PLAN.md` lesen und die dort festgelegte Reihenfolge sowie Einschränkungen einhalten. Diese Vorgabe hat für Änderungen am Cache-Busting Vorrang vor allgemeinen Pflegehinweisen in diesem Dokument.
-
 - `cache-version.txt` ist die zentrale Versionsquelle für die gesamte Website.
 - `.github/workflows/global-cache-bust.yml` erhöht die Version bei relevanten Änderungen und aktualisiert alle betroffenen Referenzen repository-weit.
+- Solange der Workflow aktiv ist, soll er bei normalen relevanten Portfolio-Änderungen unverändert weiterlaufen und die globale Cache-Version wie vorgesehen erhöhen.
 - Die eigentlichen CSS- und JavaScript-Dateien behalten ihre Dateinamen. Eine Versionskennung wie `?v=...` ist nur Teil der URL und erzeugt keine zusätzliche Datei im Repository.
-- HTML-Referenzen, CSS/JS-Assets, App-Detail-Links und relative JavaScript-Imports im ES-Modulbaum müssen auf derselben aktuellen Version bleiben. Dadurch werden neue Einstiegsmodule nicht mit älteren zwischengespeicherten Abhängigkeiten kombiniert.
+- HTML-Referenzen, CSS/JS-Assets, App-Detail-Links und relative JavaScript-Imports im ES-Modulbaum müssen auf derselben aktuellen Version bleiben.
 - Keine per-App-Cache-Versionen und keine manuellen Versionskopien von Assets anlegen.
-- Veraltete Browser-/CDN-Caches laufen außerhalb des Repositorys aus oder werden durch die neue URL umgangen.
+- `CACHE_BUSTING_PLAN.md` ist ein Sonderplan und wird nicht bei normalen Homepage-Änderungen automatisch angewendet. Erst wenn der Nutzer ausdrücklich meldet, dass das bekannte Theme-, Lade- oder Cache-Problem erneut aufgetreten ist, diesen Plan lesen und befolgen.
+- Bei einer solchen erneuten Problemmeldung nicht sofort pausieren, löschen oder bereinigen: zuerst nur eine vorübergehende Deaktivierung des Workflows als Test anbieten. Weitere Schritte ausschließlich nach ausdrücklicher Entscheidung des Nutzers.
 
 ## Datenschutzentscheidungen
 
@@ -56,10 +57,11 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 
 1. Englische und deutsche Inhalte, Links, Handbücher und Downloads inhaltlich gleichwertig aktualisieren.
 2. Öffentliche Quellen für Projektfakten prüfen; keine Angaben erfinden.
-3. Solange das globale Cache-Busting aktiv ist, keine Einzelversionen manuell pflegen oder zusätzliche Cache-Mechanismen einführen. Bei Theme-, Cache-, Lade- oder Deployment-Problemen ausschließlich nach `CACHE_BUSTING_PLAN.md` vorgehen: zuerst nur eine vorübergehende Deaktivierung des Workflows als Test anbieten; keine Vereinfachung, Löschung oder Bereinigung ohne ausdrückliche Entscheidung des Nutzers.
-4. `bash Scripts/privacy-check.sh` und `git diff --check` ausführen.
-5. Texte, Bilder, Ziel-URLs sowie Desktop- und Mobilansicht manuell prüfen.
-6. GitHub Pages auf `main` und `/(root)` in den Repository-Einstellungen kontrollieren, wenn die Auslieferung geändert wurde.
-7. Bei einem neuen öffentlichen Projekt die Repository-Zuordnung im Status-Workflow ergänzen und prüfen, dass das Badge auf der Übersicht erscheint.
+3. Bei normalen relevanten HTML-, CSS- oder JavaScript-Änderungen das bestehende globale Cache-Busting-System weiterlaufen lassen; keine Einzelversionen manuell pflegen oder zusätzliche Cache-Mechanismen einführen.
+4. Nur wenn der Nutzer ausdrücklich meldet, dass das bekannte Theme-, Lade- oder Cache-Problem wieder da ist, `CACHE_BUSTING_PLAN.md` anwenden und zuerst eine vorübergehende Deaktivierung des Workflows als Test anbieten.
+5. `bash Scripts/privacy-check.sh` und `git diff --check` ausführen.
+6. Texte, Bilder, Ziel-URLs sowie Desktop- und Mobilansicht manuell prüfen.
+7. GitHub Pages auf `main` und `/(root)` in den Repository-Einstellungen kontrollieren, wenn die Auslieferung geändert wurde.
+8. Bei einem neuen öffentlichen Projekt die Repository-Zuordnung im Status-Workflow ergänzen und prüfen, dass das Badge auf der Übersicht erscheint.
 
 Bei größeren Änderungen an Struktur, Datenschutz oder Veröffentlichung dieses Dokument und `NEXT_STEPS.md` aktualisieren.
