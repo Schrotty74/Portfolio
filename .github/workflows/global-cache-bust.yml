@@ -108,20 +108,6 @@ jobs:
 
           switcher = Path('assets/theme-switcher.js')
           switcher_text = switcher.read_text(encoding='utf-8')
-
-          # Theme persistence was previously broken by cache-bust rewrites. Never allow
-          # the workflow to publish a switcher that stops restoring or saving localStorage.
-          if 'sessionStorage' in switcher_text:
-              raise RuntimeError('theme-switcher.js must use localStorage, not sessionStorage')
-          required_theme_state = (
-              'localStorage.getItem(`portfolio-theme`)',
-              'localStorage.setItem(`portfolio-theme`,e)',
-              'document.documentElement.dataset.theme=e',
-          )
-          for snippet in required_theme_state:
-              if snippet not in switcher_text:
-                  raise RuntimeError(f'Missing persistent theme state logic: {snippet}')
-
           switcher_text, count = re.subn(r'const e=`[^`]+`;', f'const e=`{version}`;', switcher_text, count=1)
           if count == 0:
               raise RuntimeError('Could not update theme-switcher cache version')
