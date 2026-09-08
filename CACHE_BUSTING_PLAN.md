@@ -43,9 +43,26 @@ Wenn bei einer künftigen normalen Änderung an der Portfolio-Seite erneut eines
 
 dann gilt folgende Reihenfolge:
 
+### Schritt 0: Zuerst nur Deaktivieren als Test anbieten
+
+Nicht sofort den Workflow löschen, keine `?v=`-Versionierungen entfernen und keine Dateien bereinigen.
+
+Zuerst dem Nutzer ausdrücklich vorschlagen, den globalen Cache-Bust nur vorübergehend zu deaktivieren, damit die bestehende Homepage unverändert getestet werden kann.
+
+Ziel dieses Tests:
+
+- prüfen, ob Homepage und App-Detailseiten ohne neue Cache-Bust-Läufe stabil laden,
+- Theme-Wechsel und Theme-Persistenz über Reloads testen,
+- Safari, Firefox und iOS/WebKit vergleichen,
+- feststellen, ob die beobachteten Probleme tatsächlich verschwinden, sobald der Cache-Bust nicht mehr ausgeführt wird.
+
+Während dieses Tests bleiben bestehende `?v=`-Werte, `cache-version.txt` und sonstige bereits vorhandene Cache-Bust-Reste unverändert bestehen. Es wird ausschließlich verhindert, dass der Workflow erneut ausgeführt wird.
+
+Erst nach diesem Test und nur nach ausdrücklicher Entscheidung des Nutzers soll entschieden werden, ob der Workflow wieder aktiviert, vereinfacht oder vollständig entfernt wird.
+
 ### Schritt 1: Cache-Busting vereinfachen
 
-Zuerst eine deutlich vereinfachte Cache-Busting-Lösung umsetzen.
+Wenn der Test bestätigt, dass der Cache-Bust die Probleme verursacht und der Nutzer zunächst eine vereinfachte Lösung versuchen möchte, eine deutlich vereinfachte Cache-Busting-Lösung umsetzen.
 
 Ziele:
 
@@ -62,6 +79,8 @@ Wichtig: Bei dieser Vereinfachung dürfen keine fachlichen oder visuellen Änder
 ### Schritt 2: Vollständige Entfernung des Cache-Bustings
 
 Falls die vereinfachte Lösung weiterhin Probleme verursacht, neue Probleme erzeugt oder die Website nach Deployments weiterhin zeitweise inkonsistent ist, soll der globale Cache-Bust vollständig und sauber entfernt werden.
+
+Auch hier gilt: Nicht automatisch löschen. Vor der vollständigen Entfernung ausdrücklich mit dem Nutzer abstimmen, dass jetzt wirklich gelöscht und bereinigt werden soll.
 
 Dabei gilt ausdrücklich:
 
@@ -92,4 +111,4 @@ dann ist Zustand 1 ausdrücklich vorzuziehen.
 
 Solange kein erneutes Problem nach einer normalen Portfolio-Änderung beobachtet wird, soll aufgrund dieser Notiz allein nichts am Cache-Bust geändert werden.
 
-Erst bei erneutem Auftreten der beschriebenen Probleme soll Schritt 1 umgesetzt werden. Schritt 2 folgt nur, wenn Schritt 1 nicht zuverlässig funktioniert oder neue Probleme verursacht.
+Bei erneutem Auftreten der beschriebenen Probleme soll zuerst Schritt 0 angeboten werden. Keine Löschung, Bereinigung oder Vereinfachung ohne ausdrückliche Entscheidung des Nutzers. Schritt 1 folgt nur, wenn der Nutzer nach dem Deaktivierungs-Test eine vereinfachte Lösung versuchen möchte. Schritt 2 folgt nur, wenn Schritt 1 nicht zuverlässig funktioniert, neue Probleme verursacht oder der Nutzer ausdrücklich die vollständige Entfernung wünscht.
