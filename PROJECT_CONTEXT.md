@@ -34,6 +34,8 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 
 ## Cache-Busting
 
+**Wichtig bei Theme-, Cache-, Lade- oder Deployment-Problemen:** Vor Analyse oder Änderungen zuerst `CACHE_BUSTING_PLAN.md` lesen und die dort festgelegte Reihenfolge sowie Einschränkungen einhalten. Diese Vorgabe hat für Änderungen am Cache-Busting Vorrang vor allgemeinen Pflegehinweisen in diesem Dokument.
+
 - `cache-version.txt` ist die zentrale Versionsquelle für die gesamte Website.
 - `.github/workflows/global-cache-bust.yml` erhöht die Version bei relevanten Änderungen und aktualisiert alle betroffenen Referenzen repository-weit.
 - Die eigentlichen CSS- und JavaScript-Dateien behalten ihre Dateinamen. Eine Versionskennung wie `?v=...` ist nur Teil der URL und erzeugt keine zusätzliche Datei im Repository.
