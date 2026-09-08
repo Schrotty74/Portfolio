@@ -1,1 +1,1 @@
-import{r as e}from"./runtime.js?v=27";import{i as t}from"./framework.js?v=27";import{r as n}from"./index.js?v=27";var r=e(t(),1);function i({segmentMap:e,children:t}){let i=n();return i?(0,r.createElement)(i.Provider,{value:e},t):t}export{i as LayoutSegmentProvider};
+import{r as e}from"./runtime.js?v=28";import{i as t}from"./framework.js?v=28";import{r as n}from"./index.js?v=28";var r=e(t(),1);function i({segmentMap:e,children:t}){let i=n();return i?(0,r.createElement)(i.Provider,{value:e},t):t}export{i as LayoutSegmentProvider};
