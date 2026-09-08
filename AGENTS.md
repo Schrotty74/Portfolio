@@ -2,7 +2,7 @@
 
 Dieses Repository enthält die öffentliche GitHub-Pages-Portfolioseite von Schrotty74 mit App-, Technik- und Rechtsseiten. Es ist keine App und wird deshalb als Website-/Portfolio-Repository behandelt.
 
-Vor jeder Projektarbeit zuerst `PROJECT_CONTEXT.md`, `NEXT_STEPS.md`, `README.md` und `PORTFOLIO_UPDATE.md` lesen. Bei Datenschutz- oder Veröffentlichungsfragen zusätzlich `PRIVACY_CHECK.md` und `PRIVACY_CHECK.de.md` berücksichtigen.
+Vor jeder Projektarbeit zuerst `PROJECT_CONTEXT.md`, `NEXT_STEPS.md`, `README.md` und `PORTFOLIO_UPDATE.md` lesen. Bei Theme-, Cache-, Lade- oder Deployment-Problemen zusätzlich zuerst `CACHE_BUSTING_PLAN.md` lesen und dessen Reihenfolge und Einschränkungen befolgen. Bei Datenschutz- oder Veröffentlichungsfragen zusätzlich `PRIVACY_CHECK.md` und `PRIVACY_CHECK.de.md` berücksichtigen.
 
 ## Verbindliche Arbeitsregeln
 
@@ -11,7 +11,7 @@ Vor jeder Projektarbeit zuerst `PROJECT_CONTEXT.md`, `NEXT_STEPS.md`, `README.md
 - Englische und deutsche sichtbare Inhalte müssen inhaltlich gleichwertig bleiben.
 - Projektbeschreibungen, Funktionen, Technologien, Plattformen, Links und andere öffentliche Fakten nur aus überprüften öffentlichen Quellen oder dem tatsächlichen Repository-Stand übernehmen. Nichts erfinden.
 - `release-status.json` wird ausschließlich durch `.github/workflows/refresh-release-status.yml` aktualisiert. Die Zuordnung neuer öffentlicher Projekte dort ergänzen; keinen Status manuell erfinden.
-- Für Cache-Busting ausschließlich das vorhandene globale System verwenden. `cache-version.txt` ist die zentrale Versionsquelle; `.github/workflows/global-cache-bust.yml` erhöht sie und hält HTML-, CSS-, JavaScript-, interne ES-Modul-Imports und App-Detail-Links auf derselben Version. Keine per-App-Versionen, keine manuellen Einzelversionen und keine physischen Versionskopien von Assets anlegen.
+- Solange das globale Cache-Busting aktiv ist, keine per-App-Versionen, keine manuellen Einzelversionen und keine physischen Versionskopien von Assets anlegen. Bei Theme-, Cache-, Lade- oder Deployment-Problemen hat `CACHE_BUSTING_PLAN.md` Vorrang: nicht automatisch löschen, bereinigen oder vereinfachen; zuerst nur eine vorübergehende Deaktivierung des Workflows als Test anbieten und danach ausschließlich nach ausdrücklicher Entscheidung des Nutzers weiter vorgehen.
 - Die drei Themes werden getrennt in `assets/dark-theme.css`, `assets/light-theme.css` und `assets/color-theme.css` gepflegt. Gemeinsames Layout und gemeinsame Komponenten bleiben in den dafür vorgesehenen gemeinsamen Stylesheets.
 - Keine Tracker, Analysewerkzeuge, Cookies, Formulare oder sonstige neue Datenverarbeitung ohne ausdrückliche Entscheidung und erneute Datenschutzprüfung ergänzen.
 - Keinen Chatbot, Assistenten oder sonstigen eingebetteten Dienst ergänzen, ohne ausdrückliche Entscheidung, erneute Datenschutzprüfung und passende sichtbare Hinweise.
