@@ -1,12 +1,13 @@
 # Nächste Schritte
 
-**Stand:** 7. September 2026
+**Stand:** 8. September 2026
 
 ## Vor oder nach einer Veröffentlichung prüfen
 
 - Die GitHub-Pages-Einstellung muss `main` und `/(root)` verwenden.
 - Die Portfolio-Übersicht sowie mindestens eine Projekt- und Technikseite in Desktop- und Mobilansicht manuell prüfen. Eine automatisierte visuelle Browserprüfung ist nicht eingerichtet.
-- Bei relevanten HTML-, CSS- oder JavaScript-Änderungen das vorhandene globale Cache-Busting-System verwenden und nach dem finalen Deployment prüfen, dass alle Seiten und Module mit derselben aktuellen Version ausgeliefert werden.
+- Solange das globale Cache-Busting aktiv ist, keine Cache-Versionen manuell pflegen oder eigene per-App-Versionen einführen.
+- Bei Theme-, Cache-, Lade- oder Deployment-Problemen zuerst `CACHE_BUSTING_PLAN.md` lesen. Nicht automatisch löschen oder bereinigen; zuerst nur eine vorübergehende Deaktivierung des Workflows als Test anbieten und danach mit dem Nutzer über Vereinfachung oder vollständige Entfernung entscheiden.
 - Theme-Umschaltung und Wiederherstellung von Dunkel, Hell und Bunt in mindestens einem Desktop- und einem Mobilbrowser prüfen.
 
 ## App-Homepages
