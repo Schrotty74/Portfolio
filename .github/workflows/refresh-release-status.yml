@@ -123,9 +123,18 @@ jobs:
           }
 
           function applyStatusBlocks(content, language) {
+            content = content
+              .replace("Privacy-first local Apple Health export analysis for macOS. Final 1.0.0.", "Privacy-first local Apple Health export analysis for macOS.")
+              .replace("Datenschutzorientierte lokale Auswertung von Apple-Health-Exporten unter macOS. Final 1.0.0.", "Datenschutzorientierte lokale Auswertung von Apple-Health-Exporten unter macOS.")
+              .replace(" · [Release 1.0.0](https://github.com/Schrotty74/HealthAtlas/releases/tag/v1.0.0)", "");
+
+            const featuredHeading = language === "de" ? "## Ausgewählte Projekte" : "## Featured projects";
+            const featuredStart = content.indexOf(featuredHeading);
+            if (featuredStart < 0) throw new Error(`Could not find ${featuredHeading}`);
+
             for (const [repository, data] of Object.entries(status)) {
               const repositoryUrl = `https://github.com/${owner}/${repository}`;
-              const position = content.indexOf(repositoryUrl);
+              const position = content.indexOf(repositoryUrl, featuredStart);
               if (position < 0) continue;
 
               const sectionStart = content.lastIndexOf("\n### ", position);
