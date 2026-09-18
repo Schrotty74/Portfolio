@@ -94,6 +94,107 @@ jobs:
             fs.writeFileSync(bundlePath, updatedBundle);
           })().catch(error => { console.error(error); process.exit(1); });
           NODE
+      - name: Sync GitHub profile release statuses
+        env:
+          PROFILE_SYNC_TOKEN: ${{ secrets.PROFILE_SYNC_TOKEN }}
+        run: |
+          if [ -z "$PROFILE_SYNC_TOKEN" ]; then
+            echo "PROFILE_SYNC_TOKEN is not configured; skipping profile sync."
+            exit 0
+          fi
+          node <<'NODE'
+          const fs = require("fs");
+          const status = JSON.parse(fs.readFileSync("release-status.json", "utf8"));
+          const owner = "Schrotty74";
+          const profileRepo = "Schrotty74";
+
+          function releaseUrl(repository, tag) {
+            return `https://github.com/${owner}/${repository}/releases/tag/${tag}`;
+          }
+
+          function statusLine(repository, data, language) {
+            if (!data.final && !data.beta) {
+              return language === "de" ? "**Status:** Entwicklung" : "**Status:** Development";
+            }
+            const parts = [];
+            if (data.beta) parts.push(`Beta [${data.beta.release}](${releaseUrl(repository, data.beta.release)})`);
+            if (data.final) parts.push(`Final [${data.final.release}](${releaseUrl(repository, data.final.release)})`);
+            return `**Status:** ${parts.join(" · ")}`;
+          }
+
+          function applyStatusBlocks(content, language) {
+            for (const [repository, data] of Object.entries(status)) {
+              const repositoryUrl = `https://github.com/${owner}/${repository}`;
+              const position = content.indexOf(repositoryUrl);
+              if (position < 0) continue;
+
+              const sectionStart = content.lastIndexOf("\n### ", position);
+              const nextSection = content.indexOf("\n### ", position);
+              const repoActivity = content.indexOf("\n## Repo activity", position);
+              const sectionEnd = nextSection >= 0 ? nextSection : (repoActivity >= 0 ? repoActivity : content.length);
+              let section = content.slice(sectionStart, sectionEnd);
+
+              const startMarker = `<!-- release-status:${repository}:start -->`;
+              const endMarker = `<!-- release-status:${repository}:end -->`;
+              const block = `${startMarker}\n${statusLine(repository, data, language)}\n${endMarker}`;
+              const markerPattern = new RegExp(
+                `<!-- release-status:${repository}:start -->[\\s\\S]*?<!-- release-status:${repository}:end -->`
+              );
+
+              if (markerPattern.test(section)) {
+                section = section.replace(markerPattern, block);
+              } else {
+                const lines = section.split("\n");
+                const linkIndex = lines.findIndex(line => line.includes(repositoryUrl));
+                if (linkIndex >= 0) lines.splice(linkIndex, 0, block);
+                section = lines.join("\n");
+              }
+
+              content = content.slice(0, sectionStart) + section + content.slice(sectionEnd);
+            }
+            return content;
+          }
+
+          async function api(path, options = {}) {
+            const response = await fetch(`https://api.github.com${path}`, {
+              ...options,
+              headers: {
+                Accept: "application/vnd.github+json",
+                Authorization: `Bearer ${process.env.PROFILE_SYNC_TOKEN}`,
+                "X-GitHub-Api-Version": "2022-11-28",
+                ...(options.headers || {})
+              }
+            });
+            if (!response.ok) {
+              throw new Error(`${options.method || "GET"} ${path} failed: ${response.status}`);
+            }
+            return response.json();
+          }
+
+          async function updateReadme(path, language) {
+            const current = await api(`/repos/${owner}/${profileRepo}/contents/${path}`);
+            const decoded = Buffer.from(current.content, "base64").toString("utf8");
+            const updated = applyStatusBlocks(decoded, language);
+            if (updated === decoded) return;
+
+            await api(`/repos/${owner}/${profileRepo}/contents/${path}`, {
+              method: "PUT",
+              body: JSON.stringify({
+                message: "Sync profile release statuses",
+                content: Buffer.from(updated, "utf8").toString("base64"),
+                sha: current.sha
+              })
+            });
+          }
+
+          (async () => {
+            await updateReadme("README.md", "en");
+            await updateReadme("README.de.md", "de");
+          })().catch(error => {
+            console.error(error);
+            process.exit(1);
+          });
+          NODE
       - name: Commit changed status data
         run: |
           if git diff --quiet -- release-status.json assets/app-detail.js; then exit 0; fi
