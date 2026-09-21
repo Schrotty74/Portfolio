@@ -154,19 +154,19 @@
     }
   },
   "HealthAtlas": {
-    "stage": "Beta",
-    "release": "v1.6.0-beta",
-    "updatedAt": "2026-09-20T05:23:31Z",
+    "stage": "Final",
+    "release": "v2.0.0",
+    "updatedAt": "2026-09-21T03:55:40Z",
     "assets": {
-      "dmg": "https://github.com/Schrotty74/HealthAtlas/releases/download/v1.6.0-beta/HealthAtlas-Beta-1.6.0-macos.dmg",
-      "zip": "https://github.com/Schrotty74/HealthAtlas/releases/download/v1.6.0-beta/HealthAtlas-Beta-1.6.0-macos.zip"
+      "dmg": "https://github.com/Schrotty74/HealthAtlas/releases/download/v2.0.0/HealthAtlas-2.0.0-macos.dmg",
+      "zip": "https://github.com/Schrotty74/HealthAtlas/releases/download/v2.0.0/HealthAtlas-2.0.0-macos.zip"
     },
     "final": {
-      "release": "v1.0.1",
-      "updatedAt": "2026-09-06T14:47:48Z",
+      "release": "v2.0.0",
+      "updatedAt": "2026-09-21T03:55:40Z",
       "assets": {
-        "dmg": "https://github.com/Schrotty74/HealthAtlas/releases/download/v1.0.1/HealthAtlas-1.0.1-macos.dmg",
-        "zip": "https://github.com/Schrotty74/HealthAtlas/releases/download/v1.0.1/HealthAtlas-1.0.1-macos.zip"
+        "dmg": "https://github.com/Schrotty74/HealthAtlas/releases/download/v2.0.0/HealthAtlas-2.0.0-macos.dmg",
+        "zip": "https://github.com/Schrotty74/HealthAtlas/releases/download/v2.0.0/HealthAtlas-2.0.0-macos.zip"
       }
     },
     "beta": {
