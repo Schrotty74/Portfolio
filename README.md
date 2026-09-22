@@ -25,3 +25,5 @@ The site provides Dark, Light and Colour themes. Their theme-specific rules are 
 - Before publication, run `bash Scripts/privacy-check.sh`, review public texts and images manually, and run `git diff --check`.
 - The documented privacy review is in [PRIVACY_CHECK.md](PRIVACY_CHECK.md).
 - Rules for adding or updating a project are in [PORTFOLIO_UPDATE.md](PORTFOLIO_UPDATE.md).
+
+<!-- pages-deploy-test-2026-09-22 -->
