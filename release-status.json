@@ -180,11 +180,11 @@
   },
   "ThermalAtlas": {
     "stage": "Beta",
-    "release": "v1.2.0-beta.4",
-    "updatedAt": "2026-09-30T05:45:38Z",
+    "release": "v1.2.0-beta.5",
+    "updatedAt": "2026-10-01T03:43:05Z",
     "assets": {
-      "dmg": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0-beta.4/ThermalAtlas-Beta-1.2.0-beta.4-macos.dmg",
-      "zip": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0-beta.4/ThermalAtlas-Beta-1.2.0-beta.4-macos.zip"
+      "dmg": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0-beta.5/ThermalAtlas-Beta-1.2.0-beta.5-macos.dmg",
+      "zip": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0-beta.5/ThermalAtlas-Beta-1.2.0-beta.5-macos.zip"
     },
     "final": {
       "release": "v1.1.0",
@@ -195,11 +195,11 @@
       }
     },
     "beta": {
-      "release": "v1.2.0-beta.4",
-      "updatedAt": "2026-09-30T05:45:38Z",
+      "release": "v1.2.0-beta.5",
+      "updatedAt": "2026-10-01T03:43:05Z",
       "assets": {
-        "dmg": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0-beta.4/ThermalAtlas-Beta-1.2.0-beta.4-macos.dmg",
-        "zip": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0-beta.4/ThermalAtlas-Beta-1.2.0-beta.4-macos.zip"
+        "dmg": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0-beta.5/ThermalAtlas-Beta-1.2.0-beta.5-macos.dmg",
+        "zip": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0-beta.5/ThermalAtlas-Beta-1.2.0-beta.5-macos.zip"
       }
     }
   },
