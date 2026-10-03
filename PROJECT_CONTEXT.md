@@ -1,6 +1,6 @@
 # Projektkontext: Portfolio
 
-**Stand:** 8. September 2026
+**Stand:** 3. Oktober 2026
 **Zweck:** Öffentliche, zweisprachige GitHub-Pages-Website für die Apps und Projekte von Schrotty74.
 
 ## Veröffentlichtes System
@@ -24,6 +24,14 @@ Die Portfolio-Startseite bleibt die kompakte Übersicht über alle Projekte. Die
 Die App-Detailseiten verwenden inzwischen ein gemeinsames visuelles System. App-spezifische Abweichungen sind dort erlaubt, wo sie durch das Material sinnvoll sind, etwa unterschiedliche Galerie-Größen, Hochformatbegrenzungen oder die Web/Swift-Paarung bei UroBilanz. Inhalte, Screenshots, Funktionen und Downloads müssen weiterhin aus dem jeweiligen öffentlichen Projektstand abgeleitet werden und dürfen nicht schematisch erfunden werden.
 
 Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubusercontent.com/Schrotty74/...` geladen; damit ruft der Browser GitHub für diese Bilder auf. Andere Projekt- oder Downloadlinks werden erst nach Auswahl durch Besucher geöffnet.
+
+## Bedienbarkeit und Barrierefreiheit
+
+- Jede Seite bietet einen Sprunglink zum fokussierbaren Hauptinhalt. Der Sprachwechsel führt zur entsprechenden Seite der anderen Sprache.
+- Die Kategorien auf der Übersicht sind auf schmalen Bildschirmen vollständig sichtbar. Die Auswahl steht als `category` in der URL; der Ergebniszähler meldet Änderungen über eine Live-Region.
+- `assets/site-accessibility.js` steuert die Animationspause für das aktuelle Dokument. Diese Auswahl wird nicht gespeichert. Wiederholte Laufschrift-Inhalte werden vor Screenreadern verborgen.
+- `assets/image-sizes.js` enthält die geprüften Bildabmessungen für die Übersicht und dynamisch ergänzte Galerien. Bilder unterhalb des Einstiegs werden verzögert geladen.
+- Bei Änderungen am statischen Export müssen HTML, eingebettete RSC-Daten und die zugehörigen Client-Komponenten zusammenpassen.
 
 ## Themes
 

@@ -57,7 +57,7 @@
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--bg);
-  color: var(--lime);
+  color: var(--accent-ink, var(--lime));
   padding: 9px 12px;
   font-size: .72rem;
   font-weight: 800;
@@ -117,23 +117,25 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 92px;
+  width: 100%;
   height: 18px;
   border-radius: 999px;
   background: radial-gradient(ellipse at center, color-mix(in srgb, white 30%, var(--lime)) 0 7%, var(--lime) 8% 20%, color-mix(in srgb, var(--lime) 45%, transparent) 38%, transparent 72%);
-  box-shadow: 0 0 15px color-mix(in srgb, var(--lime) 62%, transparent), 0 0 30px color-mix(in srgb, var(--lime) 26%, transparent);
+
   opacity: 0;
   pointer-events: none;
-  will-change: left, transform, opacity;
+  background-size: 92px 18px;
+  background-repeat: no-repeat;
+  will-change: transform, opacity;
   animation: app-divider-pulse 4.35s linear infinite;
 }
 .app-compat-marquee + section::after { display: none; }
 .detail-page > section:nth-of-type(odd)::after { animation-direction: reverse; }
 @keyframes app-divider-pulse {
-  0% { left: 0%; transform: translate(-50%, -50%); opacity: 0; }
-  3% { left: 0%; transform: translate(-50%, -50%); opacity: .95; }
-  97% { left: 100%; transform: translate(-50%, -50%); opacity: .95; }
-  100% { left: 100%; transform: translate(-50%, -50%); opacity: 0; }
+  0% { transform: translate(0, -50%); opacity: 0; }
+  3% { transform: translate(0, -50%); opacity: .95; }
+  97% { transform: translate(calc(100% - 92px), -50%); opacity: .95; }
+  100% { transform: translate(calc(100% - 92px), -50%); opacity: 0; }
 }
 .detail-page > section > .eyebrow { margin-bottom: 10px; }
 .detail-page > section > h2,
@@ -184,7 +186,7 @@
 }
 .feature-list b {
   display: block;
-  color: var(--lime);
+  color: var(--accent-ink, var(--lime));
   letter-spacing: .1em;
   font-size: .68rem;
   margin-bottom: 28px;
@@ -260,7 +262,7 @@
     margin-top: 31px;
   }
   .detail-grid { padding: 35px 0 52px; }
-  .detail-grid h1 { font-size: clamp(3.4rem, 16vw, 4.9rem); }
+  .detail-grid h1 { font-size: clamp(2.5rem, 12vw, 4.9rem); }
   .app-compat-marquee-track { padding: 13px 0; }
   .app-compat-marquee span { margin-right: 26px; font-size: .66rem; }
   .detail-page > section { padding: 40px 0; }
@@ -269,14 +271,14 @@
     font-size: clamp(2.05rem, 9vw, 2.8rem);
     line-height: 1.04;
   }
-  .detail-page > section::after { width: 70px; height: 15px; }
+  .detail-page > section::after { height: 15px; background-size: 70px 15px; }
   .feature-list,
   .feature-list.expanded { grid-template-columns: 1fr; }
   .ai-detail { padding-left: 18px !important; }
 }
 @media (prefers-reduced-motion: reduce) {
   .app-compat-marquee-track { animation: none; transform: none; }
-  .detail-page > section::after { animation: none; opacity: .55; left: 50%; transform: translate(-50%, -50%); }
+  .detail-page > section::after { animation: none; opacity: .55; left: 0; background-position: center; transform: translateY(-50%); }
   .detail-art,
   .detail-art img,
   .feature-list > div,
@@ -339,7 +341,7 @@
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--bg);
-  color: var(--lime);
+  color: var(--accent-ink, var(--lime));
   padding: 9px 12px;
   font-size: .72rem;
   font-weight: 800;
@@ -387,23 +389,25 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 92px;
+  width: 100%;
   height: 18px;
   border-radius: 999px;
   background: radial-gradient(ellipse at center, color-mix(in srgb, white 30%, var(--lime)) 0 7%, var(--lime) 8% 20%, color-mix(in srgb, var(--lime) 45%, transparent) 38%, transparent 72%);
-  box-shadow: 0 0 15px color-mix(in srgb, var(--lime) 62%, transparent), 0 0 30px color-mix(in srgb, var(--lime) 26%, transparent);
+
   opacity: 0;
   pointer-events: none;
-  will-change: left, transform, opacity;
+  background-size: 92px 18px;
+  background-repeat: no-repeat;
+  will-change: transform, opacity;
   animation: health-divider-pulse 4.35s linear infinite;
 }
 .health-marquee + .health-section::after { display: none; }
 .health-section:nth-of-type(odd)::after { animation-direction: reverse; }
 @keyframes health-divider-pulse {
-  0% { left: 0%; transform: translate(-50%, -50%); opacity: 0; }
-  3% { left: 0%; transform: translate(-50%, -50%); opacity: .95; }
-  97% { left: 100%; transform: translate(-50%, -50%); opacity: .95; }
-  100% { left: 100%; transform: translate(-50%, -50%); opacity: 0; }
+  0% { transform: translate(0, -50%); opacity: 0; }
+  3% { transform: translate(0, -50%); opacity: .95; }
+  97% { transform: translate(calc(100% - 92px), -50%); opacity: .95; }
+  100% { transform: translate(calc(100% - 92px), -50%); opacity: 0; }
 }
 .health-section-heading {
   display: grid;
@@ -449,7 +453,7 @@
 }
 .health-step:hover,
 .health-feature:hover { background: color-mix(in srgb, var(--surface) 88%, var(--lime)); }
-.health-step b { display: block; color: var(--lime); letter-spacing: .1em; font-size: .72rem; margin-bottom: 34px; }
+.health-step b { display: block; color: var(--accent-ink, var(--lime)); letter-spacing: .1em; font-size: .72rem; margin-bottom: 34px; }
 .health-step h3 { margin: 0 0 9px; font-size: 1.3rem; }
 .health-step p { color: var(--muted); margin: 0; font-size: .9rem; line-height: 1.55; }
 .health-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
@@ -485,7 +489,7 @@
 .health-shot figcaption { padding: 17px 18px 19px; background: var(--surface); border-radius: 0 0 21px 21px; }
 .health-shot strong { display: block; font-size: .98rem; }
 .health-shot span { display: block; color: var(--muted); margin-top: 6px; font-size: .84rem; line-height: 1.5; }
-.health-shot .health-shot-open { color: var(--lime); margin-top: 11px; font-size: .76rem; font-weight: 800; letter-spacing: .02em; }
+.health-shot .health-shot-open { color: var(--accent-ink, var(--lime)); margin-top: 11px; font-size: .76rem; font-weight: 800; letter-spacing: .02em; }
 .health-feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .health-feature {
   border: 1px solid var(--line);
@@ -494,7 +498,7 @@
   padding: 22px 19px;
   min-height: 150px;
 }
-.health-feature b { color: var(--lime); letter-spacing: .1em; font-size: .68rem; }
+.health-feature b { color: var(--accent-ink, var(--lime)); letter-spacing: .1em; font-size: .68rem; }
 .health-feature p { margin: 28px 0 0; font-size: .94rem; line-height: 1.5; }
 .health-privacy { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .health-privacy-card { border: 1px solid var(--line); background: var(--surface); border-radius: 20px; padding: 26px 23px; }
@@ -519,7 +523,7 @@
 .health-product .resource-links a:hover { transform: translateY(-3px); box-shadow: 0 10px 24px #00000035; }
 .health-product .action-row a:not(.secondary):hover { box-shadow: 0 10px 28px color-mix(in srgb, var(--lime) 28%, transparent); }
 .health-product .action-row .secondary:hover,
-.health-product .resource-links a:hover { border-color: var(--lime); color: var(--lime); }
+.health-product .resource-links a:hover { border-color: var(--accent-ink, var(--lime)); color: var(--accent-ink, var(--lime)); }
 .health-reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -536,13 +540,13 @@
 @media (width <= 640px) {
   .health-product { width: min(100% - 28px, 760px); margin-top: 31px; }
   .health-hero { padding: 35px 0 52px; }
-  .health-hero h1 { font-size: clamp(3.4rem, 16vw, 4.9rem); }
+  .health-hero h1 { font-size: clamp(2.5rem, 12vw, 4.9rem); }
   .health-section h2 { font-size: clamp(2.05rem, 9vw, 2.8rem); line-height: 1.04; }
   .health-marquee-track { padding: 13px 0; }
   .health-marquee span { margin-right: 26px; font-size: .66rem; }
   .health-section { padding: 40px 0; }
   .health-section-heading { gap: 17px; margin-bottom: 26px; }
-  .health-section::after { width: 70px; height: 15px; }
+  .health-section::after { height: 15px; background-size: 70px 15px; }
   .health-steps,
   .health-gallery,
   .health-feature-grid,
@@ -554,7 +558,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .health-marquee-track { animation: none; transform: none; }
-  .health-section::after { animation: none; opacity: .55; left: 50%; transform: translate(-50%, -50%); }
+  .health-section::after { animation: none; opacity: .55; left: 0; background-position: center; transform: translateY(-50%); }
   .health-hero-media,
   .health-hero-media img,
   .health-shot,
