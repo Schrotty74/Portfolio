@@ -179,19 +179,19 @@
     }
   },
   "ThermalAtlas": {
-    "stage": "Beta",
-    "release": "v1.2.0-beta.7",
-    "updatedAt": "2026-10-06T06:38:14Z",
+    "stage": "Final",
+    "release": "v1.2.0",
+    "updatedAt": "2026-10-11T04:06:36Z",
     "assets": {
-      "dmg": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0-beta.7/ThermalAtlas-Beta-1.2.0-beta.7-macos.dmg",
-      "zip": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0-beta.7/ThermalAtlas-Beta-1.2.0-beta.7-macos.zip"
+      "dmg": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0/ThermalAtlas-1.2.0-macos.dmg",
+      "zip": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0/ThermalAtlas-1.2.0-macos.zip"
     },
     "final": {
-      "release": "v1.1.0",
-      "updatedAt": "2026-09-04T05:04:37Z",
+      "release": "v1.2.0",
+      "updatedAt": "2026-10-11T04:06:36Z",
       "assets": {
-        "dmg": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.1.0/ThermalAtlas-1.1.0-macos.dmg",
-        "zip": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.1.0/ThermalAtlas-1.1.0-macos.zip"
+        "dmg": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0/ThermalAtlas-1.2.0-macos.dmg",
+        "zip": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0/ThermalAtlas-1.2.0-macos.zip"
       }
     },
     "beta": {
@@ -206,7 +206,7 @@
   "chatgpt-pets": {
     "stage": "Development",
     "release": null,
-    "updatedAt": "2026-09-13T05:42:34Z",
+    "updatedAt": "2026-10-11T05:30:54Z",
     "assets": {
       "dmg": null,
       "zip": null
