@@ -39,8 +39,8 @@ jobs:
           expected = f"?v={version}"
           mismatches = []
 
-          asset_pattern = re.compile(r"/Portfolio/assets/[A-Za-z0-9._/-]+\.(?:css|js)(?:\?v=([^"'<>\\s]+))?")
-          page_pattern = re.compile(r"/Portfolio/(?:de/)?apps/[A-Za-z0-9._/-]+/?(?:\?v=([^"'<>]+))?")
+          asset_pattern = re.compile(r'/Portfolio/assets/[A-Za-z0-9._/-]+\.(?:css|js)(?:\?v=([^"\'<>\\s]+))?')
+          page_pattern = re.compile(r'/Portfolio/(?:de/)?apps/[A-Za-z0-9._/-]+/?(?:\?v=([^"\'<>]+))?')
 
           for path in list(Path(".").rglob("*.html")) + list(Path("assets").glob("*.js")):
               text = path.read_text(encoding="utf-8")
