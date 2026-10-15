@@ -44,9 +44,8 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 ## Cache-Busting
 
 - `cache-version.txt` ist die zentrale Versionsquelle für die gesamte Website.
-- `.github/workflows/global-cache-bust.yml` erhöht die Version bei relevanten Änderungen und aktualisiert alle betroffenen Referenzen repository-weit.
-- Solange der Workflow aktiv ist, soll er bei normalen relevanten Portfolio-Änderungen unverändert weiterlaufen und die globale Cache-Version wie vorgesehen erhöhen.
-- Die eigentlichen CSS- und JavaScript-Dateien behalten ihre Dateinamen. Eine Versionskennung wie `?v=...` ist nur Teil der URL und erzeugt keine zusätzliche Datei im Repository.
+- `.github/workflows/global-cache-bust.yml` validiert bei relevanten Änderungen nur noch, dass alle Referenzen die zentrale Version verwenden; er ändert keine Dateien, erstellt keinen Commit und löst keine zweite Pages-Veröffentlichung aus.
+- Die globale Version wird bei einer bewussten Änderung am statischen Export einmalig im selben Änderungsstand gesetzt. Die eigentlichen CSS- und JavaScript-Dateien behalten ihre Dateinamen; `?v=...` ist nur Teil der URL.
 - HTML-Referenzen, CSS/JS-Assets, App-Detail-Links und relative JavaScript-Imports im ES-Modulbaum müssen auf derselben aktuellen Version bleiben.
 - Keine per-App-Cache-Versionen und keine manuellen Versionskopien von Assets anlegen.
 - `CACHE_BUSTING_PLAN.md` ist ein Sonderplan und wird nicht bei normalen Homepage-Änderungen automatisch angewendet. Erst wenn der Nutzer ausdrücklich meldet, dass das bekannte Theme-, Lade- oder Cache-Problem erneut aufgetreten ist, diesen Plan lesen und befolgen.
@@ -65,8 +64,8 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 
 1. Englische und deutsche Inhalte, Links, Handbücher und Downloads inhaltlich gleichwertig aktualisieren.
 2. Öffentliche Quellen für Projektfakten prüfen; keine Angaben erfinden.
-3. Bei normalen relevanten HTML-, CSS- oder JavaScript-Änderungen das bestehende globale Cache-Busting-System weiterlaufen lassen; keine Einzelversionen manuell pflegen oder zusätzliche Cache-Mechanismen einführen.
-4. Nur wenn der Nutzer ausdrücklich meldet, dass das bekannte Theme-, Lade- oder Cache-Problem wieder da ist, `CACHE_BUSTING_PLAN.md` anwenden und zuerst eine vorübergehende Deaktivierung des Workflows als Test anbieten.
+3. Bei relevanten HTML-, CSS- oder JavaScript-Änderungen die zentrale Cache-Version bei Bedarf gezielt erhöhen und die Referenzen konsistent halten; der Validierungsworkflow darf keinen zweiten Commit oder Pages-Build erzeugen.
+4. Bei erneuten Cache-, Lade- oder Theme-Problemen `CACHE_BUSTING_PLAN.md` als Diagnose- und Prüfnotiz verwenden; keine zusätzliche automatische Umschreibung aller Seiten einführen.
 5. `bash Scripts/privacy-check.sh` und `git diff --check` ausführen.
 6. Texte, Bilder, Ziel-URLs sowie Desktop- und Mobilansicht manuell prüfen.
 7. GitHub Pages auf `main` und `/(root)` in den Repository-Einstellungen kontrollieren, wenn die Auslieferung geändert wurde.
