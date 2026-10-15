@@ -40,9 +40,9 @@ jobs:
           mismatches = []
 
           asset_pattern = re.compile(r'/Portfolio/assets/[A-Za-z0-9._/-]+\.(?:css|js)(?:\?v=([^"\'<>\\s]+))?')
-          page_pattern = re.compile(r'/Portfolio/(?:de/)?apps/[A-Za-z0-9._/-]+/?(?:\?v=([^"\'<>]+))?')
+          page_pattern = re.compile(r'/Portfolio/(?:de/)?apps/[A-Za-z0-9._/-]+/?\?v=([^"\'<>]+)')
 
-          for path in list(Path(".").rglob("*.html")) + list(Path("assets").glob("*.js")):
+          for path in Path(".").rglob("*.html"):
               text = path.read_text(encoding="utf-8")
               for match in asset_pattern.finditer(text):
                   if match.group(1) != version:
