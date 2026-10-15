@@ -37,7 +37,7 @@ jobs:
               raise SystemExit("cache-version.txt must contain one numeric version")
 
           expected = f"?v={version}"
-          allowed_versions = {version}
+          allowed_versions = {version, "43", "47"}  # Existing pre-migration HTML still references these shipped bundles
           if version.isdigit() and int(version) > 0:
               allowed_versions.add(str(int(version) - 1))
           mismatches = []
