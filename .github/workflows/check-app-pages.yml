@@ -1,0 +1,34 @@
+name: Check app page structure
+
+on:
+  push:
+    branches:
+      - refactor/unified-app-pages
+    paths:
+      - "apps/**"
+      - "de/apps/**"
+      - "assets/**"
+      - "release-status.json"
+      - "Scripts/check-app-pages.mjs"
+      - ".github/workflows/check-app-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify app page structure and release data
+        run: node Scripts/check-app-pages.mjs
+      - name: Validate common JavaScript syntax
+        run: |
+          node --check assets/app-detail.js
+          node --check assets/site-chrome.js
+      - name: Validate static website privacy
+        run: bash Scripts/privacy-check.sh
