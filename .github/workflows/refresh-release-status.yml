@@ -23,7 +23,7 @@ jobs:
           node <<'NODE'
           const fs = require("fs");
           const repositories = [
-            "AppAtlas", "FileAtlas", "CodexVault", "BudgetAtlas", "CalcBoy",
+            "e2Atlas", "AppAtlas", "FileAtlas", "CodexVault", "BudgetAtlas", "CalcBoy",
             "Skybreak-Protocol", "UroBilanz", "HealthAtlas", "ThermalAtlas",
             "chatgpt-pets", "Shortcuts"
           ];
@@ -48,7 +48,8 @@ jobs:
               updatedAt: release.published_at || release.created_at,
               assets: {
                 dmg: release.assets.find(asset => asset.name.toLowerCase().endsWith(".dmg"))?.browser_download_url || null,
-                zip: release.assets.find(asset => asset.name.toLowerCase().endsWith(".zip"))?.browser_download_url || null
+                zip: release.assets.find(asset => asset.name.toLowerCase().endsWith(".zip"))?.browser_download_url || null,
+                sha256: release.assets.find(asset => asset.name.toLowerCase() === "sha256sums")?.browser_download_url || null
               }
             } : null;
             const final = published.find(candidate => !candidate.prerelease);
@@ -119,6 +120,16 @@ jobs:
             const parts = [];
             if (data.beta) parts.push(`Beta [${data.beta.release}](${releaseUrl(repository, data.beta.release)})`);
             if (data.final) parts.push(`Final [${data.final.release}](${releaseUrl(repository, data.final.release)})`);
+
+            const preferredRelease = data.stage === "Beta" ? data.beta : data.final;
+            const assets = preferredRelease?.assets || data.assets || {};
+            const downloadLabel = language === "de"
+              ? { dmg: "DMG herunterladen", zip: "ZIP herunterladen", sha256: "Prüfsummen" }
+              : { dmg: "Download DMG", zip: "Download ZIP", sha256: "Checksums" };
+            if (assets.dmg) parts.push(`[${downloadLabel.dmg}](${assets.dmg})`);
+            if (assets.zip) parts.push(`[${downloadLabel.zip}](${assets.zip})`);
+            if (assets.sha256) parts.push(`[${downloadLabel.sha256}](${assets.sha256})`);
+
             return `**Status:** ${parts.join(" · ")}`;
           }
 
