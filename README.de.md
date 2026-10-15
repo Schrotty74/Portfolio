@@ -6,7 +6,7 @@
 
 Das öffentliche GitHub-Pages-App-Portfolio von [Schrotty74](https://github.com/Schrotty74) ist unter [schrotty74.github.io/Portfolio](https://schrotty74.github.io/Portfolio/) erreichbar.
 
-Es bietet eine englischsprachige Übersicht mit gleichwertiger deutscher Fassung für elf öffentliche Projekte sowie Projekt-, Technik-, Impressums- und Datenschutzseiten. Soweit öffentlich vorhanden, verlinken die Projektseiten auf Handbuch, Direktdownload, Web-App und Quell-Repository.
+Es bietet eine englischsprachige Übersicht mit gleichwertiger deutscher Fassung für zwölf öffentliche Projekte sowie Projekt-, Technik-, Impressums- und Datenschutzseiten. Soweit öffentlich vorhanden, verlinken die Projektseiten auf Handbuch, Direktdownload, Web-App und Quell-Repository.
 
 ## Veröffentlichung
 
@@ -20,7 +20,7 @@ Die Website bietet Dunkel, Hell und Bunt. Theme-spezifische Regeln liegen getren
 
 - Öffentliche Projekt-Screenshots werden direkt über GitHubs Raw-Content-Host geladen.
 - Release-Badges und getrennte Ziele für die jeweils neuesten Final-/Beta-Downloads werden durch den Repository-Workflow täglich aus öffentlichen GitHub-Release-Daten aktualisiert.
-- Das derzeit aktive globale Cache-Busting-System verwendet `cache-version.txt` und `.github/workflows/global-cache-bust.yml`, um HTML-Referenzen, CSS-/JavaScript-Ressourcen, interne ES-Modul-Imports und App-Detail-Links auf einer Version zu halten. Die Assets behalten stabile Dateinamen; es entstehen keine physischen Versionskopien. Bei Theme-, Cache-, Lade- oder Deployment-Problemen zuerst [CACHE_BUSTING_PLAN.md](CACHE_BUSTING_PLAN.md) beachten, bevor dieses System verändert wird.
+- Die globale Cache-Version steht in `cache-version.txt`. `.github/workflows/global-cache-bust.yml` prüft jetzt nur noch, ob HTML-Referenzen, CSS-/JavaScript-Ressourcen, interne ES-Modul-Imports und App-Detail-Links dieselbe Version verwenden. Der Workflow schreibt keine Dateien, erstellt keine Folge-Commits und löst keine zweite Pages-Veröffentlichung aus. Die Assets behalten stabile Dateinamen; es entstehen keine physischen Versionskopien. Bei Cache-, Lade- oder Deployment-Problemen zuerst [CACHE_BUSTING_PLAN.md](CACHE_BUSTING_PLAN.md) beachten.
 - Vor einer Veröffentlichung `bash Scripts/privacy-check.sh` und `git diff --check` ausführen sowie Texte und Bilder manuell prüfen.
 - Die dokumentierte Datenschutzprüfung steht in [PRIVACY_CHECK.de.md](PRIVACY_CHECK.de.md).
 - Regeln für neue oder geänderte Projekte stehen in [PORTFOLIO_UPDATE.md](PORTFOLIO_UPDATE.md).
