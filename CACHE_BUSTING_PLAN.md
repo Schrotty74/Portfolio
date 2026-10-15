@@ -1,6 +1,6 @@
 # Cache-Busting: Beobachtung und weiteres Vorgehen
 
-Stand: 2026-09-08
+Stand: 15. Oktober 2026
 
 ## Hintergrund
 
@@ -21,7 +21,7 @@ Seit der Einführung des globalen Cache-Bustings wurden wiederholt folgende Prob
 - Nach vollständigem Beenden des Browsers, kurzer Wartezeit und erneutem Laden funktionierten Theme und App-Seiten wieder normal.
 - Firefox unter macOS war teilweise bereits wieder stabil, während WebKit-basierte Browser noch einen inkonsistenten Zustand zeigten.
 
-Das deutet darauf hin, dass der aktuelle globale Cache-Bust zeitweise inkonsistente Kombinationen aus HTML, CSS und JavaScript-Modulen bzw. aufeinanderfolgenden GitHub-Pages-Deployments erzeugen kann.
+Das deutet darauf hin, dass der frühere globale Cache-Bust zeitweise inkonsistente Kombinationen aus HTML, CSS und JavaScript-Modulen bzw. aufeinanderfolgenden GitHub-Pages-Deployments erzeugt hat.
 
 ## Aktueller Stand
 
@@ -29,7 +29,13 @@ Die Theme-Auswahl wird weiterhin in `localStorage` unter `portfolio-theme` gespe
 
 Der aktuelle Theme-Fix soll dafür sorgen, dass die Theme-Persistenz möglichst unabhängig von gecachten bzw. versionierten JavaScript-Modulen funktioniert. Ziel ist, dass nach Reload oder Seitenwechsel immer das zuletzt gewählte Theme erhalten bleibt und nicht auf ein anderes Theme zurückspringt.
 
-Der globale Cache-Bust bleibt vorerst unverändert aktiv. Solange er aktiv ist, soll er bei normalen relevanten Portfolio-Änderungen weiterhin wie vorgesehen die globale Cache-Version erhöhen und die dazugehörigen Referenzen aktualisieren.
+Der frühere automatische Schreib-Workflow wurde am 15. Oktober 2026 durch eine reine Validierung ersetzt. `.github/workflows/global-cache-bust.yml` prüft jetzt nur noch die Referenzen, ändert keine Dateien, erstellt keinen Folge-Commit und löst keinen zweiten Pages-Build aus. Die zentrale Version in `cache-version.txt` wird bei einer geplanten Inhaltsänderung gezielt erhöht.
+
+## Neue Veröffentlichungslogik
+
+Pro eigentlicher Änderung gibt es jetzt nur noch einen normalen GitHub-Pages-Build. Die Cache-Version wird nicht mehr nachträglich durch einen Bot-Commit verändert. Dadurch werden keine konkurrierenden Folge-Deployments erzeugt und HTML, CSS sowie JavaScript bleiben im selben Veröffentlichungsstand.
+
+Der GitHub-Actions-Workflow dient nur als Konsistenzprüfung. Wenn Referenzen nicht zur zentralen Version passen, schlägt die Prüfung fehl; sie schreibt nichts zurück.
 
 ## Wann dieser Sonderplan angewendet wird
 
@@ -44,15 +50,15 @@ Er wird erst dann angewendet, wenn der Nutzer ausdrücklich meldet, dass das bek
 - vorübergehend inkonsistente Darstellung nach einem Deployment,
 - ein anderes vom Nutzer ausdrücklich als erneutes Cache-/Theme-Problem gemeldetes Verhalten.
 
-Bei normalen Portfolio-Änderungen ohne eine solche Problemmeldung läuft der bestehende Cache-Bust unverändert weiter. In diesem Fall nicht von sich aus vorschlagen, den Workflow zu pausieren, zu vereinfachen oder zu löschen.
+Bei normalen Portfolio-Änderungen ohne eine solche Problemmeldung läuft nur die Validierung. Sie erzeugt keinen zusätzlichen Commit und keine zweite Veröffentlichung.
 
 ## Verbindliches weiteres Vorgehen nach erneuter Problemmeldung
 
-### Schritt 0: Zuerst nur Deaktivieren als Test anbieten
+### Schritt 0: Zuerst nur die Auslieferung prüfen
 
-Nicht sofort den Workflow löschen, keine `?v=`-Versionierungen entfernen und keine Dateien bereinigen.
+Nicht sofort `?v=`-Versionierungen entfernen und keine Dateien bereinigen.
 
-Zuerst dem Nutzer ausdrücklich vorschlagen, den globalen Cache-Bust nur vorübergehend zu deaktivieren, damit die bestehende Homepage unverändert getestet werden kann.
+Zuerst prüfen: GitHub-Pages-Build, veröffentlichte Commit-Version, CDN-Cache und Browser-/WebKit-Cache getrennt betrachten. Der Validierungsworkflow kann bei Bedarf vorübergehend deaktiviert werden, ohne die Website-Dateien zu verändern.
 
 Ziel dieses Tests:
 
@@ -61,9 +67,7 @@ Ziel dieses Tests:
 - Safari, Firefox und iOS/WebKit vergleichen,
 - feststellen, ob die beobachteten Probleme tatsächlich verschwinden, sobald der Cache-Bust nicht mehr ausgeführt wird.
 
-Während dieses Tests bleiben bestehende `?v=`-Werte, `cache-version.txt` und sonstige bereits vorhandene Cache-Bust-Reste unverändert bestehen. Es wird ausschließlich verhindert, dass der Workflow erneut ausgeführt wird. Solange der Workflow deaktiviert ist, bleibt die zuletzt gesetzte Cache-Version unverändert und wird nicht weiter hochgezählt.
-
-Erst nach diesem Test und nur nach ausdrücklicher Entscheidung des Nutzers soll entschieden werden, ob der Workflow wieder aktiviert, vereinfacht oder vollständig entfernt wird.
+Bestehende `?v=`-Werte und `cache-version.txt` bleiben dabei unverändert. Eine Deaktivierung ist nur ein Diagnose-Schritt; die Website-Dateien werden dadurch nicht verändert.
 
 ### Schritt 1: Cache-Busting vereinfachen
 
