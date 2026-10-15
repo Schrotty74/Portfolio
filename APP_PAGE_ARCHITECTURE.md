@@ -1,27 +1,60 @@
-# App page architecture (migration in progress)
+# Portfolio: App-Seiten, Veröffentlichung und neue Apps
 
-The published website is a static GitHub Pages export. The original framework source tree is not present in this repository. **Do not claim that editing a static HTML page alone creates a reusable source template.**
+**Stand: 15. Oktober 2026 — Dokumentation des aktuellen `main`-Branches.**
 
-## Baseline
-- Ten original app pages share `assets/app-detail.js` and `assets/site-chrome.js` for their app configuration.
-- e2Atlas has been migrated to that shared rendering path in this branch, preserving its app-specific screenshots and release data.
-- HealthAtlas remains a distinct presentation, using `assets/app-home-bridge.css` and custom sections. Migrating it requires an explicit feature-by-feature comparison before replacement.
-- English and German static HTML exports need to match the shared JavaScript data; changing one without the other can cause hydration mismatches.
-- `.github/workflows/refresh-release-status.yml` updates `release-status.json` and the embedded release snapshot in `assets/app-detail.js`. Do not bypass this workflow.
-- Theme styles and the motion preference are shared behavior. Preserve accessibility, reduced-motion behavior and the existing cache-busting process.
+## Ziel und Seitenstruktur
 
-## Adding an app safely
-1. Confirm screenshot URLs, privacy descriptions, platform details, manual and release sources.
-2. Add the app to the shared metadata and detail configuration; the shared component requires both.
-3. Register its release repository and corresponding status key.
-4. Produce matching EN/DE pages using the same structure and asset imports. Check the static markup against the hydrated component.
-5. Run `node Scripts/check-app-pages.mjs`, the existing privacy checker and relevant browser smoke tests.
-6. Review on a separate, *working* preview. Test Safari, Firefox and Chrome before merging.
-7. Keep the working public site intact until these checks pass.
+Die Portfolio-Website ist eine statische, zweisprachige GitHub-Pages-Website. Die **Startseiten** `index.html` (Englisch) und `de/index.html` (Deutsch) geben einen Überblick über alle Apps. **Jede App behält ihre eigene öffentliche Homepage** unter `apps/<slug>/index.html` und `de/apps/<slug>/index.html`. Das ist ausdrücklich erwünscht, keine Schwäche des Systems.
 
-## Outstanding unification work
-- Audit every existing app's content sections and interaction flows. Do not remove special HealthAtlas features or media to force it into the generic component.
-- Restore a reproducible source/build pipeline (original build source is unavailable). The minified static export alone is not a maintainable authoring system.
-- Introduce a single app-data schema and generate both locales from it instead of hand-editing bundled JavaScript and static HTML.
-- Add real browser smoke tests for themes, motion, navigation, screenshots, release data and locale switching.
-- Only after equivalence is proven should the special-page paths and duplicated CSS be retired.
+Die derzeit zwölf Apps besitzen zusammen 24 lokalisierte App-Seiten. Die vorhandenen `technical/`-Unterseiten bleiben separat. App-spezifische Texte, Bilder, Screenshots, Funktionen und technische Informationen bleiben individuell. Gemeinsame Dateien schaffen einheitliche Gestaltung und Funktionalität; es gibt **keinen vollständig automatischen Generator für neue App-Seiten**.
+
+## Umstellung am 15. Oktober 2026
+
+- Die beiden Indexseiten und die 24 App-Homepages wurden als unmittelbar gerenderte **statische HTML-Seiten** veröffentlicht. Die komplexe React-/Vinext-Hydration (`_R_`/`__VINEXT_RSC_CHUNKS__`) wurde auf diesen Seiten entfernt, um das Problem leerer App-Seiten beim ersten Laden zu vermeiden.
+- Alle 24 App-Seiten laden jetzt das kleine gemeinsame Skript **`assets/static-app.js`**. Es ergänzt die vorhandenen HTML-Inhalte, statt sie durch eine dynamische App-Navigation aufzubauen.
+- Gemeinsame Stylesheets, Dark-/Light-/Color-Themes, `assets/app-home-bridge.css` und vorhandene Animationen werden weiterverwendet. Die gewählte Theme-Einstellung wird als `portfolio-theme` in `localStorage` gespeichert.
+- Die Markierung des aktiven Theme-Buttons auf den App-Seiten wurde nachträglich im gemeinsamen Skript korrigiert; die Verweise auf `static-app.js` wurden auf **`?v=47`** angepasst. Bei weiteren gemeinsamen Skriptänderungen sind die Asset-Verweise konsistent zu aktualisieren.
+- Das fehlende e2Atlas-Titelbild wurde in beiden Sprachen durch `https://raw.githubusercontent.com/Schrotty74/e2Atlas/beta/Documentation/Screenshots/previews/welcome.png` ersetzt. Die vier weiteren e2Atlas-Screenshots blieben bestehen.
+- Der veröffentlichte Umbau erfolgte über den Arbeitsbranch `portfolio-preview` und Pull Request **#3**; die Änderungen wurden auf `main` übernommen. Die früheren Arbeitsbranches `fix/e2atlas-shared-app-layout` und `refactor/unified-app-pages` wurden anschließend vom Nutzer gelöscht, Pull Request #2 geschlossen.
+- Die automatische Cache-Validierung erfolgt über `.github/workflows/global-cache-bust.yml`; sie darf nicht mit einem früheren automatischen Cache-Umschreib-Workflow verwechselt werden. Bestehende `?v=`-Verweise sind zu respektieren. Vor einer Änderung am Caching gilt `CACHE_BUSTING_PLAN.md`.
+
+**Grenze:** Die erfolgreiche GitHub-Pages-Veröffentlichung und die manuellen Tests der Start-/App-Seiten sind nicht mit einem vollständigen automatisierten Browser-Regressions- und Release-Wechsel-Test gleichzusetzen. Für neue Änderungen insbesondere Safari/iOS, Themes, Sprachwechsel, Bilder, Navigation, Animationen, Download-Links und Technikseiten prüfen.
+
+## Automatische Beta-/Final-Erkennung und Downloads
+
+- Der Workflow **`.github/workflows/refresh-release-status.yml`** prüft zurzeit alle zwölf explizit eingetragenen GitHub-Repositories. Er läuft per `cron: "23 4,16 * * *"`, also täglich **04:23 und 16:23 UTC** (Sommerzeit in Wien: 06:23 und 18:23; Winterzeit: 05:23 und 17:23). Auch `workflow_dispatch` ist möglich.
+- Er berücksichtigt veröffentlichte **Final-Releases und Prereleases/Betas** (keine Drafts), ermittelt die jüngsten Releases und deren verfügbare **DMG-/ZIP-Links** sowie ggf. Prüfsummen. Der Workflow schreibt **`release-status.json`** und aktualisiert weiterhin den eingebetteten Snapshot in `assets/app-detail.js` für ältere/andere Verbraucher. Außerdem enthält er einen optionalen GitHub-Profil-Sync.
+- Die neue **Startseiten-Logik** liest `release-status.json` und aktualisiert die Status-Badges der App-Karten.
+- Die neuen **App-Seiten** lesen per `assets/static-app.js` ebenfalls `release-status.json` und zeigen daraus den aktuellen Status und verfügbare Final-/Beta-Download-Links. Fehlende Dateitypen dürfen nicht als vorhanden dargestellt werden.
+- **Wichtig:** Der Workflow erkennt nicht automatisch beliebige neue Repositories. Die Liste muss bei einer neuen App **einmalig ergänzt** werden. Nach erfolgreicher Einrichtung und Workflow-Ausführung laufen die Release-/Download-Aktualisierungen automatisch.
+- Bei einem Release-Status ohne Downloads oder fehlgeschlagenem Abruf der JSON-Datei sind die UI-Fallbacks gezielt zu prüfen; die Live-Integration wurde nicht für jeden künftigen Release-Wechsel Ende-zu-Ende nachgewiesen.
+
+## Verbindlicher Ablauf: neue App hinzufügen
+
+**Der Nutzer gibt den Link zum neuen GitHub-Repository und beauftragt die Einbindung. Er muss weder eine HTML-Vorlage erstellen noch Dateien selbst bearbeiten.**
+
+1. Öffentliches Repository prüfen: tatsächlicher App-Name, Beschreibung, Plattformen, Funktionen, Bilder, Datenschutz, Dokumentation, vorhandene Tags/Releases, verifizierte DMG-/ZIP-Artefakte.
+2. Eine neue **englische und deutsche App-Homepage** auf Grundlage der existierenden statischen Seitenstruktur anlegen; vorhandene gemeinsame Stylesheets, Themes, Animationen und **`assets/static-app.js`** verwenden. App-spezifische Inhalte und Bilder korrekt einbauen, keine Fakten oder Downloads erfinden.
+3. Die App auf **beiden Indexseiten** als Projektkarte mit korrektem Link, Kategorie und Status aufnehmen. Den vorhandenen Startseiten-Mechanismus für die Zuordnung `slug → Repository-Name` ergänzen.
+4. Die neue App in die Liste `repositories` in **`.github/workflows/refresh-release-status.yml`** aufnehmen, damit die zweimal täglichen Beta-/Final-Prüfungen sie erfassen.
+5. Die Zuordnung `slug → Repository-Name` in **`assets/static-app.js`** ergänzen. Bei Bedarf zugehörige Technikseiten (`apps/<slug>/technical/`, `de/apps/<slug>/technical/`), Ressourcenseiten, Sitemap, Metadaten, GitHub-Profil-README und sonstige direkte App-Listen aktualisieren.
+6. Wenn gemeinsame CSS- oder JS-Dateien geändert wurden, die **bestehende Cache-Versionierung** und ihre Referenzen konsistent halten; **keinen eigenen Cache-Workflow** und keine separate Cache-Version pro App erstellen. `cache-version.txt` und die Validierungsregeln prüfen. Nicht ohne Anlass die Cache-Architektur verändern.
+7. Vor Veröffentlichung prüfen: alle EN-/DE-Links, Themes inkl. aktiver Markierung und Persistenz, Navigation beim ersten Laden, Animationen, mobile Darstellung, gültige Bilder, Versionsstatus, Beta-/Final-Download-Links, `node Scripts/check-app-pages.mjs` und Privacy-Checks. Falls ein Prüfskript noch fest zwölf Apps erwartet, die neue App dort ergänzen.
+8. Erst nach Prüfung veröffentlichen und GitHub-Pages-Deployment sowie Workflows kontrollieren.
+
+### Was später automatisch läuft – und was nicht
+
+| Vorgang | Automatisch? |
+| --- | --- |
+| Ein völlig neues GitHub-Repository als App hinzufügen | **Nein** — einmalige Einbindung nach Beauftragung |
+| Neue App-Seiten und Übersichtskarten erzeugen | **Nein** — bei der Einbindung erstellt |
+| Nach der Einbindung Releases der App prüfen | **Ja** — zweimal täglich und manuell auslösbar |
+| Neueste Beta-/Final-Statusdaten aktualisieren | **Ja** — nach erfolgreichem Workflow-Lauf |
+| Verfügbare DMG-/ZIP-Download-Links aktualisieren | **Ja** — aus den Release-Assets |
+| HTML-Design und App-Beschreibung bei jeder neuen Version automatisch umschreiben | **Nein** |
+
+## Sicherheit und Qualitätsregeln
+
+Die öffentliche Homepage nicht für ungetestete Umbauten ersetzen. Keine privaten Daten, Logs, Zugangsdaten oder nicht freigegebenen Screenshots veröffentlichen. Technische Sonderseiten und bestehende App-spezifische Inhalte nicht ungeprüft vereinheitlichen. **Einzelne App-Homepages sind Absicht; gemeinsam genutzt wird nur die technische Grundlage.**
+
+Weiterführende Dokumentation: `PORTFOLIO_UPDATE.md`, `PROJECT_CONTEXT.md`, `CACHE_BUSTING_PLAN.md`, `README.md`.
