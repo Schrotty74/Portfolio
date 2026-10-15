@@ -121,3 +121,18 @@ dann ist Zustand 1 ausdrücklich vorzuziehen.
 Solange der Nutzer kein erneutes Theme-, Lade- oder Cache-Problem meldet, soll aufgrund dieser Notiz allein nichts am Cache-Bust geändert oder vorgeschlagen werden. Der aktive Workflow darf bei normalen relevanten Portfolio-Änderungen weiterlaufen und die Cache-Version wie bisher erhöhen.
 
 Erst nach einer ausdrücklichen erneuten Problemmeldung des Nutzers soll Schritt 0 angeboten werden. Keine Löschung, Bereinigung oder Vereinfachung ohne ausdrückliche Entscheidung des Nutzers. Schritt 1 folgt nur, wenn der Nutzer nach dem Deaktivierungs-Test eine vereinfachte Lösung versuchen möchte. Schritt 2 folgt nur, wenn Schritt 1 nicht zuverlässig funktioniert, neue Probleme verursacht oder der Nutzer ausdrücklich die vollständige Entfernung wünscht.
+
+## Dokumentierter Ladeweg nach der e2Atlas-Reparatur
+
+Am 15. Oktober 2026 wurde der alte e2Atlas-Lade-/Bundle-Weg entfernt. Dieser konnte in Safari, Firefox und anderen Browsern zeitweise einen alten HTML-/JavaScript-Stand bzw. das alte 11-App-Bundle weiterverwenden.
+
+Wichtig ist die Trennung der Zuständigkeiten:
+
+- Das verbleibende kleine e2Atlas-Inline-Script steuert ausschließlich „Animationen pausieren/fortsetzen“. Es lädt keine App-Daten, ersetzt keine Workflows und ist nicht der eigentliche Cache-Bust.
+- Die sofortige Aktualisierung beruht auf konsistenten HTML-, CSS- und JavaScript-Referenzen sowie dem gemeinsamen veröffentlichten Stand. Sie wird nicht durch einen nachträglichen Bot-Commit oder einen zweiten Pages-Build erzwungen.
+- App-Daten, Status-/Build-Anzeigen, Download- und Detail-Links sowie Release-/Profil-Workflows bleiben getrennt und werden durch diesen Ladeweg nicht verändert.
+- App-Detailseiten müssen die gemeinsame `assets/app-home-bridge.css` laden. Dadurch verwenden sie dieselbe Abschnitts-/Zwischenanimation wie die übrigen App-Seiten.
+- Kein alter Loader, kein zusätzlicher Folge-Commit und keine Mischung aus alten und neuen Asset-Versionen darf wieder eingeführt werden.
+
+Die e2Atlas-Seite wurde an die gemeinsame App-Detail-Struktur angepasst. Die Änderung wurde am 15. Oktober 2026 per GitHub Pages veröffentlicht und live geprüft. Diese Dokumentation beschreibt den stabilisierten Ladeweg; sie führt keinen neuen Cache-Bust-Mechanismus ein.
+
