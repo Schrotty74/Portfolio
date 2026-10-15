@@ -1,7 +1,7 @@
-import{n as e,r as t}from"./runtime.js?v=43";
-import{i as n,r}from"./framework.js?v=43";
-import{motionPaused}from"./site-accessibility.js?v=43";
-import{imageSize}from"./image-sizes.js?v=43";
+import{n as e,r as t}from"./runtime.js?v=45";
+import{i as n,r}from"./framework.js?v=45";
+import{motionPaused}from"./site-accessibility.js?v=45";
+import{imageSize}from"./image-sizes.js?v=45";
 var i=e({ThemeSwitcher:()=>s}),a=t(n(),1),o=r();
 function s({locale:e}) {
   const [theme,setTheme]=a.useState("dark");
