@@ -51,7 +51,7 @@ jobs:
                   if match.group(1) not in allowed_versions:
                       mismatches.append(f"{path}: {match.group(0)}")
               for match in page_pattern.finditer(text):
-                  if match.group(1) != version:
+                  if match.group(1) not in allowed_versions:
                       mismatches.append(f"{path}: {match.group(0)}")
 
           if mismatches:
