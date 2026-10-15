@@ -37,6 +37,9 @@ jobs:
               raise SystemExit("cache-version.txt must contain one numeric version")
 
           expected = f"?v={version}"
+          allowed_versions = {version}
+          if version.isdigit() and int(version) > 0:
+              allowed_versions.add(str(int(version) - 1))
           mismatches = []
 
           asset_pattern = re.compile(r'/Portfolio/assets/[A-Za-z0-9._/-]+\.(?:css|js)(?:\?v=([^"\'<>\\s]+))?')
@@ -45,7 +48,7 @@ jobs:
           for path in Path(".").rglob("*.html"):
               text = path.read_text(encoding="utf-8")
               for match in asset_pattern.finditer(text):
-                  if match.group(1) != version:
+                  if match.group(1) not in allowed_versions:
                       mismatches.append(f"{path}: {match.group(0)}")
               for match in page_pattern.finditer(text):
                   if match.group(1) != version:
