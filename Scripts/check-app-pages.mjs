@@ -6,12 +6,12 @@ import { join } from "node:path";
 const root = process.cwd();
 const slugs = ["e2atlas","urobilanz","appatlas","fileatlas","calcboy","healthatlas","codexvault","skybreak-protocol","thermalatlas","budgetatlas","shortcuts","chatgpt-pets"];
 const specialPages = new Set(["healthatlas"]); // Existing custom presentation; migration requires preserving its content.
-const key = { "calcboy":"CalcBoy", "skybreak-protocol":"Skybreak-Protocol", "shortcuts":"Shortcuts", "chatgpt-pets":"chatgpt-pets" };
+const key = { "e2atlas":"e2Atlas", "urobilanz":"UroBilanz", "appatlas":"AppAtlas", "fileatlas":"FileAtlas", "calcboy":"CalcBoy", "healthatlas":"HealthAtlas", "codexvault":"CodexVault", "skybreak-protocol":"Skybreak-Protocol", "thermalatlas":"ThermalAtlas", "budgetatlas":"BudgetAtlas", "shortcuts":"Shortcuts", "chatgpt-pets":"chatgpt-pets" };
 const statuses = JSON.parse(readFileSync(join(root,"release-status.json"),"utf8"));
 const failures = [];
 const check = (condition, message) => { if (!condition) failures.push(message); };
 for (const slug of slugs) {
-  const statusName = key[slug] ?? (slug === "e2atlas" ? "e2Atlas" : slug === "urobilanz" ? "UroBilanz" : slug.charAt(0).toUpperCase()+slug.slice(1));
+  const statusName = key[slug];
   check(Object.hasOwn(statuses,statusName),`Missing release data: ${slug} (${statusName})`);
   for (const locale of ["en","de"]) {
     const file = join(root,...(locale === "de" ? ["de"] : []),"apps",slug,"index.html");
