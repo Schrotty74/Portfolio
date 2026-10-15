@@ -6,7 +6,7 @@
 
 The public GitHub Pages app portfolio of [Schrotty74](https://github.com/Schrotty74), available at [schrotty74.github.io/Portfolio](https://schrotty74.github.io/Portfolio/).
 
-It provides an English-first, German equivalent overview of eleven public projects, with project, technical, legal-notice and privacy pages. Where publicly available, each project page links to its manual, direct download, live web app and source repository.
+It provides an English-first, German equivalent overview of twelve public projects, with project, technical, legal-notice and privacy pages. Where publicly available, each project page links to its manual, direct download, live web app and source repository.
 
 ## Publishing
 
@@ -20,7 +20,7 @@ The site provides Dark, Light and Colour themes. Their theme-specific rules are 
 
 - Public project screenshots are loaded directly from GitHub's raw-content host.
 - Release badges and separate latest Final/Beta download targets are refreshed daily from public GitHub release data by the repository workflow.
-- The currently active global cache-busting system uses `cache-version.txt` and `.github/workflows/global-cache-bust.yml` to keep HTML references, CSS/JavaScript assets, internal ES-module imports and app-detail links on one version. Assets keep stable filenames; no versioned physical copies are created. For Theme-, cache-, loading- or deployment-related problems, follow [CACHE_BUSTING_PLAN.md](CACHE_BUSTING_PLAN.md) before changing that system.
+- The global cache version is stored in `cache-version.txt`. `.github/workflows/global-cache-bust.yml` now validates that HTML references, CSS/JavaScript assets, internal ES-module imports and app-detail links use the same version. It does not rewrite files, create follow-up commits or trigger a second Pages deployment. Assets keep stable filenames; no versioned physical copies are created. For cache-, loading- or deployment-related problems, follow [CACHE_BUSTING_PLAN.md](CACHE_BUSTING_PLAN.md).
 - The manual **Check unused static assets** workflow reports unused resources by default; removal requires choosing `remove` when starting it.
 - Before publication, run `bash Scripts/privacy-check.sh`, review public texts and images manually, and run `git diff --check`.
 - The documented privacy review is in [PRIVACY_CHECK.md](PRIVACY_CHECK.md).
