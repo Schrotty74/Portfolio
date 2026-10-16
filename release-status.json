@@ -1,21 +1,21 @@
 {
   "e2Atlas": {
     "stage": "Beta",
-    "release": "v0.1.0-beta.1",
-    "updatedAt": "2026-10-15T04:45:45Z",
+    "release": "v0.2.0-beta",
+    "updatedAt": "2026-10-16T06:00:15Z",
     "assets": {
-      "dmg": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.1.0-beta.1/e2Atlas-Beta-0.1.0-beta.1-macos-arm64.dmg",
-      "zip": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.1.0-beta.1/e2Atlas-Beta-0.1.0-beta.1-macos-arm64.zip",
-      "sha256": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.1.0-beta.1/SHA256SUMS"
+      "dmg": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.2.0-beta/e2Atlas-Beta-0.2.0-beta-macos-arm64.dmg",
+      "zip": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.2.0-beta/e2Atlas-Beta-0.2.0-beta-macos-arm64.zip",
+      "sha256": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.2.0-beta/SHA256SUMS"
     },
     "final": null,
     "beta": {
-      "release": "v0.1.0-beta.1",
-      "updatedAt": "2026-10-15T04:45:45Z",
+      "release": "v0.2.0-beta",
+      "updatedAt": "2026-10-16T06:00:15Z",
       "assets": {
-        "dmg": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.1.0-beta.1/e2Atlas-Beta-0.1.0-beta.1-macos-arm64.dmg",
-        "zip": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.1.0-beta.1/e2Atlas-Beta-0.1.0-beta.1-macos-arm64.zip",
-        "sha256": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.1.0-beta.1/SHA256SUMS"
+        "dmg": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.2.0-beta/e2Atlas-Beta-0.2.0-beta-macos-arm64.dmg",
+        "zip": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.2.0-beta/e2Atlas-Beta-0.2.0-beta-macos-arm64.zip",
+        "sha256": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.2.0-beta/SHA256SUMS"
       }
     }
   },
