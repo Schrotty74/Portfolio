@@ -23,9 +23,3 @@ html[data-motion-paused="true"] :is(.detail-page>section,.health-section)::after
   .detail-grid h1,.technical-page h1,.health-hero h1 { font-size:clamp(2.5rem,12vw,4.9rem); }
 }
 
-/* Technical profiles: prevent squeezed cards on phones held in landscape. */
-@media (orientation: landscape) and (max-height: 550px) and (max-width: 1024px) {
-  .technical-page .technical-list { grid-template-columns: minmax(0, 1fr); }
-  .technical-page .technical-list > div { min-width: 0; }
-  .technical-page .technical-list span { overflow-wrap: anywhere; line-height: 1.5; }
-}
