@@ -29,6 +29,18 @@ Die derzeit zwölf Apps besitzen zusammen 24 lokalisierte App-Seiten. Die vorhan
 - **Wichtig:** Der Workflow erkennt nicht automatisch beliebige neue Repositories. Die Liste muss bei einer neuen App **einmalig ergänzt** werden. Nach erfolgreicher Einrichtung und Workflow-Ausführung laufen die Release-/Download-Aktualisierungen automatisch.
 - Bei einem Release-Status ohne Downloads oder fehlgeschlagenem Abruf der JSON-Datei sind die UI-Fallbacks gezielt zu prüfen; die Live-Integration wurde nicht für jeden künftigen Release-Wechsel Ende-zu-Ende nachgewiesen.
 
+## Verbindliche Layout-Gleichheit für alle Apps
+
+**Alle App-Homepages und alle technischen Unterseiten sollen jeweils denselben bestehenden Aufbau verwenden.** Das gilt für Deutsch und Englisch, Desktop und Mobilgeräte. Wenn eine neue App hinzukommt oder eine vorhandene Seite geändert wird:
+
+1. **Zuerst eine nachweislich funktionierende, aktuelle Seite desselben Typs als Vorlage verwenden** (App-Homepage für App-Homepage, Technikseite für Technikseite; z. B. ThermalAtlas oder UroBilanz).
+2. **HTML-Struktur, CSS-Klassen, Typografie, Abstände, responsives Verhalten, Navigation, Themes, Animationen und gemeinsame JavaScript-Einbindung unverändert übernehmen.** Keine separaten Layouts, eigenen CSS-Sonderregeln oder abweichenden Animationen erfinden, nur um eine einzelne App darzustellen.
+3. **Ausschließlich die app-spezifischen Inhalte ersetzen:** Name, Beschreibung, verifizierte Funktionen, Plattform/Technologien, Bilder, Links und Releases. Unterschiedliches Bildformat oder tatsächlich benötigte Inhalte dürfen innerhalb des vorhandenen Designsystems passend dargestellt werden.
+4. **Alle deutschen und englischen Varianten konsistent halten** und die vorhandene automatische Release- und Download-Aktualisierung beibehalten.
+5. **Vor der Veröffentlichung direkt mit mindestens einer bestehenden Seite vergleichen**, besonders auf iPhone/Safari. Abweichungen nur nach ausdrücklicher Abstimmung.
+
+**Wichtig:** Gleiches Layout bedeutet **nicht** identische Texte oder eine gemeinsame Unterseite für alle Apps. Jede App behält ihre eigene App-Homepage und ihre eigene Technikseite. Neue Sonderlösungen sind ausdrücklich zu vermeiden.
+
 ## Verbindlicher Ablauf: neue App hinzufügen
 
 **Der Nutzer gibt den Link zum neuen GitHub-Repository und beauftragt die Einbindung. Er muss weder eine HTML-Vorlage erstellen noch Dateien selbst bearbeiten.**
