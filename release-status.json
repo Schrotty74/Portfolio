@@ -276,5 +276,33 @@
       }
     },
     "beta": null
+  },
+  "NZBPort": {
+    "stage": "Beta",
+    "release": "v0.1.1",
+    "updatedAt": "2026-10-21T09:45:58Z",
+    "assets": {
+      "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.1.1/NZBPort-0.1.1-arm64.dmg",
+      "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.1.1/NZBPort-0.1.1-arm64.zip",
+      "sha256": null
+    },
+    "final": {
+      "release": "v0.1.0",
+      "updatedAt": "2026-10-21T08:56:17Z",
+      "assets": {
+        "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.1.0/NZBPort-0.1.0-arm64.dmg",
+        "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.1.0/NZBPort-0.1.0-arm64.zip",
+        "sha256": null
+      }
+    },
+    "beta": {
+      "release": "v0.1.1",
+      "updatedAt": "2026-10-21T09:45:58Z",
+      "assets": {
+        "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.1.1/NZBPort-0.1.1-arm64.dmg",
+        "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.1.1/NZBPort-0.1.1-arm64.zip",
+        "sha256": null
+      }
+    }
   }
 }
