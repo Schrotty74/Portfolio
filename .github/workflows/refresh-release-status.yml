@@ -25,7 +25,7 @@ jobs:
           const repositories = [
             "e2Atlas", "AppAtlas", "FileAtlas", "CodexVault", "BudgetAtlas", "CalcBoy",
             "Skybreak-Protocol", "UroBilanz", "HealthAtlas", "ThermalAtlas",
-            "chatgpt-pets", "Shortcuts"
+            "chatgpt-pets", "Shortcuts", "NZBPort"
           ];
 
           async function githubJson(path) {
