@@ -53,6 +53,21 @@ jobs:
                 sha256: release.assets.find(asset => /(?:sha256sums|\.sha256)$/i.test(asset.name))?.browser_download_url || null
               }
             } : null;
+            // Multi-project repositories: track the newest release per plugin/app,
+            // rather than treating the entire collection as one application.
+            if (repository === "Enigma-Plugins" || repository === "LG-G5-Apps") {
+              const components = new Map();
+              for (const release of [...published].sort((a,b) => Date.parse(b.published_at || b.created_at || 0) - Date.parse(a.published_at || a.created_at || 0))) {
+                const match = release.tag_name.match(/^(.+?)[-_]v?\\d+(?:\\.\\d+)*/i);
+                const component = match ? match[1] : (release.name || release.tag_name);
+                if (!components.has(component)) components.set(component, {
+                  component, stage: release.prerelease ? "Beta" : "Final",
+                  ...releaseInfo(release)
+                });
+              }
+              return { stage: "Collection", components: [...components.values()],
+                release: null, final: null, beta: null };
+            }
             const final = published.find(candidate => !candidate.prerelease);
             const beta = published.find(candidate => candidate.prerelease);
             const preferred = [final, beta].filter(Boolean).reduce((newest, candidate) => {
@@ -114,7 +129,25 @@ jobs:
             return `https://github.com/${owner}/${repository}/releases/tag/${tag}`;
           }
 
+          function collectionStatus(repository, data, language) {
+            const de = language === "de";
+            const lines = [de ? "**Status:** Plugin-/App-Sammlung" : "**Status:** Plugin/app collection"];
+            for (const item of data.components || []) {
+              const label = item.component.replace(/[-_]/g, " ");
+              const url = releaseUrl(repository, item.release);
+              const links = [`${item.stage} [${item.release}](${url})`];
+              for (const ext of ["ipk", "dmg", "zip", "sha256"]) {
+                const target = item.assets?.[ext];
+                if (target) links.push(`[${ext === "sha256" ? (de ? "Prüfsumme" : "Checksum") : (de ? "Download " : "Download ") + ext.toUpperCase()}](${target})`);
+              }
+              lines.push(`- **${label}:** ${links.join(" · ")}`);
+            }
+            if (!(data.components || []).length) lines.push(de ? "Noch keine GitHub-Releases veröffentlicht." : "No GitHub releases published yet.");
+            return lines.join("\\n");
+          }
+
           function statusLine(repository, data, language) {
+            if (repository === "Enigma-Plugins" || repository === "LG-G5-Apps") return collectionStatus(repository, data, language);
             if (!data.final && !data.beta) {
               return language === "de" ? "**Status:** Entwicklung" : "**Status:** Development";
             }
