@@ -1,0 +1,12 @@
+{
+  "repository": "Enigma-Plugins",
+  "items": [
+    {
+      "name": "Box Systeminfo",
+      "url": "https://github.com/Schrotty74/Enigma-Plugins/tree/main/plugins/BoxSystemInfo",
+      "version": "boxsysteminfo-v0.1.9",
+      "releaseUrl": "https://github.com/Schrotty74/Enigma-Plugins/releases/tag/boxsysteminfo-v0.1.9",
+      "download": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.9/enigma2-plugin-extensions-boxsysteminfo_0.1.9_armv7ahf-neon.ipk"
+    }
+  ]
+}
