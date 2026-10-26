@@ -96,6 +96,54 @@ jobs:
             fs.writeFileSync(bundlePath, updatedBundle);
           })().catch(error => { console.error(error); process.exit(1); });
           NODE
+      - name: Synchronize plugin and app collection inventories
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node <<'NODE'
+          const fs = require("fs");
+          const configs = [
+            {repo:"Enigma-Plugins",slug:"enigma-plugins",folder:"plugins"},
+            {repo:"LG-G5-Apps",slug:"lg-g5-apps",folder:"apps"}
+          ];
+          async function get(path) {
+            const response = await fetch("https://api.github.com"+path,{
+              headers:{Accept:"application/vnd.github+json",
+                Authorization:"Bearer "+process.env.GH_TOKEN}
+            });
+            if(!response.ok) throw new Error(path+" HTTP "+response.status);
+            return response.json();
+          }
+          (async()=>{
+            fs.mkdirSync("collections",{recursive:true});
+            for(const config of configs){
+              const base="/repos/Schrotty74/"+config.repo;
+              const [tree,releases] = await Promise.all([
+                get(base+"/git/trees/main?recursive=1"),
+                get(base+"/releases?per_page=100")
+              ]);
+              if(tree.truncated) throw new Error("Truncated tree: "+config.repo);
+              const dirs=tree.tree.filter(entry=>
+                entry.type==="tree" && entry.path.startsWith(config.folder+"/") &&
+                entry.path.slice(config.folder.length+1).indexOf("/")===-1
+              );
+              const items=dirs.map(dir=>{
+                const raw=dir.path.split("/").pop();
+                const matching=releases.filter(r=>!r.draft && (
+                  r.tag_name.toLowerCase().startsWith(raw.toLowerCase().replace(/-/g,"")) ||
+                  r.tag_name.toLowerCase().startsWith(raw.toLowerCase())
+                )).sort((a,b)=>Date.parse(b.published_at||b.created_at)-Date.parse(a.published_at||a.created_at));
+                const rel=matching[0];
+                const asset=rel?.assets?.find(a=>/\.(?:ipk|dmg|zip)$/i.test(a.name));
+                const name=raw==="system-monitor"?"G5 System Monitor":raw==="BoxSystemInfo"?"Box Systeminfo":raw.replace(/[-_]/g," ");
+                return {name,url:"https://github.com/Schrotty74/"+config.repo+"/tree/main/"+dir.path,
+                  version:rel?.tag_name||null,releaseUrl:rel?.html_url||null,
+                  download:asset?.browser_download_url||null};
+              }).sort((a,b)=>a.name.localeCompare(b.name));
+              fs.writeFileSync("collections/"+config.slug+".json",JSON.stringify({repository:config.repo,items},null,2)+"\n");
+            }
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
       - name: Sync GitHub profile release statuses
         env:
           PROFILE_SYNC_TOKEN: ${{ secrets.PROFILE_SYNC_TOKEN }}
@@ -222,10 +270,10 @@ jobs:
           NODE
       - name: Commit changed status data
         run: |
-          if git diff --quiet -- release-status.json assets/app-detail.js; then exit 0; fi
+          if git diff --quiet -- release-status.json assets/app-detail.js collections/; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add release-status.json assets/app-detail.js
+          git add release-status.json assets/app-detail.js collections/
           git commit -m "Refresh portfolio release statuses"
           git pull --rebase origin main
           git push
