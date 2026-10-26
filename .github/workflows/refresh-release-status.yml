@@ -115,6 +115,9 @@ jobs:
           }
 
           function statusLine(repository, data, language) {
+            if (repository === "Enigma-Plugins" || repository === "LG-G5-Apps") {
+              return language === "de" ? "**Status:** Sammlung" : "**Status:** Collection";
+            }
             if (!data.final && !data.beta) {
               return language === "de" ? "**Status:** Entwicklung" : "**Status:** Development";
             }
