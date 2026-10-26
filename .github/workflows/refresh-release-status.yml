@@ -25,7 +25,7 @@ jobs:
           const repositories = [
             "e2Atlas", "AppAtlas", "FileAtlas", "CodexVault", "BudgetAtlas", "CalcBoy",
             "Skybreak-Protocol", "UroBilanz", "HealthAtlas", "ThermalAtlas",
-            "chatgpt-pets", "Shortcuts", "NZBPort"
+            "chatgpt-pets", "Shortcuts", "NZBPort", "Enigma-Plugins", "LG-G5-Apps"
           ];
 
           async function githubJson(path) {
@@ -48,8 +48,9 @@ jobs:
               updatedAt: release.published_at || release.created_at,
               assets: {
                 dmg: release.assets.find(asset => asset.name.toLowerCase().endsWith(".dmg"))?.browser_download_url || null,
+                ipk: release.assets.find(asset => asset.name.toLowerCase().endsWith(".ipk"))?.browser_download_url || null,
                 zip: release.assets.find(asset => asset.name.toLowerCase().endsWith(".zip"))?.browser_download_url || null,
-                sha256: release.assets.find(asset => asset.name.toLowerCase() === "sha256sums")?.browser_download_url || null
+                sha256: release.assets.find(asset => /(?:sha256sums|\.sha256)$/i.test(asset.name))?.browser_download_url || null
               }
             } : null;
             const final = published.find(candidate => !candidate.prerelease);
@@ -73,7 +74,7 @@ jobs:
               stage: "Development",
               release: null,
               updatedAt: repositoryData.pushed_at || repositoryData.updated_at || null,
-              assets: { dmg: null, zip: null },
+              assets: { dmg: null, zip: null, ipk: null },
               final: null,
               beta: null
             };
@@ -124,10 +125,11 @@ jobs:
             const preferredRelease = data.stage === "Beta" ? data.beta : data.final;
             const assets = preferredRelease?.assets || data.assets || {};
             const downloadLabel = language === "de"
-              ? { dmg: "DMG herunterladen", zip: "ZIP herunterladen", sha256: "Prüfsummen" }
-              : { dmg: "Download DMG", zip: "Download ZIP", sha256: "Checksums" };
+              ? { dmg: "DMG herunterladen", zip: "ZIP herunterladen", sha256: "Prüfsummen", ipk: "IPK herunterladen" }
+              : { dmg: "Download DMG", zip: "Download ZIP", sha256: "Checksums", ipk: "Download IPK" };
             if (assets.dmg) parts.push(`[${downloadLabel.dmg}](${assets.dmg})`);
             if (assets.zip) parts.push(`[${downloadLabel.zip}](${assets.zip})`);
+            if (assets.ipk) parts.push(`[${downloadLabel.ipk}](${assets.ipk})`);
             if (assets.sha256) parts.push(`[${downloadLabel.sha256}](${assets.sha256})`);
 
             return `**Status:** ${parts.join(" · ")}`;
