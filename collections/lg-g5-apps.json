@@ -3,10 +3,13 @@
   "items": [
     {
       "name": "G5 System Monitor",
+      "slug": "system-monitor",
+      "folder": "apps/system-monitor",
       "url": "https://github.com/Schrotty74/LG-G5-Apps/tree/main/apps/system-monitor",
       "version": null,
       "releaseUrl": null,
-      "download": "https://github.com/Schrotty74/LG-G5-Apps/raw/refs/heads/main/apps/system-monitor/g5-system-monitor_0.8.0_all.ipk"
+      "download": "https://raw.githubusercontent.com/Schrotty74/LG-G5-Apps/main/apps/system-monitor/g5-system-monitor_0.8.0_all.ipk",
+      "preview": null
     }
   ]
 }

@@ -3,10 +3,13 @@
   "items": [
     {
       "name": "Box Systeminfo",
+      "slug": "boxsysteminfo",
+      "folder": "plugins/BoxSystemInfo",
       "url": "https://github.com/Schrotty74/Enigma-Plugins/tree/main/plugins/BoxSystemInfo",
       "version": "boxsysteminfo-v0.1.9",
       "releaseUrl": "https://github.com/Schrotty74/Enigma-Plugins/releases/tag/boxsysteminfo-v0.1.9",
-      "download": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.9/enigma2-plugin-extensions-boxsysteminfo_0.1.9_armv7ahf-neon.ipk"
+      "download": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.9/enigma2-plugin-extensions-boxsysteminfo_0.1.9_armv7ahf-neon.ipk",
+      "preview": "https://raw.githubusercontent.com/Schrotty74/Enigma-Plugins/main/plugins/BoxSystemInfo/src/usr/lib/enigma2/python/Plugins/Extensions/BoxSystemInfo/icon.png"
     }
   ]
 }

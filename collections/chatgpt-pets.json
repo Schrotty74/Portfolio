@@ -5,57 +5,81 @@
       "name": "Byte",
       "slug": "byte",
       "folder": "Byte",
-      "preview": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Byte/preview-transparent.png",
-      "url": "https://github.com/Schrotty74/chatgpt-pets/tree/main/Byte"
+      "url": "https://github.com/Schrotty74/chatgpt-pets/tree/main/Byte",
+      "version": null,
+      "releaseUrl": null,
+      "download": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Byte/byte-spritesheet.png",
+      "preview": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Byte/preview-transparent.png"
     },
     {
       "name": "Delta",
       "slug": "delta",
       "folder": "Delta",
-      "preview": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Delta/preview-transparent.png",
-      "url": "https://github.com/Schrotty74/chatgpt-pets/tree/main/Delta"
+      "url": "https://github.com/Schrotty74/chatgpt-pets/tree/main/Delta",
+      "version": null,
+      "releaseUrl": null,
+      "download": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Delta/delta-spritesheet.png",
+      "preview": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Delta/preview-transparent.png"
     },
     {
       "name": "Finder Guy",
       "slug": "finderguy",
       "folder": "FinderGuy",
-      "preview": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/FinderGuy/preview-transparent.png",
-      "url": "https://github.com/Schrotty74/chatgpt-pets/tree/main/FinderGuy"
+      "url": "https://github.com/Schrotty74/chatgpt-pets/tree/main/FinderGuy",
+      "version": null,
+      "releaseUrl": null,
+      "download": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/FinderGuy/finder-guy-spritesheet-v2.webp",
+      "preview": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/FinderGuy/preview-transparent.png"
     },
     {
       "name": "Inky",
       "slug": "inky",
       "folder": "Inky",
-      "preview": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Inky/preview-transparent.png",
-      "url": "https://github.com/Schrotty74/chatgpt-pets/tree/main/Inky"
-    },
-    {
-      "name": "Whiskers & Squeak",
-      "slug": "mischiefduo",
-      "folder": "MischiefDuo",
-      "preview": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/MischiefDuo/preview-transparent.png",
-      "url": "https://github.com/Schrotty74/chatgpt-pets/tree/main/MischiefDuo"
+      "url": "https://github.com/Schrotty74/chatgpt-pets/tree/main/Inky",
+      "version": null,
+      "releaseUrl": null,
+      "download": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Inky/inky-spritesheet.png",
+      "preview": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Inky/preview-transparent.png"
     },
     {
       "name": "Nyx",
       "slug": "nyx",
       "folder": "Nyx",
-      "preview": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Nyx/preview-transparent.png",
-      "url": "https://github.com/Schrotty74/chatgpt-pets/tree/main/Nyx"
+      "url": "https://github.com/Schrotty74/chatgpt-pets/tree/main/Nyx",
+      "version": null,
+      "releaseUrl": null,
+      "download": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Nyx/nyx-spritesheet.png",
+      "preview": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Nyx/preview-transparent.png"
+    },
+    {
+      "name": "Whiskers & Squeak",
+      "slug": "mischiefduo",
+      "folder": "MischiefDuo",
+      "url": "https://github.com/Schrotty74/chatgpt-pets/tree/main/MischiefDuo",
+      "version": null,
+      "releaseUrl": null,
+      "download": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/MischiefDuo/whiskers-squeak-spritesheet.png",
+      "preview": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/MischiefDuo/preview-transparent.png"
     },
     {
       "name": "WonderCube",
       "slug": "wondercube",
       "folder": "WonderCube",
-      "preview": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/WonderCube/preview-transparent.png",
-      "url": "https://github.com/Schrotty74/chatgpt-pets/tree/main/WonderCube"
+      "url": "https://github.com/Schrotty74/chatgpt-pets/tree/main/WonderCube",
+      "version": null,
+      "releaseUrl": null,
+      "download": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/WonderCube/spritesheet.webp",
+      "preview": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/WonderCube/preview-transparent.png"
     },
     {
       "name": "Woodi",
       "slug": "woodi",
       "folder": "Woodi",
-      "preview": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Woodi/preview-transparent.png",
-      "url": "https://github.com/Schrotty74/chatgpt-pets/tree/main/Woodi"
+      "url": "https://github.com/Schrotty74/chatgpt-pets/tree/main/Woodi",
+      "version": null,
+      "releaseUrl": null,
+      "download": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Woodi/spritesheet.webp",
+      "preview": "https://raw.githubusercontent.com/Schrotty74/chatgpt-pets/main/Woodi/preview-transparent.png"
     }
   ]
 }
