@@ -1,19 +1,30 @@
 {
   "e2Atlas": {
-    "stage": "Beta",
-    "release": "v0.5.0-beta",
-    "updatedAt": "2026-10-25T07:17:45Z",
+    "stage": "Final",
+    "release": "v1.0.0-final",
+    "updatedAt": "2026-10-26T05:22:39Z",
     "assets": {
-      "dmg": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.5.0-beta/e2Atlas-Beta-0.5.0-beta-macos-arm64.dmg",
-      "zip": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.5.0-beta/e2Atlas-Beta-0.5.0-beta-macos-arm64.zip",
-      "sha256": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.5.0-beta/SHA256SUMS"
+      "dmg": "https://github.com/Schrotty74/e2Atlas/releases/download/v1.0.0-final/e2Atlas-1.0.0-final-macos-arm64.dmg",
+      "ipk": null,
+      "zip": "https://github.com/Schrotty74/e2Atlas/releases/download/v1.0.0-final/e2Atlas-1.0.0-final-macos-arm64.zip",
+      "sha256": "https://github.com/Schrotty74/e2Atlas/releases/download/v1.0.0-final/SHA256SUMS"
     },
-    "final": null,
+    "final": {
+      "release": "v1.0.0-final",
+      "updatedAt": "2026-10-26T05:22:39Z",
+      "assets": {
+        "dmg": "https://github.com/Schrotty74/e2Atlas/releases/download/v1.0.0-final/e2Atlas-1.0.0-final-macos-arm64.dmg",
+        "ipk": null,
+        "zip": "https://github.com/Schrotty74/e2Atlas/releases/download/v1.0.0-final/e2Atlas-1.0.0-final-macos-arm64.zip",
+        "sha256": "https://github.com/Schrotty74/e2Atlas/releases/download/v1.0.0-final/SHA256SUMS"
+      }
+    },
     "beta": {
       "release": "v0.5.0-beta",
       "updatedAt": "2026-10-25T07:17:45Z",
       "assets": {
         "dmg": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.5.0-beta/e2Atlas-Beta-0.5.0-beta-macos-arm64.dmg",
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.5.0-beta/e2Atlas-Beta-0.5.0-beta-macos-arm64.zip",
         "sha256": "https://github.com/Schrotty74/e2Atlas/releases/download/v0.5.0-beta/SHA256SUMS"
       }
@@ -25,16 +36,18 @@
     "updatedAt": "2026-08-10T06:25:54Z",
     "assets": {
       "dmg": "https://github.com/Schrotty74/AppAtlas/releases/download/v1.2.3/AppAtlas-1.2.3-macos.dmg",
+      "ipk": null,
       "zip": "https://github.com/Schrotty74/AppAtlas/releases/download/v1.2.3/AppAtlas-1.2.3-macos.zip",
-      "sha256": null
+      "sha256": "https://github.com/Schrotty74/AppAtlas/releases/download/v1.2.3/AppAtlas-1.2.3-macos.dmg.sha256"
     },
     "final": {
       "release": "v1.2.3",
       "updatedAt": "2026-08-10T06:25:54Z",
       "assets": {
         "dmg": "https://github.com/Schrotty74/AppAtlas/releases/download/v1.2.3/AppAtlas-1.2.3-macos.dmg",
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/AppAtlas/releases/download/v1.2.3/AppAtlas-1.2.3-macos.zip",
-        "sha256": null
+        "sha256": "https://github.com/Schrotty74/AppAtlas/releases/download/v1.2.3/AppAtlas-1.2.3-macos.dmg.sha256"
       }
     },
     "beta": {
@@ -42,8 +55,9 @@
       "updatedAt": "2026-07-18T05:15:58Z",
       "assets": {
         "dmg": "https://github.com/Schrotty74/AppAtlas/releases/download/v1.2.2-beta.1/AppAtlas-1.2.2-beta.1-macos.dmg",
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/AppAtlas/releases/download/v1.2.2-beta.1/AppAtlas-1.2.2-beta.1-macos.zip",
-        "sha256": null
+        "sha256": "https://github.com/Schrotty74/AppAtlas/releases/download/v1.2.2-beta.1/AppAtlas-1.2.2-beta.1-macos.dmg.sha256"
       }
     }
   },
@@ -53,6 +67,7 @@
     "updatedAt": "2026-09-11T03:47:35Z",
     "assets": {
       "dmg": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0/FileAtlas.dmg",
+      "ipk": null,
       "zip": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0/FileAtlas.zip",
       "sha256": null
     },
@@ -61,6 +76,7 @@
       "updatedAt": "2026-09-11T03:47:35Z",
       "assets": {
         "dmg": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0/FileAtlas.dmg",
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0/FileAtlas.zip",
         "sha256": null
       }
@@ -70,6 +86,7 @@
       "updatedAt": "2026-09-09T04:16:24Z",
       "assets": {
         "dmg": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0-beta.3/FileAtlas.dmg",
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0-beta.3/FileAtlas.zip",
         "sha256": null
       }
@@ -81,6 +98,7 @@
     "updatedAt": "2026-08-30T05:27:05Z",
     "assets": {
       "dmg": "https://github.com/Schrotty74/CodexVault/releases/download/v1.0.0/CodexVault-1.0.dmg",
+      "ipk": null,
       "zip": "https://github.com/Schrotty74/CodexVault/releases/download/v1.0.0/CodexVault-1.0.zip",
       "sha256": null
     },
@@ -89,6 +107,7 @@
       "updatedAt": "2026-08-30T05:27:05Z",
       "assets": {
         "dmg": "https://github.com/Schrotty74/CodexVault/releases/download/v1.0.0/CodexVault-1.0.dmg",
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/CodexVault/releases/download/v1.0.0/CodexVault-1.0.zip",
         "sha256": null
       }
@@ -98,6 +117,7 @@
       "updatedAt": "2026-08-26T03:35:01Z",
       "assets": {
         "dmg": "https://github.com/Schrotty74/CodexVault/releases/download/v1.0.0-beta.4/CodexVault-1.0-Beta-4.dmg",
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/CodexVault/releases/download/v1.0.0-beta.4/CodexVault-1.0-Beta-4.zip",
         "sha256": null
       }
@@ -109,7 +129,8 @@
     "updatedAt": "2026-09-18T09:23:33Z",
     "assets": {
       "dmg": null,
-      "zip": null
+      "zip": null,
+      "ipk": null
     },
     "final": null,
     "beta": null
@@ -120,6 +141,7 @@
     "updatedAt": "2026-08-10T05:31:55Z",
     "assets": {
       "dmg": null,
+      "ipk": null,
       "zip": "https://github.com/Schrotty74/CalcBoy/releases/download/v3.1.0/CALC-BOY-Offline-3.1.0.zip",
       "sha256": null
     },
@@ -128,6 +150,7 @@
       "updatedAt": "2026-08-10T05:31:55Z",
       "assets": {
         "dmg": null,
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/CalcBoy/releases/download/v3.1.0/CALC-BOY-Offline-3.1.0.zip",
         "sha256": null
       }
@@ -140,6 +163,7 @@
     "updatedAt": "2026-08-30T15:30:37Z",
     "assets": {
       "dmg": null,
+      "ipk": null,
       "zip": "https://github.com/Schrotty74/Skybreak-Protocol/releases/download/v1.0.1/Skybreak-Protocol-1.0.1-offline.zip",
       "sha256": null
     },
@@ -148,6 +172,7 @@
       "updatedAt": "2026-08-30T15:30:37Z",
       "assets": {
         "dmg": null,
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/Skybreak-Protocol/releases/download/v1.0.1/Skybreak-Protocol-1.0.1-offline.zip",
         "sha256": null
       }
@@ -157,6 +182,7 @@
       "updatedAt": "2026-08-15T06:23:32Z",
       "assets": {
         "dmg": null,
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/Skybreak-Protocol/releases/download/v1.0.1-beta.8/Skybreak-Protocol-1.0.1-beta.8-offline.zip",
         "sha256": null
       }
@@ -168,16 +194,18 @@
     "updatedAt": "2026-08-30T15:41:39Z",
     "assets": {
       "dmg": "https://github.com/Schrotty74/UroBilanz/releases/download/v1.7.4/UroBilanz-macOS-Swift-v1.7.4.dmg",
+      "ipk": null,
       "zip": "https://github.com/Schrotty74/UroBilanz/releases/download/v1.7.4/UroBilanz-macOS-Swift-v1.7.4.zip",
-      "sha256": null
+      "sha256": "https://github.com/Schrotty74/UroBilanz/releases/download/v1.7.4/UroBilanz-macOS-Swift-v1.7.4.dmg.sha256"
     },
     "final": {
       "release": "v1.7.4",
       "updatedAt": "2026-08-30T15:41:39Z",
       "assets": {
         "dmg": "https://github.com/Schrotty74/UroBilanz/releases/download/v1.7.4/UroBilanz-macOS-Swift-v1.7.4.dmg",
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/UroBilanz/releases/download/v1.7.4/UroBilanz-macOS-Swift-v1.7.4.zip",
-        "sha256": null
+        "sha256": "https://github.com/Schrotty74/UroBilanz/releases/download/v1.7.4/UroBilanz-macOS-Swift-v1.7.4.dmg.sha256"
       }
     },
     "beta": {
@@ -185,8 +213,9 @@
       "updatedAt": "2026-08-28T03:37:33Z",
       "assets": {
         "dmg": "https://github.com/Schrotty74/UroBilanz/releases/download/v1.7.4-beta.2/UroBilanz-macOS-Swift-v1.7.4-beta.2.dmg",
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/UroBilanz/releases/download/v1.7.4-beta.2/UroBilanz-macOS-Swift-v1.7.4-beta.2.zip",
-        "sha256": null
+        "sha256": "https://github.com/Schrotty74/UroBilanz/releases/download/v1.7.4-beta.2/UroBilanz-macOS-Swift-v1.7.4-beta.2.dmg.sha256"
       }
     }
   },
@@ -196,16 +225,18 @@
     "updatedAt": "2026-09-21T03:55:40Z",
     "assets": {
       "dmg": "https://github.com/Schrotty74/HealthAtlas/releases/download/v2.0.0/HealthAtlas-2.0.0-macos.dmg",
+      "ipk": null,
       "zip": "https://github.com/Schrotty74/HealthAtlas/releases/download/v2.0.0/HealthAtlas-2.0.0-macos.zip",
-      "sha256": null
+      "sha256": "https://github.com/Schrotty74/HealthAtlas/releases/download/v2.0.0/HealthAtlas-2.0.0-macos.dmg.sha256"
     },
     "final": {
       "release": "v2.0.0",
       "updatedAt": "2026-09-21T03:55:40Z",
       "assets": {
         "dmg": "https://github.com/Schrotty74/HealthAtlas/releases/download/v2.0.0/HealthAtlas-2.0.0-macos.dmg",
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/HealthAtlas/releases/download/v2.0.0/HealthAtlas-2.0.0-macos.zip",
-        "sha256": null
+        "sha256": "https://github.com/Schrotty74/HealthAtlas/releases/download/v2.0.0/HealthAtlas-2.0.0-macos.dmg.sha256"
       }
     },
     "beta": {
@@ -213,8 +244,9 @@
       "updatedAt": "2026-09-20T05:23:31Z",
       "assets": {
         "dmg": "https://github.com/Schrotty74/HealthAtlas/releases/download/v1.6.0-beta/HealthAtlas-Beta-1.6.0-macos.dmg",
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/HealthAtlas/releases/download/v1.6.0-beta/HealthAtlas-Beta-1.6.0-macos.zip",
-        "sha256": null
+        "sha256": "https://github.com/Schrotty74/HealthAtlas/releases/download/v1.6.0-beta/HealthAtlas-Beta-1.6.0-macos.dmg.sha256"
       }
     }
   },
@@ -224,16 +256,18 @@
     "updatedAt": "2026-10-11T04:06:36Z",
     "assets": {
       "dmg": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0/ThermalAtlas-1.2.0-macos.dmg",
+      "ipk": null,
       "zip": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0/ThermalAtlas-1.2.0-macos.zip",
-      "sha256": null
+      "sha256": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0/ThermalAtlas-1.2.0-macos.dmg.sha256"
     },
     "final": {
       "release": "v1.2.0",
       "updatedAt": "2026-10-11T04:06:36Z",
       "assets": {
         "dmg": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0/ThermalAtlas-1.2.0-macos.dmg",
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0/ThermalAtlas-1.2.0-macos.zip",
-        "sha256": null
+        "sha256": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0/ThermalAtlas-1.2.0-macos.dmg.sha256"
       }
     },
     "beta": {
@@ -241,8 +275,9 @@
       "updatedAt": "2026-10-06T06:38:14Z",
       "assets": {
         "dmg": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0-beta.7/ThermalAtlas-Beta-1.2.0-beta.7-macos.dmg",
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0-beta.7/ThermalAtlas-Beta-1.2.0-beta.7-macos.zip",
-        "sha256": null
+        "sha256": "https://github.com/Schrotty74/ThermalAtlas/releases/download/v1.2.0-beta.7/ThermalAtlas-Beta-1.2.0-beta.7-macos.dmg.sha256"
       }
     }
   },
@@ -252,7 +287,8 @@
     "updatedAt": "2026-10-11T05:30:54Z",
     "assets": {
       "dmg": null,
-      "zip": null
+      "zip": null,
+      "ipk": null
     },
     "final": null,
     "beta": null
@@ -263,16 +299,18 @@
     "updatedAt": "2026-07-19T10:13:19Z",
     "assets": {
       "dmg": null,
+      "ipk": null,
       "zip": "https://github.com/Schrotty74/Shortcuts/releases/download/v1.2.3/weather-for-city-1.2.3.zip",
-      "sha256": null
+      "sha256": "https://github.com/Schrotty74/Shortcuts/releases/download/v1.2.3/weather-for-city-1.2.3.zip.sha256"
     },
     "final": {
       "release": "v1.2.3",
       "updatedAt": "2026-07-19T10:13:19Z",
       "assets": {
         "dmg": null,
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/Shortcuts/releases/download/v1.2.3/weather-for-city-1.2.3.zip",
-        "sha256": null
+        "sha256": "https://github.com/Schrotty74/Shortcuts/releases/download/v1.2.3/weather-for-city-1.2.3.zip.sha256"
       }
     },
     "beta": null
@@ -283,6 +321,7 @@
     "updatedAt": "2026-10-22T04:26:05Z",
     "assets": {
       "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2/NZBPort-0.2-arm64.dmg",
+      "ipk": null,
       "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2/NZBPort-0.2-arm64.zip",
       "sha256": null
     },
@@ -291,6 +330,7 @@
       "updatedAt": "2026-10-21T08:56:17Z",
       "assets": {
         "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.1.0/NZBPort-0.1.0-arm64.dmg",
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.1.0/NZBPort-0.1.0-arm64.zip",
         "sha256": null
       }
@@ -300,9 +340,44 @@
       "updatedAt": "2026-10-22T04:26:05Z",
       "assets": {
         "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2/NZBPort-0.2-arm64.dmg",
+        "ipk": null,
         "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2/NZBPort-0.2-arm64.zip",
         "sha256": null
       }
     }
+  },
+  "Enigma-Plugins": {
+    "stage": "Final",
+    "release": "boxsysteminfo-v0.1.9",
+    "updatedAt": "2026-10-26T08:29:19Z",
+    "assets": {
+      "dmg": null,
+      "ipk": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.9/enigma2-plugin-extensions-boxsysteminfo_0.1.9_armv7ahf-neon.ipk",
+      "zip": null,
+      "sha256": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.9/boxsysteminfo_0.1.9.sha256"
+    },
+    "final": {
+      "release": "boxsysteminfo-v0.1.9",
+      "updatedAt": "2026-10-26T08:29:19Z",
+      "assets": {
+        "dmg": null,
+        "ipk": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.9/enigma2-plugin-extensions-boxsysteminfo_0.1.9_armv7ahf-neon.ipk",
+        "zip": null,
+        "sha256": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.9/boxsysteminfo_0.1.9.sha256"
+      }
+    },
+    "beta": null
+  },
+  "LG-G5-Apps": {
+    "stage": "Development",
+    "release": null,
+    "updatedAt": "2026-10-22T13:44:11Z",
+    "assets": {
+      "dmg": null,
+      "zip": null,
+      "ipk": null
+    },
+    "final": null,
+    "beta": null
   }
 }
