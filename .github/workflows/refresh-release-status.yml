@@ -58,7 +58,7 @@ jobs:
             if (repository === "Enigma-Plugins" || repository === "LG-G5-Apps") {
               const components = new Map();
               for (const release of [...published].sort((a,b) => Date.parse(b.published_at || b.created_at || 0) - Date.parse(a.published_at || a.created_at || 0))) {
-                const match = release.tag_name.match(/^(.+?)[-_]v?\\d+(?:\\.\\d+)*/i);
+                const match = release.tag_name.match(/^(.+?)[-_]v?\d+(?:\.\d+)*/i);
                 const component = match ? match[1] : (release.name || release.tag_name);
                 if (!components.has(component)) components.set(component, {
                   component, stage: release.prerelease ? "Beta" : "Final",
@@ -143,7 +143,7 @@ jobs:
               lines.push(`- **${label}:** ${links.join(" · ")}`);
             }
             if (!(data.components || []).length) lines.push(de ? "Noch keine GitHub-Releases veröffentlicht." : "No GitHub releases published yet.");
-            return lines.join("\\n");
+            return lines.join("\n");
           }
 
           function statusLine(repository, data, language) {
