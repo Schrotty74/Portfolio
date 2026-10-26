@@ -347,29 +347,36 @@
     }
   },
   "Enigma-Plugins": {
-    "stage": "Collection",
-    "components": [
-      {
-        "component": "boxsysteminfo",
-        "stage": "Final",
-        "release": "boxsysteminfo-v0.1.9",
-        "updatedAt": "2026-10-26T08:29:19Z",
-        "assets": {
-          "dmg": null,
-          "ipk": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.9/enigma2-plugin-extensions-boxsysteminfo_0.1.9_armv7ahf-neon.ipk",
-          "zip": null,
-          "sha256": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.9/boxsysteminfo_0.1.9.sha256"
-        }
+    "stage": "Final",
+    "release": "boxsysteminfo-v0.1.9",
+    "updatedAt": "2026-10-26T08:29:19Z",
+    "assets": {
+      "dmg": null,
+      "ipk": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.9/enigma2-plugin-extensions-boxsysteminfo_0.1.9_armv7ahf-neon.ipk",
+      "zip": null,
+      "sha256": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.9/boxsysteminfo_0.1.9.sha256"
+    },
+    "final": {
+      "release": "boxsysteminfo-v0.1.9",
+      "updatedAt": "2026-10-26T08:29:19Z",
+      "assets": {
+        "dmg": null,
+        "ipk": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.9/enigma2-plugin-extensions-boxsysteminfo_0.1.9_armv7ahf-neon.ipk",
+        "zip": null,
+        "sha256": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.9/boxsysteminfo_0.1.9.sha256"
       }
-    ],
-    "release": null,
-    "final": null,
+    },
     "beta": null
   },
   "LG-G5-Apps": {
-    "stage": "Collection",
-    "components": [],
+    "stage": "Development",
     "release": null,
+    "updatedAt": "2026-10-22T13:44:11Z",
+    "assets": {
+      "dmg": null,
+      "zip": null,
+      "ipk": null
+    },
     "final": null,
     "beta": null
   }
