@@ -350,7 +350,7 @@
     "stage": "Collection",
     "components": [
       {
-        "component": "Box Systeminfo 0.1.9",
+        "component": "boxsysteminfo",
         "stage": "Final",
         "release": "boxsysteminfo-v0.1.9",
         "updatedAt": "2026-10-26T08:29:19Z",
@@ -359,18 +359,6 @@
           "ipk": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.9/enigma2-plugin-extensions-boxsysteminfo_0.1.9_armv7ahf-neon.ipk",
           "zip": null,
           "sha256": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.9/boxsysteminfo_0.1.9.sha256"
-        }
-      },
-      {
-        "component": "Box Systeminfo 0.1.7",
-        "stage": "Final",
-        "release": "boxsysteminfo-v0.1.7",
-        "updatedAt": "2026-10-26T08:13:45Z",
-        "assets": {
-          "dmg": null,
-          "ipk": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.7/enigma2-plugin-extensions-boxsysteminfo_0.1.7_armv7ahf-neon.ipk",
-          "zip": null,
-          "sha256": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.7/boxsysteminfo_0.1.7.sha256"
         }
       }
     ],
