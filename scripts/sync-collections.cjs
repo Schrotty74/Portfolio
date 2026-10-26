@@ -20,7 +20,7 @@ function template(cfg,item,de,readme,altReadme){
  const text=description(readme)||description(altReadme)||(de?"Projektdateien und Installationshinweise im Repository.":"Project files and installation instructions in the repository.");
  const points=bullets(readme).length?bullets(readme):bullets(altReadme);
  const url="https://github.com/Schrotty74/"+cfg.repo+"/tree/main/"+item.folder;
- const file=item.download?'<a href="'+safe(item.download)+'" target="_blank" rel="noreferrer">'+(de?"Datei herunterladen":"Download file")+' <span>↗</span></a>':"";
+ const file=item.download?'<a href="'+safe(item.download)+'" target="_blank" rel="noreferrer">'+(de?"Download IPK":"Download IPK")+(item.version?" v"+safe(item.version):"")+' <span>↗</span></a>':"";
  const photo=item.preview?'<img src="'+safe(item.preview)+'" alt="'+safe(item.name)+'" loading="eager"/>':"";
  const status=item.version?'<p class="detail-note">'+(de?"Release: ":"Release: ")+safe(item.version)+'</p>':"";
  const rows=points.map((x,i)=>'<div><b>'+String(i+1).padStart(2,"0")+'</b><span>'+safe(x)+'</span></div>').join("");
@@ -42,7 +42,9 @@ function put(filename,content){fs.mkdirSync(path.dirname(filename),{recursive:tr
    const ipk=tree.tree.filter(x=>x.type==="blob"&&x.path.startsWith(dir.path+"/")&&/\.ipk$/i.test(x.path)).sort((a,b)=>b.path.localeCompare(a.path))[0];
    const sprite=tree.tree.find(x=>x.type==="blob"&&x.path.startsWith(dir.path+"/")&&/spritesheet.*\.(png|webp)$/i.test(x.path));
    const preview=cfg.kind==="pets"?"https://raw.githubusercontent.com/Schrotty74/"+cfg.repo+"/main/"+dir.path+"/preview-transparent.png":cfg.kind==="plugins"?"https://raw.githubusercontent.com/Schrotty74/"+cfg.repo+"/main/"+dir.path+"/src/usr/lib/enigma2/python/Plugins/Extensions/"+raw+"/icon.png":null;
-   const item={name,slug:id,folder:dir.path,url:"https://github.com/Schrotty74/"+cfg.repo+"/tree/main/"+dir.path,version:rel?.tag_name||null,releaseUrl:rel?.html_url||null,download:asset?.browser_download_url|| (ipk?"https://raw.githubusercontent.com/Schrotty74/"+cfg.repo+"/main/"+ipk.path:null)|| (sprite?"https://raw.githubusercontent.com/Schrotty74/"+cfg.repo+"/main/"+sprite.path:null),preview};
+   const versionFromIpk=ipk?.path.match(/_(\d+\.\d+(?:\.\d+)*(?:[-+.][A-Za-z0-9.-]+)?)_/i)?.[1]||null;
+   const detectedVersion=rel?.tag_name||versionFromIpk;
+   const item={name,slug:id,folder:dir.path,url:"https://github.com/Schrotty74/"+cfg.repo+"/tree/main/"+dir.path,version:detectedVersion,releaseUrl:rel?.html_url||null,download:asset?.browser_download_url|| (ipk?"https://raw.githubusercontent.com/Schrotty74/"+cfg.repo+"/main/"+ipk.path:null)|| (sprite?"https://raw.githubusercontent.com/Schrotty74/"+cfg.repo+"/main/"+sprite.path:null),preview};
    items.push(item);
    const [english,german]=await Promise.all([read(cfg.repo,dir.path+"/README.en.md"),read(cfg.repo,dir.path+"/README.de.md")]);
    const standard=await read(cfg.repo,dir.path+"/README.md");
