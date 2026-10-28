@@ -1,6 +1,6 @@
 # Projektkontext: Portfolio
 
-**Stand:** 3. Oktober 2026
+**Stand:** 28. Oktober 2026
 **Zweck:** Öffentliche, zweisprachige GitHub-Pages-Website für die Apps und Projekte von Schrotty74.
 
 ## Veröffentlichtes System
@@ -16,7 +16,7 @@ Die Website wird als statischer Export direkt aus dem Stamm des `main`-Branches 
 | Cache-Busting | `cache-version.txt`, `.github/workflows/global-cache-bust.yml` | Repository-weite Cache-Version für HTML-, CSS-, JavaScript-, interne ES-Modul-Imports und App-Detail-Links. |
 | Manuelle Asset-Prüfung | `.github/workflows/check-unused-assets.yml` | Prüft bei manuellem Start auf nicht referenzierte Assets. Standard ist nur ein Bericht; Löschen erfordert die ausdrücklich gewählte Aktion `remove`. |
 | Suchmaschinen | `robots.txt`, `sitemap.xml` | Indexierungs- und Sitemap-Hinweise. |
-| Release-Status | `release-status.json`, `.github/workflows/refresh-release-status.yml` | Öffentliche GitHub-Releases der elf Projekte; Übersicht und Detailseiten laden Status sowie aktuelle DMG-/ZIP-Zieladressen für die jeweils neueste Final- und Beta-Version innerhalb derselben GitHub-Pages-Website. |
+| Release-Status | `release-status.json`, `.github/workflows/refresh-release-status.yml` | Öffentliche GitHub-Releases der im Workflow eingetragenen Repositories; Übersicht und Detailseiten laden Status sowie aktuelle DMG-/ZIP-Zieladressen für die jeweils neueste Final- und Beta-Version innerhalb derselben GitHub-Pages-Website. |
 | Prüfung | `Scripts/privacy-check.sh`, `.github/workflows/privacy-check.yml` | Prüfung auf Geheimnisse, private Pfade und frühere Hosting-Verweise. |
 
 Die Portfolio-Startseite bleibt die kompakte Übersicht über alle Projekte. Die normalen Projektseiten unter `apps/<slug>/` beziehungsweise `de/apps/<slug>/` sind als besucherorientierte App-Homepages gedacht: Sie erklären Zweck und Nutzen der App, zeigen – sofern vorhanden – geprüfte öffentliche Screenshots, beschreiben den grundlegenden Ablauf, stellen zentrale Funktionen und Datenschutzmerkmale dar und führen zu Repository, Downloads und technischen Details. Die separaten `technical/`-Seiten bleiben die kompakte technische Darstellung für Architektur und Technologien.
@@ -59,6 +59,15 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 - GitHub Pages verarbeitet bei der Auslieferung technische Verbindungsdaten nach den Bedingungen von GitHub. Die öffentlich verlinkte Datenschutzerklärung benennt dies.
 - Die Statusdatei enthält nur öffentliche Release-Informationen (Stufe, Versionsbezeichnung, Zeitpunkt und direkte URL zu vorhandenen DMG-/ZIP-Dateien). Sie wird täglich aktualisiert und führt die jeweils neueste Final- und Beta-Version getrennt. Der Status zeigt immer die zeitlich neueste veröffentlichte Version, also gegebenenfalls eine Beta.
 - Nur öffentliche, synthetische oder eindeutig freigegebene Projektbilder und Inhalte verwenden.
+
+## Aktueller Stand der Startseiten und Sammlungen (28. Oktober 2026)
+
+- Die englische und deutsche Startseite zeigen derzeit **15 Projekt- und Sammlungskarten**. Jede Kartenkategorie besitzt einen passenden Filter; für die beiden Sammlungen `Enigma-Plugins` und `LG-G5-Apps` heißen die Filter **Collection** beziehungsweise **Sammlung**. Der bestehende visuelle Stil und die Filtermechanik bleiben verbindlich erhalten.
+- Sammlungseinträge und zweisprachige Detailseiten werden für Ordnerprojekte durch `scripts/sync-collections.cjs` und die Daten unter `collections/` betreut. Bestehende individuelle App-Homepages und ihre Skripte dürfen dadurch nicht umgestaltet werden.
+- Unter `LG-G5-Apps` sind **G5 System Monitor** und **G5 TV Launcher** eingetragen. Die Launcher-Detailseiten zeigen oben das originale App-Icon, darunter drei vergrößerbare Screenshots (Übersicht, Favoriten, Eingänge) **vor** der Feature-Liste; diese Reihenfolge ist auch im Generator hinterlegt.
+- Die zweisprachigen BoxSystemInfo-Sammlungsseiten zeigen zehn Hauptfunktionen im bestehenden Kachelstil und verlinken auf die vollständigen GitHub-Listen (`FEATURES.md` und `FEATURES.de.md`).
+- Die e2Atlas-Detailseiten verwenden oben das App-Icon und dieselben fünf Screenshots in Deutsch und Englisch.
+- **Oberste Priorität:** HTML-Struktur, Layout, Farben, Themes, Animationen, Navigation, Sprachwechsel, Downloads und automatische Aktualisierungen erhalten. Nur ausdrücklich beauftragte Inhalte gezielt ändern und sowohl statische Seiten als auch ihre zuständigen Generatoren/Quellzuordnungen konsistent halten.
 
 ## Pflege- und Prüfablauf
 
