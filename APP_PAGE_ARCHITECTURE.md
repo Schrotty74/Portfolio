@@ -1,6 +1,14 @@
 # Portfolio: App-Seiten, Veröffentlichung und neue Apps
 
-**Stand: 15. Oktober 2026 — Dokumentation des aktuellen `main`-Branches.**
+**Historischer Stand: 15. Oktober 2026; Ergänzung zum aktuellen Stand: 28. Oktober 2026.**
+
+## Aktuelle Ergänzung (28. Oktober 2026)
+
+Die Startseiten zeigen inzwischen **15 Projekt-/Sammlungskarten**. Die Sammlungen `Enigma-Plugins` und `LG-G5-Apps` verwenden den Filter **Collection / Sammlung**. Daneben gibt es eigene lokalisierte Detailseiten für die Ordnerprojekte; deren Inhalte werden durch `scripts/sync-collections.cjs` auf Grundlage der GitHub-Quellen und `collections/` aktualisiert. Diese Automatisierung betrifft **Sammlungs-Detailseiten**, nicht die individuell gestalteten App-Homepages. Die historischen Angaben über zwölf Apps und 24 Seiten unten beschreiben den Stand vom 15. Oktober und sind keine aktuelle Bestandszahl.
+
+Die `LG-G5-Apps`-Sammlung enthält G5 System Monitor und G5 TV Launcher. Beim Launcher werden App-Icon oben und drei klickbare Screenshots **vor** den zehn Hauptfunktionen dargestellt; die Reihenfolge ist auch im Generator gesichert. BoxSystemInfo zeigt zehn Funktionen mit Link zu allen sechzehn (`FEATURES.md` / `FEATURES.de.md`). Bei e2Atlas verwenden DE und EN dasselbe Icon und dieselben fünf Screenshots.
+
+**Verbindliche Priorität:** Bestehende Gestaltung, Seitenaufbau, getrennte App-Skripte, Themes, Animationen, Navigation, Sprache, Status und Downloads nicht ohne ausdrücklichen Auftrag ändern. Bei Inhaltsänderungen nur die betroffenen Seiten und zugehörigen Generator-/Synchronisationsregeln anpassen; keine gestalterische Vereinheitlichung oder ungefragte Umbauten.
 
 ## Ziel und Seitenstruktur
 
