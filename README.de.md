@@ -6,7 +6,7 @@
 
 Das öffentliche GitHub-Pages-App-Portfolio von [Schrotty74](https://github.com/Schrotty74) ist unter [schrotty74.github.io/Portfolio](https://schrotty74.github.io/Portfolio/) erreichbar.
 
-Es bietet eine englischsprachige Übersicht mit gleichwertiger deutscher Fassung für zwölf öffentliche Projekte sowie Projekt-, Technik-, Impressums- und Datenschutzseiten. Soweit öffentlich vorhanden, verlinken die Projektseiten auf Handbuch, Direktdownload, Web-App und Quell-Repository.
+Es bietet eine englischsprachige Übersicht mit gleichwertiger deutscher Fassung für 15 öffentliche Projekte und Sammlungen sowie Projekt-, Technik-, Impressums- und Datenschutzseiten. Soweit öffentlich vorhanden, verlinken die Projektseiten auf Handbuch, Direktdownload, Web-App und Quell-Repository.
 
 ## Veröffentlichung
 
