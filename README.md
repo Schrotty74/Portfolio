@@ -6,7 +6,7 @@
 
 The public GitHub Pages app portfolio of [Schrotty74](https://github.com/Schrotty74), available at [schrotty74.github.io/Portfolio](https://schrotty74.github.io/Portfolio/).
 
-It provides an English-first, German equivalent overview of twelve public projects, with project, technical, legal-notice and privacy pages. Where publicly available, each project page links to its manual, direct download, live web app and source repository.
+It provides an English-first, German equivalent overview of 15 public projects and collections, with project, technical, legal-notice and privacy pages. Where publicly available, each project page links to its manual, direct download, live web app and source repository.
 
 ## Publishing
 
