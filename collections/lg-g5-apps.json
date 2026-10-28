@@ -2,6 +2,16 @@
   "repository": "LG-G5-Apps",
   "items": [
     {
+      "name": "G5 TV Launcher",
+      "slug": "g5-tv-launcher",
+      "folder": "apps/g5-tv-launcher",
+      "url": "https://github.com/Schrotty74/LG-G5-Apps/tree/main/apps/g5-tv-launcher",
+      "version": "0.2.32",
+      "releaseUrl": null,
+      "download": "https://raw.githubusercontent.com/Schrotty74/LG-G5-Apps/main/apps/g5-tv-launcher/g5-tv-launcher_0.2.32_all.ipk",
+      "preview": "https://raw.githubusercontent.com/Schrotty74/LG-G5-Apps/main/apps/g5-tv-launcher/screenshots/overview.jpg"
+    },
+    {
       "name": "G5 System Monitor",
       "slug": "system-monitor",
       "folder": "apps/system-monitor",
