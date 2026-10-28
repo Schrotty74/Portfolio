@@ -69,6 +69,14 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 - Die e2Atlas-Detailseiten verwenden oben das App-Icon und dieselben fünf Screenshots in Deutsch und Englisch.
 - **Oberste Priorität:** HTML-Struktur, Layout, Farben, Themes, Animationen, Navigation, Sprachwechsel, Downloads und automatische Aktualisierungen erhalten. Nur ausdrücklich beauftragte Inhalte gezielt ändern und sowohl statische Seiten als auch ihre zuständigen Generatoren/Quellzuordnungen konsistent halten.
 
+## Abschnittsanimation: Ursache, Korrektur und Prüfvorgabe (28. Oktober 2026)
+
+- **Symptom:** Auf mehreren App- und Sammlungsseiten (unter anderem NZBPort, Enigma-Plugins und LG G5 Apps) fehlte der leuchtende Punkt, der entlang der Abschnittstrennlinien abwechselnd von links nach rechts und zurück läuft. Auf e2Atlas funktionierte er.
+- **Ursache:** Die Animation war in `assets/app-home-bridge.css` definiert, doch diese Datei wurde auf den betroffenen statischen HTML-Seiten nicht eingebunden. Bei früheren Anpassungen wurde dieser visuelle Effekt nicht seitenübergreifend überprüft.
+- **Korrektur:** Die relevanten Animationsregeln wurden in `assets/section-dot-animation.css` bereitgestellt. Betroffene Seiten laden sie direkt oder über `assets/static-app.js` nach. Der Generator `scripts/sync-collections.cjs` berücksichtigt die Einbindung bei neu erzeugten Sammlungsseiten. e2Atlas wird vom dynamischen Nachladen ausgenommen, da der Effekt dort schon vorhanden war.
+- **Ergebnis:** Der Nutzer hat bestätigt, dass die Animation wieder auf allen Seiten funktioniert. HTML-/JavaScript-Syntaxprüfungen allein gelten ausdrücklich **nicht** als visueller Funktionstest.
+- **Verbindliche Regel:** Das vorhandene Design einschließlich Abschnittsanimationen, Bewegungsrichtung, Übergängen, Hover-Effekten, Abständen und Themes hat oberste Priorität. Bei jeder relevanten Änderung deutsche und englische Seiten sowie unterschiedliche Seitentypen gegen eine funktionierende Referenz vergleichen. CSS-Einbindungen und Generator-Ausgaben prüfen; visuelle/browserbasierte Tests nicht als durchgeführt behaupten, wenn nur Quelltext geprüft wurde. Keine ungefragten Layout- oder Animationsumbauten.
+
 ## Pflege- und Prüfablauf
 
 1. Englische und deutsche Inhalte, Links, Handbücher und Downloads inhaltlich gleichwertig aktualisieren.
