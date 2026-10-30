@@ -29,7 +29,7 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 
 - Jede Seite bietet einen Sprunglink zum fokussierbaren Hauptinhalt. Der Sprachwechsel führt zur entsprechenden Seite der anderen Sprache.
 - Die Kategorien auf der Übersicht sind auf schmalen Bildschirmen vollständig sichtbar. Die Auswahl steht als `category` in der URL; der Ergebniszähler meldet Änderungen über eine Live-Region.
-- `assets/site-accessibility.js` steuert die Animationspause für das aktuelle Dokument. Diese Auswahl wird nicht gespeichert. Wiederholte Laufschrift-Inhalte werden vor Screenreadern verborgen.
+- `assets/site-accessibility.js` steuert die Animationspause und speichert die Auswahl wie `assets/static-app.js` unter `portfolio-motion-paused` in `localStorage`, sodass sie nach Reload und Seitenwechsel erhalten bleibt. Wiederholte Laufschrift-Inhalte werden vor Screenreadern verborgen.
 - `assets/image-sizes.js` enthält die geprüften Bildabmessungen für die Übersicht und dynamisch ergänzte Galerien. Bilder unterhalb des Einstiegs werden verzögert geladen.
 - Bei Änderungen am statischen Export müssen HTML, eingebettete RSC-Daten und die zugehörigen Client-Komponenten zusammenpassen.
 
@@ -58,7 +58,7 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 ## Datenschutzentscheidungen
 
 - Keine eigenen Cookies, keine Analysewerkzeuge, Werbenetzwerke, Formulare, Chatbots oder Tracker.
-- Die einzige lokale Browser-Speicherung ist die Theme-Präferenz in `localStorage`; gespeichert wird nur `dark`, `light` oder `color`.
+- Die lokale Browser-Speicherung umfasst die Theme-Präferenz `portfolio-theme` (`dark`, `light`, `color`) sowie die Animationspause `portfolio-motion-paused` (`true` oder `false`). Beide dienen ausschließlich zur Wiederherstellung von Benutzereinstellungen.
 - Keine externen Schriftanbieter; Schriften stammen aus dem Browser/System.
 - GitHub Pages verarbeitet bei der Auslieferung technische Verbindungsdaten nach den Bedingungen von GitHub. Die öffentlich verlinkte Datenschutzerklärung benennt dies.
 - Die Statusdatei enthält nur öffentliche Release-Informationen (Stufe, Versionsbezeichnung, Zeitpunkt und direkte URL zu vorhandenen DMG-/ZIP-Dateien). Sie wird täglich aktualisiert und führt die jeweils neueste Final- und Beta-Version getrennt. Der Status zeigt immer die zeitlich neueste veröffentlichte Version, also gegebenenfalls eine Beta.
