@@ -3,8 +3,12 @@ name: Check app page structure
 on:
   push:
     branches:
-      - refactor/unified-app-pages
+      - main
     paths:
+      - "index.html"
+      - "de/index.html"
+      - "scripts/sync-static-releases.cjs"
+      - ".github/workflows/refresh-release-status.yml"
       - "apps/**"
       - "de/apps/**"
       - "assets/**"
@@ -28,6 +32,8 @@ jobs:
         run: node Scripts/check-app-pages.mjs
       - name: Validate common JavaScript syntax
         run: |
+          node --check assets/static-app.js
+          node --check scripts/sync-static-releases.cjs
           node --check assets/app-detail.js
           node --check assets/site-chrome.js
       - name: Validate static website privacy
