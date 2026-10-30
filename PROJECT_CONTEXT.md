@@ -109,6 +109,13 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 - **Verbindliche Testregel:** Bei UI-Schaltern **sämtliche** Handler (Inline-Skripte, gemeinsame und app-spezifische JS-Dateien, Listener auf Elementen und Dokument) und deren Wechselwirkungen suchen. Nicht nur Einzelmodule isoliert testen. Auf echten EN/DE-Startseiten und unterschiedlichen App-Seitentypen **ohne Reload** die Folge „pausieren → sichtbar angehalten → fortsetzen → sichtbar animiert“ prüfen; zusätzlich Reload, Navigation, `localStorage`, Themes und Bedienung mit Tastatur kontrollieren. Neue App-Seiten dürfen keinen zweiten Listener für dieselbe Zustandsänderung hinzufügen.
 - **Grenze früherer Prüfung:** Ein isolierter Chromium-/Playwright-Teiltest hatte die vollständige echte Startseite nicht geladen und konnte den konkurrierenden Inline-Handler deshalb nicht erfassen. Solch ein Teiltest ist **kein** bestandener Browser-End-to-End-Test. Unzugängliche Live-Website und nicht ausgeführte Browserprüfungen ausdrücklich benennen; erfolgreiches GitHub Pages Deployment ersetzt weder realen Bedien- noch visuellen Test.
 
+## Seiten- und Zuordnungsprüfung (30. Oktober 2026)
+
+- `Scripts/check-app-pages.mjs` liest Projektkarten aus beiden Startseiten, statt eine feste Anzahl von Apps vorzugeben. Aktuell prüft es 15 Karten und 30 zugehörige EN-/DE-Seiten; neue Karten im bestehenden HTML-Format werden automatisch einbezogen.
+- Die Prüfung kontrolliert unter anderem Sprachvarianten, grundlegende Seitenstruktur, gemeinsame Styles, Themes, `static-app.js`, den Animationsschalter und Repository-/Release-Zuordnungen. Als Collection gekennzeichnete Karten werden bei den App-spezifischen Release-Zuordnungen gesondert behandelt. Neue Projekte müssen weiterhin vollständig eingerichtet werden; die Prüfung ergänzt keine Einträge selbst.
+- `.github/workflows/check-app-pages.yml` führt die Prüfung bei relevanten Pushes auf `main` und manuell aus. Der Workflow prüft nur und verändert keine Dateien. GitHub-Actions-Lauf `41036614676` war erfolgreich; auch der Privacy-Check und die Pages-Veröffentlichung waren erfolgreich.
+- Lokal wurde zusätzlich eine fiktive neue Karte ohne Zuordnung eingefügt: Die Prüfung meldete die fehlende Zuordnung. Dies ist eine Strukturprüfung, kein visueller Browser-, Download- oder vollständiger Release-Funktionstest.
+
 ## Pflege- und Prüfablauf
 
 1. Englische und deutsche Inhalte, Links, Handbücher und Downloads inhaltlich gleichwertig aktualisieren.

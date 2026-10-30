@@ -30,7 +30,7 @@ Die derzeit zwölf Apps besitzen zusammen 24 lokalisierte App-Seiten. Die vorhan
 
 ## Automatische Beta-/Final-Erkennung und Downloads
 
-- Der Workflow **`.github/workflows/refresh-release-status.yml`** prüft zurzeit alle zwölf explizit eingetragenen GitHub-Repositories. Er läuft per `cron: "23 4,16 * * *"`, also täglich **04:23 und 16:23 UTC** (Sommerzeit in Wien: 06:23 und 18:23; Winterzeit: 05:23 und 17:23). Auch `workflow_dispatch` ist möglich.
+- Der Workflow **`.github/workflows/refresh-release-status.yml`** prüft die explizit eingetragenen GitHub-Repositories (aktuell 15). Er läuft per `cron: "23 4,16 * * *"`, also täglich **04:23 und 16:23 UTC** (Sommerzeit in Wien: 06:23 und 18:23; Winterzeit: 05:23 und 17:23). Auch `workflow_dispatch` ist möglich.
 - Er berücksichtigt veröffentlichte **Final-Releases und Prereleases/Betas** (keine Drafts), ermittelt die jüngsten Releases und deren verfügbare **DMG-/ZIP-Links** sowie ggf. Prüfsummen. Der Workflow schreibt **`release-status.json`** und aktualisiert weiterhin den eingebetteten Snapshot in `assets/app-detail.js` für ältere/andere Verbraucher. Außerdem enthält er einen optionalen GitHub-Profil-Sync.
 - Die neue **Startseiten-Logik** liest `release-status.json` und aktualisiert die Status-Badges der App-Karten.
 - Die neuen **App-Seiten** lesen per `assets/static-app.js` ebenfalls `release-status.json` und zeigen daraus den aktuellen Status und verfügbare Final-/Beta-Download-Links. Fehlende Dateitypen dürfen nicht als vorhanden dargestellt werden.
@@ -59,7 +59,7 @@ Die derzeit zwölf Apps besitzen zusammen 24 lokalisierte App-Seiten. Die vorhan
 4. Die neue App in die Liste `repositories` in **`.github/workflows/refresh-release-status.yml`** aufnehmen, damit die zweimal täglichen Beta-/Final-Prüfungen sie erfassen.
 5. Die Zuordnung `slug → Repository-Name` in **`assets/static-app.js`** ergänzen. Bei Bedarf zugehörige Technikseiten (`apps/<slug>/technical/`, `de/apps/<slug>/technical/`), Ressourcenseiten, Sitemap, Metadaten, GitHub-Profil-README und sonstige direkte App-Listen aktualisieren.
 6. Wenn gemeinsame CSS- oder JS-Dateien geändert wurden, die **bestehende Cache-Versionierung** und ihre Referenzen konsistent halten; **keinen eigenen Cache-Workflow** und keine separate Cache-Version pro App erstellen. `cache-version.txt` und die Validierungsregeln prüfen. Nicht ohne Anlass die Cache-Architektur verändern.
-7. Vor Veröffentlichung prüfen: alle EN-/DE-Links, Themes inkl. aktiver Markierung und Persistenz, Navigation beim ersten Laden, Animationen, mobile Darstellung, gültige Bilder, Versionsstatus, Beta-/Final-Download-Links, `node Scripts/check-app-pages.mjs` und Privacy-Checks. Falls ein Prüfskript noch fest zwölf Apps erwartet, die neue App dort ergänzen.
+7. Vor Veröffentlichung prüfen: alle EN-/DE-Links, Themes inkl. aktiver Markierung und Persistenz, Navigation beim ersten Laden, Animationen, mobile Darstellung, gültige Bilder, Versionsstatus, Beta-/Final-Download-Links, `node Scripts/check-app-pages.mjs` und Privacy-Checks. Die Seitenprüfung liest Projektkarten aus den Startseiten und berücksichtigt neue Karten im bestehenden Format automatisch; die erforderlichen Repository- und Release-Zuordnungen müssen dennoch ergänzt werden.
 8. Erst nach Prüfung veröffentlichen und GitHub-Pages-Deployment sowie Workflows kontrollieren.
 
 ### Was später automatisch läuft – und was nicht
