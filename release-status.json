@@ -69,7 +69,7 @@
       "dmg": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0/FileAtlas.dmg",
       "ipk": null,
       "zip": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0/FileAtlas.zip",
-      "sha256": null
+      "sha256": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0/SHA256SUMS.txt"
     },
     "final": {
       "release": "v1.11.0",
@@ -78,7 +78,7 @@
         "dmg": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0/FileAtlas.dmg",
         "ipk": null,
         "zip": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0/FileAtlas.zip",
-        "sha256": null
+        "sha256": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0/SHA256SUMS.txt"
       }
     },
     "beta": {
@@ -88,7 +88,7 @@
         "dmg": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0-beta.3/FileAtlas.dmg",
         "ipk": null,
         "zip": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0-beta.3/FileAtlas.zip",
-        "sha256": null
+        "sha256": "https://github.com/Schrotty74/FileAtlas/releases/download/v1.11.0-beta.3/SHA256SUMS.txt"
       }
     }
   },
@@ -323,7 +323,7 @@
       "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2/NZBPort-0.2-arm64.dmg",
       "ipk": null,
       "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2/NZBPort-0.2-arm64.zip",
-      "sha256": null
+      "sha256": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2/SHA256SUMS-0.2.txt"
     },
     "final": {
       "release": "v0.1.0",
@@ -332,7 +332,7 @@
         "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.1.0/NZBPort-0.1.0-arm64.dmg",
         "ipk": null,
         "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.1.0/NZBPort-0.1.0-arm64.zip",
-        "sha256": null
+        "sha256": "https://github.com/Schrotty74/NZBPort/releases/download/v0.1.0/SHA256SUMS.txt"
       }
     },
     "beta": {
@@ -342,31 +342,46 @@
         "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2/NZBPort-0.2-arm64.dmg",
         "ipk": null,
         "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2/NZBPort-0.2-arm64.zip",
-        "sha256": null
+        "sha256": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2/SHA256SUMS-0.2.txt"
       }
     }
   },
   "Enigma-Plugins": {
-    "stage": "Final",
-    "release": "boxsysteminfo-v0.1.11",
+    "stage": "Collection",
+    "release": null,
     "updatedAt": "2026-10-27T05:56:11Z",
     "assets": {
       "dmg": null,
-      "ipk": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.11/enigma2-plugin-extensions-boxsysteminfo_0.1.11_armv7ahf-neon.ipk",
+      "ipk": null,
       "zip": null,
-      "sha256": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.11/boxsysteminfo_0.1.11.sha256"
+      "sha256": null
     },
-    "final": {
-      "release": "boxsysteminfo-v0.1.11",
-      "updatedAt": "2026-10-27T05:56:11Z",
-      "assets": {
-        "dmg": null,
-        "ipk": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.11/enigma2-plugin-extensions-boxsysteminfo_0.1.11_armv7ahf-neon.ipk",
-        "zip": null,
-        "sha256": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.11/boxsysteminfo_0.1.11.sha256"
+    "final": null,
+    "beta": null,
+    "items": {
+      "BoxSystemInfo": {
+        "stage": "Final",
+        "release": "boxsysteminfo-v0.1.11",
+        "updatedAt": "2026-10-27T05:56:11Z",
+        "assets": {
+          "dmg": null,
+          "ipk": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.11/enigma2-plugin-extensions-boxsysteminfo_0.1.11_armv7ahf-neon.ipk",
+          "zip": null,
+          "sha256": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.11/boxsysteminfo_0.1.11.sha256"
+        },
+        "final": {
+          "release": "boxsysteminfo-v0.1.11",
+          "updatedAt": "2026-10-27T05:56:11Z",
+          "assets": {
+            "dmg": null,
+            "ipk": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.11/enigma2-plugin-extensions-boxsysteminfo_0.1.11_armv7ahf-neon.ipk",
+            "zip": null,
+            "sha256": "https://github.com/Schrotty74/Enigma-Plugins/releases/download/boxsysteminfo-v0.1.11/boxsysteminfo_0.1.11.sha256"
+          }
+        },
+        "beta": null
       }
-    },
-    "beta": null
+    }
   },
   "LG-G5-Apps": {
     "stage": "Development",
