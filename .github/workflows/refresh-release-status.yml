@@ -50,7 +50,7 @@ jobs:
                 dmg: release.assets.find(asset => asset.name.toLowerCase().endsWith(".dmg"))?.browser_download_url || null,
                 ipk: release.assets.find(asset => asset.name.toLowerCase().endsWith(".ipk"))?.browser_download_url || null,
                 zip: release.assets.find(asset => asset.name.toLowerCase().endsWith(".zip"))?.browser_download_url || null,
-                sha256: release.assets.find(asset => /(?:sha256sums?(?:\.txt)?|checksums?(?:\.txt)?|\.sha256(?:\.txt)?)$/i.test(asset.name))?.browser_download_url || null
+                sha256: release.assets.find(asset => /(?:sha256|checksum)/i.test(asset.name))?.browser_download_url || null
               }
             } : null;
             const final = published.find(candidate => !candidate.prerelease);
