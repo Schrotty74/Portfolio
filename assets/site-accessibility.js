@@ -1,4 +1,8 @@
-// The pause choice lasts for this document; only the theme is stored locally.
+// Persist the animation preference locally across pages, as on static app pages.
+const motionKey = "portfolio-motion-paused";
+try {
+  if (typeof document !== "undefined") document.documentElement.dataset.motionPaused = localStorage.getItem(motionKey) === "true" ? "true" : "false";
+} catch {}
 export function motionPaused() {
   return typeof document !== "undefined" && document.documentElement.dataset.motionPaused === "true";
 }
@@ -15,6 +19,7 @@ if (typeof document !== "undefined") {
   document.addEventListener("click", event => {
     if (!event.target.closest?.("[data-motion-toggle]")) return;
     document.documentElement.dataset.motionPaused = String(!motionPaused());
+    try { localStorage.setItem(motionKey, document.documentElement.dataset.motionPaused); } catch {}
     syncMotionButtons();
     window.dispatchEvent(new Event("portfolio:motionchange"));
   });
