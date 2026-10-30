@@ -38,7 +38,7 @@ for(const locale of ["","de/"]){
  let html=original;
  for(const [repo,slug] of Object.entries(slugs)){
   const info=status[repo];if(!info)continue;
-  const re=new RegExp('(<a href="/Portfolio/apps/'+slug+'/index\\.html" class="app-card"[\\s\\S]*?<span class="release-badge">)[\\s\\S]*?(<\\/span>)');
+  const re=new RegExp('(<a href="/Portfolio/'+locale+'apps/'+slug+'/index\\.html" class="app-card"[\\s\\S]*?<span class="release-badge">)[\\s\\S]*?(<\\/span>)');
   const label=info.stage==="Development"?"Development":(info.stage==="Beta"?"Beta ":"")+String(info.release||"").replace(/^v/,"").replace(/-(final|beta.*)$/i,"");
   html=html.replace(re,(all,a,b)=>a+escape(label)+b);
  }
