@@ -31,4 +31,17 @@ for(const [repo,slug] of Object.entries(slugs)){
     if(next!==html){fs.writeFileSync(file,next);count++;}
   }
 }
-console.log("Synchronized "+count+" static app detail pages.");
+// Keep homepage badges consistent with the same release-status source.
+for(const locale of ["","de/"]){
+ const file=locale+"index.html";if(!fs.existsSync(file))continue;
+ const original=fs.readFileSync(file,"utf8");
+ let html=original;
+ for(const [repo,slug] of Object.entries(slugs)){
+  const info=status[repo];if(!info)continue;
+  const re=new RegExp('(<a href="/Portfolio/apps/'+slug+'/index\\.html" class="app-card"[\\s\\S]*?<span class="release-badge">)[\\s\\S]*?(<\\/span>)');
+  const label=info.stage==="Development"?"Development":(info.stage==="Beta"?"Beta ":"")+String(info.release||"").replace(/^v/,"").replace(/-(final|beta.*)$/i,"");
+  html=html.replace(re,(all,a,b)=>a+escape(label)+b);
+ }
+ if(html!==original){fs.writeFileSync(file,html);count++;}
+}
+console.log("Synchronized "+count+" static pages.");
