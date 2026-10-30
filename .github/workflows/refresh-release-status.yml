@@ -85,7 +85,11 @@ jobs:
             const status = Object.fromEntries(entries);
             // A collection is not a final release of one of its contained apps.
             if (status["Enigma-Plugins"]) {
-              const plugin = status["Enigma-Plugins"];
+              const current = status["Enigma-Plugins"];
+              // Normalize previously wrapped data, but never nest a collection inside itself.
+              const plugin = current.items?.BoxSystemInfo?.items?.BoxSystemInfo
+                || current.items?.BoxSystemInfo
+                || current;
               status["Enigma-Plugins"] = {
                 stage: "Collection", release: null, updatedAt: plugin.updatedAt,
                 assets: { dmg: null, ipk: null, zip: null, sha256: null },
