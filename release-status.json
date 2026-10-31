@@ -385,21 +385,21 @@
   },
   "LG-G5-Apps": {
     "stage": "Final",
-    "release": "apps-2026-10-31",
-    "updatedAt": "2026-10-31T07:31:38Z",
+    "release": "g5-tv-launcher-v0.2.80",
+    "updatedAt": "2026-10-31T12:20:44Z",
     "assets": {
       "dmg": null,
-      "ipk": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/apps-2026-10-31/g5-system-monitor_0.9.3_all.ipk",
-      "zip": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/apps-2026-10-31/g5-system-monitor-source-v0.9.3.zip",
+      "ipk": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/g5-tv-launcher-v0.2.80/g5-system-monitor_0.9.3_all.ipk",
+      "zip": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/g5-tv-launcher-v0.2.80/g5-system-monitor-source-v0.9.3.zip",
       "sha256": null
     },
     "final": {
-      "release": "apps-2026-10-31",
-      "updatedAt": "2026-10-31T07:31:38Z",
+      "release": "g5-tv-launcher-v0.2.80",
+      "updatedAt": "2026-10-31T12:20:44Z",
       "assets": {
         "dmg": null,
-        "ipk": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/apps-2026-10-31/g5-system-monitor_0.9.3_all.ipk",
-        "zip": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/apps-2026-10-31/g5-system-monitor-source-v0.9.3.zip",
+        "ipk": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/g5-tv-launcher-v0.2.80/g5-system-monitor_0.9.3_all.ipk",
+        "zip": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/g5-tv-launcher-v0.2.80/g5-system-monitor-source-v0.9.3.zip",
         "sha256": null
       }
     },
