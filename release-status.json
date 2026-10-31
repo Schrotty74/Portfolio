@@ -384,15 +384,25 @@
     }
   },
   "LG-G5-Apps": {
-    "stage": "Development",
-    "release": null,
-    "updatedAt": "2026-10-30T18:09:20Z",
+    "stage": "Final",
+    "release": "apps-2026-10-31",
+    "updatedAt": "2026-10-31T07:31:38Z",
     "assets": {
       "dmg": null,
-      "zip": null,
-      "ipk": null
+      "ipk": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/apps-2026-10-31/g5-system-monitor_0.9.3_all.ipk",
+      "zip": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/apps-2026-10-31/g5-system-monitor-source-v0.9.3.zip",
+      "sha256": null
     },
-    "final": null,
+    "final": {
+      "release": "apps-2026-10-31",
+      "updatedAt": "2026-10-31T07:31:38Z",
+      "assets": {
+        "dmg": null,
+        "ipk": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/apps-2026-10-31/g5-system-monitor_0.9.3_all.ipk",
+        "zip": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/apps-2026-10-31/g5-system-monitor-source-v0.9.3.zip",
+        "sha256": null
+      }
+    },
     "beta": null
   }
 }
