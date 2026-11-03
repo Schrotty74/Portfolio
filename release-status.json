@@ -295,35 +295,35 @@
   },
   "Shortcuts": {
     "stage": "Final",
-    "release": "v1.2.3",
-    "updatedAt": "2026-07-19T10:13:19Z",
+    "release": "v1.2.4",
+    "updatedAt": "2026-11-03T05:34:40Z",
     "assets": {
       "dmg": null,
       "ipk": null,
-      "zip": "https://github.com/Schrotty74/Shortcuts/releases/download/v1.2.3/weather-for-city-1.2.3.zip",
-      "sha256": "https://github.com/Schrotty74/Shortcuts/releases/download/v1.2.3/weather-for-city-1.2.3.zip.sha256"
+      "zip": "https://github.com/Schrotty74/Shortcuts/releases/download/v1.2.4/weather-for-city-1.2.4.zip",
+      "sha256": "https://github.com/Schrotty74/Shortcuts/releases/download/v1.2.4/weather-for-city-1.2.4.zip.sha256"
     },
     "final": {
-      "release": "v1.2.3",
-      "updatedAt": "2026-07-19T10:13:19Z",
+      "release": "v1.2.4",
+      "updatedAt": "2026-11-03T05:34:40Z",
       "assets": {
         "dmg": null,
         "ipk": null,
-        "zip": "https://github.com/Schrotty74/Shortcuts/releases/download/v1.2.3/weather-for-city-1.2.3.zip",
-        "sha256": "https://github.com/Schrotty74/Shortcuts/releases/download/v1.2.3/weather-for-city-1.2.3.zip.sha256"
+        "zip": "https://github.com/Schrotty74/Shortcuts/releases/download/v1.2.4/weather-for-city-1.2.4.zip",
+        "sha256": "https://github.com/Schrotty74/Shortcuts/releases/download/v1.2.4/weather-for-city-1.2.4.zip.sha256"
       }
     },
     "beta": null
   },
   "NZBPort": {
     "stage": "Beta",
-    "release": "v0.2",
-    "updatedAt": "2026-10-22T04:26:05Z",
+    "release": "v0.2.1",
+    "updatedAt": "2026-11-03T06:13:39Z",
     "assets": {
-      "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2/NZBPort-0.2-arm64.dmg",
+      "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.1/NZBPort-0.2.1-arm64.dmg",
       "ipk": null,
-      "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2/NZBPort-0.2-arm64.zip",
-      "sha256": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2/SHA256SUMS-0.2.txt"
+      "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.1/NZBPort-0.2.1-arm64.zip",
+      "sha256": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.1/SHA256SUMS-0.2.1.txt"
     },
     "final": {
       "release": "v0.1.0",
@@ -336,13 +336,13 @@
       }
     },
     "beta": {
-      "release": "v0.2",
-      "updatedAt": "2026-10-22T04:26:05Z",
+      "release": "v0.2.1",
+      "updatedAt": "2026-11-03T06:13:39Z",
       "assets": {
-        "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2/NZBPort-0.2-arm64.dmg",
+        "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.1/NZBPort-0.2.1-arm64.dmg",
         "ipk": null,
-        "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2/NZBPort-0.2-arm64.zip",
-        "sha256": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2/SHA256SUMS-0.2.txt"
+        "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.1/NZBPort-0.2.1-arm64.zip",
+        "sha256": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.1/SHA256SUMS-0.2.1.txt"
       }
     }
   },
@@ -385,21 +385,21 @@
   },
   "LG-G5-Apps": {
     "stage": "Final",
-    "release": "g5-tv-launcher-v0.2.80",
-    "updatedAt": "2026-10-31T12:20:44Z",
+    "release": "g5-tv-launcher-v0.2.90",
+    "updatedAt": "2026-11-03T10:39:52Z",
     "assets": {
       "dmg": null,
-      "ipk": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/g5-tv-launcher-v0.2.80/g5-system-monitor_0.9.3_all.ipk",
-      "zip": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/g5-tv-launcher-v0.2.80/g5-system-monitor-source-v0.9.3.zip",
+      "ipk": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/g5-tv-launcher-v0.2.90/g5-system-monitor_0.9.3_all.ipk",
+      "zip": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/g5-tv-launcher-v0.2.90/g5-system-monitor-source-v0.9.3.zip",
       "sha256": null
     },
     "final": {
-      "release": "g5-tv-launcher-v0.2.80",
-      "updatedAt": "2026-10-31T12:20:44Z",
+      "release": "g5-tv-launcher-v0.2.90",
+      "updatedAt": "2026-11-03T10:39:52Z",
       "assets": {
         "dmg": null,
-        "ipk": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/g5-tv-launcher-v0.2.80/g5-system-monitor_0.9.3_all.ipk",
-        "zip": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/g5-tv-launcher-v0.2.80/g5-system-monitor-source-v0.9.3.zip",
+        "ipk": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/g5-tv-launcher-v0.2.90/g5-system-monitor_0.9.3_all.ipk",
+        "zip": "https://github.com/Schrotty74/LG-G5-Apps/releases/download/g5-tv-launcher-v0.2.90/g5-system-monitor-source-v0.9.3.zip",
         "sha256": null
       }
     },
