@@ -2,6 +2,10 @@
 
 This repository is the public entry point for Schrotty74 projects.
 
+## Metadata for new apps
+
+For every new app, prepare and check search-engine and social-media metadata on both English and German pages. Use the current optimized pages as examples. The page title, meta description, Open Graph and Twitter descriptions must describe the correct app and match its language and verified public features and platform. Check copied templates for metadata belonging to another app. Keep the existing design and functionality unchanged.
+
 ## New public app
 
 When a new public project is ready to be presented:
