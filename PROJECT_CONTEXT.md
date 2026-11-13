@@ -81,6 +81,12 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 - **Ergebnis:** Der Nutzer hat bestätigt, dass die Animation wieder auf allen Seiten funktioniert. HTML-/JavaScript-Syntaxprüfungen allein gelten ausdrücklich **nicht** als visueller Funktionstest.
 - **Verbindliche Regel:** Das vorhandene Design einschließlich Abschnittsanimationen, Bewegungsrichtung, Übergängen, Hover-Effekten, Abständen und Themes hat oberste Priorität. Bei jeder relevanten Änderung deutsche und englische Seiten sowie unterschiedliche Seitentypen gegen eine funktionierende Referenz vergleichen. CSS-Einbindungen und Generator-Ausgaben prüfen; visuelle/browserbasierte Tests nicht als durchgeführt behaupten, wenn nur Quelltext geprüft wurde. Keine ungefragten Layout- oder Animationsumbauten.
 
+## Release-Auswahl nach Veröffentlichungsdatum (13. November 2026)
+
+- In `.github/workflows/refresh-release-status.yml` werden öffentliche Releases vor der Auswahl von Final und Beta ausdrücklich absteigend nach `published_at` (Fallback `created_at`) sortiert. Damit hängen `final`, `beta` und die bevorzugte Version nicht mehr von der Reihenfolge der GitHub-API-Antwort ab.
+- Die Änderung betrifft ausschließlich die Release-Auswahl; Statusformat, Download-Asset-Erkennung, Sammlungslogik, Profil-Synchronisierung und Darstellung bleiben unverändert.
+- Die Codeänderung wurde auf GitHub veröffentlicht. Ein erfolgreicher Actions-Lauf und die Übernahme eines künftig neu erscheinenden Releases sind damit noch nicht nachgewiesen; diese Prüfung bleibt erforderlich.
+
 ## Release-Synchronisierung: reparierter Stand und nächste Kontrolle (30. Oktober 2026)
 
 - **Ausgangslage:** Der GitHub-Projekt-Watch meldete veraltete HTML-Versionen/Bögen, fehlende SHA256-Links und einen unzutreffenden Final-Status der Sammlung Enigma-Plugins. Die zentrale `release-status.json` war bei e2Atlas, FileAtlas und ThermalAtlas bereits aktueller als einzelne statische App-Seiten und Startseiten-Badges.
