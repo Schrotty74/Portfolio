@@ -42,7 +42,14 @@ jobs:
 
           async function latestStatus(repository) {
             const releases = await githubJson(`/repos/Schrotty74/${repository}/releases?per_page=100`);
-            const published = releases.filter(candidate => !candidate.draft);
+            // Sort explicitly by publication date; GitHub API response order is not a release-date guarantee.
+            const published = releases
+              .filter(candidate => !candidate.draft)
+              .sort((a, b) => {
+                const aTime = Date.parse(a.published_at || a.created_at || 0) || 0;
+                const bTime = Date.parse(b.published_at || b.created_at || 0) || 0;
+                return bTime - aTime;
+              });
             const releaseInfo = release => release ? {
               release: release.tag_name,
               updatedAt: release.published_at || release.created_at,
