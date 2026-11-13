@@ -81,6 +81,19 @@ Alle Seiten sind statisch. Projektbilder werden bewusst direkt von `raw.githubus
 - **Ergebnis:** Der Nutzer hat bestätigt, dass die Animation wieder auf allen Seiten funktioniert. HTML-/JavaScript-Syntaxprüfungen allein gelten ausdrücklich **nicht** als visueller Funktionstest.
 - **Verbindliche Regel:** Das vorhandene Design einschließlich Abschnittsanimationen, Bewegungsrichtung, Übergängen, Hover-Effekten, Abständen und Themes hat oberste Priorität. Bei jeder relevanten Änderung deutsche und englische Seiten sowie unterschiedliche Seitentypen gegen eine funktionierende Referenz vergleichen. CSS-Einbindungen und Generator-Ausgaben prüfen; visuelle/browserbasierte Tests nicht als durchgeführt behaupten, wenn nur Quelltext geprüft wurde. Keine ungefragten Layout- oder Animationsumbauten.
 
+## Verbindliche Prüfroutine für GitHub-Projekt-Watch (13. November 2026)
+
+Bei jeder planmäßigen Prüfung diese Schritte in gleicher Reihenfolge durchführen und im Ergebnis nachweisbar unterscheiden:
+
+1. Öffentliche Repositories und Änderungen seit dem letzten Prüflauf ermitteln; neue Repositories nicht ohne Freigabe in Profil oder Portfolio aufnehmen.
+2. Neue Final- und Beta-Releases einschließlich Veröffentlichungsdatum, Download-Assets und SHA256-Links prüfen. Release-Auswahl auch mit Testfällen für vertauschte API-Reihenfolge, ältere Beta und neuere Final sowie fehlende Releases überprüfen.
+3. `release-status.json`, eingebettete Daten in `assets/app-detail.js`, DE/EN-Startseiten und Detailseiten sowie beide Profil-READMEs miteinander abgleichen; Sammlungen und Unterprojekte getrennt behandeln.
+4. Tatsächliche GitHub-Actions-Läufe (Release-Sync, Seitenprüfung, Cache-Prüfung, Datenschutzprüfung und Pages-Deployment), einschließlich Failed/Cancelled, sowie bei Auffälligkeiten Job-Logs kontrollieren. Ein grüner Workflow ersetzt keine inhaltliche Datenprüfung.
+5. Bereits dokumentierte Befunde mit dem vorherigen Stand vergleichen und nicht erneut als neu melden. Nur neue, bestätigte Abweichungen oder Statusänderungen berichten; bloße Risiken klar als unbestätigt kennzeichnen.
+6. Für jeden Prüfschritt festhalten: bestanden, Fehler bestätigt oder nicht geprüft (mit Grund). Keine pauschale Erfolgsmeldung bei unvollständiger Prüfung. Keine Änderungen, Commits oder Workflow-Auslösungen ohne ausdrückliche Zustimmung.
+
+Diese Prüfroutine ergänzt die bestehenden Idempotenz-, Datenschutz- und Veröffentlichungsvorgaben; sie ersetzt sie nicht.
+
 ## Release-Auswahl nach Veröffentlichungsdatum (13. November 2026)
 
 - In `.github/workflows/refresh-release-status.yml` werden öffentliche Releases vor der Auswahl von Final und Beta ausdrücklich absteigend nach `published_at` (Fallback `created_at`) sortiert. Damit hängen `final`, `beta` und die bevorzugte Version nicht mehr von der Reihenfolge der GitHub-API-Antwort ab.
