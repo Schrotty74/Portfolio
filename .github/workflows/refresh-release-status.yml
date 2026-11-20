@@ -50,16 +50,27 @@ jobs:
                 const bTime = Date.parse(b.published_at || b.created_at || 0) || 0;
                 return bTime - aTime;
               });
-            const releaseInfo = release => release ? {
-              release: release.tag_name,
-              updatedAt: release.published_at || release.created_at,
-              assets: {
-                dmg: release.assets.find(asset => asset.name.toLowerCase().endsWith(".dmg"))?.browser_download_url || null,
-                ipk: release.assets.find(asset => asset.name.toLowerCase().endsWith(".ipk"))?.browser_download_url || null,
-                zip: release.assets.find(asset => asset.name.toLowerCase().endsWith(".zip"))?.browser_download_url || null,
-                sha256: release.assets.find(asset => /(?:sha256|checksum)/i.test(asset.name))?.browser_download_url || null
-              }
-            } : null;
+            const releaseInfo = release => {
+              if (!release) return null;
+              // Collection releases contain assets for multiple apps: match the tag's app prefix.
+              const appPrefix = repository === "LG-G5-Apps"
+                ? (/^g5-tv-launcher-/i.test(release.tag_name) ? "g5-tv-launcher"
+                  : /^g5-system-monitor-/i.test(release.tag_name) ? "g5-system-monitor" : null)
+                : null;
+              const assetFor = (test) => release.assets.find(asset =>
+                (!appPrefix || asset.name.toLowerCase().startsWith(appPrefix)) && test(asset.name.toLowerCase())
+              )?.browser_download_url || null;
+              return {
+                release: release.tag_name,
+                updatedAt: release.published_at || release.created_at,
+                assets: {
+                  dmg: assetFor(name => name.endsWith(".dmg")),
+                  ipk: assetFor(name => name.endsWith(".ipk")),
+                  zip: assetFor(name => name.endsWith(".zip")),
+                  sha256: assetFor(name => /(?:sha256|checksum)/i.test(name))
+                }
+              };
+            };
             const final = published.find(candidate => !candidate.prerelease);
             const beta = published.find(candidate => candidate.prerelease);
             const preferred = [final, beta].filter(Boolean).reduce((newest, candidate) => {
