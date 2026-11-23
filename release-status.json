@@ -317,13 +317,13 @@
   },
   "NZBPort": {
     "stage": "Beta",
-    "release": "v0.2.4",
-    "updatedAt": "2026-11-21T08:46:18Z",
+    "release": "v0.2.5",
+    "updatedAt": "2026-11-23T06:08:11Z",
     "assets": {
-      "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.4/NZBPort-0.2.4-arm64.dmg",
+      "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.5/NZBPort-0.2.5-arm64.dmg",
       "ipk": null,
-      "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.4/NZBPort-0.2.4-arm64.zip",
-      "sha256": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.4/SHA256SUMS-0.2.4.txt"
+      "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.5/NZBPort-0.2.5-arm64.zip",
+      "sha256": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.5/SHA256SUMS-0.2.5.txt"
     },
     "final": {
       "release": "v0.1.0",
@@ -336,13 +336,13 @@
       }
     },
     "beta": {
-      "release": "v0.2.4",
-      "updatedAt": "2026-11-21T08:46:18Z",
+      "release": "v0.2.5",
+      "updatedAt": "2026-11-23T06:08:11Z",
       "assets": {
-        "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.4/NZBPort-0.2.4-arm64.dmg",
+        "dmg": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.5/NZBPort-0.2.5-arm64.dmg",
         "ipk": null,
-        "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.4/NZBPort-0.2.4-arm64.zip",
-        "sha256": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.4/SHA256SUMS-0.2.4.txt"
+        "zip": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.5/NZBPort-0.2.5-arm64.zip",
+        "sha256": "https://github.com/Schrotty74/NZBPort/releases/download/v0.2.5/SHA256SUMS-0.2.5.txt"
       }
     }
   },
