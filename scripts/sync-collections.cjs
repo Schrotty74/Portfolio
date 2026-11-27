@@ -41,7 +41,12 @@ function put(filename,content){fs.mkdirSync(path.dirname(filename),{recursive:tr
    const raw=dir.path.split("/").pop(),id=slug(raw),name=nice(raw);
    const prefix=raw.toLowerCase().replace(/[^a-z0-9]/g,"");
    const matching=(releases||[]).filter(r=>!r.draft&&r.tag_name.toLowerCase().replace(/[^a-z0-9]/g,"").startsWith(prefix)).sort((a,b)=>Date.parse(b.published_at||b.created_at)-Date.parse(a.published_at||a.created_at));
-   const rel=matching[0],asset=rel?.assets?.find(a=>/\.(ipk|zip|dmg|webp|png)$/i.test(a.name));
+   const rel=matching[0];
+   // LG releases may bundle several apps. Only use this app's installable IPK.
+   const appPrefix=raw==="system-monitor"?"g5-system-monitor":raw.toLowerCase();
+   const asset=cfg.repo==="LG-G5-Apps"
+    ? rel?.assets?.find(a=>a.name.toLowerCase().startsWith(appPrefix+"_")&&/\.ipk$/i.test(a.name))
+    : rel?.assets?.find(a=>/\.(ipk|zip|dmg|webp|png)$/i.test(a.name));
    const ipk=tree.tree.filter(x=>x.type==="blob"&&x.path.startsWith(dir.path+"/")&&/\.ipk$/i.test(x.path)).sort((a,b)=>b.path.localeCompare(a.path))[0];
    const sprite=tree.tree.find(x=>x.type==="blob"&&x.path.startsWith(dir.path+"/")&&/spritesheet.*\.(png|webp)$/i.test(x.path));
    const preview=cfg.kind==="pets"?"https://raw.githubusercontent.com/Schrotty74/"+cfg.repo+"/main/"+dir.path+"/preview-transparent.png":cfg.kind==="plugins"?"https://raw.githubusercontent.com/Schrotty74/"+cfg.repo+"/main/"+dir.path+"/src/usr/lib/enigma2/python/Plugins/Extensions/"+raw+"/icon.png":cfg.kind==="apps"?"https://raw.githubusercontent.com/Schrotty74/"+cfg.repo+"/main/"+dir.path+(raw==="g5-tv-launcher"?"/app/icon.png":"/preview.png"):null;
