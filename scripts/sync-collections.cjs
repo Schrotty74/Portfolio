@@ -21,7 +21,8 @@ function template(cfg,item,de,readme,altReadme){
  const allPoints=bullets(readme,30).length?bullets(readme,30):bullets(altReadme,30);
  const points=cfg.repo==="LG-G5-Apps"&&item.slug==="g5-tv-launcher"?[0,1,3,4,5,6,7,11,17,18].map(i=>allPoints[i]).filter(Boolean):allPoints.slice(0,14);
  const url="https://github.com/Schrotty74/"+cfg.repo+"/tree/main/"+item.folder;
- const file=item.download?'<a href="'+safe(item.download)+'" target="_blank" rel="noreferrer">'+(de?"Download IPK":"Download IPK")+(item.version?" v"+safe(item.version):"")+' <span>↗</span></a>':"";
+ const downloadLabel=cfg.kind==="pets"?(de?"Sprite-Sheet herunterladen":"Download sprite sheet"):"Download IPK";
+ const file=item.download?'<a href="'+safe(item.download)+'" target="_blank" rel="noreferrer">'+downloadLabel+(item.version?" v"+safe(item.version):"")+' <span>↗</span></a>':"";
  const photo=item.preview?'<img src="'+safe(item.preview)+'" alt="'+safe(item.name)+'" loading="eager"/>':"";
  const status=item.version?'<p class="detail-note">'+(de?"Release: ":"Release: ")+safe(item.version)+'</p>':"";
  const rows=points.map((x,i)=>'<div><b>'+String(i+1).padStart(2,"0")+'</b><span>'+safe(x)+'</span></div>').join("");
@@ -48,11 +49,15 @@ function put(filename,content){fs.mkdirSync(path.dirname(filename),{recursive:tr
     ? rel?.assets?.find(a=>a.name.toLowerCase().startsWith(appPrefix+"_")&&/\.ipk$/i.test(a.name))
     : rel?.assets?.find(a=>/\.(ipk|zip|dmg|webp|png)$/i.test(a.name));
    const ipk=tree.tree.filter(x=>x.type==="blob"&&x.path.startsWith(dir.path+"/")&&/\.ipk$/i.test(x.path)).sort((a,b)=>b.path.localeCompare(a.path))[0];
-   const sprite=tree.tree.find(x=>x.type==="blob"&&x.path.startsWith(dir.path+"/")&&/spritesheet.*\.(png|webp)$/i.test(x.path));
+   const petManifest=cfg.kind==="pets"?JSON.parse(await read(cfg.repo,dir.path+"/pet.json")):null;
+   const spritePath=petManifest?.spritesheetPath;
+   if(cfg.kind==="pets"&&(!spritePath||!/^[-a-z0-9_.]+\.(png|webp)$/i.test(spritePath)||!tree.tree.some(x=>x.type==="blob"&&x.path===dir.path+"/"+spritePath)))throw Error("Missing pet sprite sheet: "+dir.path);
+   const sprite=spritePath?{path:dir.path+"/"+spritePath}:null;
    const preview=cfg.kind==="pets"?"https://raw.githubusercontent.com/Schrotty74/"+cfg.repo+"/main/"+dir.path+"/preview-transparent.png":cfg.kind==="plugins"?"https://raw.githubusercontent.com/Schrotty74/"+cfg.repo+"/main/"+dir.path+"/src/usr/lib/enigma2/python/Plugins/Extensions/"+raw+"/icon.png":cfg.kind==="apps"?"https://raw.githubusercontent.com/Schrotty74/"+cfg.repo+"/main/"+dir.path+(raw==="g5-tv-launcher"?"/app/icon.png":"/preview.png"):null;
    const versionFromIpk=ipk?.path.match(/_(\d+\.\d+(?:\.\d+)*(?:[-+.][A-Za-z0-9.-]+)?)_/i)?.[1]||null;
    const detectedVersion=rel?.tag_name||versionFromIpk;
-   const item={name,slug:id,folder:dir.path,url:"https://github.com/Schrotty74/"+cfg.repo+"/tree/main/"+dir.path,version:detectedVersion,releaseUrl:rel?.html_url||null,download:asset?.browser_download_url|| (ipk?"https://raw.githubusercontent.com/Schrotty74/"+cfg.repo+"/main/"+ipk.path:null)|| (sprite?"https://raw.githubusercontent.com/Schrotty74/"+cfg.repo+"/main/"+sprite.path:null),preview};
+   const download=cfg.kind==="pets"?"https://raw.githubusercontent.com/Schrotty74/"+cfg.repo+"/main/"+sprite.path:asset?.browser_download_url|| (ipk?"https://raw.githubusercontent.com/Schrotty74/"+cfg.repo+"/main/"+ipk.path:null);
+   const item={name,slug:id,folder:dir.path,url:"https://github.com/Schrotty74/"+cfg.repo+"/tree/main/"+dir.path,version:detectedVersion,releaseUrl:rel?.html_url||null,download,preview};
    items.push(item);
    const [english,german]=await Promise.all([read(cfg.repo,dir.path+"/README.en.md"),read(cfg.repo,dir.path+"/README.de.md")]);
    const standard=await read(cfg.repo,dir.path+"/README.md");
