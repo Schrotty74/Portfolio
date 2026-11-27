@@ -20,6 +20,7 @@ Vor jeder Projektarbeit zuerst `PROJECT_CONTEXT.md`, `NEXT_STEPS.md`, `README.md
 - Fragen nicht automatisch als Änderungsauftrag behandeln. Dateien, Prüfungen, Commits, Pushes oder Veröffentlichungen nur ausführen, wenn der Auftrag dies verlangt oder sie für eine ausdrücklich beauftragte Änderung notwendig sind.
 - Keine Projektzustände, Testergebnisse, Prüfungen oder offenen Punkte erfinden. Einen Erfolg nur behaupten, wenn die betreffende Prüfung tatsächlich ausgeführt wurde.
 - Änderungen am Portfolio autorisieren keine Änderungen an verlinkten App-/Projekt-Repositories.
+- Für ausdrücklich freigegebene GitHub-Änderungen in ChatGPT Work zuerst den verbundenen GitHub-Zugang verwenden, sofern die benötigten Funktionen verfügbar sind. Direkten Git-Push nur verwenden, wenn die Git-Authentifizierung in der jeweiligen Umgebung bereits funktioniert; bei fehlenden Zugangsdaten den verbundenen Zugang nutzen. Lesende Git-Befehle bleiben möglich.
 - Keine Commits, Pushes, Tags oder Releases ohne ausdrücklichen Auftrag.
 - Keine Regeln zur Vorbereitung oder Fortsetzung eines neuen Chats aufnehmen. Solche Anweisungen gehören ausschließlich in `CHAT_TEMPLATE.md` beziehungsweise in einen separaten Start-Prompt.
 
