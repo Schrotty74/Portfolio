@@ -159,21 +159,21 @@
   },
   "Skybreak-Protocol": {
     "stage": "Final",
-    "release": "v1.0.1",
-    "updatedAt": "2026-08-30T15:30:37Z",
+    "release": "v1.1.0",
+    "updatedAt": "2026-11-28T05:39:16Z",
     "assets": {
       "dmg": null,
       "ipk": null,
-      "zip": "https://github.com/Schrotty74/Skybreak-Protocol/releases/download/v1.0.1/Skybreak-Protocol-1.0.1-offline.zip",
+      "zip": "https://github.com/Schrotty74/Skybreak-Protocol/releases/download/v1.1.0/Skybreak-Protocol-1.1.0-offline.zip",
       "sha256": null
     },
     "final": {
-      "release": "v1.0.1",
-      "updatedAt": "2026-08-30T15:30:37Z",
+      "release": "v1.1.0",
+      "updatedAt": "2026-11-28T05:39:16Z",
       "assets": {
         "dmg": null,
         "ipk": null,
-        "zip": "https://github.com/Schrotty74/Skybreak-Protocol/releases/download/v1.0.1/Skybreak-Protocol-1.0.1-offline.zip",
+        "zip": "https://github.com/Schrotty74/Skybreak-Protocol/releases/download/v1.1.0/Skybreak-Protocol-1.1.0-offline.zip",
         "sha256": null
       }
     },
